@@ -1,0 +1,60 @@
+<xml version="1.0" encoding="utf-8"?>
+<videos>
+	<video>
+		<id></id>
+		<title></title>
+		<subtitle></subtitle>
+		<url></url>
+		<description>
+		</description>
+		<images>
+			<!-- 
+			e.g.:
+			<image>
+				<url>http://www.google.de/image.png</url>
+				<alt>Alternativtext zum Bild für bessere Semantik</alt>
+			</image>
+			 -->
+			<image>
+				<url></url>
+				<alt></alt>
+			</image>
+		</images>
+		<protagonists>
+			<protagonist></protagonist>
+		</protagonists>
+		<producers>
+			<producer>
+				<!-- 
+				e.g.:
+				<name>Max Müller</name>
+				<function>Videoschnitt</function>
+				 -->
+				<name></name>
+				<function></function>
+			</producer>
+		<producers>
+		<tags>
+			<timepositions>
+				<timeposition>
+					<!-- time in seconds -->
+					<time_from></time_from>
+					<time_to></time_to>
+					<!-- coordinates from google maps -->
+					<coordinate>
+						<name></name>
+						<longitude></longitude>
+						<altitude></altitude>
+					</coordinate>
+				</timeposition>
+			</timepositions>
+			<comments>
+				<comment>
+					<name></name>
+					<text>
+					</text>
+				</comment>
+			</comments>
+		</tags>
+	</video>
+</videos>

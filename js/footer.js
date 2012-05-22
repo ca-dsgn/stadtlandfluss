@@ -21,11 +21,11 @@ function footerEventListeners() {
 		
 		if ($("#pageFooterSlider .wrapper").is(":hidden")) {
 		
-			console.log("hidden");	
+			showFooter();
 		}
 		else {
 			
-			console.log("not hidden");
+			hideFooter();
 		}
 	});
 }

@@ -9,6 +9,18 @@ html {
 }
 
 
+h1 {
+
+}
+
+h2 {
+	font-size: 14px;
+}
+
+.hidden {
+	display: none;
+}
+
 .wrapper {
 	background-color: grey;
 	width: 90%;

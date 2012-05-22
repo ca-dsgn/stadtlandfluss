@@ -21,10 +21,8 @@
 	height: 25px; 
 	background: red;
 	margin: 0 auto;
-	position: relative;
 /*	background: url('../img/loop.png');*/
 	z-index: 1;
-	top: -25px;
 	cursor: pointer;
 	
 	
@@ -48,7 +46,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dedfdf', end
 	height: 300px;
 	width: 100%;
 	
-	background: #ff00ff; /* Old browsers */
+	background: #989898;
+	background: -moz-linear-gradient(top,  #cbcbcb 4%, #989898 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(4%,#cbcbcb), color-stop(100%,#989898)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #cbcbcb 4%,#989898 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #cbcbcb 4%,#989898 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #cbcbcb 4%,#989898 100%); /* IE10+ */
+	background: linear-gradient(top,  #cbcbcb 4%,#989898 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cbcbcb', endColorstr='#989898',GradientType=0 ); /* IE6-9 */	
 
 
 }

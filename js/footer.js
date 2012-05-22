@@ -35,4 +35,12 @@ function footerEventListeners() {
 			hideFooter();
 		}
 	});
+	$("#pageFooterSlider").draggable({
+		
+		axis: "y",
+		stop: function(event,ui) {
+			
+			console.log(ui);
+		}
+	});
 }

@@ -56,10 +56,6 @@ body {
 	/* Opera cannot do radial gradients yet */
 }
 
-#content {
-
-}
-
 h1 {
 
 }
@@ -73,7 +69,6 @@ h2 {
 }
 
 .wrapper {
-	background-color: grey;
 	width: 90%;
 	min-width: 960px;
 	max-width: 1280px;
@@ -87,3 +82,15 @@ h2 {
 }
 
 
+/********* Startseite *********/
+
+#startseite div#video{
+	background-color: black;
+
+	width: 300px;
+	height: 200px;
+}
+
+#startseite h1 {
+
+}

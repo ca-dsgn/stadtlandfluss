@@ -1,7 +1,6 @@
 
 #pageHeader {
 	position: relative;
-	background-color: aqua;
 	height: 100px;
 }
 
@@ -10,9 +9,13 @@
 
 #logoBig {
 	display: block;
+	position: absolute;
+	top: 54px;
+	left: 0;
 	width: 240px;
 	height: 46px;
 	background-image: url('../img/logo.png');
+	text-indent: -9999px;
 }
 
 

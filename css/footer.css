@@ -37,7 +37,8 @@
 }
 
 #pageFooterSliderButton:hover {
-	/*background-color: blue;*/
+	background-position: 0 -25px;
+
 }
 
 #pageFooterSliderContent {

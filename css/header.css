@@ -1,6 +1,8 @@
 #pageHeader {
 	position: relative;
 	height: 120px;
+	
+	z-index: 15;
 }
 
 

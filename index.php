@@ -7,7 +7,8 @@
 
 <div id="protagonistContent">
 	<div class="wrapper">
-		<div class="content">
+	
+		<!-- <div class="content">
 			<div class="picture">Video</div>
 			<div class="playButton">Play</div>
 			<div class="description">
@@ -15,7 +16,23 @@
 				<sub>Motocross-Fahrer</sub>
 				<p>Hier kommt der Beschreibungstext von dem Film mal rein.</p>
 			</div>
-		</div>
+		</div> -->
+		
+		
+		<ul class="content">
+			<li class="previous contentBox">
+				
+			</li>
+			
+			<li class="current contentBox">
+			
+			</li>
+			
+			<li class="following contentBox">
+			
+			</li>
+		</ul>
+		
 
 		<div class="arrows">
 			<div class="arrowLeft"><</div>

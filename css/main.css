@@ -4,17 +4,62 @@
 
 * {border: 0; margin: 0; padding: 0;}
 
+
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+
+
 html {
 	font-family: 'Open Sans', sans-serif;
 }
 
+body {
+	/* fallback */ 
+	background-color: #ddd;
+	
+	
+	/* Safari 4-5, Chrome 1-9 */ 
+	/* Can't specify a percentage size? Laaaaaame. */ 
+	/* background: -webkit-gradient(radial, center center, 0, center center, 460, from(#ddd), to(#ccc)); */
+	
+	/* Safari 5.1+, Chrome 10+ */ 
+	background: -webkit-radial-gradient(circle, #eee, #ccc);
+	
+	/* Firefox 3.6+ */ 
+	background: -moz-radial-gradient(circle, #eee, #ccc);
+	
+	/* IE 10 */ 
+	background: -ms-radial-gradient(circle, #eee, #ccc);
+	
+	/* Opera cannot do radial gradients yet */
+}
 
 h1 {
 
 }
 
 h2 {
-	font-size: 14px;
+	font-size: 18px;
 }
 
 .hidden {

@@ -4,7 +4,8 @@ $(document).ready(function() {
 	
 	$("#pageFooterSlider").css("top",(parseFloat($(document).height())));
 	showFooter();
-	footerEventListeners();
+	addfooterEventListeners();
+	footerDraggable();
 });
 
 function showFooter() {
@@ -29,10 +30,14 @@ function hideFooter() {
 	$("#pageFooterSlider").removeClass("is_up");
 }
 
-function footerEventListeners() {
+function addfooterEventListeners() {
 	
-	$("#pageFooterSliderButton").live("click", function() {
+	$("#pageFooterSliderButton").live("mouseup", function() {
 		
+		if ($("#pageFooterSlider").hasClass("ui-draggable-dragging")) {
+			
+		}
+		else {
 			if ($("#pageFooterSlider").hasClass("is_up")) {
 				
 				hideFooter();
@@ -42,28 +47,47 @@ function footerEventListeners() {
 				
 				showFooter();
 			}
+		}
 	});
+}
+
+function footerDraggable() {
+
 	$("#pageFooterSlider").draggable({
 		
 		axis: "y",
 		stop: function(event,ui) {
 			
-			if (ui.originalPosition.top - ui.offset.top < -20 || ui.originalPosition.top - ui.offset.top > 20) {
+			if ($("#pageFooterSlider").hasClass("is_down")) {
 				
-				if ($("#pageFooterSlider").hasClass("is_down")) {
-				
+				if (ui.originalPosition.top - ui.offset.top > 20) {
+					
+					//Is DOWN wants to go UP
 					showFooter();
 				}
 				else {
-					hideFooter();
+					//Is DOWN wants to go down
+					$("#pageFooterSlider").animate({
+						top: ui.originalPosition.top,
+						easing: 'swing'
+					});
 				}
 			}
 			else {
-				$("#pageFooterSlider").animate({
-					top: ui.originalPosition.top,
-					easing: 'swing'
-				});
+				
+				if (ui.originalPosition.top - ui.offset.top > 20) {
+					
+					//Is UP wants to go UP
+					$("#pageFooterSlider").animate({
+						top: ui.originalPosition.top,
+						easing: 'swing'
+					});
+				}
+				else {
+					//Is UP wants to go DOWN
+					hideFooter();
+				}
 			}
 		}
-	});
+	});	
 }

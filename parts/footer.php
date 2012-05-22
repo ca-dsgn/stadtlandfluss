@@ -1,5 +1,6 @@
 <footer id="pageFooter">
 	<div id="pageFooterSlider">
+		<div id="pageFooterSliderButton"></div>
 		<div class="wrapper">
 			<div id="pageFooterLeft">asd</div>
 			<div id="pageFooterMiddle">asd</div>

@@ -17,8 +17,10 @@ function showFooter() {
 
 function hideFooter() {
 
+	console.log("in function");
+
 	$("#pageFooterSlider").animate({
-		top: $("#pageFooterSlider").offset().top+300,
+		bottom: "-=300",
 		easing: 'swing',
 		duration: animation_time
 	});
@@ -26,7 +28,7 @@ function hideFooter() {
 
 function footerEventListeners() {
 	
-	$("#pageFooterSliderButton").live("click", function() {
+	$("#pageFooterSliderButton").live("mouseup", function() {
 		
 		if ($("#pageFooterSlider .wrapper").is(":hidden")) {
 		
@@ -44,12 +46,16 @@ function footerEventListeners() {
 			
 			if (ui.originalPosition.top - ui.offset.top < -20 || ui.originalPosition.top - ui.offset.top > 20) {
 				
-				if ($("#pageFooterSlider .wrapper").is(":hidden")) {
+				console.log(parseInt($("#pageFooterSlider").css("bottom")));
 				
+				if (parseInt($("#pageFooterSlider").css("bottom")) == -280) {
+				
+					console.log("here");
 					showFooter();
 				}
 				else {
 					hideFooter();
+					console.log("hideit");
 				}
 			}
 			else {

@@ -9,7 +9,7 @@ function showFooter() {
 
 	$("#pageFooterSlider .wrapper").slideDown({
 		
-		duration: 500,
+		duration: 700,
 		easing: 'easeInQuad'
 	});
 }
@@ -18,7 +18,7 @@ function hideFooter() {
 
 	$("#pageFooterSlider .wrapper").slideUp({
 		
-		duration: 500,
+		duration: 700,
 		easing: 'easeOutQuad'
 	});	
 }

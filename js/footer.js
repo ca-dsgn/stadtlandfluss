@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	
-	$("#pageFooterSlider .wrapper").hide();
 	showFooter();
 	footerEventListeners();
 });

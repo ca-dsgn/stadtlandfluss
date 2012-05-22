@@ -16,6 +16,7 @@
 
 #pageFooterSlider .wrapper {
 	height: 300px;
+	overflow: hidden;
 }
 
 #pageFooterSliderButton {

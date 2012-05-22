@@ -1,3 +1,36 @@
+
 #pageFooter {
 
+}
+
+
+#pageFooterContent {
+	position: fixed;
+	background-color: #2a2a2a;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-size: 9px;
+	font-weight: 300;
+	line-height: 20px;
+	letter-spacing: 0.2px;
+	text-transform: uppercase;
+}
+
+#pageFooterContent a {
+	text-decoration: none;
+	color: #929292;
+}
+
+#pageFooterContent a:hover {
+	text-decoration: underline;
+}
+
+#pageFooterContent ul {
+	list-style-type: none;
+}
+
+#pageFooterContent ul li {
+	float: left;
+	margin-right: 10px;
 }

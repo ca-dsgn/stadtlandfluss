@@ -7,5 +7,13 @@
 <body>
 <header id="pageHeader">
 	<div class="wrapper">
+		<a href="/" id="logoBig">Stadt Land Fluss Geschichten</a>
+		<nav id="pageNav">
+			<ul>
+				<li><a href="">Punkt 1</a></li>
+				<li><a href="">Punkt 2</a></li>
+				<li><a href="">Punkt 3</a></li>
+			</ul>
+		</nav>
 	</div>
 </header>

@@ -7,12 +7,20 @@ $(document).ready(function() {
 
 function showFooter() {
 
-	$("#pageFooterSlider .wrapper").slideDown(500);
+	$("#pageFooterSlider .wrapper").slideDown({
+		
+		duration: 500,
+		easing: 'easeInQuad'
+	});
 }
 
 function hideFooter() {
 
-	$("#pageFooterSlider .wrapper").slideUp(500);	
+	$("#pageFooterSlider .wrapper").slideUp({
+		
+		duration: 500,
+		easing: 'easeOutQuad'
+	});	
 }
 
 function footerEventListeners() {

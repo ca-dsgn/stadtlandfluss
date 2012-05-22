@@ -1,7 +1,7 @@
 <footer id="pageFooter">
 	<div id="pageFooterSlider">
 		<div id="pageFooterSliderButton"></div>
-		<div class="wrapper clearfix" style="display: none;">
+		<div class="wrapper clearfix hidden">
 			<div id="pageFooterLeft">
 				<h2>Kennenlernen</h2>
 				<p>AFFE</p>

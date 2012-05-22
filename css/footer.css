@@ -8,7 +8,6 @@
 	bottom: 20px;
 	left: 0;
 	right: 0;
-	background-color: fuchsia;
 	opacity: 0.9;
 }
 
@@ -23,10 +22,22 @@
 	background: red;
 	margin: 0 auto;
 	position: relative;
-	background: url('../img/loop.png');
+/*	background: url('../img/loop.png');*/
 	z-index: 1;
 	top: -25px;
 	cursor: pointer;
+	
+	
+	background: #dedfdf; /* Old browsers */
+background: -moz-linear-gradient(top,  #dedfdf 8%, #cbcbcb 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(8%,#cbcbcb), color-stop(100%,#dedede)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #dedfdf 8%,#cbcbcb 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #dedfdf 8%,#cbcbcb 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #dedfdf 8%,#cbcbcb 100%); /* IE10+ */
+background: linear-gradient(top,  #dedfdf 8%,#cbcbcb 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dedfdf', endColorstr='#cbcbcb',GradientType=0 ); /* IE6-9 */
+
+	
 }
 
 #pageFooterSliderButton:hover {
@@ -35,6 +46,11 @@
 
 #pageFooterSliderContent {
 	height: 300px;
+	width: 100%;
+	
+	background: #ff00ff; /* Old browsers */
+
+
 }
 
 

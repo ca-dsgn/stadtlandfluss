@@ -22,19 +22,12 @@
 	height: 25px; 
 	background: red;
 	margin: 0 auto;
-/*	background: url('../img/loop.png');*/
 	z-index: 1;
 	cursor: pointer;
 	
-background: #949494; /* Old browsers */
-background: -moz-linear-gradient(top,  #b7b7b7 1%, #949494 95%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#b7b7b7), color-stop(95%,#949494)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #b7b7b7 1%,#949494 95%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #b7b7b7 1%,#949494 95%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #b7b7b7 1%,#949494 95%); /* IE10+ */
-background: linear-gradient(top,  #b7b7b7 1%,#949494 95%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7b7b7', endColorstr='#949494',GradientType=0 ); /* IE6-9 */
-	
+
+	background-image: url('../img/footerButtonBack.jpg');   
+	background-repeat: repeat-x;
 }
 
 #pageFooterSliderButton:hover {

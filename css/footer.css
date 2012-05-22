@@ -1,4 +1,3 @@
-
 #pageFooter {
 
 }
@@ -18,24 +17,20 @@
 	overflow: hidden;
 }
 
-#loop {
+#pageFooterSliderButton {
 	width: 75px; 
 	height: 25px; 
 	background: red;
 	margin: 0 auto;
 	position: relative;
-	top: -20px;
-}
-
-#pageFooterSliderButton {
-	width: 100%;
-	height: 30px;
-	background-color: aqua;
+	background: url('../img/loop.png');
+	z-index: 1;
+	top: -25px;
 	cursor: pointer;
 }
 
 #pageFooterSliderButton:hover {
-	background-color: blue;
+	/*background-color: blue;*/
 }
 
 #pageFooterSliderContent {
@@ -52,15 +47,12 @@
 	float: left;
 	width: 200px;
 	background-color: yellow;
-
 }
 
 #pageFooterRight {
 	float: right;
-		background-color: green;
-
+	background-color: green;
 }
-
 
 
 #pageFooterContent {

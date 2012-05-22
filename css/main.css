@@ -31,6 +31,8 @@ html[xmlns] .clearfix {
 
 html {
 	font-family: 'Open Sans', sans-serif;
+	
+	overflow-x: hidden;
 }
 
 body {

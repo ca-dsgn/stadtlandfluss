@@ -10,12 +10,21 @@
 	left: 0;
 	right: 0;
 	background-color: fuchsia;
-	opacity: 0.9;	
+	opacity: 0.9;
 }
 
 
 #pageFooterSlider .wrapper {
 	overflow: hidden;
+}
+
+#loop {
+	width: 75px; 
+	height: 25px; 
+	background: red;
+	margin: 0 auto;
+	position: relative;
+	top: -20px;
 }
 
 #pageFooterSliderButton {
@@ -29,6 +38,10 @@
 	background-color: blue;
 }
 
+#pageFooterSliderContent {
+	height: 300px;
+}
+
 
 #pageFooterLeft {
 	float: left;
@@ -38,7 +51,7 @@
 #pageFooterMiddle {
 	float: left;
 	width: 200px;
-		background-color: yellow;
+	background-color: yellow;
 
 }
 

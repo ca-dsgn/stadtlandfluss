@@ -85,14 +85,15 @@ h2 {
 /********* Startseite *********/
 
 #protagonistContent {
-	background-color: red;
+	/* background-color: red; */
 	
 	position: absolute;
-	top: 160px;
-	bottom: 100px;
+	top: 0px;
+	bottom: 0px;
 	left: 0;
 	right: 0;
 }
+
 
 #protagonistContent .picture {
 	background-color: black;
@@ -125,21 +126,23 @@ h2 {
 }
 
 #protagonistContent .arrowLeft {
-	position: absolute;
-	top: 50%;
 	left: 0px;
-	margin-top: -30px;
 	background-color: #f0f;
 	width: 60px;
 	height: 60px;
+	
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
 }
 
 #protagonistContent .arrowRight {
-	position: absolute;
-	top: 50%;
 	right: 0px;
-	margin-top: -30px;
 	background-color: #f0f;
 	width: 60px;
 	height: 60px;
+	
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
 }

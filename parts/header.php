@@ -16,9 +16,9 @@
 		<a href="/" id="logoBig">Stadt Land Fluss Geschichten</a>
 		<nav id="pageNav">
 			<ul>
-				<li><a href="">Punkt 1</a></li>
-				<li><a href="">Punkt 2</a></li>
-				<li><a href="">Punkt 3</a></li>
+				<li><a href="index.php$section=protagonisten">Protagonisten</a></li>
+				<li><a href="index.php$section=karte">Karte</a></li>
+				<li><a href="index.php$section=matrix">Matrix</a></li>
 			</ul>
 		</nav>
 	</div>

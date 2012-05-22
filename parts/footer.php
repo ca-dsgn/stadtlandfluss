@@ -2,7 +2,7 @@
 	<div id="pageFooterSlider">
 		<div id="pageFooterSliderButton"></div>
 		<div id="pageFooterSliderContent">
-			<div class="wrapper hidden">
+			<div class="wrapper">
 				<div id="pageFooterLeft">
 					<h2>Kennenlernen</h2>
 					<p>AFFE</p>

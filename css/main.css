@@ -45,13 +45,13 @@ body {
 	/* background: -webkit-gradient(radial, center center, 0, center center, 460, from(#ddd), to(#ccc)); */
 	
 	/* Safari 5.1+, Chrome 10+ */ 
-	background: -webkit-radial-gradient(circle, #eee, #ccc);
+	background: -webkit-radial-gradient(circle, #eee, #b0b0b0);
 	
 	/* Firefox 3.6+ */ 
-	background: -moz-radial-gradient(circle, #eee, #ccc);
+	background: -moz-radial-gradient(circle, #eee, #b0b0b0);
 	
 	/* IE 10 */ 
-	background: -ms-radial-gradient(circle, #eee, #ccc);
+	background: -ms-radial-gradient(circle, #eee, #b0b0b0);
 	
 	/* Opera cannot do radial gradients yet */
 }
@@ -84,13 +84,55 @@ h2 {
 
 /********* Startseite *********/
 
-#startseite div#video{
+
+div#startseite div#picture {
 	background-color: black;
 
 	width: 300px;
-	height: 200px;
+	height: 260px;
+	
+	position: absolute;
+	left: 140px;
 }
 
-#startseite h1 {
+div#startseite div#play_button {
+	background-color: red;
 
+	width: 100px;
+	height: 100px;
+	
+	position: absolute;
+	left: 380px;
+	top: 180px;
+}
+
+div#startseite div#description {
+	position: relative;
+	float: right;
+	
+	position: absolute;
+	left: 540px;
+	right: 140px;
+}
+
+div#startseite div#arrow_left {
+	position: absolute;
+	top: 160px;
+	left: 0px;
+	
+	background-color: #f0f;
+	
+	width: 60px;
+	height: 60px;
+}
+
+div#startseite div#arrow_right {
+	position: absolute;
+	top: 200px;
+	right: 0px;
+	
+	background-color: #f0f;
+	
+	width: 60px;
+	height: 60px;
 }

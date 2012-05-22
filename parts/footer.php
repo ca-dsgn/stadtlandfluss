@@ -1,7 +1,7 @@
 <footer id="pageFooter">
 	<div id="pageFooterSlider">
 		<div id="pageFooterSliderButton"></div>
-		<div class="wrapper clearfix hidden">
+		<div class="wrapper clearfix" style="display: block;">
 			<div id="pageFooterLeft">
 				<h2>Kennenlernen</h2>
 				<p>AFFE</p>
@@ -26,6 +26,6 @@
 		</div>
 	</div>
 </footer>
-<script type="text/javascript" src="js/footer.js"></script>
+
 </body>
 </html>

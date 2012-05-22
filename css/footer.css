@@ -34,6 +34,10 @@
 	background-color: #bababa;
 	background-image: url('../img/footerButtonBack.jpg');   
 	background-repeat: repeat-x;
+	
+	-moz-box-shadow:    0px 0px 1px #3d3d3d;
+	-webkit-box-shadow: 0px 0px 1px #3d3d3d;
+	box-shadow:         0px 0px 1px #3d3d3d;
 }
 
 #pageFooterSliderButton:hover {
@@ -53,9 +57,6 @@
 	background: -ms-linear-gradient(top,  #949494 8%,#414141 100%); /* IE10+ */
 	background: linear-gradient(top,  #949494 8%,#414141 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#949494', endColorstr='#414141',GradientType=0 ); /* IE6-9 */
-
-
-
 }
 
 
@@ -78,7 +79,7 @@
 
 #pageFooterContent {
 	position: fixed;
-	background-color: #373737;
+	background-color: #222;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -88,9 +89,9 @@
 	letter-spacing: 0.2px;
 	text-transform: uppercase;
 	
-  -moz-box-shadow:    0px 0px 10px #3d3d3d;
-  -webkit-box-shadow: 0px 0px 10px #3d3d3d;
-  box-shadow:         0px 0px 10px #3d3d3d;
+	-moz-box-shadow:    0px 0px 10px #3d3d3d;
+	-webkit-box-shadow: 0px 0px 10px #3d3d3d;
+	box-shadow:         0px 0px 10px #3d3d3d;
 	
 }
 

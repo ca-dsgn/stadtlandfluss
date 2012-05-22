@@ -1,10 +1,19 @@
 <footer id="pageFooter">
 	<div id="pageFooterSlider">
 		<div id="pageFooterSliderButton"></div>
-		<div class="wrapper">
-			<div id="pageFooterLeft">asd</div>
-			<div id="pageFooterMiddle">asd</div>
-			<div id="pageFooterRight">asd</div>
+		<div class="wrapper hidden">
+			<div id="pageFooterLeft">
+				<h2>Kennenlernen</h2>
+				<p>AFFE</p>
+			</div>
+			<div id="pageFooterMiddle">
+				<h2>Mitmachen</h2>
+				<p>AFFE</p>
+			</div>
+			<div id="pageFooterRight">
+				<h2>Empfehlen</h2>
+				<p>AFFE</p>
+			</div>
 		</div>
 	</div>
 	<div id="pageFooterContent">

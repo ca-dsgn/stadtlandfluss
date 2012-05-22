@@ -1,6 +1,8 @@
 @import "header.css";
 @import "footer.css";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
+* {border: 0; margin: 0; padding: 0;}
 
 .wrapper {
 

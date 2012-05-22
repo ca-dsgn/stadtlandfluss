@@ -1,7 +1,7 @@
 
 #pageHeader {
 	position: relative;
-	height: 100px;
+	height: 120px;
 }
 
 
@@ -10,8 +10,8 @@
 #logoBig {
 	display: block;
 	position: absolute;
-	top: 54px;
-	left: 0;
+	top: 74px;
+	left: 50px;
 	width: 240px;
 	height: 46px;
 	background-image: url('../img/logo.png');
@@ -20,6 +20,11 @@
 
 
 #pageNav {
+position: absolute;
+right: 50px;
+top: 70px;
+height: 50px;
+background-color: aqua;
 }
 
 #pageNav ul {

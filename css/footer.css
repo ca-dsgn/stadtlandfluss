@@ -11,8 +11,33 @@
 	right: 0;
 	height: 300px;
 	background-color: fuchsia;
-	
+	opacity: 0.9;	
 }
+
+#pageFooterSliderButton {
+	width: 100%;
+	height: 30px;
+	background-color: aqua;
+	cursor: pointer;
+}
+
+#pageFooterSliderButton:hover {
+	background-color: blue;
+}
+
+
+#pageFooterLeft {
+	float: left;
+}
+
+#pageFooterMiddle {
+	float: left;
+}
+
+#pageFooterRight {
+	float: right;
+}
+
 
 
 #pageFooterContent {

@@ -8,7 +8,6 @@
 	bottom: -280px;
 	left: 0;
 	right: 0;
-	
 	z-index: 15;
 }
 
@@ -50,39 +49,46 @@
 	height: 300px;
 	width: 100%;
 	
-		-moz-box-shadow:    0px 0px 10px #3d3d3d;
+	-moz-box-shadow:    0px 0px 10px #3d3d3d;
 	-webkit-box-shadow: 0px 0px 10px #3d3d3d;
 	box-shadow:         0px 0px 10px #3d3d3d;
 	
 	background: #949494; /* Old browsers */
-	background: -moz-linear-gradient(top,  #949494 8%, #414141 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(8%,#949494), color-stop(100%,#414141)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #949494 8%,#414141 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #949494 8%,#414141 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #949494 8%,#414141 100%); /* IE10+ */
-	background: linear-gradient(top,  #949494 8%,#414141 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#949494', endColorstr='#414141',GradientType=0 ); /* IE6-9 */
+	background: -moz-linear-gradient(top,  #a9a9a9 8%, #5b5b5b 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(8%,#a9a9a9), color-stop(100%,#5b5b5b)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #a9a9a9 8%,#5b5b5b 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #a9a9a9 8%,#5b5b5b 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #a9a9a9 8%,#5b5b5b 100%); /* IE10+ */
+	background: linear-gradient(top,  #a9a9a9 8%,#5b5b5b 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9a9a9', endColorstr='#5b5b5b',GradientType=0 ); /* IE6-9 */
+
+	opacity: 0.99;
 }
 
 
 #pageFooterLeft {
 	float: left;
 	width: 300px;
-	margin: 10px 20px 0 0;
+	height: 200px;
+	margin: 20px 20px 0 0;
 	border-right: 2px dotted #b2b2b2;
 }
 
 #pageFooterMiddle {
 	float: left;
 	width: 600px;
-	margin: 10px 20px 0 0;
+	height: 200px;
+
+	margin: 20px 20px 0 0;
 	border-right: 2px dotted #b2b2b2;
 }
 
 #pageFooterRight {
 	float: left;
-		width: 175px;
-	margin: 10px 0 0 0;
+	width: 175px;
+	height: 200px;
+
+	margin: 20px 0 0 0;
 
 }
 

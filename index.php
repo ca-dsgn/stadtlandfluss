@@ -5,6 +5,7 @@
 
 
 
+
 <div id="protagonistContent">
 	<div class="wrapper">
 	
@@ -35,10 +36,10 @@
 		</ul>
 		
 
-		<div class="arrows">
-			<div class="arrowLeft"></div>
-			<div class="arrowRight"></div>
-		</div>
+
+		<div class="arrowLeft"></div>
+		<div class="arrowRight"></div>
+
 
 	</div>
 </div>

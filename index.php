@@ -14,9 +14,9 @@
 		
 		
 		<ul class="content">
-			<li class="previous contentBox">
+			<!--li class="previous contentBox">
 				
-			</li>
+			</li-->
 			
 			<li class="current contentBox">
 				<div class="picture">Video</div>
@@ -28,16 +28,16 @@
 				</div>
 			</li>
 			
-			<li class="following contentBox">
+			<!--li class="following contentBox">
 			
-			</li>
+			</li-->
 			
 		</ul>
 		
 
 		<div class="arrows">
-			<div class="arrowLeft"><</div>
-			<div class="arrowRight">></div>
+			<div class="arrowLeft"></div>
+			<div class="arrowRight"></div>
 		</div>
 
 	</div>

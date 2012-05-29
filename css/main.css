@@ -88,7 +88,7 @@ h2 {
 }
 
 #protagonistContent .current {
-	background-color: #f00;
+	border: 1px solid #f00;
 	
 	z-index: 10;
 }
@@ -128,15 +128,15 @@ h2 {
 }
 
 #protagonistContent .arrowLeft {
-	left: 0px;
-	background-color: #f0f;
-	width: 60px;
-	height: 60px;
 	position: absolute;
 	top: 50%;
-	margin-top: -30px;
+	left: 0px;
+	width: 100px;
+	height: 250px;
+	margin-top: -100px;
 	z-index: 15;
 	cursor: pointer;
+	background-image: url('../img/arrowLeft.png')
 }
 
 #protagonistContent .arrowLeft:hover {
@@ -147,14 +147,18 @@ h2 {
 
 
 #protagonistContent .arrowRight {
-	right: 0px;
-	background-color: #f0f;
-	width: 60px;
-	height: 60px;
-	
 	position: absolute;
 	top: 50%;
-	margin-top: -30px;
-	
+	right: 0px;
+	width: 100px;
+	height: 250px;
+	margin-top: -100px;
 	z-index: 15;
+	cursor: pointer;
+	background-image: url('../img/arrowRight.png')
 }
+
+#protagonistContent .arrowRight:hover {
+	background-color: aqua;
+}
+

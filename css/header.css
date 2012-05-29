@@ -26,9 +26,9 @@
 #pageNav ul 		{list-style-type: none;}
 #pageNav li 		{float: left;}
 
-#navPortrait 		{background-image: url('../img/navPortrait.png');}
-#navGrid	 			{background-image: url('../img/navGrid.png');}
-#navMap 				{background-image: url('../img/navMap.png');}
+#navPortrait 		{background-image: url('../img/navi-portrait.png');}
+#navGrid	 			{background-image: url('../img/navi-grid.png');}
+#navMap 				{background-image: url('../img/navi-maps.png');}
 
 
 

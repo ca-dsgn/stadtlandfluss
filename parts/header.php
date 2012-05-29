@@ -17,7 +17,7 @@
 		<nav id="pageNav">
 			<ul>
 				<li class="active"><a href="index.php$section=protagonisten" id="navPortrait">Protagonisten</a></li>
-				<li><a href="index.php$section=karte" id="navMap">Karte</a></li>
+				<li><a href="index.php$section=karte" id="navGrid">Karte</a></li>
 				<li><a href="index.php$section=matrix" id="navMap">Map</a></li>
 			</ul>
 		</nav>

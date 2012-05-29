@@ -4,8 +4,6 @@
 
 
 
-
-
 <div id="protagonistContent">
 	<div class="wrapper">
 	

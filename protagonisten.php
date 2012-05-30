@@ -1,13 +1,37 @@
-<div id="protagonisten" class="wrapper">
+<div id="protagonistContent">
+	<div class="wrapper">
 	
-	<div id="picture">Video</div>
-	<div id="play_button">Play</div>
-	<div id="description">
-		<h1>Max Mustermann</h1>
-		<sub>Motocross-Fahrer</sub>
-		<p>Hier kommt der Beschreibungstext von dem Film mal rein.</p>
+		<!-- <div class="content">
+
+		</div> -->
+		
+		
+		<ul class="content">
+			<!--li class="previous contentBox">
+				
+			</li-->
+			
+			<li class="current contentBox">
+				<div class="picture">Video</div>
+				<div class="playButton">Play</div>
+				<div class="description">
+					<h1>Max Mustermann</h1>
+					<sub>Motocross-Fahrer</sub>
+					<p>Hier kommt der Beschreibungstext von dem Film mal rein.</p>
+				</div>
+			</li>
+			
+			<!--li class="following contentBox">
+			
+			</li-->
+			
+		</ul>
+		
+
+
+		<div class="arrowLeft"></div>
+		<div class="arrowRight"></div>
+
+
 	</div>
-	
-	<div id="arrow_left"><</div>
-	<div id="arrow_right">></div>
 </div>

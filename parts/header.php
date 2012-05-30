@@ -16,9 +16,14 @@
 		<a href="/" id="logoBig">Stadt Land Fluss Geschichten</a>
 		<nav id="pageNav">
 			<ul>
-				<li class="active"><a href="index.php$section=protagonisten" id="navPortrait">Protagonisten</a></li>
-				<li><a href="index.php$section=karte" id="navGrid">Karte</a></li>
-				<li><a href="index.php$section=matrix" id="navMap">Map</a></li>
+				<?php
+					if (!isset($_GET["section"])) {
+						$_GET["section"] = "protagonisten";
+					}
+				?>
+				<li<?php ($_GET["section"] == "protagonisten" ? print ' class="active"':'')?>><a href="index.php?section=protagonisten" id="navPortrait">Protagonisten</a></li>
+				<li<?php ($_GET["section"] == "karte" ? print ' class="active"':'')?>><a href="index.php?section=karte" id="navGrid">Karte</a></li>
+				<li<?php ($_GET["section"] == "matrix" ? print ' class="active"':'')?>><a href="index.php?section=matrix" id="navMap">Map</a></li>
 			</ul>
 		</nav>
 	</div>

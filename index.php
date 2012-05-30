@@ -3,44 +3,23 @@
 ?>
 
 
+<?php
+/* error_reporting(E_ALL);
+ini_set('display_errors', 1); */
 
-<div id="protagonistContent">
-	<div class="wrapper">
-	
-		<!-- <div class="content">
-
-		</div> -->
-		
-		
-		<ul class="content">
-			<!--li class="previous contentBox">
-				
-			</li-->
-			
-			<li class="current contentBox">
-				<div class="picture">Video</div>
-				<div class="playButton">Play</div>
-				<div class="description">
-					<h1>Max Mustermann</h1>
-					<sub>Motocross-Fahrer</sub>
-					<p>Hier kommt der Beschreibungstext von dem Film mal rein.</p>
-				</div>
-			</li>
-			
-			<!--li class="following contentBox">
-			
-			</li-->
-			
-		</ul>
-		
+$section = array();
+$section['protagonisten'] = 'protagonisten.php';
+$section['karte'] = 'karte.php';
+$section['matrix'] = 'matrix.php';
 
 
-		<div class="arrowLeft"></div>
-		<div class="arrowRight"></div>
+if (isset($_GET['section'], $section[$_GET['section']])) {
+    include $section[$_GET['section']];
+} else {
+    include 'protagonisten.php'; // wird keine "section" übergeben, dann lade standardmäßig "protagonisten"
+}
+?>
 
-
-	</div>
-</div>
 
 <?php
 	include 'parts/footer.php';

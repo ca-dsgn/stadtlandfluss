@@ -2,15 +2,38 @@ $(document).ready(function() {
 	
 	$(".playButton").live("mouseenter",function() {
 		
-		blow_play($(this));
+		blow_play_automat("on");
+	});
+	$(".playButton").live("mouseleave",function() {
+		
+		blow_play_automat("off");
 	});
 });
 
-function blow_play(element) {
+function blow_play_automat(on_or_off) {
+	
+	switch (on_or_off) {
+		
+		case "on":
+		
+			blow_play();
+			$("body").everyTime(500, function() {
+				blow_play();
+			});
+			break;
+			
+		case "off":
+		
+			$("body").stopTime();
+			break;
+	}
+}
+
+function blow_play() {
 	
 	ghost_button = '<div class="playButtonEcho"></div>';
 	
-	$(element).after(ghost_button);
+	$(".playButton").after(ghost_button);
 	
 	$(".playButtonEcho").animate({
 		

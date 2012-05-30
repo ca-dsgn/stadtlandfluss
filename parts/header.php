@@ -7,6 +7,7 @@
     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
     <script src="http://code.jquery.com/ui/1.8.20/jquery-ui.min.js" type="text/javascript"></script>
     <script src="js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/timer.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/footer.js"></script>
 </head>

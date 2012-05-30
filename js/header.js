@@ -56,6 +56,6 @@ function slideShowPositioning() {
 	
 	current_width = $(".contentBox.current").width();
 	
-	$(".contentBox.previous").css("left", "-" + current_width);
+	$(".contentBox.previous").css("left", "-" + current_width + "px");
 	$(".contentBox.following").css("left", current_width + "px");
 }

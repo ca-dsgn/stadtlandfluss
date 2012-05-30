@@ -135,6 +135,9 @@ h2 {
 	
 	z-index: 500;
 }
+#protagonistContent .playButton:hover {
+	background-image: url(../img/play-over.png);
+}
 
 #protagonistContent .playButtonEcho {
 	

@@ -13,7 +13,7 @@
 <body>
 <header id="pageHeader">
 	<div class="wrapper">
-		<a href="/" id="logoBig">Stadt Land Fluss Geschichten</a>
+		<a href="/" id="logoBig">StadtLandFluss-Geschichten</a>
 		<nav id="pageNav">
 			<ul>
 				<li class="active"><a href="index.php$section=protagonisten" id="navPortrait">Protagonisten</a></li>

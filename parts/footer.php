@@ -9,7 +9,7 @@
 				</div>
 				<div id="pageFooterMiddle">
 					<h2>Mitmachen</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisici elitLorem ipsum dolor sit amet, consectetur adipisici elitLorem ipsum dolor sit amet, consectetur adipisici elitLorem ipsum dolor sit amet, consectetur adipisici elitLorem ipsum dolor sit amet, consectetur adipisici elit</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisici elit. Lorem ipsum dolor sit amet, consectetur adipisici elit. Lorem ipsum dolor sit amet, consectetur adipisici elit. Lorem ipsum dolor sit amet, consectetur adipisici elit. Lorem ipsum dolor sit amet, consectetur adipisici elit.</p>
 				</div>
 				<div id="pageFooterRight">
 					<h2>Empfehlen</h2>

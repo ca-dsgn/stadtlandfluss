@@ -2,11 +2,23 @@ var animation_time = 500;
 
 $(document).ready(function() {
 	
-	$("#pageFooterSlider").css("top",(parseFloat($(document).height())));
+	footerPosition();
 	showFooter();
 	addfooterEventListeners();
 	footerDraggable();
+	
+	$(window).resize(function() {
+		
+		footerPosition();
+	});
 });
+
+function footerPosition() {
+	
+	$("#pageFooterSlider").css("top",(parseFloat($(document).height()))-55);
+	
+	console.log(parseFloat($(document).height()));
+}
 
 function showFooter() {
 

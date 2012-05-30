@@ -5,16 +5,21 @@
 	z-index: 15;
 }
 
-
-
+div#tag {
+	background-color: white;
+	height: 130px;
+	width: 260px;
+	position: absolute;
+	left: 50px;
+}
 
 #logoBig {
 	display: block;
 	position: absolute;
 	top: 74px;
-	left: 50px;
 	width: 240px;
 	height: 46px;
+	margin: 0 10px;
 	background-image: url('../img/logo.png');
 	text-indent: -9999px;
 }
@@ -28,9 +33,6 @@
 
 #navPortrait {
 	background-image: url('../img/navi-portrait.png');
-	-moz-box-shadow:    0px 0px 1px #3d3d3d;
-	-webkit-box-shadow: 0px 0px 1px #3d3d3d;
-	box-shadow:         0px 0px 1px #3d3d3d;
 }
 
 #navGrid {
@@ -60,6 +62,18 @@
 	border-radius: 10px;
 	border-radius: 10px;
 	background-color: white;
+}
+
+#pageNav li.active a#navPortrait {
+	background-image: url('../img/navi-portrait-active.png');
+}
+
+#pageNav li.active a#navGrid {
+	background-image: url('../img/navi-grid-active.png');
+}
+
+#pageNav li.active a#navMap {
+	background-image: url('../img/navi-maps-active.png');
 }
 
 

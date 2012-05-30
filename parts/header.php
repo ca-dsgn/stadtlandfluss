@@ -13,7 +13,9 @@
 <body>
 <header id="pageHeader">
 	<div class="wrapper">
-		<a href="/" id="logoBig">StadtLandFluss-Geschichten</a>
+		<div id="tag">
+			<a href="/" id="logoBig">StadtLandFluss-Geschichten</a>
+		</div>
 		<nav id="pageNav">
 			<ul>
 				<?php

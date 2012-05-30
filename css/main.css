@@ -92,6 +92,7 @@ h2 {
 
 #protagonistContent .previous {
 	background-color: #ff0;
+	display: none;
 }
 
 #protagonistContent .current {
@@ -102,6 +103,7 @@ h2 {
 
 #protagonistContent .following {
 	background-color: #0f0;
+	display: none;
 }
 
 #protagonistContent .picture {

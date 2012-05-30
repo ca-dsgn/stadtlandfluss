@@ -1,6 +1,7 @@
 ﻿@import "header.css";
 @import "footer.css";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
 
 * {border: 0; margin: 0; padding: 0;}
 
@@ -31,10 +32,13 @@ body {
 }
 
 h1 {
-
+	font-weight: normal;
+	font-family: 'Pacifico', serif;
+	margin-bottom: -10px;
 }
 
 h2 {
+	font-weight: normal;
 	font-size: 18px;
 	margin-bottom: 10px;
 }
@@ -124,6 +128,10 @@ h2 {
 	position: absolute;
 	left: 540px;
 	right: 140px;
+}
+
+#protagonistContent .description p {
+	font-size: 0.9em;
 }
 
 #protagonistContent .arrowLeft {

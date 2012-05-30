@@ -15,6 +15,7 @@ body {
 	background-image: url('../img/background.jpg');
 	background-position: top center;
 	background-repeat: no-repeat;
+	color: #b1bcce;
 }
 
 h1 {
@@ -78,7 +79,6 @@ h2 {
 }
 
 #protagonistContent .current {
-	border: 1px solid #f00;
 	
 	z-index: 10;
 }
@@ -89,13 +89,12 @@ h2 {
 }
 
 #protagonistContent .picture {
-	background-color: black;
-
-	width: 300px;
-	height: 260px;
-	
-	position: absolute;
-	left: 140px;
+	position: relative;
+	float: left;
+	width: 40%;
+	height: 85%;
+	margin: 5% 0 0 10%;
+	background-color: red;
 }
 
 #protagonistContent .playButton {
@@ -110,8 +109,9 @@ h2 {
 	cursor: pointer;
 	
 	position: absolute;
-	left: 380px;
-	top: 180px;
+	left: 47%;
+	bottom: 17%;
+
 	
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -133,8 +133,9 @@ h2 {
 	height: 100px;
 	
 	position: absolute;
-	left: 380px;
-	top: 180px;
+	left: 47%;
+	bottom: 17%;
+
 	
 	background-color: #fff;
 	-webkit-border-radius: 50%;
@@ -145,10 +146,9 @@ h2 {
 #protagonistContent .description {
 	position: relative;
 	float: right;
-	
-	position: absolute;
-	left: 540px;
-	right: 140px;
+	width: 37%;
+	height: 50%;
+	margin: 15% 8% 0 0;
 }
 
 #protagonistContent .description p {

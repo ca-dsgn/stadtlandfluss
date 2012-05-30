@@ -17,7 +17,7 @@ function blow_play_automat(on_or_off) {
 		case "on":
 		
 			blow_play();
-			$("body").everyTime(500, function() {
+			$("body").everyTime(1000, function() {
 				blow_play();
 			});
 			break;
@@ -42,7 +42,7 @@ function blow_play() {
 		left: "-=25",
 		top: "-=25",
 		opacity: 0
-	}, 1200, function() {
+	}, 2000, function() {
 		
 		$(this).remove();
 	});

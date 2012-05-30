@@ -24,9 +24,8 @@ class Database {
 
     private $connection;
     private $servername = "localhost";
-    private $mysqluser = "";
+    private $mysqluser = "root";
     private $mysqlpasswd = "";
-
    
     /**
      * connect

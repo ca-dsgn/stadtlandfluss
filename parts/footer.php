@@ -19,13 +19,17 @@
 		</div>
 	</div>
 	<div id="pageFooterContent">
-		<div class="wrapper">
-			<ul>
-				<li><a href="">Impressum</a></li>
+
+		<p>© 2012 DHBW Mosbach – All Rights reserved</p>
+
+			<ul id="footerNav">
+				<li><a href="">Kontakt</a></li>
 				<li><a href="">Datenschutz</a></li>
-				<li><a href="">Bla bla bla</a></li>
+				<li><a href="">Impressum</a></li>
+				<li class="overProject"><a href="">Über das Projekt</a></li>
 			</ul>
-		</div>
+			
+			
 	</div>
 </footer>
 

@@ -30,7 +30,7 @@ body {
 	/*background: -ms-radial-gradient(circle, #eee, #b0b0b0);
 	*/
 	
-	background-image: url('background.jpg');
+	background-image: url('../img/background.jpg');
 	
 	/* Opera cannot do radial gradients yet */
 }

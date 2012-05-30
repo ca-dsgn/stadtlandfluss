@@ -8,6 +8,14 @@ $(document).ready(function() {
 		
 		blow_play_automat("off");
 	});
+	$(".arrowRight").live("click",function() {
+		
+		
+	});
+	$(".arrowLeft").live("click",function() {
+		
+		
+	});
 	slideShowPositioning();
 	$(window).resize(function() {
 		slideShowPositioning();

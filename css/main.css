@@ -111,14 +111,23 @@ h2 {
 }
 
 #protagonistContent .playButton {
-	background-color: red;
-
+	background-color: #fff;
+	background-image: url(../img/play.png);
+	background-repeat: no-repeat;
+	background-position: 30px 22px;
+	
 	width: 100px;
 	height: 100px;
+	
+	cursor: pointer;
 	
 	position: absolute;
 	left: 380px;
 	top: 180px;
+	
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
 }
 
 #protagonistContent .description {

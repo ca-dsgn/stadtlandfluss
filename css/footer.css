@@ -3,9 +3,6 @@
 
 
 
-#pageFooter {
-	
-}
 
 
 #pageFooterSlider {
@@ -39,10 +36,10 @@
 	background-color: #bababa;
 	background-image: url('../img/footerButtonBack.jpg');   
 	background-repeat: repeat-x;
-	
+	/*
 	-moz-box-shadow:    0px 0px 1px #3d3d3d;
 	-webkit-box-shadow: 0px 0px 1px #3d3d3d;
-	box-shadow:         0px 0px 1px #3d3d3d;
+	box-shadow:         0px 0px 1px #3d3d3d;*/
 }
 
 #pageFooterSliderButton:hover {
@@ -54,9 +51,8 @@
 	height: 300px;
 	width: 100%;
 	
-	-moz-box-shadow:    0px 0px 10px #3d3d3d;
-	-webkit-box-shadow: 0px 0px 10px #3d3d3d;
-	box-shadow:         0px 0px 10px #3d3d3d;
+
+	
 	
 	background: #949494; /* Old browsers */
 	background: -moz-linear-gradient(top,  #a9a9a9 8%, #5b5b5b 100%); /* FF3.6+ */
@@ -107,7 +103,17 @@
 }
 
 
-#pageFooterContent {
+
+
+
+
+
+
+
+
+
+
+#pageFooter {
 	position: fixed;
 	left: 0;
 	right: 0;
@@ -116,21 +122,24 @@
 	font-weight: 300px;
 	line-height: 30px;
 	letter-spacing: 0.2px;
-	
 	background-image: url('../img/footerBack.gif');
-	
-	/*
-	-moz-box-shadow:    0px 0px 6px #3d3d3d;
-	-webkit-box-shadow: 0px 0px 6px #3d3d3d;
-	box-shadow:         0px 0px 6px #3d3d3d;
-	*/
 	z-index: 15;
-	
 	text-align: center;
-	
+	-moz-box-shadow:    0px 2px 7px #1d1d1d;
+	-webkit-box-shadow: 0px 2px 7px #1d1d1d;
+	box-shadow:         0px 2px 7px #1d1d1d;
 }
 
-#pageFooterContent p {
+#pageFooter a {
+	color: #3b4555;
+}
+
+#pageFooter a:hover {
+	color: #b1bcce;
+}
+
+
+#pageFooter p {
 	color: #3b4555;
 }
 

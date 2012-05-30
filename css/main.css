@@ -11,28 +11,10 @@ html {
 }
 
 body {
-	/* fallback */ 
 	background-color: #ddd;
-	
-	
-	/* Safari 4-5, Chrome 1-9 */ 
-	/* Can't specify a percentage size? Laaaaaame. */ 
-	/* background: -webkit-gradient(radial, center center, 0, center center, 460, from(#ddd), to(#ccc)); */
-	
-	/* Safari 5.1+, Chrome 10+ */ 
-	/*
-	background: -webkit-radial-gradient(circle, #eee, #b0b0b0);
-	
-	/* Firefox 3.6+ */ 
-	/*background: -moz-radial-gradient(circle, #eee, #b0b0b0);
-	
-	/* IE 10 */ 
-	/*background: -ms-radial-gradient(circle, #eee, #b0b0b0);
-	*/
-	
 	background-image: url('../img/background.jpg');
-	
-	/* Opera cannot do radial gradients yet */
+	background-position: top center;
+	background-repeat: no-repeat;
 }
 
 h1 {

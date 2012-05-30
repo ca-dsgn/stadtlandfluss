@@ -9,16 +9,16 @@ include_once ("database.php");
  
 class VideoController
 {
-	private $dbConnection = new Database();
+	private $dbConnection;
+	
 	
 	/**
 	* returns the hyperlink to a given video index
 	*/
 	public function getVideo($p_iCurrentIndex)
 	{
-		$dbConnection->connect("stadtlandfluss");
-		$resultSet = $dbConnection->query("Select title from videos");
-		$dbConnection->disconnect();
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->query("Select title from videos where ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
 		return $resultSet[0];
 	}
 	
@@ -88,3 +88,4 @@ class VideoController
 	
 	
 }
+?>

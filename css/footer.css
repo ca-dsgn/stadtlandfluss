@@ -110,8 +110,7 @@
 
 
 
-
-
+/* PAGE FOOTER */
 
 #pageFooter {
 	position: fixed;
@@ -120,7 +119,7 @@
 	bottom: 0;
 	font-size: 9px;
 	font-weight: 300px;
-	line-height: 30px;
+	line-height: 25px;
 	letter-spacing: 0.2px;
 	background-image: url('../img/footerBack.gif');
 	z-index: 15;
@@ -128,42 +127,15 @@
 	-moz-box-shadow:    0px 2px 7px #1d1d1d;
 	-webkit-box-shadow: 0px 2px 7px #1d1d1d;
 	box-shadow:         0px 2px 7px #1d1d1d;
-}
-
-#pageFooter a {
 	color: #3b4555;
 }
 
-#pageFooter a:hover {
-	color: #b1bcce;
-}
+#pageFooter a {color: #3b4555;}
+#pageFooter a:hover {color: #b1bcce;}
 
-
-#pageFooter p {
-	color: #3b4555;
-}
-
-#footerNav {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	text-transform: uppercase;
-	list-style-type: none;
-}
-
-#footerNav li {
-	float: left;
-	margin-left: 15px;
-}
-
-#footerNav a {
-	text-decoration: none;
-	color: #6a768a;
-}
-
-#footerNav a:hover {
-	color: #b1bcce;
-}
+#footerNav 		{position: absolute; right: 0; bottom: 0; text-transform: uppercase; list-style-type: none;}
+#footerNav li {float: left; margin-left: 15px;}
+#footerNav a 	{text-decoration: none; color: #6a768a;}
 
 .overProject {
 	padding: 0 10px;
@@ -175,5 +147,4 @@
 	background: -ms-linear-gradient(top,  #364459 8%,#222b38 100%); /* IE10+ */
 	background: linear-gradient(top,  #364459 8%,#222b38 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#364459', endColorstr='#222b38',GradientType=0 ); /* IE6-9 */
-
 }

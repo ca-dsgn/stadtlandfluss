@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <head>
 	<title>Stadt Land Fluss Geschichten</title>
 	<meta charset="utf-8"/>
@@ -18,12 +18,12 @@
 			<ul>
 				<?php
 					if (!isset($_GET["section"])) {
-						$_GET["section"] = "protagonisten";
+						$_GET["section"] = "portrait";
 					}
 				?>
-				<li<?php ($_GET["section"] == "protagonisten" ? print ' class="active"':'')?>><a href="index.php?section=protagonisten" id="navPortrait">Protagonisten</a></li>
-				<li<?php ($_GET["section"] == "karte" ? print ' class="active"':'')?>><a href="index.php?section=karte" id="navGrid">Karte</a></li>
-				<li<?php ($_GET["section"] == "matrix" ? print ' class="active"':'')?>><a href="index.php?section=matrix" id="navMap">Map</a></li>
+				<li<?php ($_GET["section"] == "portrait" ? print ' class="active"':'')?>><a href="index.php?section=portrait" id="navPortrait">Protagonisten</a></li>
+				<li<?php ($_GET["section"] == "map" ? print ' class="active"':'')?>><a href="index.php?section=map" id="navMap">Karte</a></li>
+				<li<?php ($_GET["section"] == "grid" ? print ' class="active"':'')?>><a href="index.php?section=grid" id="navGrid">Map</a></li>
 			</ul>
 		</nav>
 	</div>

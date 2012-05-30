@@ -4,7 +4,7 @@ include_once ("database.php");
 /**
  * Class VideoController
  * contains video functions
- * @author ON09
+ * @author ON09 DHBW Mosbach 2012
  */
  
 class VideoController
@@ -16,7 +16,10 @@ class VideoController
 	*/
 	public function getVideo($p_iCurrentIndex)
 	{
-		//###
+		$dbConnection->connect("stadtlandfluss");
+		$resultSet = $dbConnection->query("Select title from videos");
+		$dbConnection->disconnect();
+		return $resultSet[0];
 	}
 	
 	/**
@@ -32,7 +35,7 @@ class VideoController
 	*/
 	public function getNextVideo($p_iCurrentIndex)
 	{
-		//###
+		//### 
 	}
 	
 	/**

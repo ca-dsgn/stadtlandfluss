@@ -8,6 +8,10 @@ $(document).ready(function() {
 		
 		blow_play_automat("off");
 	});
+	slideShowPositioning();
+	$(window).resize(function() {
+		slideShowPositioning();
+	});
 });
 
 function blow_play_automat(on_or_off) {
@@ -46,4 +50,12 @@ function blow_play() {
 		
 		$(this).remove();
 	});
+}
+
+function slideShowPositioning() {
+	
+	current_width = $(".contentBox.current").width();
+	
+	$(".contentBox.previous").css("left", "-" + current_width);
+	$(".contentBox.following").css("left", current_width + "px");
 }

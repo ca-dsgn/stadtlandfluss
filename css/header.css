@@ -18,9 +18,9 @@ div#tag {
 	display: block;
 	position: absolute;
 	top: 74px;
-	left: 50px;
 	width: 240px;
 	height: 46px;
+	margin: 0 10px;
 	background-image: url('../img/logo.png');
 	text-indent: -9999px;
 }

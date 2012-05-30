@@ -26,9 +26,20 @@
 #pageNav ul 		{list-style-type: none;}
 #pageNav li 		{float: left;}
 
-#navPortrait 		{background-image: url('../img/navi-portrait.png');}
-#navGrid	 			{background-image: url('../img/navi-grid.png');}
-#navMap 				{background-image: url('../img/navi-maps.png');}
+#navPortrait {
+	background-image: url('../img/navi-portrait.png');
+	-moz-box-shadow:    0px 0px 1px #3d3d3d;
+	-webkit-box-shadow: 0px 0px 1px #3d3d3d;
+	box-shadow:         0px 0px 1px #3d3d3d;
+}
+
+#navGrid {
+	background-image: url('../img/navi-grid.png');
+}
+
+#navMap {
+	background-image: url('../img/navi-maps.png');
+}
 
 
 
@@ -48,7 +59,7 @@
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	border-radius: 10px;
-	background-color: green;
+	background-color: white;
 }
 
 

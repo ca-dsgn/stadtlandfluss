@@ -42,7 +42,7 @@ function blow_play() {
 		left: "-=25",
 		top: "-=25",
 		opacity: 0
-	}, 1000, function() {
+	}, 1200, function() {
 		
 		$(this).remove();
 	});

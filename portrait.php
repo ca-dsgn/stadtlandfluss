@@ -13,7 +13,7 @@
 			
 			<li class="current contentBox">
 				<div class="picture">Video</div>
-				<div class="playButton">Play</div>
+				<div class="playButton"></div>
 				<div class="description">
 				<hgroup>
 					<h1>Uli Körber</h1>

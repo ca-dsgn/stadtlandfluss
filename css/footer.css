@@ -1,3 +1,8 @@
+
+
+
+
+
 #pageFooter {
 	
 }
@@ -63,6 +68,15 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9a9a9', endColorstr='#5b5b5b',GradientType=0 ); /* IE6-9 */
 
 	opacity: 0.99;
+}
+
+#pageFooterSliderContent h2 {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+#pageFooterSliderContent p {
+	font-size: 0.9em;
 }
 
 

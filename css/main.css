@@ -1,6 +1,7 @@
 ﻿@import "header.css";
 @import "footer.css";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
 
 * {border: 0; margin: 0; padding: 0;}
 
@@ -31,10 +32,13 @@ body {
 }
 
 h1 {
-
+	font-weight: normal;
+	font-family: 'Pacifico', serif;
+	margin-bottom: -10px;
 }
 
 h2 {
+	font-weight: normal;
 	font-size: 18px;
 	margin-bottom: 10px;
 }
@@ -61,7 +65,6 @@ h2 {
 
 #protagonistContent {
 	/* background-color: red; */
-	
 	position: absolute;
 	top: 0px;
 	bottom: 0px;
@@ -127,38 +130,52 @@ h2 {
 	right: 140px;
 }
 
+#protagonistContent .description p {
+	font-size: 0.9em;
+}
+
 #protagonistContent .arrowLeft {
 	position: absolute;
 	top: 50%;
 	left: 0px;
-	width: 100px;
-	height: 250px;
-	margin-top: -100px;
+	width: 28px;
+	height: 68px;
+	margin-top: -10px;
 	z-index: 15;
 	cursor: pointer;
-	background-image: url('../img/arrowLeft.png')
+	background-image: url('../img/arrowLeft.png');
+  opacity: 0.6;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	-ms-transition: opacity 0.5s ease-in-out;	
+	transition: opacity 0.5s ease-in-out;	
 }
 
 #protagonistContent .arrowLeft:hover {
-	background-color: aqua;
+	opacity: 1;
 }
-
-
-
 
 #protagonistContent .arrowRight {
 	position: absolute;
 	top: 50%;
 	right: 0px;
-	width: 100px;
-	height: 250px;
-	margin-top: -100px;
+	width: 28px;
+	height: 68px;
+	margin-top: -10px;
 	z-index: 15;
 	cursor: pointer;
-	background-image: url('../img/arrowRight.png')
+	background-image: url('../img/arrowRight.png');
+	  opacity: 0.6;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	-ms-transition: opacity 0.5s ease-in-out;	
+	transition: opacity 0.5s ease-in-out;
+	
 }
 
 #protagonistContent .arrowRight:hover {
-	background-color: aqua;
+	opacity: 1;
 }
 

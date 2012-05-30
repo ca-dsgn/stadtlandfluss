@@ -31,7 +31,7 @@ class Database {
      * connect
      *
      * connect to database
-     *
+     * 
      * @param string $databasename 
      * @param string $mode null or ro for readonly
      */

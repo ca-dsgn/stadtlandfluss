@@ -67,3 +67,16 @@ function slideShowPositioning() {
 	$(".contentBox.previous").css("left", "-" + current_width + "px");
 	$(".contentBox.following").css("left", current_width + "px");
 }
+
+function slideshow_move(direction) {
+	
+	switch(direction) {
+		
+		case "left":
+		
+			break;
+		case "right":
+		
+			break;
+	}
+}

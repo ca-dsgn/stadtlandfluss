@@ -20,13 +20,17 @@ body {
 	/* background: -webkit-gradient(radial, center center, 0, center center, 460, from(#ddd), to(#ccc)); */
 	
 	/* Safari 5.1+, Chrome 10+ */ 
+	/*
 	background: -webkit-radial-gradient(circle, #eee, #b0b0b0);
 	
 	/* Firefox 3.6+ */ 
-	background: -moz-radial-gradient(circle, #eee, #b0b0b0);
+	/*background: -moz-radial-gradient(circle, #eee, #b0b0b0);
 	
 	/* IE 10 */ 
-	background: -ms-radial-gradient(circle, #eee, #b0b0b0);
+	/*background: -ms-radial-gradient(circle, #eee, #b0b0b0);
+	*/
+	
+	background-image: url('background.jpg');
 	
 	/* Opera cannot do radial gradients yet */
 }

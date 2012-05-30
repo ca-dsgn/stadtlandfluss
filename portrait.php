@@ -20,7 +20,7 @@
 			</li>
 			
 			<li class="current contentBox">
-				<div class="picture">Video</div>
+				<div class="picture">Bild</div>
 				<div class="playButton"></div>
 				<div class="description">
 				<hgroup>

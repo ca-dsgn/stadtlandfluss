@@ -10,6 +10,15 @@ include_once ("database.php");
 class VideoController
 {
 	private $dbConnection;
+	private $idMax; //the maximum ID of the database
+	private $defaultVideoSource = "./videos/defaultVideo.mp4";
+	
+	function __construct()
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->query("Select MAX(ID) from videos", "stadtlandfluss", "ro");
+		$this->idMax = $resultSet[0];
+	}
 	
 	
 	/**
@@ -17,9 +26,16 @@ class VideoController
 	*/
 	public function getVideo($p_iCurrentIndex)
 	{
-		$dbConnection = new Database();
-		$resultSet = $dbConnection->query("Select title from videos where ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
-		return $resultSet[0];
+		if($this->idIsValid($p_iCurrentIndex))
+		{
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->query("Select source from videos where ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			return $resultSet[0];
+		}
+		else
+		{
+			return $defaultVideoSource;
+		}
 	}
 	
 	/**
@@ -27,7 +43,25 @@ class VideoController
 	*/
 	public function getPreviousVideo($p_iCurrentIndex)
 	{
-		//###
+		if($this->idIsValid($p_iCurrentIndex))
+		{
+			if($p_iCurrentIndex == 0)
+			{
+				$dbConnection = new Database();
+				$resultSet = $dbConnection->query("Select source from videos where ID=(Select MAX(ID) from videos)", "stadtlandfluss", "ro");
+				return $resultSet[0];
+			}
+			else
+			{
+				$dbConnection = new Database();
+				$resultSet = $dbConnection->query("Select source from videos where ID = ".$p_iCurrentIndex-1, "stadtlandfluss", "ro");
+				return $resultSet[0];
+			}
+		}
+		else
+		{
+			return $defaultVideoSource;
+		}
 	}
 	
 	/**
@@ -84,6 +118,18 @@ class VideoController
 	public function getVideoImagesAsCsv($p_iCurrentIndex)
 	{
 		//###
+	}
+	
+	private function idIsValid($p_ID)
+	{
+		if($p_ID >=0 && $p_ID <= $this->idMax)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	

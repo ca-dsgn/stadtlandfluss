@@ -5,7 +5,7 @@
 				<div class="wrapper">
 					<div id="pageFooterLeft">
 						<h2>Kennenlernen</h2>
-						<p>AFFE</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisici elit. Lorem ipsum dolor sit amet, consectetur adipisici elit. Lorem ipsum dolor sit amet, consectetur adipisici elit.</p>
 					</div>
 					<div id="pageFooterMiddle">
 						<h2>Mitmachen</h2>
@@ -13,7 +13,10 @@
 					</div>
 					<div id="pageFooterRight">
 						<h2>Empfehlen</h2>
-						<p>AFFE</p>
+						<ul>
+							<li><p>Facebook</p></li>
+							<li><p>Twitter</p></li>
+						</ul>
 					</div>
 				</div>
 			</div>

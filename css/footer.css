@@ -81,6 +81,19 @@
 	font-size: 0.8em;
 }
 
+#pageFooterSliderContent ul {
+	margin-left: 15px;
+}
+
+#pageFooterSliderContent ul li {
+	color: rgb(100,205,245);
+	line-height: 1.3em;
+}
+
+#pageFooterSliderContent ul li p {
+	color: #b1bcce;
+}
+
 
 #pageFooterLeft {
 	float: left;

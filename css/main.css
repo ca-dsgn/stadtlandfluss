@@ -80,6 +80,13 @@ h2 {
 
 #protagonistContent .current {
 	z-index: 10;
+	
+}
+
+#protagonistContent .current .picture {
+	background-image: url('../img/portraits/motocross.png');
+	background-repeat: no-repeat;
+	background-position: top left;
 }
 
 #protagonistContent .following {
@@ -91,14 +98,14 @@ h2 {
 	position: relative;
 	float: left;
 	width: 40%;
-	height: 75%;
+	height: 100%;
 	margin: 0 0 0 10%;
 	/*background-color: white;*/
 }
 
 #protagonistContent .playButton {
 	background-color: #fff;
-	background-image: url(../img/play.png);
+	background-image: url('../img/play.png');
 	background-repeat: no-repeat;
 	background-position: 30px 22px;
 	

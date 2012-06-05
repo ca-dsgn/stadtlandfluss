@@ -10,8 +10,10 @@
     <script type="text/javascript" src="js/timer.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/footer.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="js/maps.js"></script>
 </head>
-<body>
+<body onload="initialize();">
 <header id="pageHeader">
 	<div class="wrapper">
 		<div id="tag">

@@ -135,7 +135,7 @@ function slidehowDraggable() {
 				if (($(window).width()-$(event.target).width())/2 - ui.offset.left > 50) {
 					
 					//WANTS TO GO LEFT
-					slideshow_move("left");
+					slideshow_move("right");
 				}
 				else {
 					
@@ -150,7 +150,7 @@ function slidehowDraggable() {
 				if (($(window).width()-$(event.target).width())/2 - ui.offset.left < -50) {
 					
 					//WANTS TO GO RIGHT
-					slideshow_move("right");
+					slideshow_move("left");
 				}
 				else {
 					

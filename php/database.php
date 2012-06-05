@@ -3,6 +3,10 @@
  * DAO
  * @author ON09 DHBW Mosbach
  */
+class DatabaseException extends Exception {
+	
+}
+ 
 class Database {
 
     private $connection;

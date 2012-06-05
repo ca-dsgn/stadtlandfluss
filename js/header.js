@@ -74,6 +74,8 @@ function slideShowPositioning() {
 
 function slideshow_move(direction) {
 	
+	current_width = $(".contentBox.current").width();
+	
 	switch(direction) {
 		
 		case "left":
@@ -83,7 +85,7 @@ function slideshow_move(direction) {
 				opacity: 1
 			});
 			$(".contentBox.current").animate({
-				left: "-1280",
+				left: "-" + current_width,
 				opacity: 0
 			});
 			$(".contentBox.previous").remove();
@@ -104,7 +106,7 @@ function slideshow_move(direction) {
 				opacity: 1
 			});
 			$(".contentBox.current").animate({
-				left: "1280",
+				left: current_width,
 				opacity: 0
 			});
 			$(".contentBox.following").remove();
@@ -168,12 +170,13 @@ function loadContentBox(type) {
 	
 		case "following":
 		
-			console.log("following");
+			/* AJAX CALL */
 			$(".contentBox.current").before('<li class="contentBox previous">' + "<p>This stuff has to be loaded by AJAX</p>" + '</li>');
 			break;
 			
 		case "previous":
 		
+			/* AJAX CALL */
 			$(".contentBox.current").after('<li class="contentBox following">' + "<p>This stuff has to be loaded by AJAX</p>" + '</li>');
 			break;
 	}

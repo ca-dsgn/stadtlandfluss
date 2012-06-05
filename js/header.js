@@ -79,11 +79,11 @@ function slideshow_move(direction) {
 		case "left":
 		
 			$(".contentBox.following").animate({
-				left: "-=1280",
+				left: "0",
 				opacity: 1
 			});
 			$(".contentBox.current").animate({
-				left: "-=1280",
+				left: "-1280",
 				opacity: 0
 			});
 			$(".contentBox.previous").remove();
@@ -98,11 +98,11 @@ function slideshow_move(direction) {
 		case "right":
 		
 			$(".contentBox.previous").animate({
-				left: "+=1280",
+				left: "0",
 				opacity: 1
 			});
 			$(".contentBox.current").animate({
-				left: "+=1280",
+				left: "1280",
 				opacity: 0
 			});
 			$(".contentBox.following").remove();

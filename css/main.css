@@ -151,6 +151,16 @@ h2 {
 	margin: 13% 8% 0 0;
 }
 
+#protagonistContent .description h1 {
+	color: #60cef0;
+	text-shadow: 1px 1px #444;
+}
+
+#protagonistContent .description h2 {
+	color: white;
+	text-shadow: 1px 1px #555;
+}
+
 #protagonistContent .description p {
 	font-size: 0.9em;
 }

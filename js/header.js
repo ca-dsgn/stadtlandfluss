@@ -78,7 +78,7 @@ function slideshow_move(direction) {
 	
 	switch(direction) {
 		
-		case "left":
+		case "right":
 		
 			$(".contentBox.following").animate({
 				left: "0",
@@ -99,7 +99,7 @@ function slideshow_move(direction) {
 			loadContentBox("previous");
 			
 			break;
-		case "right":
+		case "left":
 		
 			$(".contentBox.previous").animate({
 				left: "0",

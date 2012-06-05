@@ -94,6 +94,8 @@ function slideshow_move(direction) {
 			$(".contentBox.following").addClass("current");
 			$(".contentBox.following").removeClass("following");
 			
+			loadContentBox("previous");
+			
 			break;
 		case "right":
 		
@@ -112,6 +114,9 @@ function slideshow_move(direction) {
 			
 			$(".contentBox.previous").addClass("current");
 			$(".contentBox.previous").removeClass("previous");
+			
+			loadContentBox("following");
+			
 			break;
 	}
 }
@@ -155,4 +160,23 @@ function slidehowDraggable() {
 			}
 		}
 	});	
+}
+
+function loadContentBox(type) {
+	
+	switch (type) {
+	
+		case "following":
+		
+			console.log("following");
+			$(".contentBox.current").before('<li class="contentBox previous">' + "<p>This stuff has to be loaded by AJAX</p>" + '</li>');
+			break;
+			
+		case "previous":
+		
+			$(".contentBox.current").after('<li class="contentBox following">' + "<p>This stuff has to be loaded by AJAX</p>" + '</li>');
+			break;
+	}
+	/* Bring draggable to new staged elements */
+	slidehowDraggable();
 }

@@ -12,7 +12,7 @@ html {
 
 body {
 	background-color: #ddd;
-	background-image: url('../img/background.jpg');
+	background-image: url('../img/backgrounds/motocross.jpg');
 	background-position: top center;
 	background-repeat: no-repeat;
 	color: #b1bcce;
@@ -92,8 +92,8 @@ h2 {
 	float: left;
 	width: 40%;
 	height: 75%;
-	margin: 5% 0 0 10%;
-	background-color: white;
+	margin: 0 0 0 10%;
+	/*background-color: white;*/
 }
 
 #protagonistContent .playButton {
@@ -152,14 +152,14 @@ h2 {
 
 #protagonistContent .description h1 {
 	color: #60cef0;
-	text-shadow: 1px 1px #444;
+	text-shadow: 1px 1px #777;
 	font-size: 2.5em;
 	margin-left: -3px;
 }
 
 #protagonistContent .description h2 {
 	color: white;
-	text-shadow: 1px 1px #444;
+	text-shadow: 1px 1px #777;
 	font-size: 1.3em;
 	margin: -15px 0 15px 0;
 }
@@ -167,6 +167,7 @@ h2 {
 #protagonistContent .description p {
 	font-size: 1em;
 	line-height: 1.5em;
+	color: rgb(102,102,102);
 }
 
 #protagonistContent .arrowLeft {
@@ -214,3 +215,10 @@ h2 {
 	opacity: 1;
 }
 
+#map_canvas {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}

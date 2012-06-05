@@ -12,8 +12,8 @@
 				<div class="playButton"></div>
 				<div class="description">
 				<hgroup>
-					<h1>Uli Körber</h1>
-					<h2>Motocross-Fahrer</h2>
+					<h1>Siegfried Raether</h1>
+					<h2>Pizzabäcker bei »Santa Farina« in Mosbach</h2>
 				</hgroup>
 					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 				</div>
@@ -25,7 +25,7 @@
 				<div class="description">
 				<hgroup>
 					<h1>Uli Körber</h1>
-					<h2>Motocross-Fahrer</h2>
+					<h2>Motocross-Fahrer aus Leidenschaft</h2>
 				</hgroup>
 					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
 				</div>

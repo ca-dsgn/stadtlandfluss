@@ -19,7 +19,7 @@ function initialize() {
 	var marker = new google.maps.Marker({
 	  position: allekotte, 
 	  map: map, 
-	  title:"Thomas Allekotte - Die Goldschmiede"
+	  title:"Bla"
 	});
 	
 	markersArray.push(marker);

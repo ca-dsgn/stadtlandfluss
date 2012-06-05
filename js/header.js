@@ -54,9 +54,9 @@ function blow_play() {
 	$(".playButtonEcho").animate({
 		
 		width: "+=4%",
-		height: "+=4%",
+		height: "+=8%",
 		left: "-=2%",
-		bottom: "-=2%",
+		bottom: "-=4%",
 		opacity: 0
 	}, 2000, function() {
 		

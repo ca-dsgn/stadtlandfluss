@@ -20,7 +20,7 @@
 			</li>
 			
 			<li class="current contentBox">
-				<div class="picture"></div>
+				<div class="picture"><img src="img/portraits/motocross.png" /></div>
 				<div class="playButton"></div>
 				<div class="description">
 				<hgroup>

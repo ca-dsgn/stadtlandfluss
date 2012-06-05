@@ -83,12 +83,6 @@ h2 {
 	
 }
 
-#protagonistContent .current .picture {
-	background-image: url('../img/portraits/motocross.png');
-	background-repeat: no-repeat;
-	background-position: top left;
-}
-
 #protagonistContent .following {
 	/*background-color: #0f0;*/
 	opacity: 0;
@@ -98,7 +92,7 @@ h2 {
 	position: relative;
 	float: left;
 	width: 40%;
-	height: 100%;
+	height: 75%;
 	margin: 0 0 0 10%;
 	/*background-color: white;*/
 }

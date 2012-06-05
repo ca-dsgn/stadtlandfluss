@@ -74,17 +74,16 @@ h2 {
 }
 
 #protagonistContent .previous {
-	background-color: #ff0;
+	/*background-color: #ff0;*/
 	opacity: 0;
 }
 
 #protagonistContent .current {
-	
 	z-index: 10;
 }
 
 #protagonistContent .following {
-	background-color: #0f0;
+	/*background-color: #0f0;*/
 	opacity: 0;
 }
 
@@ -124,7 +123,7 @@ h2 {
 	z-index: 500;
 }
 #protagonistContent .playButton:hover {
-	background-image: url(../img/play-over.png);
+	background-image: url('../img/play-over.png');
 }
 
 #protagonistContent .playButtonEcho {

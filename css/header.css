@@ -58,6 +58,18 @@
 	background-color: white;
 }
 
+#pageNav li.active a#navPortrait {
+	background-image: url('../img/navi-portrait-active.png');
+}
+
+#pageNav li.active a#navGrid {
+	background-image: url('../img/navi-grid-active.png');
+}
+
+#pageNav li.active a#navMap {
+	background-image: url('../img/navi-maps-active.png');
+}
+
 
 /*	MAIN-NAVIGATION ------------------------------------------------------ [END] --	*/
 

@@ -22,6 +22,11 @@ function initialize() {
 	  title:"Bla"
 	});
 	
+	google.maps.event.addListener(marker, 'click', function() {
+		
+		alert("TEST");
+	});
+	
 	markersArray.push(marker);
 	directionsDisplay.setMap(map);
 }

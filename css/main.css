@@ -18,6 +18,10 @@ body {
 	color: #b1bcce;
 }
 
+a {
+	color: #70bbee;
+}
+
 h1 {
 	font-weight: normal;
 	font-family: 'Pacifico', serif;
@@ -43,10 +47,9 @@ h2 {
 	margin: 0 auto;
 }
 
-#pageHeader {
-
+.floatRight {
+	text-align: right;
 }
-
 
 /********* Startseite *********/
 

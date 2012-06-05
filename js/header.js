@@ -47,12 +47,15 @@ function blow_play() {
 	
 	$(".playButton").after(ghost_button);
 	
+	/* Calculate the width in percent of th eplay button */
+	width_play = $(".playButton").width()/$(window).width()*100;
+	
 	$(".playButtonEcho").animate({
 		
-		width: "+=50",
-		height: "+=50",
-		left: "-=25",
-		top: "-=25",
+		width: "+=4%",
+		height: "+=4%",
+		left: "-=2%",
+		bottom: "-=2%",
 		opacity: 0
 	}, 2000, function() {
 		

@@ -21,7 +21,7 @@ function footerPosition() {
 function showFooter() {
 
 	$("#pageFooterSlider").animate({
-		top: $(document).height()-300,
+		top: $(window).height()-300,
 		easing: 'swing',
 		duration: animation_time
 	});
@@ -32,7 +32,7 @@ function showFooter() {
 function hideFooter() {
 
 	$("#pageFooterSlider").animate({
-		top: $(document).height()-$("#pageFooter").height()-$("#pageFooterSliderButton").height(),
+		top: $(window).height()-$("#pageFooter").height()-$("#pageFooterSliderButton").height(),
 		easing: 'swing',
 		duration: animation_time
 	});

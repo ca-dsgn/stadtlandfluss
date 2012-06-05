@@ -54,14 +54,21 @@
 
 	
 	
-	background: #949494; /* Old browsers */
-	background: -moz-linear-gradient(top,  #a9a9a9 8%, #5b5b5b 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(8%,#a9a9a9), color-stop(100%,#5b5b5b)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #a9a9a9 8%,#5b5b5b 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #a9a9a9 8%,#5b5b5b 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #a9a9a9 8%,#5b5b5b 100%); /* IE10+ */
-	background: linear-gradient(top,  #a9a9a9 8%,#5b5b5b 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9a9a9', endColorstr='#5b5b5b',GradientType=0 ); /* IE6-9 */
+	background: #364459; /* Old browsers */
+	background: -moz-linear-gradient(top,  #364459 8%, #222b38 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(8%,#364459), color-stop(100%,#222b38)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #364459 8%,#222b38 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #364459 8%,#222b38 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #364459 8%,#222b38 100%); /* IE10+ */
+	background: linear-gradient(top,  #364459 8%,#222b38 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#364459', endColorstr='#222b38',GradientType=0 ); /* IE6-9 */
+	/*background: -moz-linear-gradient(top,  #a9a9a9 8%, #5b5b5b 100%); FF3.6+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(8%,#a9a9a9), color-stop(100%,#5b5b5b)); Chrome,Safari4+
+	background: -webkit-linear-gradient(top,  #a9a9a9 8%,#5b5b5b 100%); Chrome10+,Safari5.1+
+	background: -o-linear-gradient(top,  #a9a9a9 8%,#5b5b5b 100%); Opera 11.10+
+	background: -ms-linear-gradient(top,  #a9a9a9 8%,#5b5b5b 100%); IE10+
+	background: linear-gradient(top,  #a9a9a9 8%,#5b5b5b 100%); W3C
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9a9a9', endColorstr='#5b5b5b',GradientType=0 ); IE6-9 */
 
 	opacity: 0.99;
 }

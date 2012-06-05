@@ -15,7 +15,7 @@
 <header id="pageHeader">
 	<div class="wrapper">
 		<div id="tag">
-			<a href="/" id="logoBig">StadtLandFluss-Geschichten</a>
+			<a href="./" id="logoBig">StadtLandFluss-Geschichten</a>
 		</div>
 		<nav id="pageNav">
 			<ul>

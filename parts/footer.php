@@ -5,7 +5,8 @@
 				<div class="wrapper">
 					<div id="pageFooterLeft">
 						<h2>Kennenlernen</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisici elit. Lorem ipsum dolor sit amet, consectetur adipisici elit. Lorem ipsum dolor sit amet, consectetur adipisici elit.</p>
+						<iframe width="240" height="135" src="http://www.youtube.com/embed/qqLaRYxJeno?rel=0" frameborder="0" allowfullscreen></iframe>
+						<p class="floatRight"><a href="">mehr über das Projekt erfahren</a></p>
 					</div>
 					<div id="pageFooterMiddle">
 						<h2>Mitmachen</h2>

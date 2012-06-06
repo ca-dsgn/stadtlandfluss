@@ -1,8 +1,9 @@
 #pageHeader {
 	position: relative;
-	height: 140px;
+	top: 20px;
+	height: 120px;
 	z-index: 15;
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba(255,255,255,0.9);
 }
 
 
@@ -11,7 +12,7 @@
 #logoBig {
 	display: block;
 	position: absolute;
-	top: 55px;
+	top: 45px;
 	left: 50px;
 	width: 240px;
 	height: 46px;
@@ -22,7 +23,7 @@
 
 /*	MAIN-NAVIGATION ------------------------------------------------------ [BEGIN] --	*/
 
-#pageNav 			{position: absolute; right: 50px; top: 35px;}
+#pageNav 			{position: absolute; right: 50px; top: 25px;}
 #pageNav ul 		{list-style-type: none;}
 #pageNav li 		{float: left;}
 

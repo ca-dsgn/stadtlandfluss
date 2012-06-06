@@ -1,7 +1,15 @@
 $(document).ready(function() {
 	
 	matrixDraggable();
+	playListSortable();
 });
+
+function playListSortable() {
+	
+	$(".playList ul").sortable({
+		revert: true
+	});
+}
 
 function matrixDraggable() {
 	
@@ -41,6 +49,9 @@ function matrixDraggable() {
 				}
 			}
 		}
+	});
+	$(".page li").draggable({
+		connectToSortable: ".playList ul"
 	});
 }
 

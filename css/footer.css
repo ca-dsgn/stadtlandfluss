@@ -130,7 +130,8 @@
 	bottom: 0;
 	font-size: 10px;
 	font-weight: 300px;
-	line-height: 25px;
+	line-height: 22px;
+	height: 25px;
 	letter-spacing: 0.2px;
 	background-image: url('../img/footerBack2.gif');
 	z-index: 15;
@@ -146,24 +147,29 @@
 #pageFooter a:hover {color: #b1bcce;}
 
 #footerNav 		{position: absolute; right: 0; bottom: 0; text-transform: uppercase; list-style-type: none;}
-#footerNav li {float: left; margin-left: 10px;}
+#footerNav li {float: left; margin-left: 15px; line-height: 22px;	margin-top: 10px;}
 #footerNav a 	{text-decoration: none; color: #656f78;}
 
-.overProject {
-	padding: 0 10px;
-	background: #484e54; /* Old browsers */
-	background: -moz-linear-gradient(top,  #545b61 8%, #484e54 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(8%,#545b61), color-stop(100%,#484e54)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #545b61 8%,#484e54 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #545b61 8%,#484e54 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #545b61 8%,#484e54 100%); /* IE10+ */
-	background: linear-gradient(top,  #545b61 8%,#484e54 100%); /* W3C */
+#footerNav li.overProject {
+	padding: 0 15px 0 30px;
+	margin-top: 0px;
+	
+	background: #484e54;
+	background-image: url('../img/logo-uni-small.png'); /* fallback */
+	background-image: url('../img/logo-uni-small.png'), -webkit-gradient(linear, left top, left bottom, from(#444444), to(#999999)); /* 	Saf4+, Chrome */
+	background-image: url('../img/logo-uni-small.png'), -webkit-linear-gradient(top,  #545b61 8%, #484e54 100%); /* Chrome 10+, Saf5.1+ */
+	background-image: url('../img/logo-uni-small.png'),    -moz-linear-gradient(top,  #545b61 8%, #484e54 100%); /* FF3.6+ */
+	background-image: url('../img/logo-uni-small.png'),     -ms-linear-gradient(top,  #545b61 8%, #484e54 100%); /* IE10 */
+	background-image: url('../img/logo-uni-small.png'),      -o-linear-gradient(top,  #545b61 8%, #484e54 100%); /* Opera 11.10+ */
+	background-image: url('../img/logo-uni-small.png'),         linear-gradient(top,  #545b61 8%, #484e54 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545b61', endColorstr='#484e54',GradientType=0 ); /* IE6-9 */
+
+	background-repeat: no-repeat;
 
 	-moz-box-shadow:    2px 6px 5px #141414;
 	-webkit-box-shadow: 2px 6px 5px #141414;
 	box-shadow:         2px 6px 5px #141414;
-
+	line-height: 35px;
 }
 
 .overProject:hover {

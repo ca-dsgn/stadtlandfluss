@@ -29,7 +29,6 @@
 			<p>© 2012 <a href="http://www.dhbw-mosbach.de/" target="_blank">DHBW Mosbach</a> – All Rights reserved</p>
 			<ul id="footerNav">
 				<li><a href="">Kontakt</a></li>
-				<li><a href="">Datenschutz</a></li>
 				<li><a href="">Impressum</a></li>
 				<li class="overProject"><a href="">Über das Projekt</a></li>
 			</ul>

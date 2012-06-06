@@ -26,7 +26,7 @@
 	
 		<!-- PAGE FOOTER [BEGIN] -->
 		<footer id="pageFooter">
-			<p>© 2012 <a href="http://www.dhbw-mosbach.de/" target="_blank">DHBW Mosbach</a> – All Rights reserved</p>
+			<p>© 2012 <a href="http://www.dhbw-mosbach.de/" target="_blank">DHBW Mosbach</a> – all rights reserved.</p>
 			<ul id="footerNav">
 				<li><a href="">Kontakt</a></li>
 				<li><a href="">Impressum</a></li>

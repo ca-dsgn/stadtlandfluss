@@ -39,6 +39,7 @@
     </div>
     <div class="playList">
     	<ul>
+        	<li><p>DROP ELEMENTS HERE</p></li>
         </ul>
     </div>
     <div class="clear"></div>

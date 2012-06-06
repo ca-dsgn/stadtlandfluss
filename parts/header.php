@@ -3,6 +3,8 @@
 	<title>Stadt Land Fluss Geschichten</title>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" href="css/main.css" type="text/css"/>
+	<link rel="shortcut icon" href="./favicon.png" type="image/png">
+	<link rel="icon" href="./favicon.png" type="image/png">
     <script src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
     <script src="http://code.jquery.com/ui/1.8.20/jquery-ui.min.js" type="text/javascript"></script>

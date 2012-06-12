@@ -54,7 +54,7 @@ class VideoController
 			else
 			{
 				$dbConnection = new Database();
-				$resultSet = $dbConnection->query("Select source from videos where ID = ".$p_iCurrentIndex-1, "stadtlandfluss", "ro");
+				$resultSet = $dbConnection->query("Select source from videos where ID = ".--$p_iCurrentIndex, "stadtlandfluss", "ro");
 				return $resultSet[0];
 			}
 		}
@@ -73,51 +73,11 @@ class VideoController
 	}
 	
 	/**
-	* returns the date of the current Video
+	* returns a video array with the given number of videos	
 	*/
-	public function getVideoDate($p_iCurrentIndex)
+	public function getMatrixView($p_iAnzVideos)
 	{
-		//###
-	}
-	
-	/**
-	* returns the tags of the current Video as csv
-	*/
-	public function getVideoTagsAsCsv($p_iCurrentIndex)
-	{
-		//###
-	}
-	
-	/**
-	* returns the title of the current Video
-	*/
-	public function getVideoTitle($p_iCurrentIndex)
-	{
-		//###
-	}
-	
-	/**
-	* returns the subtitle of the current Video
-	*/
-	public function getVideoSubtitle($p_iCurrentIndex)
-	{
-		//###
-	}
-	
-	/**
-	* returns the descrition of the current Video
-	*/
-	public function getVideoDescription($p_iCurrentIndex)
-	{
-		//###
-	}
-	
-	/**
-	* returns the images of the current Video as csv
-	*/
-	public function getVideoImagesAsCsv($p_iCurrentIndex)
-	{
-		//###
+		
 	}
 	
 	private function idIsValid($p_ID)

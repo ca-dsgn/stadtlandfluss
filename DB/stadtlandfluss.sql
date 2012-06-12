@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 23. Mai 2012 um 12:05
+-- Erstellungszeit: 12. Jun 2012 um 16:27
 -- Server Version: 5.5.16
 -- PHP-Version: 5.3.8
 
@@ -27,21 +27,23 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `comments` (
-  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `video` int(10) unsigned NOT NULL,
+  `Comment_ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Video_ID` int(10) unsigned NOT NULL,
   `name` varchar(256) DEFAULT NULL,
   `text` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  PRIMARY KEY (`Comment_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Daten für Tabelle `comments`
 --
 
-INSERT INTO `comments` (`ID`, `video`, `name`, `text`) VALUES
+INSERT INTO `comments` (`Comment_ID`, `Video_ID`, `name`, `text`) VALUES
 (1, 1, 'Keep', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'),
 (2, 1, 'Gamsbichler', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'),
-(3, 2, 'Dreckshagel', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.');
+(3, 2, 'Dreckshagel', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'),
+(4, 2, 'Dieter', 'Genial'),
+(5, 2, 'Loreny', 'Chips sind nix, Bahlsen 4 the win');
 
 -- --------------------------------------------------------
 
@@ -50,20 +52,21 @@ INSERT INTO `comments` (`ID`, `video`, `name`, `text`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `images` (
-  `ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `Image_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `url` varchar(255) DEFAULT NULL,
   `alt` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+  `Video_ID` int(5) DEFAULT NULL,
+  PRIMARY KEY (`Image_ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Daten für Tabelle `images`
 --
 
-INSERT INTO `images` (`ID`, `url`, `alt`) VALUES
-(1, 'http://www.amerika-forum.de/gallery/files/11427-LandscapeArch.jpg', 'Buntsandstein'),
-(2, 'http://www.kidsgeo.com/images/landscape.jpg', 'See'),
-(3, 'http://www.blyphoto.com/images/gallery/landscape/landscape01-010.jpg', 'Gewitter');
+INSERT INTO `images` (`Image_ID`, `url`, `alt`, `Video_ID`) VALUES
+(1, 'http://www.amerika-forum.de/gallery/files/11427-LandscapeArch.jpg', 'Buntsandstein', 1),
+(2, 'http://www.kidsgeo.com/images/landscape.jpg', 'See', 2),
+(3, 'http://www.blyphoto.com/images/gallery/landscape/landscape01-010.jpg', 'Gewitter', 1);
 
 -- --------------------------------------------------------
 
@@ -72,18 +75,18 @@ INSERT INTO `images` (`ID`, `url`, `alt`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `persons` (
-  `ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `Person_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `function` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+  PRIMARY KEY (`Person_ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Daten für Tabelle `persons`
 --
 
-INSERT INTO `persons` (`ID`, `name`, `function`, `type`) VALUES
+INSERT INTO `persons` (`Person_ID`, `name`, `function`, `type`) VALUES
 (1, 'Alex', 'kamera', 'dozent'),
 (2, 'Daniela', 'Schnitt', 'dozent'),
 (3, 'Christoph', 'Aufnahmeleiter', 'student');
@@ -95,23 +98,24 @@ INSERT INTO `persons` (`ID`, `name`, `function`, `type`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `tags` (
-  `ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `Tag_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `start` varchar(30) DEFAULT NULL,
   `end` varchar(30) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `longitude` varchar(30) DEFAULT NULL,
   `altitude` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+  `Video_ID` int(5) DEFAULT NULL,
+  PRIMARY KEY (`Tag_ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Daten für Tabelle `tags`
 --
 
-INSERT INTO `tags` (`ID`, `start`, `end`, `name`, `longitude`, `altitude`) VALUES
-(1, '10', '20', 'Stadt', '9.12938290', '49.34891530'),
-(2, '21', '30', 'Land', '9.22938290', '49.45891530'),
-(3, '31', '40', 'Fluss', '9.33938290', '49.55891530');
+INSERT INTO `tags` (`Tag_ID`, `start`, `end`, `name`, `longitude`, `altitude`, `Video_ID`) VALUES
+(1, '10', '20', 'Stadt', '9.12938290', '49.34891530', 2),
+(2, '21', '30', 'Land', '9.22938290', '49.45891530', 1),
+(3, '31', '40', 'Fluss', '9.33938290', '49.55891530', 3);
 
 -- --------------------------------------------------------
 
@@ -120,24 +124,24 @@ INSERT INTO `tags` (`ID`, `start`, `end`, `name`, `longitude`, `altitude`) VALUE
 --
 
 CREATE TABLE IF NOT EXISTS `videos` (
-  `ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `Video_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `date` datetime DEFAULT NULL,
-  `tags` varchar(255) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
   `subtitle` varchar(255) DEFAULT NULL,
   `source` varchar(255) DEFAULT NULL,
   `description` varchar(1000) DEFAULT NULL,
-  `images` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `Person_ID` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`Video_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Daten für Tabelle `videos`
 --
 
-INSERT INTO `videos` (`ID`, `date`, `tags`, `title`, `subtitle`, `source`, `description`, `images`) VALUES
-(1, '2012-05-22 01:57:27', 'TimeLapse, Stadt', 'TimeLapse Marktplatz', 'Marktaufbau Untertitel', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'lorem ipsum... blaaaaaaaaaaaaa aaa aa aa  aaa', '1,2,3'),
-(2, '2012-05-22 02:02:44', 'TimeLapse, Natur', 'TimeLapse Burg Hornberg', 'Blick ins Neckartal Subtitle', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'lorem... Du bist der IPSUMINATOR!!! dasddsa adawd dwdwqdw', '1,2,3');
+INSERT INTO `videos` (`Video_ID`, `date`, `title`, `subtitle`, `source`, `description`, `Person_ID`) VALUES
+(1, '2012-05-22 01:57:27', 'TimeLapse Marktplatz', 'Marktaufbau Untertitel', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'lorem ipsum... blaaaaaaaaaaaaa aaa aa aa  aaa', '1,3'),
+(2, '2012-05-22 02:02:44', 'TimeLapse Burg Hornberg', 'Blick ins Neckartal Subtitle', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'lorem... Du bist der IPSUMINATOR!!! dasddsa adawd dwdwqdw', '2,3'),
+(3, '2012-06-12 13:05:11', 'Song', 'Too close', 'http://www.youtube.com/watch?v=zYXjLbMZFmo', 'Best song ever', '2');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

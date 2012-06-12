@@ -53,10 +53,9 @@
 
 
 #pageFooterSliderContent h2 {
-	font-size: 18px;
-	margin-bottom: 5px;
+	font-size: 16px;
+	margin-bottom: 10px;
 	color: #fff;
-	font-weight: 300;
 }
 
 #pageFooterSliderContent p {
@@ -83,6 +82,7 @@
 	width: 224px;
 	height: 200px;
 	padding-right: 20px;
+	padding-top: 10px;
 	margin: 20px 20px 0 50px;
 }
 
@@ -95,14 +95,16 @@
 	margin: 20px 20px 0 20px;
 	padding: 0 20px;
 	border-right: 1px dotted #6c757e;
-	border-left: 1px dotted #6c757e;
+	border-left: 1px dotted #6c757e;	
+
 }
 
 #pageFooterRight {
 	float: right;
 	width: 150px;
 	height: 200px;
-	margin: 20px 0 0 0;
+	margin: 20px 0 0 0;	padding-top: 10px;
+
 }
 
 
@@ -112,7 +114,7 @@
 	position: absolute;
 	left: 20px;
 	right: 290px;
-	top: 0;
+	top: 0;padding-top: 10px;
 }
 
 #topList {
@@ -132,6 +134,7 @@
 #tellAStory {
 	width: 250px;
 	float: right;
+	padding-top: 10px;
 }
 
 

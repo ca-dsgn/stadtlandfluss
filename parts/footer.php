@@ -6,11 +6,12 @@
 					<div id="pageFooterLeft">
 						<h2>Kennenlernen</h2>
 						<iframe width="240" height="135" src="http://www.youtube.com/embed/qqLaRYxJeno?rel=0" frameborder="0" allowfullscreen></iframe>
-						<p class="floatRight"><a href="">mehr über das Projekt erfahren</a></p>
+						<p class="floatRight"><a href="" class="blueButton">mehr erfahren …</a></p>
 					</div>
 					<div id="pageFooterMiddle">
 						<h2>Mitmachen</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisici elit. Lorem ipsum dolor sit amet, consectetur adipisici elit. Lorem ipsum dolor sit amet, consectetur adipisici elit. Lorem ipsum dolor sit amet, consectetur adipisici elit. Lorem ipsum dolor sit amet, consectetur adipisici elit.</p>
+						<p><a href="" class="blueButton">mehr erfahren</a></p>
 					</div>
 					<div id="pageFooterRight">
 						<h2>Empfehlen</h2>
@@ -30,7 +31,7 @@
 			<ul id="footerNav">
 				<li><a href="">Kontakt</a></li>
 				<li><a href="">Impressum</a></li>
-				<li class="overProject"><a href="">Über das Projekt</a></li>
+				<li class="overProject"><a href="">das Projekt</a></li>
 			</ul>
 		</footer>
 		<!-- PAGE FOOTER [END] -->

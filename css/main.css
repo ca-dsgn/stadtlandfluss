@@ -12,7 +12,7 @@ html {
 
 body {
 	background-color: #ddd;
-	background-image: url('../img/backgrounds/motocross2.jpg');
+	background-image: url('../img/backgrounds/motocross.jpg');
 	background-position: top center;
 	background-repeat: no-repeat;
 	color: #cbcbcb;
@@ -50,6 +50,33 @@ h2 {
 .floatRight {
 	text-align: right;
 }
+
+
+.blueButton {
+	display: inline-block;
+	margin: 0;
+	padding: 6px 12px;
+
+	text-decoration: none;
+	color: #D3DBE1;
+	font-size: 0.8em;
+	font-weight: 600;
+
+	background: #70bbee;
+	background: -webkit-gradient(linear, left top, left bottom, from(#70bbee), to(#44779a)); /* 	Saf4+, Chrome */
+	background: -webkit-linear-gradient(top,  #70bbee 8%, #44779a 100%); /* Chrome 10+, Saf5.1+ */
+	background: -moz-linear-gradient(top,  #70bbee 8%, #44779a 100%); /* FF3.6+ */
+	background: -ms-linear-gradient(top,  #70bbee 8%, #5b9dc9 100%); /* IE10 */
+	background: -o-linear-gradient(top,  #70bbee 8%, #5b9dc9 100%); /* Opera 11.10+ */
+	background: linear-gradient(top,  #70bbee 8%, #5b9dc9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70bbee', endColorstr='#5b9dc9',GradientType=0 ); /* IE6-9 */
+
+	-moz-box-shadow:    0px 0px 3px #444;
+	-webkit-box-shadow: 0px 0px 3px #444;
+	box-shadow:         0px 0px 3px #444;
+
+}
+
 
 /********* Startseite *********/
 
@@ -171,7 +198,7 @@ h2 {
 }
 
 #protagonistContent .description p {
-	font-size: 1em;
+	font-size: 0.9em;
 	line-height: 1.5em;
 	color: #656565;
 }

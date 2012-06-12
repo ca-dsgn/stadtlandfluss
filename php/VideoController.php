@@ -16,7 +16,7 @@ class VideoController
 	function __construct()
 	{
 		$dbConnection = new Database();
-		$resultSet = $dbConnection->query("Select MAX(ID) from videos", "stadtlandfluss", "ro");
+		$resultSet = $dbConnection->query("Select MAX(Video_ID) from videos", "stadtlandfluss", "ro");
 		$this->idMax = $resultSet[0];
 	}
 	
@@ -29,7 +29,7 @@ class VideoController
 		if($this->idIsValid($p_iCurrentIndex))
 		{
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->query("Select source from videos where ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			$resultSet = $dbConnection->query("Select source from videos where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
 			return $resultSet[0];
 		}
 		else
@@ -48,13 +48,13 @@ class VideoController
 			if($p_iCurrentIndex == 0)
 			{
 				$dbConnection = new Database();
-				$resultSet = $dbConnection->query("Select source from videos where ID=(Select MAX(ID) from videos)", "stadtlandfluss", "ro");
+				$resultSet = $dbConnection->query("Select source from videos where Video_ID=(Select MAX(ID) from videos)", "stadtlandfluss", "ro");
 				return $resultSet[0];
 			}
 			else
 			{
 				$dbConnection = new Database();
-				$resultSet = $dbConnection->query("Select source from videos where ID = ".--$p_iCurrentIndex, "stadtlandfluss", "ro");
+				$resultSet = $dbConnection->query("Select source from videos where Video_ID = ".--$p_iCurrentIndex, "stadtlandfluss", "ro");
 				return $resultSet[0];
 			}
 		}

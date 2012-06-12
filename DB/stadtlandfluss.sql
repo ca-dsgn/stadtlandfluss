@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 12. Jun 2012 um 16:27
+-- Erstellungszeit: 12. Jun 2012 um 18:12
 -- Server Version: 5.5.16
 -- PHP-Version: 5.3.8
 
@@ -57,16 +57,17 @@ CREATE TABLE IF NOT EXISTS `images` (
   `alt` varchar(255) DEFAULT NULL,
   `Video_ID` int(5) DEFAULT NULL,
   PRIMARY KEY (`Image_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Daten für Tabelle `images`
 --
 
 INSERT INTO `images` (`Image_ID`, `url`, `alt`, `Video_ID`) VALUES
-(1, 'http://www.amerika-forum.de/gallery/files/11427-LandscapeArch.jpg', 'Buntsandstein', 1),
-(2, 'http://www.kidsgeo.com/images/landscape.jpg', 'See', 2),
-(3, 'http://www.blyphoto.com/images/gallery/landscape/landscape01-010.jpg', 'Gewitter', 1);
+(0, 'http://www.amerika-forum.de/gallery/files/11427-LandscapeArch.jpg', 'Buntsandstein', 0),
+(1, 'http://www.kidsgeo.com/images/landscape.jpg', 'See', 1),
+(2, 'http://www.kidsgeo.com/images/landscape.jpg', 'See1', 2),
+(3, 'http://www.blyphoto.com/images/gallery/landscape/landscape01-010.jpg', 'Gewitter', 2);
 
 -- --------------------------------------------------------
 
@@ -87,9 +88,9 @@ CREATE TABLE IF NOT EXISTS `persons` (
 --
 
 INSERT INTO `persons` (`Person_ID`, `name`, `function`, `type`) VALUES
-(1, 'Alex', 'kamera', 'dozent'),
-(2, 'Daniela', 'Schnitt', 'dozent'),
-(3, 'Christoph', 'Aufnahmeleiter', 'student');
+(0, 'Alex', 'kamera', 'dozent'),
+(1, 'Daniela', 'Schnitt', 'dozent'),
+(2, 'Christoph', 'Aufnahmeleiter', 'student');
 
 -- --------------------------------------------------------
 
@@ -113,9 +114,9 @@ CREATE TABLE IF NOT EXISTS `tags` (
 --
 
 INSERT INTO `tags` (`Tag_ID`, `start`, `end`, `name`, `longitude`, `altitude`, `Video_ID`) VALUES
-(1, '10', '20', 'Stadt', '9.12938290', '49.34891530', 2),
-(2, '21', '30', 'Land', '9.22938290', '49.45891530', 1),
-(3, '31', '40', 'Fluss', '9.33938290', '49.55891530', 3);
+(0, '10', '20', 'Stadt', '9.12938290', '49.34891530', 1),
+(1, '21', '30', 'Land', '9.22938290', '49.45891530', 0),
+(2, '31', '40', 'Fluss', '9.33938290', '49.55891530', 2);
 
 -- --------------------------------------------------------
 
@@ -139,9 +140,9 @@ CREATE TABLE IF NOT EXISTS `videos` (
 --
 
 INSERT INTO `videos` (`Video_ID`, `date`, `title`, `subtitle`, `source`, `description`, `Person_ID`) VALUES
-(1, '2012-05-22 01:57:27', 'TimeLapse Marktplatz', 'Marktaufbau Untertitel', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'lorem ipsum... blaaaaaaaaaaaaa aaa aa aa  aaa', '1,3'),
-(2, '2012-05-22 02:02:44', 'TimeLapse Burg Hornberg', 'Blick ins Neckartal Subtitle', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'lorem... Du bist der IPSUMINATOR!!! dasddsa adawd dwdwqdw', '2,3'),
-(3, '2012-06-12 13:05:11', 'Song', 'Too close', 'http://www.youtube.com/watch?v=zYXjLbMZFmo', 'Best song ever', '2');
+(0, '2012-05-22 01:57:27', 'TimeLapse Marktplatz', 'Marktaufbau Untertitel', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'lorem ipsum... blaaaaaaaaaaaaa aaa aa aa  aaa', '1,3'),
+(1, '2012-05-22 02:02:44', 'TimeLapse Burg Hornberg', 'Blick ins Neckartal Subtitle', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'lorem... Du bist der IPSUMINATOR!!! dasddsa adawd dwdwqdw', '2,3'),
+(2, '2012-06-12 13:05:11', 'Song', 'Too close', 'http://www.youtube.com/watch?v=zYXjLbMZFmo', 'Best song ever', '2');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

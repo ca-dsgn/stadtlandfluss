@@ -30,7 +30,7 @@ function blow_play_automat(on_or_off) {
 		case "on":
 		
 			blow_play();
-			$("body").everyTime(1000, function() {
+			$("body").everyTime(750, function() {
 				blow_play();
 			});
 			break;

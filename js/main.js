@@ -50,8 +50,8 @@ function matrixDraggable() {
 			}
 		}
 	});
-	$(".page li").draggable({
-		connectToSortable: ".playList ul"
+	$(".page").sortable({
+		connectWith: ".playList ul"
 	});
 }
 

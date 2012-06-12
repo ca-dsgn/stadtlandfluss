@@ -12,4 +12,6 @@ echo ("<br/>");
 echo $vc->getImages(2);
 echo ("<br/>");
 echo $vc->getComments(2);
+echo ("<br/>");
+echo $vc->getPersons(0);
 ?>

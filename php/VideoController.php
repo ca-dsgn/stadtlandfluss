@@ -142,6 +142,23 @@ class VideoController
 	}
 	
 	/**
+	* returns the persons belonging to the given video ID	
+	*/
+	public function getPersons($p_iCurrentIndex)
+	{
+		if($this->idIsValid($p_iCurrentIndex))
+		{
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM Persons JOIN person2video ON person2video.Person_ID = Persons.Person_ID WHERE Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			return json_encode($resultSet);
+		}
+		else
+		{
+			return $this->defaultVideoSource;
+		}
+	}
+	
+	/**
 	* returns a video array with the given number of videos	
 	*/
 	public function getMatrixView($p_iAnzVideos)

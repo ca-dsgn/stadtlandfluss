@@ -86,7 +86,7 @@ class Database {
 		$arr = array();
 		while ($row = mysql_fetch_assoc($result)) 
 		{
-			array_push($arr,$row);
+			array_push($arr,$row); //add result to the end of $arr
 		}
 		$this->disconnect();
 		return $arr;

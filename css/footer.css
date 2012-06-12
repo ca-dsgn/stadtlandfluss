@@ -135,7 +135,7 @@
 	color: #656F78;
 }
 
-#pageFooter a {color: #5FCEEF; text-decoration: none;}
+#pageFooter a {color: #656F78;}
 #pageFooter a:hover {color: #b1bcce;}
 
 #footerNav 		{position: absolute; right: 0; bottom: 0; text-transform: uppercase; list-style-type: none;}

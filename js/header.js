@@ -132,7 +132,7 @@ function slidehowDraggable() {
 			
 			if (($(window).width()-$(event.target).width())/2 - ui.offset.left > 0) {
 				
-				if (($(window).width()-$(event.target).width())/2 - ui.offset.left > 50) {
+				if (($(window).width()-$(event.target).width())/2 - ui.offset.left > 100) {
 					
 					//WANTS TO GO LEFT
 					slideshow_move("right");
@@ -147,7 +147,7 @@ function slidehowDraggable() {
 			}
 			if (($(window).width()-$(event.target).width())/2 - ui.offset.left < 0) {
 				
-				if (($(window).width()-$(event.target).width())/2 - ui.offset.left < -50) {
+				if (($(window).width()-$(event.target).width())/2 - ui.offset.left < -100) {
 					
 					//WANTS TO GO RIGHT
 					slideshow_move("left");

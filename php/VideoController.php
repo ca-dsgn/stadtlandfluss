@@ -91,11 +91,62 @@ class VideoController
 	}
 	
 	/**
+	* returns a tag array belonging to the given video ID	
+	*/
+	public function getTags($p_iCurrentIndex)
+	{
+		if($this->idIsValid($p_iCurrentIndex))
+		{
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("Select * from tags where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			return json_encode($resultSet);
+		}
+		else
+		{
+			return $this->defaultVideoSource;
+		}
+	}
+	
+	/**
+	* returns an image array belonging to the given video ID	
+	*/
+	public function getImages($p_iCurrentIndex)
+	{
+		if($this->idIsValid($p_iCurrentIndex))
+		{
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("Select * from images where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			return json_encode($resultSet);
+		}
+		else
+		{
+			return $this->defaultVideoSource;
+		}
+	}
+	
+	/**
+	* returns a comments array belonging to the given video ID	
+	*/
+	public function getComments($p_iCurrentIndex)
+	{
+		if($this->idIsValid($p_iCurrentIndex))
+		{
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("Select * from comments where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			return json_encode($resultSet);
+		}
+		else
+		{
+			return $this->defaultVideoSource;
+		}
+	}
+	
+	/**
 	* returns a video array with the given number of videos	
 	*/
 	public function getMatrixView($p_iAnzVideos)
 	{
-		
+		//### ABKLÄREN MIT CHRISTIAN, OB ER AUCH EINEN START- UND ENDWERT BRAUCHT für PAGINATION ODER OB ER ALLE HOLT
 	}
 	
 	private function idIsValid($p_ID)

@@ -82,9 +82,14 @@ class Database {
 		{
             throw new DatabaseException("invalid query: " . $query . " error:" . mysql_error(), 3);
         }
-        $resultSet = mysql_fetch_assoc($result);
+        //$resultSet = mysql_fetch_assoc($result);
+		$arr = array();
+		while ($row = mysql_fetch_assoc($result)) 
+		{
+			array_push($arr,$row);
+		}
 		$this->disconnect();
-		return $resultSet;
+		return $arr;
     }
 	
 }

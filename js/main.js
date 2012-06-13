@@ -27,6 +27,15 @@ $(document).ready(function() {
 		}
 		positionGrid();
 	});
+	$(".item").bind("click", function() {
+		
+		$(this).find(".images").animate({
+			
+			height: '450',
+			top: '-150px'
+		});
+		
+	});
 });
 
 function changeObjectsInGrid(num) {
@@ -86,6 +95,11 @@ function playListSortable() {
 	
 	$(".playList ul").sortable({
 		revert: true,
+		start: function(event,ui) {
+			
+			y_original = event.screenX;
+			ready_to_kill = false;
+		},
 		receive: function() {
 			
 			if ($(this).find("li").length > 0) {
@@ -102,7 +116,30 @@ function playListSortable() {
 		},
 		over: function(event, ui) {
 			
-			ui.item.clone().addClass("copy");
+			ui.item.clone();
+			console.log("test");
+		},
+		out: function(event, ui) {
+			
+			ready_to_kill = true;
+		},
+		sort: function(event, ui) {
+			
+			if (ready_to_kill) {
+				
+				if (y_original - event.pageX > 250 || y_original - event.pageX < -250) {
+					
+					ui.item.fadeOut(300, function() {
+						
+						$(this).remove();
+					});
+					ui.placeholder.slideUp(300, function() {
+							
+						$(this).remove();
+						$(".playList ul").sortable("cancel");
+					});
+				}
+			}
 		}
 	});
 }
@@ -197,6 +234,11 @@ function matrixMove(direction) {
 		
 		y++;
 	}
+	
+	page = y+1;
+	
+	$(".naviPages ul li").removeClass("current");
+	$(".naviPages ul li:nth-child(" + page + ")").addClass("current");
 	
 	switch(direction) {
 		

@@ -17,6 +17,8 @@
     <script type="text/javascript" src="js/maps.js"></script>
 </head>
 <body onload="initialize();">
+<div class="overlay" style="display: none;">
+</div>
 <header id="pageHeader">
 	<div class="wrapper">
 		<div id="tag">

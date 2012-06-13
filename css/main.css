@@ -375,7 +375,10 @@ p {
 	background-color: green;
 }
 .naviPages {
-	width: 67%;
+	width: 75%;
+}
+.naviPages li.current {
+	background-color: #1e1e1e;
 }
 .naviPages ul {
 	list-style: none;
@@ -420,5 +423,29 @@ p {
 #detailCommentBox {
 	float: right;	
 }
-
-
+.item {
+	position: relative;
+}
+.item .images {
+	position: absolute;
+	height: 150px;
+	width: 210px;
+	overflow: hidden;
+	top: 0;
+}
+.item .images .top {
+	position: absolute;
+	top: 0;
+}
+.item .images .bottom {
+	position: absolute;
+	bottom: 0;
+}
+.overlay {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 500;
+}

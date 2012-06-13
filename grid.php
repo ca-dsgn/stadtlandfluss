@@ -3,7 +3,19 @@
 	<div class="gridContainer">
     	<div class="slider">
             <ul class="page is_shown" id="1">
-                <li class="item"></li>
+                <li class="item">
+                	<div class="box">
+                    	<img src="img/grid/motorcross_main.png" alt="Motorcross"/>
+                    </div>
+                    <div class="images">
+                    	<div class="top">
+                        	<img src="img/grid/motorcross_main.png" alt="Motorcross"/>
+                        </div>
+                        <div class="bottom">
+                        	<img src="img/grid/motorcross_main.png" alt="Motorcross"/>
+                        </div>
+                    </div>
+                </li>
                 <li class="item"></li>
                 <li class="item"></li>
                 <li class="item"></li>
@@ -65,7 +77,7 @@
     <div class="clear"></div>
     <div class="naviPages">
     	<ul>
-        	<li ref="1"></li>
+        	<li ref="1" class="current"></li>
             <li ref="2"></li>
             <li ref="3"></li>
             <li ref="4"></li>

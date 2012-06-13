@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 12. Jun 2012 um 22:59
+-- Erstellungszeit: 13. Jun 2012 um 10:40
 -- Server Version: 5.5.16
 -- PHP-Version: 5.3.8
 
@@ -116,7 +116,8 @@ CREATE TABLE IF NOT EXISTS `tags` (
 INSERT INTO `tags` (`Tag_ID`, `start`, `end`, `name`, `longitude`, `altitude`, `Video_ID`) VALUES
 (0, '10', '20', 'Stadt', '9.12938290', '49.34891530', 1),
 (1, '21', '30', 'Land', '9.22938290', '49.45891530', 0),
-(2, '31', '40', 'Fluss', '9.33938290', '49.55891530', 2);
+(2, '31', '40', 'Fluss', '9.33938290', '49.55891530', 2),
+(3, '41', '50', 'Hi Jack!', '9.12938280', '49.34891430', 2);
 
 -- --------------------------------------------------------
 
@@ -131,6 +132,8 @@ CREATE TABLE IF NOT EXISTS `videos` (
   `subtitle` varchar(255) DEFAULT NULL,
   `source` varchar(255) DEFAULT NULL,
   `description` varchar(1000) DEFAULT NULL,
+  `backgroundimage` varchar(500) DEFAULT NULL,
+  `keyvisual` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`Video_ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
@@ -138,10 +141,10 @@ CREATE TABLE IF NOT EXISTS `videos` (
 -- Daten für Tabelle `videos`
 --
 
-INSERT INTO `videos` (`Video_ID`, `date`, `title`, `subtitle`, `source`, `description`) VALUES
-(0, '2012-05-22 01:57:27', 'TimeLapse Marktplatz', 'Marktaufbau Untertitel', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'lorem ipsum... blaaaaaaaaaaaaa aaa aa aa  aaa'),
-(1, '2012-05-22 02:02:44', 'TimeLapse Burg Hornberg', 'Blick ins Neckartal Subtitle', 'http://www.youtube.com/watch?v=NSFIv7HgNdk', 'lorem... Du bist der IPSUMINATOR!!! dasddsa adawd dwdwqdw'),
-(2, '2012-06-12 13:05:11', 'Song', 'too close', 'http://www.youtube.com/watch?v=zYXjLbMZFmo', 'Best song ever');
+INSERT INTO `videos` (`Video_ID`, `date`, `title`, `subtitle`, `source`, `description`, `backgroundimage`, `keyvisual`) VALUES
+(0, '2012-05-22 01:57:27', 'TimeLapse Marktplatz', 'Marktaufbau Untertitel', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'lorem ipsum... blaaaaaaaaaaaaa aaa aa aa  aaa', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg'),
+(1, '2012-05-22 02:02:44', 'TimeLapse Burg Hornberg', 'Blick ins Neckartal Subtitle', 'http://www.youtube.com/watch?v=NSFIv7HgNdk', 'lorem... Du bist der IPSUMINATOR!!! dasddsa adawd dwdwqdw', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg'),
+(2, '2012-06-12 13:05:11', 'Song', 'too close', 'http://www.youtube.com/watch?v=zYXjLbMZFmo', 'Best song ever', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 12. Jun 2012 um 20:35
+-- Erstellungszeit: 12. Jun 2012 um 22:59
 -- Server Version: 5.5.16
 -- PHP-Version: 5.3.8
 
@@ -131,7 +131,6 @@ CREATE TABLE IF NOT EXISTS `videos` (
   `subtitle` varchar(255) DEFAULT NULL,
   `source` varchar(255) DEFAULT NULL,
   `description` varchar(1000) DEFAULT NULL,
-  `Person_ID` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Video_ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
@@ -139,10 +138,10 @@ CREATE TABLE IF NOT EXISTS `videos` (
 -- Daten für Tabelle `videos`
 --
 
-INSERT INTO `videos` (`Video_ID`, `date`, `title`, `subtitle`, `source`, `description`, `Person_ID`) VALUES
-(0, '2012-05-22 01:57:27', 'TimeLapse Marktplatz', 'Marktaufbau Untertitel', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'lorem ipsum... blaaaaaaaaaaaaa aaa aa aa  aaa', '1,3'),
-(1, '2012-05-22 02:02:44', 'TimeLapse Burg Hornberg', 'Blick ins Neckartal Subtitle', 'http://www.youtube.com/watch?v=NSFIv7HgNdk', 'lorem... Du bist der IPSUMINATOR!!! dasddsa adawd dwdwqdw', '2,3'),
-(2, '2012-06-12 13:05:11', 'Song', 'too close', 'http://www.youtube.com/watch?v=zYXjLbMZFmo', 'Best song ever', '2');
+INSERT INTO `videos` (`Video_ID`, `date`, `title`, `subtitle`, `source`, `description`) VALUES
+(0, '2012-05-22 01:57:27', 'TimeLapse Marktplatz', 'Marktaufbau Untertitel', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'lorem ipsum... blaaaaaaaaaaaaa aaa aa aa  aaa'),
+(1, '2012-05-22 02:02:44', 'TimeLapse Burg Hornberg', 'Blick ins Neckartal Subtitle', 'http://www.youtube.com/watch?v=NSFIv7HgNdk', 'lorem... Du bist der IPSUMINATOR!!! dasddsa adawd dwdwqdw'),
+(2, '2012-06-12 13:05:11', 'Song', 'too close', 'http://www.youtube.com/watch?v=zYXjLbMZFmo', 'Best song ever');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

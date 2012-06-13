@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 13. Jun 2012 um 14:06
+-- Erstellungszeit: 13. Jun 2012 um 16:31
 -- Server Version: 5.5.16
 -- PHP-Version: 5.3.8
 
@@ -120,6 +120,20 @@ INSERT INTO `persons` (`Person_ID`, `name`, `function`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `stories`
+--
+
+CREATE TABLE IF NOT EXISTS `stories` (
+  `Story_ID` int(5) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `suggestion` varchar(2000) DEFAULT NULL,
+  PRIMARY KEY (`Story_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `tags`
 --
 
@@ -172,6 +186,20 @@ INSERT INTO `videos` (`Video_ID`, `date`, `title`, `subtitle`, `source`, `descri
 (0, '2012-05-22 01:57:27', 'TimeLapse Marktplatz', 'Marktaufbau Untertitel', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'lorem ipsum... blaaaaaaaaaaaaa aaa aa aa  aaa', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.12938280', '49.34891530'),
 (1, '2012-05-22 02:02:44', 'TimeLapse Burg Hornberg', 'Blick ins Neckartal Subtitle', 'http://www.youtube.com/watch?v=NSFIv7HgNdk', 'lorem... Du bist der IPSUMINATOR!!! dasddsa adawd dwdwqdw', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.12938280', '49.34891430'),
 (2, '2012-06-12 13:05:11', 'Song', 'too close', 'http://www.youtube.com/watch?v=zYXjLbMZFmo', 'Best song ever', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.12938280', '49.34891440');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `votings`
+--
+
+CREATE TABLE IF NOT EXISTS `votings` (
+  `Voting_ID` int(5) NOT NULL DEFAULT '0',
+  `headline` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `votes` bigint(8) DEFAULT NULL,
+  PRIMARY KEY (`Voting_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -2,55 +2,64 @@
 	<h1>Matrix-Ansicht</h1>
 	<div class="gridContainer">
     	<div class="slider">
-            <ul class="page" id="1">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul class="page is_shown" id="1">
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
             </ul>
-            <ul class="page" id="2" style="display: none;">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul class="page" id="2" style="opacity: 0;">
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
             </ul>
-            <ul class="page" id="3" style="display: none;">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul class="page" id="3" style="opacity: 0;">
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
             </ul>
-            <ul class="page" id="4" style="display: none;">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul class="page" id="4" style="opacity: 0;">
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
             </ul>
         </div>
     </div>
     <div class="playList">
+    	<div class="info">
+        	<h3>PlayList</h3>
+        	<p>Ziehen Sie die Filme in die PlayList</p>
+        </div>
     	<ul>
-        	<li><p>DROP ELEMENTS HERE</p></li>
         </ul>
     </div>
     <div class="clear"></div>

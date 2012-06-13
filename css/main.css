@@ -304,6 +304,7 @@ p {
 .gridContainer {
 	width: 75%;
 	float: left;
+	height: 500px;
 }
 .gridContainer .page {
 	width: 25%;
@@ -314,7 +315,6 @@ p {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	display: list-item;
 }
 .gridContainer .slider {
 	width: 400%;
@@ -326,24 +326,49 @@ p {
 	float: left;
 	background-color: rgba(255,0,0,0.5);
 }
+.gridContainer .page li.arrow {
+	cursor: pointer;
+}
+
+.gridContainer .page li.left {
+	background-color: #0E0;
+}
+.gridContainer .page li.right {
+	background-color: #D00;
+}
 .playList {
+	position: relative;
+	z-index: 10;
+	width: 240px;
+	background-color: rgba(255,255,255,0.5);
 	float: right;
-	height: 500px;
-	float: right;
+	min-height: 500px;
 }
 .playList ul {
 	list-style: none;
 	width: 240px;
+	min-height: 500px;
+	float: right;
 }
 .playList ul li {
 	background-color: rgba(255,0,0,0.5);
 	height: 150px;
 	width: 220px;
 	margin: 10px;
+	float: left;
 }
 .playList ul li p {
 	text-align: center;
 	padding: 50px;
+}
+.playList .info {
+	text-align: center;
+	position: absolute;
+	top: 200px;
+	color: #656565;
+}
+.clone {
+	background-color: green;
 }
 .naviPages {
 	width: 67%;

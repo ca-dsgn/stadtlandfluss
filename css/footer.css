@@ -127,8 +127,16 @@
 #topList li {
 	height: 40px;
 	border: 1px solid #5b6168;
-	background-color: #747980;
+	background-color: #656c73;
 }
+
+#topList li:hover {
+	background-color: #737b83;
+}
+
+
+
+
 
 
 #tellAStory {
@@ -139,7 +147,7 @@
 
 
 #tellAStoryForm {
-	background-color: #747980;
+	background-color: #656c73;
 	height: 124px;
 	margin: 0 0 5px 0;
 	border: 1px solid #5b6168;

@@ -55,7 +55,7 @@
         </div>
     </div>
     <div class="playList">
-    	<div class="placeholder">
+    	<div class="info">
         	<h3>PlayList</h3>
         	<p>Ziehen Sie die Filme in die PlayList</p>
         </div>

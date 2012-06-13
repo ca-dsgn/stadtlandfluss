@@ -19,7 +19,7 @@ $(document).ready(function() {
 			
 			if (parseInt($(".page").width()) < 960) {
 				
-				changeObjectsInGrid(8);
+				changeObjectsInGrid(9);
 			}
 			else {
 				changeObjectsInGrid(12);
@@ -32,17 +32,26 @@ function changeObjectsInGrid(num) {
 	
 	$(".page").each(function() {
 		
-		i = 0;
+		i = 1;
+		
+		if ($(".slider ul:first-child").hasClass("is_shown")) {
+			
+			//num--;
+		}
+		else {
+		}
 		
 		$(this).find("li").each(function() {
 		
 			$(this).show();
-			if (i>=num) {
+			
+			if (i>num+2) {
+				
 				if ($(this).hasClass("arrow")) {
 					
 				}
 				else {
-					$(this).hide();
+					//$(this).hide();
 				}
 			}
 			i++;
@@ -58,15 +67,19 @@ function playListSortable() {
 			
 			if ($(this).find("li").length > 0) {
 				
-				$(this).parent().find(".placeholder").fadeOut(300);
+				$(this).parent().find(".info").fadeOut(300);
 			}
 		},
 		remove: function() {
 			
 			if ($(this).find("li").length == 0) {
 				
-				$(this).parent().find(".placeholder").fadeIn(300);
+				$(this).parent().find(".info").fadeIn(300);
 			}
+		},
+		over: function(event, ui) {
+			
+			ui.item.clone().addClass("copy");
 		}
 	});
 }
@@ -92,9 +105,11 @@ function matrixDraggable() {
 				i++;
 			});
 			
-			if (($(window).width()-$("#content").width())/2 - ui.offset.left - y*current_width > 0) {
+			moving_factor = ($(window).width()-$("#content").width())/2 - ui.offset.left - (y*current_width);
+			
+			if (moving_factor > 0) {
 				
-				if (($(window).width()-$("#content").width())/2 - ui.offset.left - y*current_width > 100) {
+				if (moving_factor > 100) {
 					
 					//WANTS TO GO LEFT
 					matrixMove("right");
@@ -107,9 +122,9 @@ function matrixDraggable() {
 					}, 100);
 				}
 			}
-			if (($(window).width()-$("#content").width())/2 - ui.offset.left - y*current_width < 0) {
+			if (moving_factor < 0) {
 				
-				if (($(window).width()-$("#content").width())/2 - ui.offset.left - y*current_width < -100) {
+				if (moving_factor < -100) {
 					
 					//WANTS TO GO RIGHT
 					matrixMove("left");
@@ -124,8 +139,13 @@ function matrixDraggable() {
 			}
 		}
 	});
+	
 	$(".page").sortable({
-		connectWith: ".playList ul"
+		connectWith: ".playList ul",
+		distance: 5,
+		placeholder: "placeholder",
+		helper: "clone",
+		revert: 300
 	});
 }
 

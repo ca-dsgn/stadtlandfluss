@@ -145,7 +145,8 @@ function matrixDraggable() {
 		distance: 5,
 		placeholder: "placeholder",
 		helper: "clone",
-		revert: 300
+		revert: 300,
+		items: 'li.item'
 	});
 }
 

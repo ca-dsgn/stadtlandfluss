@@ -27,6 +27,15 @@ $(document).ready(function() {
 		}
 		positionGrid();
 	});
+	$(".item").bind("click", function() {
+		
+		$(this).find(".images").animate({
+			
+			height: '450',
+			top: '-150px'
+		});
+		
+	});
 });
 
 function changeObjectsInGrid(num) {
@@ -108,6 +117,7 @@ function playListSortable() {
 		over: function(event, ui) {
 			
 			ui.item.clone();
+			console.log("test");
 		},
 		out: function(event, ui) {
 			
@@ -119,7 +129,15 @@ function playListSortable() {
 				
 				if (y_original - event.pageX > 250 || y_original - event.pageX < -250) {
 					
-					ui.item.remove();
+					ui.item.fadeOut(300, function() {
+						
+						$(this).remove();
+					});
+					ui.placeholder.slideUp(300, function() {
+							
+						$(this).remove();
+						$(".playList ul").sortable("cancel");
+					});
 				}
 			}
 		}

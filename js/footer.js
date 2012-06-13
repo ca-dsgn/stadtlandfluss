@@ -11,7 +11,34 @@ $(document).ready(function() {
 		
 		footerPosition();
 	});
+	footerJumpEveryTime();
 });
+
+function footerJumpEveryTime() {
+	
+	footerJump();
+	
+	$("body").everyTime(5000, function() {
+		
+		if ($("#pageFooterSlider").attr("class") == "ui-draggable") {
+			
+			footerJump();
+		}
+	});
+}
+
+function footerJump() {
+	
+	original_position = $("#pageFooterSlider").offset().top;
+	
+	$("#pageFooterSlider").animate({
+		
+		top: '-=20px'
+	},200).animate({
+		
+		top: '+=20px'
+	},300);
+}
 
 function footerPosition() {
 	

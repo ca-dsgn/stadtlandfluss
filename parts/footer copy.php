@@ -41,40 +41,14 @@
 		</div>
 		<!-- PAGE SLIDER-BOX [END] -->
 	
-
-
-
-
 		<!-- PAGE FOOTER [BEGIN] -->
 		<footer id="pageFooter">
-
-
-			<div class="wrapper">
-				<ul id="pageNav">
-					<li><a href="">Ansicht wählen</a>
-						<ul>
-							<?php
-								if (!isset($_GET["section"])) {
-									$_GET["section"] = "portrait";
-								}
-							?>
-							<li<?php ($_GET["section"] == "portrait" ? print ' class="active"':'')?>><a href="index.php?section=portrait" id="navPortrait">Portrait</a></li>				
-							<li<?php ($_GET["section"] == "map" ? print ' class="active"':'')?>><a href="index.php?section=map" id="navMap">Landkarte</a></li>
-							<li<?php ($_GET["section"] == "grid" ? print ' class="active"':'')?>><a href="index.php?section=grid" id="navGrid">Raster</a></li>
-						</ul>
-					</li>
-				</ul>
-				<ul id="footerNav">
-					<li><a href="">Kontakt</a></li>
-					<li><a href="">Impressum</a></li>
-				</ul>
-				<a href="/" class="logoSmall">Über das Projekt</a>
-			</div>
-		
-
-
-
-
+			<p>© 2012 <a href="http://www.dhbw-mosbach.de/" target="_blank">DHBW Mosbach</a> – all rights reserved.</p>
+			<ul id="footerNav">
+				<li><a href="">Kontakt</a></li>
+				<li><a href="">Impressum</a></li>
+				<li class="overProject"><a href="">das Projekt</a></li>
+			</ul>
 		</footer>
 		<!-- PAGE FOOTER [END] -->
 

@@ -1,0 +1,148 @@
+#pageHeader {
+	position: fixed;
+	height: 50px;
+	z-index: 15;
+	min-width: 960px;	
+	width: 100%;
+	font-size: 15px;
+	font-weight: 400;
+	color: #333333;
+}
+
+#logoBig {
+	position: absolute;
+	width: 225px;
+	height: 70px;
+	left: 50px;
+	top: 0px;
+	display: block;
+	background-color: #fff;
+	background-image: url('../img/logo-new.png');
+	background-repeat: no-repeat;
+	background-position: 10px 20px;
+	text-indent: -9999px;
+}
+
+
+
+
+/*	MAIN-NAVIGATION ------------------------------------------------------ [BEGIN] --	*/
+
+#pageNav {
+	position: absolute; 
+	list-style-type: none;
+	right: 50px;
+	top: 0px;
+}
+
+#pageNav  li  {
+	display: block;
+	height: 70px;
+	width: 70px;
+	background-color: #fff;
+	float: right;	
+}
+
+#pageNav li a { 
+	text-decoration: none;
+}
+
+#pageNav li:hover a { 
+	color: #333333;
+}
+
+#pageNav ul  {
+	display: none;
+}
+
+
+
+#pageNav li:hover ul  {
+	display: block;
+}
+
+
+#pageNav ul li {
+	display: block;
+	width: 70px;
+	height: 70px;
+	margin: 0px;
+	border: 0px;
+	text-decoration: none;
+	background-color: #fff;
+}
+
+#pageNav ul ul li a {
+	color: #b2c7d5;
+	}
+
+
+
+
+/*
+
+#pageNav a.topButton {
+
+}
+
+
+#pageNav a.topButton:hover {
+	display: block;
+}
+
+
+
+
+
+
+
+#pageNav li 		{float: left;}
+
+#navPortrait {
+	background-image: url('../img/navi-portrait.png');
+}
+
+#navGrid {
+	background-image: url('../img/navi-grid.png');
+}
+
+#navMap {
+	background-image: url('../img/navi-maps.png');
+}
+
+
+
+
+#pageNav li a {
+	display: block;
+	width: 125px;
+	line-height: 40px;
+	margin: 13px 0 0 18px;
+	border: 1px solid #acc1cf;
+	text-decoration: none;
+	padding: 0 0 0 50px;
+}
+
+#pageNav li.active a {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: white;
+}
+
+#pageNav li.active a#navPortrait {
+	background-image: url('../img/navi-portrait-active.png');
+}
+
+#pageNav li.active a#navGrid {
+	background-image: url('../img/navi-grid-active.png');
+}
+
+#pageNav li.active a#navMap {
+	background-image: url('../img/navi-maps-active.png');
+}
+*/
+
+
+/*	MAIN-NAVIGATION ------------------------------------------------------ [END] --	*/
+

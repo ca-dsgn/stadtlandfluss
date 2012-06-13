@@ -20,31 +20,31 @@ class VideoController
 		$this->idMax = $resultSet[0];
 	}
 	
+	/**
+	* returns the number of available videos
+	*/
+	public function getNumOfVideos()
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->query("SELECT COUNT(Video_ID) FROM videos", "stadtlandfluss", "ro");
+		return $resultSet[0];
+	}
 	
 	/**
 	* returns the videoData as JSON to a given video index
 	*/
 	public function getVideo($p_iCurrentIndex)
 	{
-		if($this->idIsValid($p_iCurrentIndex))
-		{
 			$dbConnection = new Database();
 			$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
 			return json_encode($resultSet);
-		}
-		else
-		{
-			return $this->defaultVideoSource;
-		}
 	}
 	
 	/**
-	* returns the hyperlink of the previous video
+	* returns the videoData as JSON of the previous video to the given index
 	*/
 	public function getPreviousVideo($p_iCurrentIndex)
 	{
-		if($this->idIsValid($p_iCurrentIndex))
-		{
 			if($p_iCurrentIndex == 0)
 			{
 				$dbConnection = new Database();
@@ -57,20 +57,13 @@ class VideoController
 				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".--$p_iCurrentIndex, "stadtlandfluss", "ro");
 				return json_encode($resultSet);
 			}
-		}
-		else
-		{
-			return $this->defaultVideoSource;
-		}
 	}
 	
 	/**
-	* returns the hyperlink of the next video
+	* returns the videoData as JSON of the next video to the given index
 	*/
 	public function getNextVideo($p_iCurrentIndex)
 	{
-		if($this->idIsValid($p_iCurrentIndex))
-		{
 			if($p_iCurrentIndex == $this->idMax)
 			{
 				$dbConnection = new Database();
@@ -83,11 +76,6 @@ class VideoController
 				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".++$p_iCurrentIndex, "stadtlandfluss", "ro");
 				return json_encode($resultSet);
 			}
-		}
-		else
-		{
-			return $this->defaultVideoSource;
-		}
 	}
 	
 	/**
@@ -95,16 +83,9 @@ class VideoController
 	*/
 	public function getTags($p_iCurrentIndex)
 	{
-		if($this->idIsValid($p_iCurrentIndex))
-		{
 			$dbConnection = new Database();
 			$resultSet = $dbConnection->queryAssoc("Select * from tags where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
 			return json_encode($resultSet);
-		}
-		else
-		{
-			return $this->defaultVideoSource;
-		}
 	}
 	
 	/**
@@ -112,16 +93,9 @@ class VideoController
 	*/
 	public function getImages($p_iCurrentIndex)
 	{
-		if($this->idIsValid($p_iCurrentIndex))
-		{
 			$dbConnection = new Database();
 			$resultSet = $dbConnection->queryAssoc("Select * from images where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
 			return json_encode($resultSet);
-		}
-		else
-		{
-			return $this->defaultVideoSource;
-		}
 	}
 	
 	/**
@@ -129,16 +103,9 @@ class VideoController
 	*/
 	public function getComments($p_iCurrentIndex)
 	{
-		if($this->idIsValid($p_iCurrentIndex))
-		{
 			$dbConnection = new Database();
 			$resultSet = $dbConnection->queryAssoc("Select * from comments where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
 			return json_encode($resultSet);
-		}
-		else
-		{
-			return $this->defaultVideoSource;
-		}
 	}
 	
 	/**
@@ -146,26 +113,24 @@ class VideoController
 	*/
 	public function getPersons($p_iCurrentIndex)
 	{
-		if($this->idIsValid($p_iCurrentIndex))
-		{
 			$dbConnection = new Database();
 			$resultSet = $dbConnection->queryAssoc("SELECT * FROM Persons JOIN person2video ON person2video.Person_ID = Persons.Person_ID WHERE Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
 			return json_encode($resultSet);
-		}
-		else
-		{
-			return $this->defaultVideoSource;
-		}
 	}
 	
 	/**
-	* returns a video array with the given number of videos	
+	* returns a video array with the given number of videos	beginning with the given startIndex
 	*/
-	public function getMatrixView($p_iAnzVideos)
-	{
-		//### ABKLÄREN MIT CHRISTIAN, OB ER AUCH EINEN START- UND ENDWERT BRAUCHT für PAGINATION ODER OB ER ALLE HOLT
+	public function getMatrixView($p_iStart, $p_iNum)
+	{		
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, "stadtlandfluss", "ro");
+			return json_encode($resultSet);
 	}
 	
+	/**
+	*checks if the given video ID exists
+	*/
 	private function idIsValid($p_ID)
 	{
 		if($p_ID >=0 && $p_ID <= $this->idMax)

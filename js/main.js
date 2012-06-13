@@ -159,6 +159,8 @@ function playListSortable() {
 				
 				$(this).parent().find(".info").fadeOut(300);
 			}
+			$(".is_shown .copy").show();
+			$(".is_shown .copy").removeClass("copy");
 		},
 		remove: function() {
 			
@@ -169,6 +171,9 @@ function playListSortable() {
 		},
 		over: function(event, ui) {
 			
+			$(".is_shown .item:hidden").after(ui.item.clone().addClass("copy"));
+			$(".is_shown .item:hidden").show();
+			$(".is_shown .item.copy").hide();
 			ui.item.clone();
 			
 		},

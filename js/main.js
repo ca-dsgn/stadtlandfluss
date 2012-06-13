@@ -86,6 +86,11 @@ function playListSortable() {
 	
 	$(".playList ul").sortable({
 		revert: true,
+		start: function(event,ui) {
+			
+			y_original = event.screenX;
+			ready_to_kill = false;
+		},
 		receive: function() {
 			
 			if ($(this).find("li").length > 0) {
@@ -102,7 +107,21 @@ function playListSortable() {
 		},
 		over: function(event, ui) {
 			
-			ui.item.clone().addClass("copy");
+			ui.item.clone();
+		},
+		out: function(event, ui) {
+			
+			ready_to_kill = true;
+		},
+		sort: function(event, ui) {
+			
+			if (ready_to_kill) {
+				
+				if (y_original - event.pageX > 250 || y_original - event.pageX < -250) {
+					
+					ui.item.remove();
+				}
+			}
 		}
 	});
 }

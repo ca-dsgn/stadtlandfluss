@@ -423,6 +423,9 @@ p {
 .item {
 	position: relative;
 }
+.item .box {
+	position: relative;
+}
 .item .images {
 	position: absolute;
 	height: 150px;
@@ -438,11 +441,26 @@ p {
 	position: absolute;
 	bottom: 0;
 }
+.item .info {
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	height: 150px;
+	width: 0;
+	overflow: hidden;
+	padding: 20px 20px 20px 260px;
+	background-color: #fff;
+	overflow: hidden;
+	opacity: 0;
+}
+.item .info_box {
+	width: 400px;
+}
 .overlay {
 	width: 100%;
 	height: 100%;
 	position: fixed;
 	top: 0;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.8);
 	z-index: 500;
 }

@@ -27,16 +27,57 @@ $(document).ready(function() {
 		}
 		positionGrid();
 	});
-	$(".item").bind("click", function() {
+	$(".item").bind("mouseup", function() {
 		
-		$(this).find(".images").animate({
-			
-			height: '450',
-			top: '-150px'
-		});
+		open_box($(this));
 		
 	});
+	$(".overlay").bind("mouseup", function() {
+		
+		close_box($(".is_shown .open"));
+	});
+	
 });
+
+function open_box(elem) {
+	
+	$(elem).addClass("open");
+	$(elem).css("z-index","550");
+	$(elem).find(".box").css("z-index","650");
+	
+	$(elem).find(".images").animate({
+			
+		height: '470',
+		top: '-160px'
+	},500);
+	$(elem).find(".info").animate({
+		
+		width: '400',
+		opacity: 1
+	},500);
+	$(".overlay").fadeIn(300);
+}
+
+function close_box(elem) {
+	
+	$(elem).removeClass("open");
+	
+	$(elem).find(".images").animate({
+			
+		height: '150',
+		top: '0'
+	},500);
+	$(elem).find(".info").animate({
+		
+		width: '0',
+		opacity: 0
+	},500);
+	$(".overlay").fadeOut(300, function() {
+		
+		$(elem).css("z-index","auto");
+		$(elem).find(".box").css("z-index","auto");
+	});
+}
 
 function changeObjectsInGrid(num) {
 	
@@ -99,6 +140,13 @@ function playListSortable() {
 			
 			y_original = event.screenX;
 			ready_to_kill = false;
+			$(".item").unbind("mouseup");
+		},
+		stop: function(event, ui) {
+			$(".item").bind("mouseup", function() {
+				
+				open_box(ui.item);
+			});
 		},
 		receive: function() {
 			
@@ -117,7 +165,7 @@ function playListSortable() {
 		over: function(event, ui) {
 			
 			ui.item.clone();
-			console.log("test");
+			
 		},
 		out: function(event, ui) {
 			

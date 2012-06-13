@@ -15,7 +15,9 @@ echo $vc->getComments(2);
 echo ("<br/>");
 echo $vc->getPersons(0);
 echo ("<br/>");
-echo $vc->getMatrixView(0,1);
+echo $vc->getMatrixView(0,5);
 echo ("<br/>");
 echo $vc->getNumOfVideos();
+echo ("<br/>");
+echo $vc->getAllLocations();
 ?>

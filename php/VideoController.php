@@ -129,6 +129,18 @@ class VideoController
 	}
 	
 	/**
+	* returns the locations of the videos	
+	*/
+	public function getAllLocations()
+	{
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("SELECT altitude, longitude, Video_ID FROM videos", "stadtlandfluss", "ro");
+			return json_encode($resultSet);
+	}
+	
+	
+	
+	/**
 	*checks if the given video ID exists
 	*/
 	private function idIsValid($p_ID)

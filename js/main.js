@@ -160,9 +160,12 @@ function playListSortable() {
 				$(this).parent().find(".info").fadeOut(300);
 			}
 			$(".is_shown .copy").show();
+			close_box($(".is_shown .copy"));
+			$(".is_shown .copy").animate({ opacity: 0.5 },300);
+			$(".is_shown .copy").removeClass("item");
 			$(".is_shown .copy").removeClass("copy");
 		},
-		remove: function() {
+		remove: function(event, ui) {
 			
 			if ($(this).find("li").length == 0) {
 				
@@ -174,7 +177,6 @@ function playListSortable() {
 			$(".is_shown .item:hidden").after(ui.item.clone().addClass("copy"));
 			$(".is_shown .item:hidden").show();
 			$(".is_shown .item.copy").hide();
-			ui.item.clone();
 			
 		},
 		out: function(event, ui) {
@@ -186,6 +188,21 @@ function playListSortable() {
 			if (ready_to_kill) {
 				
 				if (y_original - event.pageX > 250 || y_original - event.pageX < -250) {
+					
+					$(".page").each(function() {
+						
+						$(this).find("li").each(function() {
+						
+							if ($(this).attr("ref") == $(ui.item).attr("ref")) {
+							
+								$(this).animate({
+									
+									opacity: 1
+								},300);
+								$(this).addClass("item");
+							}
+						});
+					});
 					
 					ui.item.fadeOut(300, function() {
 						
@@ -264,6 +281,15 @@ function matrixDraggable() {
 			close_box(ui.item);
 			close_box(ui.helper);
 		},
+		over: function() {
+			
+			$(".is_shown .copy").prev().hide();
+			$(".is_shown .copy").hide();
+		},
+		stop: function() {
+			$(".is_shown .copy").prev().show();
+			$(".is_shown .copy").remove();
+		},
 		connectWith: ".playList ul",
 		distance: 5,
 		placeholder: "placeholder",
@@ -312,6 +338,7 @@ function matrixMove(direction) {
 				$(".slider").animate({
 					left: "-" + current_width*y
 				});
+	
 				$(".is_shown").next().addClass("next_to_show");
 				$(".is_shown").animate({
 					

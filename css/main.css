@@ -420,12 +420,15 @@ p {
 #detailCommentBox {
 	float: right;	
 }
-.item {
+.page li,
+.playList ul li {
 	position: relative;
 }
+.page .box,
 .item .box {
 	position: relative;
 }
+.page .images,
 .item .images {
 	position: absolute;
 	height: 150px;
@@ -433,14 +436,17 @@ p {
 	overflow: hidden;
 	top: 0;
 }
+.page .images .top,
 .item .images .top {
 	position: absolute;
 	top: 0;
 }
+.page .images .bottom,
 .item .images .bottom {
 	position: absolute;
 	bottom: 0;
 }
+.page .info,
 .item .info {
 	position: absolute;
 	top: -20px;
@@ -453,6 +459,7 @@ p {
 	overflow: hidden;
 	opacity: 0;
 }
+.page .info_box,
 .item .info_box {
 	width: 400px;
 }

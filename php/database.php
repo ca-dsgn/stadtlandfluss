@@ -69,5 +69,28 @@ class Database {
 		return $resultSet;
     }
 	
+	
+	/**
+	*Same as query function but with field name
+	*returning associative array 
+	**/
+	public function queryAssoc($query, $dbName, $mode) 
+	{
+		$this->connect($dbName, $mode);
+		$result = mysql_query($query);
+        if (!$result && __SCOPE__ == "dev") 
+		{
+            throw new DatabaseException("invalid query: " . $query . " error:" . mysql_error(), 3);
+        }
+        //$resultSet = mysql_fetch_assoc($result);
+		$arr = array();
+		while ($row = mysql_fetch_assoc($result)) 
+		{
+			array_push($arr,$row); //add result to the end of $arr
+		}
+		$this->disconnect();
+		return $arr;
+    }
+	
 }
 ?>

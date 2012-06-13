@@ -9,6 +9,7 @@ $section = array();
 $section['portrait'] = 'portrait.php';
 $section['map'] = 'maps.php';
 $section['grid'] = 'grid.php';
+$section['detail'] = 'detail.php';
 
 if (isset($_GET['section'], $section[$_GET['section']])) {
 

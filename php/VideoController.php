@@ -16,25 +16,25 @@ class VideoController
 	function __construct()
 	{
 		$dbConnection = new Database();
-		$resultSet = $dbConnection->query("Select MAX(ID) from videos", "stadtlandfluss", "ro");
+		$resultSet = $dbConnection->query("Select MAX(Video_ID) from videos", "stadtlandfluss", "ro");
 		$this->idMax = $resultSet[0];
 	}
 	
 	
 	/**
-	* returns the hyperlink to a given video index
+	* returns the videoData as JSON to a given video index
 	*/
 	public function getVideo($p_iCurrentIndex)
 	{
 		if($this->idIsValid($p_iCurrentIndex))
 		{
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->query("Select source from videos where ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
-			return $resultSet[0];
+			$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			return json_encode($resultSet);
 		}
 		else
 		{
-			return $defaultVideoSource;
+			return $this->defaultVideoSource;
 		}
 	}
 	
@@ -48,19 +48,19 @@ class VideoController
 			if($p_iCurrentIndex == 0)
 			{
 				$dbConnection = new Database();
-				$resultSet = $dbConnection->query("Select source from videos where ID=(Select MAX(ID) from videos)", "stadtlandfluss", "ro");
-				return $resultSet[0];
+				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID=(Select MAX(Video_ID) from videos)", "stadtlandfluss", "ro");
+				return json_encode($resultSet);
 			}
 			else
 			{
 				$dbConnection = new Database();
-				$resultSet = $dbConnection->query("Select source from videos where ID = ".$p_iCurrentIndex-1, "stadtlandfluss", "ro");
-				return $resultSet[0];
+				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".--$p_iCurrentIndex, "stadtlandfluss", "ro");
+				return json_encode($resultSet);
 			}
 		}
 		else
 		{
-			return $defaultVideoSource;
+			return $this->defaultVideoSource;
 		}
 	}
 	
@@ -69,55 +69,101 @@ class VideoController
 	*/
 	public function getNextVideo($p_iCurrentIndex)
 	{
-		//### 
+		if($this->idIsValid($p_iCurrentIndex))
+		{
+			if($p_iCurrentIndex == $this->idMax)
+			{
+				$dbConnection = new Database();
+				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID=(Select MIN(Video_ID) from videos)", "stadtlandfluss", "ro");
+				return json_encode($resultSet);
+			}
+			else
+			{
+				$dbConnection = new Database();
+				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".++$p_iCurrentIndex, "stadtlandfluss", "ro");
+				return json_encode($resultSet);
+			}
+		}
+		else
+		{
+			return $this->defaultVideoSource;
+		}
 	}
 	
 	/**
-	* returns the date of the current Video
+	* returns a tag array belonging to the given video ID	
 	*/
-	public function getVideoDate($p_iCurrentIndex)
+	public function getTags($p_iCurrentIndex)
 	{
-		//###
+		if($this->idIsValid($p_iCurrentIndex))
+		{
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("Select * from tags where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			return json_encode($resultSet);
+		}
+		else
+		{
+			return $this->defaultVideoSource;
+		}
 	}
 	
 	/**
-	* returns the tags of the current Video as csv
+	* returns an image array belonging to the given video ID	
 	*/
-	public function getVideoTagsAsCsv($p_iCurrentIndex)
+	public function getImages($p_iCurrentIndex)
 	{
-		//###
+		if($this->idIsValid($p_iCurrentIndex))
+		{
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("Select * from images where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			return json_encode($resultSet);
+		}
+		else
+		{
+			return $this->defaultVideoSource;
+		}
 	}
 	
 	/**
-	* returns the title of the current Video
+	* returns a comments array belonging to the given video ID	
 	*/
-	public function getVideoTitle($p_iCurrentIndex)
+	public function getComments($p_iCurrentIndex)
 	{
-		//###
+		if($this->idIsValid($p_iCurrentIndex))
+		{
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("Select * from comments where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			return json_encode($resultSet);
+		}
+		else
+		{
+			return $this->defaultVideoSource;
+		}
 	}
 	
 	/**
-	* returns the subtitle of the current Video
+	* returns the persons belonging to the given video ID	
 	*/
-	public function getVideoSubtitle($p_iCurrentIndex)
+	public function getPersons($p_iCurrentIndex)
 	{
-		//###
+		if($this->idIsValid($p_iCurrentIndex))
+		{
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM Persons JOIN person2video ON person2video.Person_ID = Persons.Person_ID WHERE Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			return json_encode($resultSet);
+		}
+		else
+		{
+			return $this->defaultVideoSource;
+		}
 	}
 	
 	/**
-	* returns the descrition of the current Video
+	* returns a video array with the given number of videos	
 	*/
-	public function getVideoDescription($p_iCurrentIndex)
+	public function getMatrixView($p_iAnzVideos)
 	{
-		//###
-	}
-	
-	/**
-	* returns the images of the current Video as csv
-	*/
-	public function getVideoImagesAsCsv($p_iCurrentIndex)
-	{
-		//###
+		//### ABKLÄREN MIT CHRISTIAN, OB ER AUCH EINEN START- UND ENDWERT BRAUCHT für PAGINATION ODER OB ER ALLE HOLT
 	}
 	
 	private function idIsValid($p_ID)

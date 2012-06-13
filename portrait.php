@@ -28,6 +28,7 @@
 					<h2>Motocross-Fahrer aus Leidenschaft</h2>
 				</hgroup>
 					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+					<p><a href="" class="greenBigButton">Film ansehen</a> <a href="" class="commentLink">Kommentare</a></p>
 				</div>
 			</li>
 			

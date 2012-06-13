@@ -25,6 +25,7 @@ $(document).ready(function() {
 				changeObjectsInGrid(12);
 			}
 		}
+		positionGrid();
 	});
 });
 
@@ -34,9 +35,9 @@ function changeObjectsInGrid(num) {
 		
 		i = 1;
 		
-		if ($(".slider ul:first-child").hasClass("is_shown")) {
+		if ($(this).is(":last-child")) {
 			
-			//num--;
+			i=0;
 		}
 		else {
 		}
@@ -45,18 +46,40 @@ function changeObjectsInGrid(num) {
 		
 			$(this).show();
 			
-			if (i>num+2) {
+			if (i>=num) {
 				
 				if ($(this).hasClass("arrow")) {
 					
 				}
 				else {
-					//$(this).hide();
+					$(this).hide();
 				}
 			}
 			i++;
 		});
 	});
+}
+
+function positionGrid() {
+	
+	current_width = $(".page").width();
+	
+	if ((".gridContainer").length > 0) {
+	
+		i=0;
+		y=0;
+		
+		$(".page").each(function() {
+			
+			if ($(this).hasClass("is_shown")) {
+				
+				y=i;
+			}
+			i++;
+		});
+	}
+	
+	$(".slider").css("left","-" + y*current_width + "px");
 }
 
 function playListSortable() {

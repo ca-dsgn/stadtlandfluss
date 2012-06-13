@@ -1,5 +1,11 @@
 <div id="detailView">
 	<div class="wrapper">
-		<p>aasdad</p>
+		
+		<div id="detailVideoPlayer">asd</div>
+		
+		<div id="detailLocationBox">asd</div>
+		<div id="detailCommentBox">asd</div>
+		
+		
 	</div>
 </div>

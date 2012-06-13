@@ -12,7 +12,19 @@ html {
 
 body {
 	background-color: #ddd;
-	background-image: url('../img/backgrounds/motocross.jpg');
+/*	background-image: url('../img/backgrounds/motocross.jpg'); */
+
+
+background: #282422; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #282422 0%, #2a2a28 51%, #272b2d 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#282422), color-stop(51%,#2a2a28), color-stop(100%,#272b2d)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #282422 0%,#2a2a28 51%,#272b2d 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #282422 0%,#2a2a28 51%,#272b2d 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #282422 0%,#2a2a28 51%,#272b2d 100%); /* IE10+ */
+background: radial-gradient(center, ellipse cover,  #282422 0%,#2a2a28 51%,#272b2d 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#282422', endColorstr='#272b2d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
 	background-position: top center;
 	color: #cbcbcb;
 }

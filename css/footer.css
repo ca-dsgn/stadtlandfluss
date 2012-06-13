@@ -196,6 +196,7 @@
 
 #pageFooter a {
 	color: #707070;
+	text-decoration: none;
 }
 
 #pageFooter a:hover {
@@ -211,7 +212,7 @@
 	background-color: #fff;
 	background-image: url('../img/arrowTop.png');
 	background-repeat: no-repeat;
-	background-position: 20px 20px;
+	background-position: 20px 19px;
 	list-style-type: none;
 	-moz-box-shadow:    1px 2px 2px #232527;
 	-webkit-box-shadow: 1px 2px 2px #232527;
@@ -220,7 +221,7 @@
 
 #pageNav li {
 	width: 350px;
-	height: 60px;
+	height: 55px;
 	display: block;
 	line-height: 60px;
 	font-size: 14px;
@@ -228,7 +229,11 @@
 }
 
 #pageNav li a {
-	margin: 0 0 0 55px;
+	display: block;
+	width: 350px;
+	height: 55px;
+	line-height: 55px;
+	text-indent: 55px;
 }
 
 #pageNav ul  {
@@ -236,18 +241,19 @@
 	bottom: -9999px;
 	background-color: #fff;
   opacity: 0;
-  -webkit-transition: opacity .3s ease-in-out;
-  -moz-transition: opacity .3s ease-in-out;
-  -o-transition: opacity .3s ease-in-out;
-  transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out;
+  -o-transition: opacity .4s ease-in-out;
+  transition: opacity .4s ease-in-out;
+}
+
+#pageNav ul li a {
+	text-indent: 70px;
 }
 
 #pageNav li:hover {
 	cursor: pointer;
 	background-color: #000;
-	background-image: url('../img/arrowTopNegative.png');
-	background-repeat: no-repeat;
-	background-position: 20px 20px;
 	color: #fff;
 }
 
@@ -257,7 +263,36 @@
 }
 
 
+#navPortrait {
+	background-image: url('../img/portrait.png');
+	background-repeat: no-repeat;
+	background-position: 15px 10px;
+}
 
+#navPortrait:hover {
+	background-image: url('../img/portraitOver.png');
+}
+
+
+#navMap {
+	background-image: url('../img/map.png');
+	background-repeat: no-repeat;
+	background-position: 15px 10px;
+}
+
+#navMap:hover {
+	background-image: url('../img/mapOver.png');
+}
+
+#navGrid {
+	background-image: url('../img/grid.png');
+	background-repeat: no-repeat;
+	background-position: 15px 10px;
+}
+
+#navGrid:hover {
+	background-image: url('../img/gridOver.png');
+}
 /*	FOOTER-NAVIGATION ------------------------------------------------------ [BEGIN] --	*/
 
 #footerNav {
@@ -272,7 +307,6 @@
 }
 
 #footerNav li a {
-	text-decoration: none;
 	letter-spacing: 1;
 	text-transform: uppercase;
 }

@@ -51,7 +51,7 @@
 
 			<div class="wrapper">
 				<ul id="pageNav">
-					<li><a href="">Ansicht wählen</a>
+					<li><a href="">Ansicht wechseln</a>
 						<ul>
 							<?php
 								if (!isset($_GET["section"])) {

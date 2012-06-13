@@ -65,7 +65,7 @@
     <div class="clear"></div>
     <div class="naviPages">
     	<ul>
-        	<li ref="1"></li>
+        	<li ref="1" class="current"></li>
             <li ref="2"></li>
             <li ref="3"></li>
             <li ref="4"></li>

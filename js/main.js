@@ -198,6 +198,11 @@ function matrixMove(direction) {
 		y++;
 	}
 	
+	page = y+1;
+	
+	$(".naviPages ul li").removeClass("current");
+	$(".naviPages ul li:nth-child(" + page + ")").addClass("current");
+	
 	switch(direction) {
 		
 		case "right":

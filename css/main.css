@@ -299,7 +299,7 @@ h2 {
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 500px;
+	height: 100%;
 }
 
 .gridContainer {
@@ -372,7 +372,10 @@ h2 {
 	background-color: green;
 }
 .naviPages {
-	width: 67%;
+	width: 75%;
+}
+.naviPages li.current {
+	background-color: #1e1e1e;
 }
 .naviPages ul {
 	list-style: none;

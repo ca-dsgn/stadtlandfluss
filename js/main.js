@@ -46,6 +46,7 @@ function open_box(elem) {
 	
 	$(elem).addClass("open");
 	$(elem).css("z-index","550");
+	$(elem).find(".images").css("z-index","600");
 	$(elem).find(".box").css("z-index","650");
 	
 	$(elem).find(".images").animate({
@@ -78,6 +79,7 @@ function close_box(elem) {
 	$(".overlay").fadeOut(300, function() {
 		
 		$(elem).css("z-index","auto");
+		$(elem).find(".images").css("z-index","auto");
 		$(elem).find(".box").css("z-index","auto");
 	});
 }

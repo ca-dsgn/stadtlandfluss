@@ -3,7 +3,7 @@ var animation_time = 500;
 $(document).ready(function() {
 	
 	footerPosition();
-	showFooter();
+	//showFooter();
 	addfooterEventListeners();
 	footerDraggable();
 	
@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 function footerPosition() {
 	
-	$("#pageFooterSlider").css("top",(parseFloat($(document).height()))-55);
+	$("#pageFooterSlider").css("top",(parseFloat($(window).height()))-50);
 }
 
 function showFooter() {

@@ -254,6 +254,11 @@ function matrixDraggable() {
 	});
 	
 	$(".page").sortable({
+		start: function(event, ui) {
+			
+			close_box(ui.item);
+			close_box(ui.helper);
+		},
 		connectWith: ".playList ul",
 		distance: 5,
 		placeholder: "placeholder",

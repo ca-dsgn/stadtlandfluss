@@ -32,6 +32,7 @@ h2 {
 	font-weight: normal;
 	font-size: 18px;
 	margin-bottom: 10px;
+	color: #656565;
 }
 
 p {
@@ -424,9 +425,15 @@ p {
 #detailCommentBox {
 	float: right;	
 }
-.item {
+.page li,
+.playList ul li {
 	position: relative;
 }
+.page .box,
+.item .box {
+	position: relative;
+}
+.page .images,
 .item .images {
 	position: absolute;
 	height: 150px;
@@ -434,19 +441,38 @@ p {
 	overflow: hidden;
 	top: 0;
 }
+.page .images .top,
 .item .images .top {
 	position: absolute;
 	top: 0;
 }
+.page .images .bottom,
 .item .images .bottom {
 	position: absolute;
 	bottom: 0;
+}
+.page .info,
+.item .info {
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	height: 150px;
+	width: 0;
+	overflow: hidden;
+	padding: 20px 20px 20px 260px;
+	background-color: #fff;
+	overflow: hidden;
+	opacity: 0;
+}
+.page .info_box,
+.item .info_box {
+	width: 400px;
 }
 .overlay {
 	width: 100%;
 	height: 100%;
 	position: fixed;
 	top: 0;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.8);
 	z-index: 500;
 }

@@ -3,7 +3,7 @@ var animation_time = 500;
 $(document).ready(function() {
 	
 	footerPosition();
-	showFooter();
+	//showFooter();
 	addfooterEventListeners();
 	footerDraggable();
 	
@@ -11,11 +11,38 @@ $(document).ready(function() {
 		
 		footerPosition();
 	});
+	footerJumpEveryTime();
 });
+
+function footerJumpEveryTime() {
+	
+	footerJump();
+	
+	$("body").everyTime(5000, function() {
+		
+		if ($("#pageFooterSlider").attr("class") == "ui-draggable") {
+			
+			footerJump();
+		}
+	});
+}
+
+function footerJump() {
+	
+	original_position = $("#pageFooterSlider").offset().top;
+	
+	$("#pageFooterSlider").animate({
+		
+		top: '-=20px'
+	},200).animate({
+		
+		top: '+=20px'
+	},300);
+}
 
 function footerPosition() {
 	
-	$("#pageFooterSlider").css("top",(parseFloat($(document).height()))-55);
+	$("#pageFooterSlider").css("top",(parseFloat($(window).height()))-50);
 }
 
 function showFooter() {

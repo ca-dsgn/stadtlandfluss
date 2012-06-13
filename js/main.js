@@ -29,7 +29,10 @@ $(document).ready(function() {
 	});
 	$(".item").bind("mouseup", function() {
 		
-		open_box($(this));
+		if ($(this).parent().hasClass("is_shown")) {
+			
+			open_box($(this));
+		}
 		
 	});
 	$(".overlay").bind("mouseup", function() {
@@ -140,10 +143,10 @@ function playListSortable() {
 			
 			y_original = event.screenX;
 			ready_to_kill = false;
-			$(".item").unbind("mouseup");
+			$(ui.item).unbind("mouseup");
 		},
 		stop: function(event, ui) {
-			$(".item").bind("mouseup", function() {
+			$(ui.item).bind("mouseup", function() {
 				
 				open_box(ui.item);
 			});

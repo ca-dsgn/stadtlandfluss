@@ -21,7 +21,14 @@ a {
 }
 
 h1 {
+<<<<<<< HEAD
 	color: rgb(35,37,39);
+=======
+	color: black;
+	font-weight: 300;
+	font-size: 30px;
+	line-height: 37px;
+>>>>>>> 3fff2ced256f667fd0bc606dc2952b4dcb45c812
 	margin-bottom: 15px;
 	letter-spacing: -1px;
 	font-size: 30px;

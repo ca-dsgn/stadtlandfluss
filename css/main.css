@@ -129,6 +129,59 @@ p {
 	font-size: 1.2em;
 }
 
+
+
+
+
+
+
+
+
+.arrowRight {
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	right: 0px;
+	width: 70px;
+	height: 70px;
+	z-index: 55;
+	cursor: pointer;
+	background-image: url('../img/arrow.png');
+}
+
+.arrowRight:hover {
+	background-image: url('../img/arrowOver.png');
+}
+
+
+.arrowLeft {
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	left: 0px;
+	width: 70px;
+	height: 70px;
+	z-index: 55;
+	cursor: pointer;
+	background-image: url('../img/arrow.png');
+	-webkit-transform: rotate(-180deg); 
+	-moz-transform: rotate(-180deg); 
+}
+
+.arrowLeft:hover {
+	background-image: url('../img/arrowOver.png');
+}
+
+
+
+
+
+
+
+
+
+
+
 /********* Startseite *********/
 
 #protagonistContent {
@@ -254,50 +307,9 @@ p {
 
 
 
-#protagonistContent .arrowLeft {
-	position: absolute;
-	top: 50%;
-	left: 0px;
-	width: 28px;
-	height: 68px;
-	margin-top: -10px;
-	z-index: 15;
-	cursor: pointer;
-	background-image: url('../img/arrowLeft.png');
-  opacity: 0.6;
-	-webkit-transition: opacity 0.5s ease-in-out;
-	-moz-transition: opacity 0.5s ease-in-out;
-	-o-transition: opacity 0.5s ease-in-out;
-	-ms-transition: opacity 0.5s ease-in-out;	
-	transition: opacity 0.5s ease-in-out;	
-}
 
-#protagonistContent .arrowLeft:hover {
-	opacity: 1;
-}
 
-#protagonistContent .arrowRight {
-	position: absolute;
-	top: 50%;
-	right: 0px;
-	width: 28px;
-	height: 68px;
-	margin-top: -10px;
-	z-index: 15;
-	cursor: pointer;
-	background-image: url('../img/arrowRight.png');
-	  opacity: 0.6;
-	-webkit-transition: opacity 0.5s ease-in-out;
-	-moz-transition: opacity 0.5s ease-in-out;
-	-o-transition: opacity 0.5s ease-in-out;
-	-ms-transition: opacity 0.5s ease-in-out;	
-	transition: opacity 0.5s ease-in-out;
-	
-}
 
-#protagonistContent .arrowRight:hover {
-	opacity: 1;
-}
 
 #map_canvas {
 	position: absolute;

@@ -142,7 +142,7 @@ p {
 	display: inline-block;
 	height: 19px;
 	padding: 0 10px 6px 23px;
-	margin: 0 10px 0 0;
+	margin: 0 8px 0 0;
 	background-image: url('../img/arrowClear.png');
 	background-repeat: no-repeat;
 	background-position: 10px 9px;
@@ -152,10 +152,10 @@ p {
 .playlistLink {
 	display: inline-block;
 	height: 19px;
-	width: 25px;
+	width: 22px;
 	background-image: url('../img/arrowAdd.png');
-		padding: 0 0px 6px 0px;
-		background-repeat: no-repeat;
+	padding: 0 0px 6px 0px;
+	background-repeat: no-repeat;
 	background-position: 0 3px;
 	text-indent: -9999px;
 }
@@ -167,10 +167,10 @@ p {
 .commentLink {
 	display: inline-block;
 	height: 19px;
-	width: 25px;
+	width: 22px;
 	background-image: url('../img/arrowComment.png');
-		padding: 0 0px 6px 0px;
-		background-repeat: no-repeat;
+	padding: 0 0px 6px 0px;
+	background-repeat: no-repeat;
 	background-position: 0 3px;
 	text-indent: -9999px;
 }

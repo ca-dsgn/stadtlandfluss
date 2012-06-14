@@ -1,7 +1,6 @@
 ﻿@import "header.css";
 @import "footer.css";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-@import url(http://fonts.googleapis.com/css?family=Pacifico);
 
 * {border: 0; margin: 0; padding: 0;}
 
@@ -22,24 +21,27 @@ a {
 }
 
 h1 {
-	color: black;
-	font-weight: 600;
-	font-size: 30px;
-	line-height: 37px;
+	color: rgb(35,37,39);
 	margin-bottom: 15px;
 	letter-spacing: -1px;
+	font-size: 30px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	line-height: 1.2em;
 }
 
 h2 {
 	font-weight: normal;
-	font-size: 18px;
-	margin-bottom: 10px;
-	color: #656565;
+	color: white;
+	text-shadow: 1px 1px #999;
+	font-size: 1.3em;
+	margin: -15px 0 5px 0;
 }
 
 p {
 	font-size: 0.9em;
 	margin-bottom: 0.9em;
+	color: rgb(102,102,102);
 }
 
 
@@ -153,10 +155,6 @@ p {
 	right: 0;
 }
 
-#protagonistContent p {
-		color: #707070;
-}
-
 #protagonistContent .content {
 	background-color: #f0f;
 	list-style-type: none;
@@ -252,16 +250,6 @@ p {
 	margin: 13% 8% 0 0;
 	line-height: 1.5em;
 
-}
-
-
-
-#protagonistContent .description h2 {
-	color: white;
-	text-shadow: 1px 1px #999;
-	font-size: 1.3em;
-	font-weight: 600;
-	margin: -15px 0 15px 0;
 }
 
 

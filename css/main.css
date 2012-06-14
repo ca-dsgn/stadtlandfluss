@@ -277,16 +277,15 @@ p {
 	z-index: 15;
 	cursor: pointer;
 	background-image: url('../img/arrow.png');
-	opacity: 0.6;
-	-webkit-transition: opacity 0.5s ease-in-out;
-	-moz-transition: opacity 0.5s ease-in-out;
-	-o-transition: opacity 0.5s ease-in-out;
-	-ms-transition: opacity 0.5s ease-in-out;	
-	transition: opacity 0.5s ease-in-out;
 }
 
 .arrowLeft {
 	left: 0px;
+	-webkit-transform:rotate(-180deg);
+	-ms-transform:rotate(-180deg);
+	-o-transform:rotate(-180deg);
+	-moz-transform:rotate(-180deg);
+
 }
 
 .arrowTop {
@@ -307,10 +306,6 @@ p {
 
 .arrowRight {
 	right: 0;
-	-webkit-transform:rotate(180deg);
-	-ms-transform:rotate(180deg);
-	-o-transform:rotate(180deg);
-	-moz-transform:rotate(180deg);
 }
 
 #map_canvas {

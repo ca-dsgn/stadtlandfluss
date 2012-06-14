@@ -154,6 +154,7 @@ p {
 	bottom: 0px;
 	left: 0;
 	right: 0;
+	overflow: hidden;
 }
 
 #protagonistContent .content {

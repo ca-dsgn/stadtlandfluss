@@ -278,6 +278,13 @@ p {
 	cursor: pointer;
 	background-image: url('../img/arrow.png');
 }
+.arrowLeft:hover,
+.arrowRight:hover,
+.arrowTop:hover,
+.arrowBottom:hover {
+
+	background-image: url('../img/arrowOver.png');
+}
 
 .arrowLeft {
 	left: 0px;

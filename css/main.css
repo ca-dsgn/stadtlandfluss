@@ -185,14 +185,33 @@ p {
 	opacity: 0;
 }
 
+
+
+
+
+
 #protagonistContent .picture {
-	position: relative;
-	float: left;
-	width: 40%;
-	height: 75%;
-	margin: 0 0 0 10%;
-	/*background-color: white;*/
+	position: absolute;
+	right: 52%;
+	width: 500px;
+	height: 700px;
+	background-color: #ffff00;
 }
+
+
+#protagonistContent .description {
+	position: absolute;
+	top: 6%;
+	left: 52%;
+	width: 400px;
+	height: 200px;
+	margin: 13% 8% 0 0;
+	line-height: 1.5em;
+
+}
+
+
+
 
 #protagonistContent .playButton {
 	background-color: #fff;
@@ -243,15 +262,6 @@ p {
 	border-radius: 50%;
 }
 
-#protagonistContent .description {
-	position: relative;
-	float: right;
-	width: 400px;
-	height: 200px;
-	margin: 13% 8% 0 0;
-	line-height: 1.5em;
-
-}
 
 
 

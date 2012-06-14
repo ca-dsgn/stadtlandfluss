@@ -796,6 +796,8 @@
         </div>
     	<ul>
         </ul>
+        <div class="arrowBottom"></div>
+    	<div class="arrowTop"></div>
     </div>
     <div class="clear"></div>
     <div class="naviPages">

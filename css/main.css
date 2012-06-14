@@ -249,49 +249,51 @@ p {
 
 
 
-#protagonistContent .arrowLeft {
+.arrowLeft,
+.arrowRight,
+.arrowTop,
+.arrowBottom {
 	position: absolute;
 	top: 50%;
-	left: 0px;
 	width: 28px;
 	height: 68px;
 	margin-top: -10px;
 	z-index: 15;
 	cursor: pointer;
 	background-image: url('../img/arrowLeft.png');
-  opacity: 0.6;
-	-webkit-transition: opacity 0.5s ease-in-out;
-	-moz-transition: opacity 0.5s ease-in-out;
-	-o-transition: opacity 0.5s ease-in-out;
-	-ms-transition: opacity 0.5s ease-in-out;	
-	transition: opacity 0.5s ease-in-out;	
-}
-
-#protagonistContent .arrowLeft:hover {
-	opacity: 1;
-}
-
-#protagonistContent .arrowRight {
-	position: absolute;
-	top: 50%;
-	right: 0px;
-	width: 28px;
-	height: 68px;
-	margin-top: -10px;
-	z-index: 15;
-	cursor: pointer;
-	background-image: url('../img/arrowRight.png');
-	  opacity: 0.6;
+	opacity: 0.6;
 	-webkit-transition: opacity 0.5s ease-in-out;
 	-moz-transition: opacity 0.5s ease-in-out;
 	-o-transition: opacity 0.5s ease-in-out;
 	-ms-transition: opacity 0.5s ease-in-out;	
 	transition: opacity 0.5s ease-in-out;
-	
 }
 
-#protagonistContent .arrowRight:hover {
+.arrowLeft {
+	left: 0px;
+}
+
+.arrowTop {
+	top: -30px;
+	-webkit-transform:rotate(90deg);
+	-ms-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+}
+
+.arrowLeft:hover,
+.arrowRight:hover,
+.arrowTop:hover,
+.arrowBottom:hover {
 	opacity: 1;
+}
+
+.arrowRight {
+	right: 0;
+	-webkit-transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+	-moz-transform:rotate(180deg);
 }
 
 #map_canvas {
@@ -343,7 +345,8 @@ p {
 	width: 240px;
 	background-color: rgba(255,255,255,0.5);
 	float: right;
-	min-height: 500px;
+	min-height: 510px;
+	max-height: 510px;
 }
 .playList ul {
 	list-style: none;

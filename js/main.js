@@ -27,11 +27,17 @@ $(document).ready(function() {
 		}
 		positionGrid();
 	});
-	$(".item").bind("mouseup", function() {
+	$(".item").live("mouseup", function() {
 		
 		if ($(this).parent().hasClass("is_shown")) {
 			
-			open_box($(this));
+			if ($(this).hasClass("ui-sortable-helper")) {
+				
+				
+			}
+			else {
+				open_box($(this));
+			}
 		}
 		
 	});
@@ -198,11 +204,19 @@ function playListSortable() {
 								$(this).animate({
 									
 									opacity: 1
-								},300);
-								$(this).addClass("item");
+								},300, function() {
+									
+									$(this).addClass("item");
+								});
+								if ($(this).find("li").length == 0) {
+									
+									$(this).parent().find(".info").fadeIn(300);
+								}
 							}
 						});
 					});
+					
+					ui.item.addClass("delete_this");
 					
 					ui.item.fadeOut(300, function() {
 						
@@ -212,6 +226,8 @@ function playListSortable() {
 							
 						$(this).remove();
 						$(".playList ul").sortable("cancel");
+						
+						$(".delete_this").remove();
 					});
 				}
 			}

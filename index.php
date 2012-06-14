@@ -1,10 +1,4 @@
 <?php 
-	include 'parts/header.php';
-?>
-
-
-<?php
-
 	include "parts/header.php";
 
 	$section = array();

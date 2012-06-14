@@ -220,7 +220,7 @@
 }
 
 #pageNav li {
-	width: 350px;
+	width: 300px;
 	height: 55px;
 	display: block;
 	line-height: 60px;
@@ -230,7 +230,7 @@
 
 #pageNav li a {
 	display: block;
-	width: 350px;
+	width: 300px;
 	height: 55px;
 	line-height: 55px;
 	text-indent: 55px;

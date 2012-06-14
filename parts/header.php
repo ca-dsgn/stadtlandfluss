@@ -22,6 +22,6 @@
     </div>
     <header id="pageHeader">
         <div class="wrapper">
-            <a href="./" class="logoBig">StadtLandFluss-Geschichten</a>		
+            <a href="./" class="logoBig">StadtLandFluss-Geschichten</a>
         </div>
     </header>

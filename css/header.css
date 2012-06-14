@@ -8,14 +8,14 @@
 .logoBig {
 	position: absolute;
 	width: 300px;
-	height: 80px;
+	height: 70px;
 	left: 0px;
 	top: 0px;
 	display: block;
 	background-color: #fff;
 	background-image: url('../img/logoBig.png');
 	background-repeat: no-repeat;
-	background-position: 10px 30px;
+	background-position: 15px 28px;
 	text-indent: -9999px;
 }
 

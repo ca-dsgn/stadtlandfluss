@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Stadt Land Fluss Geschichten</title>
@@ -18,8 +18,7 @@
         <script type="text/javascript" src="js/maps.js"></script>
     </head>
     <body onload="initialize();">
-    <div class="overlay" style="display: none;">
-    </div>
+    <div class="overlay" style="display: none;"></div>
     <header id="pageHeader">
         <div class="wrapper">
             <a href="./" class="logoBig">StadtLandFluss-Geschichten</a>		

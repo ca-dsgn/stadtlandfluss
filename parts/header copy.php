@@ -20,7 +20,30 @@
 <div class="overlay" style="display: none;">
 </div>
 <header id="pageHeader">
+
 	<div class="wrapper">
-		<a href="./" class="logoBig">StadtLandFluss-Geschichten</a>		
+	
+		<a href="./" id="logoBig">StadtLandFluss-Geschichten</a>
+		
+		<ul id="pageNav">
+		
+			<li><a href="">Portrait-Ansicht</a>
+			<ul>
+				<?php
+					if (!isset($_GET["section"])) {
+						$_GET["section"] = "portrait";
+					}
+				?>
+				<li<?php ($_GET["section"] == "portrait" ? print ' class="active"':'')?>><a href="index.php?section=portrait" id="navPortrait">Portrait</a></li>				
+				<li<?php ($_GET["section"] == "map" ? print ' class="active"':'')?>><a href="index.php?section=map" id="navMap">Landkarte</a></li>
+				<li<?php ($_GET["section"] == "grid" ? print ' class="active"':'')?>><a href="index.php?section=grid" id="navGrid">Raster</a></li>
+			</ul>
+			</li>
+		
+			</ul>
+			
+
+		
+		</nav>
 	</div>
 </header>

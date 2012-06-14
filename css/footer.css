@@ -173,83 +173,141 @@
 
 
 
-/* PAGE FOOTER */
+/*	PAGE_FOOTER ------------------------------------------------------ [BEGIN] --	*/
 
 #pageFooter {
 	position: fixed;
+	z-index: 45;
 	left: 0;
 	right: 0;
 	bottom: 0;
+	height: 35px;
+
+	background-color: rgba(35, 37, 39, 1);
+	
 	font-size: 10px;
-	font-weight: 300px;
-	line-height: 22px;
-	height: 25px;
-	letter-spacing: 0.2px;
-	background-image: url('../img/footerBack2.gif');
-	z-index: 15;
-	text-align: center;
-	border-top: 1px dotted #42484d;
-	-moz-box-shadow:    0px 3px 7px #000;
-	-webkit-box-shadow: 0px 3px 7px #000;
-	box-shadow:         0px 3px 7px #000;
-	color: #656F78;
+	font-weight: 300;
+	
+	-moz-box-shadow:    2px 0px 5px #232527;
+	-webkit-box-shadow: 2px 0px 5px #232527;
+	box-shadow:         2px 0px 5px #232527;
+		
 }
 
-#pageFooter a {color: #656F78;}
-#pageFooter a:hover {color: #70bbee;}
+#pageFooter a {
+	color: #707070;
+	text-decoration: none;
+}
 
-#footerNav 		{position: absolute; right: 0; bottom: 0; text-transform: uppercase; list-style-type: none;}
-#footerNav li {float: left; margin-left: 15px; line-height: 22px;	margin-top: 10px;}
-#footerNav a 	{color: #949da2; text-decoration: none;}
+#pageFooter a:hover {
+	color: #fff;
+}
 
-#footerNav li.overProject {
-	padding: 0 15px 0 30px;
-	margin-top: 0px;
-	
-	
-	
-	
-	background: #484e54;
-	background-image: url('../img/logo-uni-small.png'); /* fallback */
-	background-image: url('../img/logo-uni-small.png'), -webkit-gradient(linear, left top, left bottom, from(#545b61), to(#999999)); /* 	Saf4+, Chrome */
-	background-image: url('../img/logo-uni-small.png'), -webkit-linear-gradient(top,  #545b61 8%, #484e54 100%); /* Chrome 10+, Saf5.1+ */
-	background-image: url('../img/logo-uni-small.png'),    -moz-linear-gradient(top,  #545b61 8%, #484e54 100%); /* FF3.6+ */
-	background-image: url('../img/logo-uni-small.png'),     -ms-linear-gradient(top,  #545b61 8%, #484e54 100%); /* IE10 */
-	background-image: url('../img/logo-uni-small.png'),      -o-linear-gradient(top,  #545b61 8%, #484e54 100%); /* Opera 11.10+ */
-	background-image: url('../img/logo-uni-small.png'),         linear-gradient(top,  #545b61 8%, #484e54 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545b61', endColorstr='#484e54',GradientType=0 ); /* IE6-9 */
+/*	MAIN-NAVIGATION ------------------------------------------------------ [BEGIN] --	*/
 
-
-	background: #B1BCCE;
-	background-image: url('../img/logo-uni-small.png'); /* fallback */
-	background-image: url('../img/logo-uni-small.png'), -webkit-gradient(linear, left top, left bottom, from(#70bbee), to(#44779a)); /* 	Saf4+, Chrome */
-	background-image: url('../img/logo-uni-small.png'), -webkit-linear-gradient(top,  #70bbee 8%, #44779a 100%); /* Chrome 10+, Saf5.1+ */
-	background-image: url('../img/logo-uni-small.png'),    -moz-linear-gradient(top,  #70bbee 8%, #44779a 100%); /* FF3.6+ */
-	background-image: url('../img/logo-uni-small.png'),     -ms-linear-gradient(top,  #70bbee 8%, #5b9dc9 100%); /* IE10 */
-	background-image: url('../img/logo-uni-small.png'),      -o-linear-gradient(top,  #70bbee 8%, #5b9dc9 100%); /* Opera 11.10+ */
-	background-image: url('../img/logo-uni-small.png'),         linear-gradient(top,  #70bbee 8%, #5b9dc9 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70bbee', endColorstr='#5b9dc9',GradientType=0 ); /* IE6-9 */
-
-
-
+#pageNav {
+	float: right;
+	margin: -20px 0 0 0;
+	list-style-type: none;
+	background-color: #fff;
+	background-image: url('../img/arrowTop.png');
 	background-repeat: no-repeat;
+	background-position: 20px 19px;
+	list-style-type: none;
+	-moz-box-shadow:    1px 2px 2px #232527;
+	-webkit-box-shadow: 1px 2px 2px #232527;
+	box-shadow:         1px 2px 2px #232527;
+}
 
-	-moz-box-shadow:    2px 6px 5px #141414;
-	-webkit-box-shadow: 2px 6px 5px #141414;
-	box-shadow:         2px 6px 5px #141414;
+#pageNav li {
+	width: 350px;
+	height: 55px;
+	display: block;
+	line-height: 60px;
+	font-size: 14px;
+	color: #232527;
+}
+
+#pageNav li a {
+	display: block;
+	width: 350px;
+	height: 55px;
+	line-height: 55px;
+	text-indent: 55px;
+}
+
+#pageNav ul  {
+	position: absolute;
+	bottom: -9999px;
+	background-color: #fff;
+  opacity: 0;
+  -webkit-transition: opacity .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out;
+  -o-transition: opacity .4s ease-in-out;
+  transition: opacity .4s ease-in-out;
+}
+
+#pageNav ul li a {
+	text-indent: 70px;
+}
+
+#pageNav li:hover {
+	cursor: pointer;
+	background-color: #000;
+	color: #fff;
+}
+
+#pageNav li:hover ul  {
+	opacity: 1;
+	bottom: 0px;
+}
+
+
+#navPortrait {
+	background-image: url('../img/portrait.png');
+	background-repeat: no-repeat;
+	background-position: 15px 10px;
+}
+
+#navPortrait:hover {
+	background-image: url('../img/portraitOver.png');
+}
+
+
+#navMap {
+	background-image: url('../img/map.png');
+	background-repeat: no-repeat;
+	background-position: 15px 10px;
+}
+
+#navMap:hover {
+	background-image: url('../img/mapOver.png');
+}
+
+#navGrid {
+	background-image: url('../img/grid.png');
+	background-repeat: no-repeat;
+	background-position: 15px 10px;
+}
+
+#navGrid:hover {
+	background-image: url('../img/gridOver.png');
+}
+/*	FOOTER-NAVIGATION ------------------------------------------------------ [BEGIN] --	*/
+
+#footerNav {
+	float: right;
 	line-height: 35px;
+	list-style-type: none;
 }
 
-.overProject:hover {
-	background: #575e65; /* Old browsers */
-	background: -moz-linear-gradient(top,  #60686f 8%, #575e65 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(8%,#60686f), color-stop(100%,#575e65)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #60686f 8%,#575e65 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #60686f 8%,#575e65 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #60686f 8%,#575e65 100%); /* IE10+ */
-	background: linear-gradient(top,  #60686f 8%,#575e65 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#60686f', endColorstr='#575e65',GradientType=0 ); /* IE6-9 */
+#footerNav li {
+	margin-right: 20px;
+	float: left;
 }
 
-#footerNav li.overProject a {color: #d3dbe1;}
-#footerNav li.overProject a:hover {color: #fff; text-decoration: underline;}
+#footerNav li a {
+	letter-spacing: 1;
+	text-transform: uppercase;
+}
+

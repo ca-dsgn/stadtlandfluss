@@ -21,17 +21,11 @@ a {
 }
 
 h1 {
-<<<<<<< HEAD
 	color: rgb(35,37,39);
-=======
-	color: black;
 	font-weight: 300;
-	font-size: 30px;
-	line-height: 37px;
->>>>>>> 3fff2ced256f667fd0bc606dc2952b4dcb45c812
 	margin-bottom: 15px;
 	letter-spacing: -1px;
-	font-size: 30px;
+	font-size: 2em;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	line-height: 1.2em;
@@ -42,7 +36,7 @@ h2 {
 	color: white;
 	text-shadow: 1px 1px #999;
 	font-size: 1.3em;
-	margin: -15px 0 5px 0;
+	margin: -15px 0 7px 0;
 }
 
 p {

@@ -178,7 +178,6 @@ p {
 
 #protagonistContent .current {
 	z-index: 10;
-	
 }
 
 #protagonistContent .following {
@@ -201,13 +200,10 @@ p {
 
 #protagonistContent .description {
 	position: absolute;
-	top: 6%;
+	top: 200px;
 	left: 52%;
-	width: 400px;
-	height: 200px;
-	margin: 13% 8% 0 0;
+	width: 390px;
 	line-height: 1.5em;
-
 }
 
 

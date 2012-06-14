@@ -24,11 +24,11 @@
 				<div class="playButton"></div>
 				<div class="description">
 				<hgroup>
-					<h1>Uli Körber</h1>
-					<h2>Motocross-Fahrer aus Leidenschaft</h2>
+					<h2>Uli Körber</h2>
+					<h1>Benzin im Blut – Zwischen Motocross und Corel Draw</h1>
 				</hgroup>
 					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-					<p><a href="" class="greenBigButton">Film ansehen</a> <a href="" class="commentLink">Kommentare</a></p>
+					<!--p><a href="" class="greenBigButton">Film ansehen</a> <a href="" class="commentLink">Kommentare</a></p-->
 				</div>
 			</li>
 			

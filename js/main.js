@@ -27,7 +27,13 @@ $(document).ready(function() {
 		
 		if ($(this).parent().hasClass("is_shown")) {
 			
-			open_box($(this));
+			if ($(this).hasClass("ui-sortable-helper")) {
+				
+				
+			}
+			else {
+				open_box($(this));
+			}
 		}
 		
 	});

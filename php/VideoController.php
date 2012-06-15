@@ -139,7 +139,6 @@ class VideoController
 	}
 	
 	
-	
 	/**
 	*checks if the given video ID exists
 	*/

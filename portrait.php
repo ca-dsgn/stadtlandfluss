@@ -8,7 +8,7 @@
 		
 		<ul class="content">
 			<li class="previous contentBox">
-				<div class="picture">Video</div>
+				<div class="picture"></div>
 				<div class="playButton"></div>
 				<div class="description">
 				<hgroup>
@@ -36,6 +36,14 @@
 			</li>
 			
 			<li class="following contentBox">
+				<div class="picture"><img src="img/portraits/tierheim.png" /></div>
+				<div class="playButton"></div>
+				<div class="description">
+				<hgroup>
+					<h2>Brigitte Schmitt</h2>
+					<h1>Tierheim Dallau – Jeder Käfig hat seine Geschichte</h1>
+				</hgroup>
+					<p>Mit einem besonders großen Einzugsgebiet im Neckar-Odenwald-Kreis bietet das Tierheim Dallau vielen Tieren ein temporäres Zuhause – manchen länger, anderen nur kurz. Wir haben Brigitte Schmitt, eines der langjährigen Mitglieder des Vereins begleitet, wie sie um das Schicksal des Schäferhundrüden „Sultan“ bangt, der fünf Jahre lang nicht vermittelt werden konnte.</p>
 				<img src="img/portraits/motocross.png" class="picture" />
 				<div class="playButton"></div>
 				<div class="description">

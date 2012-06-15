@@ -186,14 +186,9 @@ p {
 
 
 
-
-
-
-
-/********* Startseite *********/
+/*	PORTRAIT-VIEW -------------------------------------------------------------------[BEGIN] */
 
 #protagonistContent {
-	/* background-color: red; */
 	position: absolute;
 	top: 0px;
 	bottom: 0px;
@@ -363,6 +358,19 @@ p {
 	top: 0;
 	width: 100%;
 	height: 100%;
+}
+
+
+
+
+
+
+/*	GRID-VIEW -------------------------------------------------------------------[BEGIN] */
+
+
+#gridContent {
+	position: relative;
+	background-color: aqua;
 }
 
 .gridContainer {
@@ -536,3 +544,5 @@ p {
 	background-color: rgba(0,0,0,0.8);
 	z-index: 500;
 }
+
+

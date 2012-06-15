@@ -23,17 +23,11 @@ $(document).ready(function() {
 		resizeGridByWindowWidth();
 		positionGrid();
 	});
-	$(".item").live("mouseup", function() {
+	$(".page .item").live("mouseup", function() {
 		
 		if ($(this).parent().hasClass("is_shown")) {
 			
-			if ($(this).hasClass("ui-sortable-helper")) {
-				
-				
-			}
-			else {
-				open_box($(this));
-			}
+			open_box($(this));
 		}
 		
 	});
@@ -87,22 +81,25 @@ function set_cookie(name, value) {
 
 function open_box(elem) {
 	
-	$(elem).addClass("open");
-	$(elem).css("z-index","550");
-	$(elem).find(".images").css("z-index","600");
-	$(elem).find(".box").css("z-index","650");
+	if ($(elem).parent().hasClass("page")) {
 	
-	$(elem).find(".images").animate({
-			
-		height: '470',
-		top: '-160px'
-	},500);
-	$(elem).find(".info").animate({
+		$(elem).addClass("open");
+		$(elem).css("z-index","550");
+		$(elem).find(".images").css("z-index","600");
+		$(elem).find(".box").css("z-index","650");
 		
-		width: '400',
-		opacity: 1
-	},500);
-	$(".overlay").fadeIn(300);
+		$(elem).find(".images").animate({
+				
+			height: '470',
+			top: '-160px'
+		},500);
+		$(elem).find(".info").animate({
+			
+			width: '400',
+			opacity: 1
+		},500);
+		$(".overlay").fadeIn(300);
+	}
 }
 
 function close_box(elem) {

@@ -7,42 +7,63 @@
 <div id="gridContent">
 	<div class="wrapper">	
 		<div class="contentBox">
-
-
-
-
-
 			<div class="gridContainer">
 		    	<div class="slider">
 		            <ul class="page is_shown" id="1">
-		                <li class="item" ref="1">
-		                	<div class="box">
-		                    	<img src="img/grid/motorcross_main.png" alt="Motorcross"/>
-		                    </div>
-		                    <div class="images">
-		                    	<div class="top">
-		                        	<img src="img/grid/motorcross_main.png" alt="Motorcross"/>
-		                        </div>
-		                        <div class="bottom">
-		                        	<img src="img/grid/motorcross_main.png" alt="Motorcross"/>
-		                        </div>
-		                    </div>
-		                    <div class="info">
-		                    	<div class="info_box">
-		                            <h2>Bla und Bla</h2>
-		                            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
-		                            <a>Link</a>
-		                            <a>Link</a>
-		                        </div>
-		                    </div>
-		                </li>
 		                <?php
+						
+							function getVideoTemplateById($id) {
+								
+								global $vc;
+								
+								$element = json_decode($vc->getVideo($id));
+								
+								return getTemplate($element[0]->Video_ID,$element[0]->title,$element[0]->description,NULL);
+							}
+							
+							function getVideoTemplate($id,$title,$description,$images) {
+								
+								return getTemplate($id,$title,$description,$images);
+							}
+							
+							function getTemplate($id,$title,$description,$images) {
+								
+								$html = '<li class="item" ref="'.$id.'">';
+								$html.= '<div class="box">';
+								$html.= '<img src="img/grid/motorcross_main.png" alt="'.$title.'"/>';
+								$html.= '</div>';
+								$html.= '<div class="images">';
+								$html.= '<div class="top">';
+								$html.= '<img src="img/grid/motorcross_main.png" alt="'.$title.'"/>';
+								$html.= '</div>';
+								$html.= '<div class="bottom">';
+								$html.= '<img src="img/grid/motorcross_main.png" alt="'.$title.'"/>';
+								$html.= '</div>';
+								$html.= '</div>';
+								$html.= '<div class="info">';
+								$html.= '<div class="info_box">';
+								$html.= '<h2>'.$title.'</h2>';
+								$html.= '<p>'.$description.'</p>';
+								$html.= '<a>Link</a>';
+								$html.= '<a>Link</a>';
+								$html.= '</div>';
+								$html.= '</div>';
+								$html.= '</li>';
+								
+								return $html;
+							}
 							
 							$max = $vc->getNumOfVideos();
 							
 							$grid_elements = json_decode($vc->getMatrixView(0,$max));
 							
-							print_r($grid_elements);
+							foreach($grid_elements as $element) {
+								
+								print getVideoTemplate($element->Video_ID,$element->title,$element->description,NULL);
+								
+								//for debugging
+								//print_r($element);
+							}
 						?>
 		            </ul>
 		        </div>
@@ -55,13 +76,15 @@
 		    	<ul>
 		        	<?php
 						
-						$ids = explode("-",$_COOKIE["playlist"]);
-						
-						foreach ($ids as $id) {
-						
-							print $vc->getVideo($id);
+						if ($_COOKIE["playlist"] != null && $_COOKIE["playlist"] != "") {
+							
+							$ids = explode("-",$_COOKIE["playlist"]);
+							
+							foreach ($ids as $id) {
+							
+								print getVideoTemplateById($id);
+							}
 						}
-					
 					?>
 		        </ul>
 		        <div class="arrowBottom"></div>

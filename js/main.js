@@ -203,7 +203,7 @@ function removeFromPlayList(ref) {
 	
 	for (var i = 0; i < refs.length; i++) {
 		
-		if (i==0) {
+		if (i==0 || refs[i-1] == ref) {
 			
 			seperator = "";
 		}

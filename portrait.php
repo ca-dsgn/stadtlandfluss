@@ -1,7 +1,7 @@
 <div id="protagonistContent">
 	<div class="wrapper">
 		
-		<ul class="content">
+		<ul>
 			<li class="previous contentBox">
 				<img src="img/portraits/motocross.png" class="picture" />
 				<div class="playButton"></div>

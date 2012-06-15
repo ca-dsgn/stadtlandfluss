@@ -11,8 +11,8 @@ class Database {
 
     private $connection;
     private $servername = "localhost";
-    private $mysqluser = "root";
-    private $mysqlpasswd = "";
+    private $mysqluser = "p167191";
+    private $mysqlpasswd = "c4S!#gX4";
    
     /**
      * connect to database

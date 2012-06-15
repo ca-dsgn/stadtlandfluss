@@ -1,5 +1,5 @@
 		<!-- PAGE SLIDER-BOX [BEGIN] -->
-		<div id="pageFooterSlider">
+		<div id="pageFooterSlider" class="is_down">
 			<div id="pageFooterSliderButton"></div>
 			<div id="pageFooterSliderContent">
 				<div class="wrapper">

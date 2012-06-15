@@ -42,7 +42,7 @@ function footerJump() {
 
 function footerPosition() {
 	
-	$("#pageFooterSlider").css("top",(parseFloat($(window).height()))-50);
+	$("#pageFooterSlider").css("top",(parseFloat($(window).height()))-60);
 }
 
 function showFooter() {

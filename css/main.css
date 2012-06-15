@@ -473,28 +473,44 @@ p {
 
 /********* Detail-View *********/
 
-#detailView {
+#detailContent {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0;
+	right: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
+
+
+
+
+
 
 #detailVideoPlayer {
 	width: 860px;
 	height: 500px;
 	background-color: black;
-	margin: 0 0 0 50px;
+	margin: 90px 0 0 0px;
 	float: left;
 }
 
 #detailLocationBox {
-	float: right;
-	min-width: 100px;
-	height: 200px;
+	position: absolute;
+	top: 90px;
+	left: 860px;
+	right: 0px;
+	min-width: 200px;
+	height: 500px;
 	background-color: blue;
-	margin: 0 0 0 50px;
 }
 
 #detailCommentBox {
-	float: right;	
+	clear: both;
+	background-color: fuchsia;
 }
+
 .page li,
 .playList ul li {
 	position: relative;

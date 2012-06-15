@@ -256,7 +256,7 @@ p {
 	position: absolute;
 	left: 50%;
 	margin-left: -63px;
-	bottom: 100px;
+	margin-top: 280px;
 	background-color: rgb(35,37,39);
 
 	background-image: url('../img/play.png');
@@ -278,7 +278,7 @@ p {
 	width: 136px;
 	height: 136px;
 	margin-left: -68px;
-	bottom: 95px;
+	margin-top: 275px;
 	background-color: rgb(96,206,240);
 	background-image: url('../img/play-over.png');
 }
@@ -288,7 +288,7 @@ p {
 	position: absolute;
 	left: 50%;
 	margin-left: -68px;
-	bottom: 95px;
+	margin-top: 275px;
 	width: 136px;
 	height: 136px;
 	background-color: #fff;

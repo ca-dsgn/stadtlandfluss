@@ -69,23 +69,33 @@
 		        </div>
 		    </div>
 		    <div class="playList">
+				<?php
+                    
+                    $playlist = '';
+                    
+                    if ($_COOKIE["playlist"] != null && $_COOKIE["playlist"] != "") {
+                        
+                        $ids = explode("-",$_COOKIE["playlist"]);
+                        
+                        foreach ($ids as $id) {
+                        
+                            $playlist .= getVideoTemplateById($id);
+                        }
+                        
+                    }
+                ?>
 		    	<div class="info">
+                    <?php
+						if ($playlist == '') {
+					?>
 		        	<h3>PlayList</h3>
 		        	<p>Ziehen Sie die Filme in die PlayList</p>
-		        </div>
-		    	<ul>
-		        	<?php
-						
-						if ($_COOKIE["playlist"] != null && $_COOKIE["playlist"] != "") {
-							
-							$ids = explode("-",$_COOKIE["playlist"]);
-							
-							foreach ($ids as $id) {
-							
-								print getVideoTemplateById($id);
-							}
+                    <?php
 						}
 					?>
+		        </div>
+		    	<ul>
+		        	<?php print $playlist ?>
 		        </ul>
 		        <div class="arrowBottom"></div>
 		    	<div class="arrowTop"></div>
@@ -93,10 +103,23 @@
 		    <div class="clear"></div>
 		    <div class="naviPages">
 		    	<ul>
-		        	<li ref="1" class="current"></li>
-		            <li ref="2"></li>
-		            <li ref="3"></li>
-		            <li ref="4"></li>
+                	<?php
+					
+						global $max;
+						
+						if ($max < 11) {
+						
+							$pages = 1;	
+						}
+						else {
+							
+						}
+					
+						for($i=1;$i<=$pages;$i++) {
+							
+							print '<li ref="'.$i.'"'.(($i==1) ? ' class="current"':'').'></li>';
+						}
+					?>
 		        </ul>
 		    </div>
     

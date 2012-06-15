@@ -1,3 +1,5 @@
+var playlist;
+
 $(document).ready(function() {
 	
 	matrixDraggable();
@@ -13,18 +15,12 @@ $(document).ready(function() {
 		matrixMove("left");
 	});
 	
+	resizeGridByWindowWidth();
+	positionGrid();
+	
 	$(window).resize(function() {
 		
-		if ((".gridContainer").length > 0) {
-			
-			if (parseInt($(".page").width()) < 960) {
-				
-				changeObjectsInGrid(9);
-			}
-			else {
-				changeObjectsInGrid(12);
-			}
-		}
+		resizeGridByWindowWidth();
 		positionGrid();
 	});
 	$(".item").live("mouseup", function() {
@@ -46,7 +42,48 @@ $(document).ready(function() {
 		close_box($(".is_shown .open"));
 	});
 	
+	if (get_cookie("playlist") == null) {
+		
+		set_cookie("playlist","");
+	}
+	playlist = get_cookie("playlist");
+	
 });
+
+function resizeGridByWindowWidth() {
+	
+	if ((".gridContainer").length > 0) {
+			
+		if (parseInt($(".page").width()) < 960) {
+			
+			changeObjectsInGrid(9);
+		}
+		else {
+			changeObjectsInGrid(12);
+		}
+	}
+}
+
+function get_cookie(name) {
+	var cookiename = name + "="; 
+	var ca = document.cookie.split(';'); 
+	
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];  
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(cookiename) == 0) return c.substring(cookiename.length,c.length);
+	}
+	return null;
+}
+
+function set_cookie(name, value) {
+
+	ablauf = new Date();
+	infuenfTagen = ablauf.getTime() + (2 * 60 * 60 * 1000); //2 hours
+	ablauf.setTime(infuenfTagen);
+
+	document.cookie = name + "=" + value + "; expires=" + ablauf.toGMTString() + "; path=/";
+}
 
 function open_box(elem) {
 	
@@ -143,6 +180,48 @@ function positionGrid() {
 	$(".slider").css("left","-" + y*current_width + "px");
 }
 
+function addToPlayList(ref) {
+	
+	seperator = "-";
+	
+	if (playlist == "") {
+		
+		seperator = "";
+	}
+	playlist += seperator + ref;
+	set_cookie("playlist",playlist);
+}
+
+function removeFromPlayList(ref) {
+	
+	refs = playlist.split("-");
+	
+	console.log(refs);
+	
+	new_playlist = "";
+	seperator = "-";
+	
+	for (var i = 0; i < refs.length; i++) {
+		
+		if (i==0) {
+			
+			seperator = "";
+		}
+		else {
+			seperator = "-";
+		}
+		console.log(seperator);
+		
+		if (refs[i] != ref) {
+			
+			new_playlist+= seperator + refs[i];
+		}
+	}
+	playlist = new_playlist;
+	
+	set_cookie("playlist",playlist);
+}
+
 function playListSortable() {
 	
 	$(".playList ul").sortable({
@@ -159,7 +238,7 @@ function playListSortable() {
 				open_box(ui.item);
 			});
 		},
-		receive: function() {
+		receive: function(event,ui) {
 			
 			if ($(this).find("li").length > 0) {
 				
@@ -170,6 +249,8 @@ function playListSortable() {
 			$(".is_shown .copy").animate({ opacity: 0.5 },300);
 			$(".is_shown .copy").removeClass("item");
 			$(".is_shown .copy").removeClass("copy");
+			
+			addToPlayList($(ui.item).attr("ref"));
 		},
 		remove: function(event, ui) {
 			
@@ -183,7 +264,6 @@ function playListSortable() {
 			$(".is_shown .item:hidden").after(ui.item.clone().addClass("copy"));
 			$(".is_shown .item:hidden").show();
 			$(".is_shown .item.copy").hide();
-			
 		},
 		out: function(event, ui) {
 			
@@ -220,6 +300,7 @@ function playListSortable() {
 					
 					ui.item.fadeOut(300, function() {
 						
+						removeFromPlayList($(ui.item).attr("ref"));
 						$(this).remove();
 					});
 					ui.placeholder.slideUp(300, function() {

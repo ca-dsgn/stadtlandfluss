@@ -795,6 +795,9 @@
         	<p>Ziehen Sie die Filme in die PlayList</p>
         </div>
     	<ul>
+        	<?php
+			
+			?>
         </ul>
         <div class="arrowBottom"></div>
     	<div class="arrowTop"></div>

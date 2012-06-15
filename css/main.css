@@ -11,7 +11,7 @@ html {
 
 body {
 	background-color: #ddd;
-	background-image: url('../img/backgrounds/motocross.jpg');
+	background-image: url('../img/backgrounds/currentBack.jpg');
 	background-position: top center;
 	color: #cbcbcb;
 }
@@ -104,38 +104,115 @@ p {
 }
 
 
-.greenBigButton {
-	display: inline-block;
-	margin: 0;
-	padding: 12px 16px;
-
-	text-decoration: none;
-	color: #d3e1d5;
-	font-size: 1.2em;
-	font-weight: 600;
-	text-shadow: 1px 1px 1px #56823e;
-
-	background: #90db67;
-	background: -webkit-gradient(linear, left top, left bottom, from(#90db67), to(#74b351)); /* 	Saf4+, Chrome */
-	background: -webkit-linear-gradient(top,  #90db67 8%, #74b351 100%); /* Chrome 10+, Saf5.1+ */
-	background: -moz-linear-gradient(top,  #90db67 8%, #74b351 100%); /* FF3.6+ */
-	background: -ms-linear-gradient(top,  #90db67 8%, #74b351 100%); /* IE10 */
-	background: -o-linear-gradient(top,  #90db67 8%, #74b351 100%); /* Opera 11.10+ */
-	background: linear-gradient(top,  #90db67 8%, #74b351 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90db67', endColorstr='#74b351',GradientType=0 ); /* IE6-9 */
-
-	-moz-box-shadow:    0px 0px 3px #444;
-	-webkit-box-shadow: 0px 0px 3px #444;
-	box-shadow:         0px 0px 3px #444;
+.greyButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
 }
 
+.greyButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}
+
+.greyButton:active {
+	position:relative;
+	top:1px;
+}
+
+.infoLink {
+	display: inline-block;
+	height: 19px;
+	padding: 0 10px 6px 23px;
+	margin: 0 8px 0 0;
+	background-image: url('../img/arrowClear.png');
+	background-repeat: no-repeat;
+	background-position: 10px 9px;
+	background-color: white;
+}
+
+.playlistLink {
+	display: inline-block;
+	height: 19px;
+	width: 22px;
+	background-image: url('../img/arrowAdd.png');
+	padding: 0 0px 6px 0px;
+	background-repeat: no-repeat;
+	background-position: 0 3px;
+	text-indent: -9999px;
+}
+
+.playlistLink:hover {
+	background-image: url('../img/arrowAddOver.png');
+}
 
 .commentLink {
-	font-size: 1.2em;
+	display: inline-block;
+	height: 19px;
+	width: 22px;
+	background-image: url('../img/arrowComment.png');
+	padding: 0 0px 6px 0px;
+	background-repeat: no-repeat;
+	background-position: 0 3px;
+	text-indent: -9999px;
+}
+
+.commentLink:hover {
+	background-image: url('../img/arrowCommentOver.png');
 }
 
 
 
+/*	PLAY-BUTTON -------------------------------------- */
+
+.playButton {
+	background-color: rgb(35,37,39);
+
+	background-image: url('../img/play.png');
+	background-repeat: no-repeat;
+	background-position: 30px 22px;	
+	
+	width: 126px;
+	height: 126px;
+	cursor: pointer;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;	
+	z-index: 500;
+}
+
+.playButton:hover {
+	background-color: rgb(96,206,240);
+	background-image: url('../img/play-over.png');
+}
+
+
+.playButtonEcho {
+	width: 126px;
+	height: 126px;
+	background-color: #fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
 
 
 
@@ -200,8 +277,9 @@ p {
 
 #protagonistContent .description {
 	position: absolute;
-	top: 175px;
-	left: 52%;
+	bottom: 250px;
+	left: 50%;
+	margin-left: 40px;
 	width: 390px;
 	line-height: 1.5em;
 }
@@ -209,54 +287,23 @@ p {
 
 
 
-#protagonistContent .playButton {
-	background-color: #fff;
-	background-image: url('../img/play.png');
-	background-repeat: no-repeat;
-	background-position: 30px 22px;
-	
-	width: 100px;
-	height: 100px;
-	
-	cursor: pointer;
-	
-	position: absolute;
-	left: 47%;
-	bottom: 17%;
 
-	
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-	
-	-moz-box-shadow:    0px 0px 5px #777;
-	-webkit-box-shadow: 0px 0px 5px #777;
-	box-shadow:         0px 0px 5px #777;
-	
-	z-index: 500;
-	
-	display: none;
-	
-}
-#protagonistContent .playButton:hover {
-	background-image: url('../img/play-over.png');
+
+
+#protagonistContent .playButton {
+	position: absolute;
+	left: 50%;
+	margin-left: -63px;
+	bottom: 100px;
 }
 
 #protagonistContent .playButtonEcho {
-	
-	width: 100px;
-	height: 100px;
-	
 	position: absolute;
-	left: 47%;
-	bottom: 17%;
-
-	
-	background-color: #fff;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
+	left: 50%;
+	margin-left: -63px;
+	bottom: 100px;
 }
+
 
 
 

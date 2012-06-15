@@ -181,38 +181,6 @@ p {
 
 
 
-/*	PLAY-BUTTON -------------------------------------- */
-
-.playButton {
-	background-color: rgb(35,37,39);
-
-	background-image: url('../img/play.png');
-	background-repeat: no-repeat;
-	background-position: 30px 22px;	
-	
-	width: 126px;
-	height: 126px;
-	cursor: pointer;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;	
-	z-index: 500;
-}
-
-.playButton:hover {
-	background-color: rgb(96,206,240);
-	background-image: url('../img/play-over.png');
-}
-
-
-.playButtonEcho {
-	width: 126px;
-	height: 126px;
-	background-color: #fff;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-}
 
 
 
@@ -288,20 +256,51 @@ p {
 
 
 
+/*	PLAY-BUTTON -------------------------------------- */
 
-
-#protagonistContent .playButton {
+.playButton {
 	position: absolute;
 	left: 50%;
 	margin-left: -63px;
 	bottom: 100px;
+	background-color: rgb(35,37,39);
+
+	background-image: url('../img/play.png');
+	background-repeat: no-repeat;
+	background-position: 30px 22px;	
+	
+	width: 126px;
+	height: 126px;
+	cursor: pointer;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;	
+	z-index: 500;
+	
+
 }
 
-#protagonistContent .playButtonEcho {
+.playButton:hover {
+	width: 136px;
+	height: 136px;
+	margin-left: -68px;
+	bottom: 95px;
+	background-color: rgb(96,206,240);
+	background-image: url('../img/play-over.png');
+}
+
+
+.playButtonEcho {
 	position: absolute;
 	left: 50%;
-	margin-left: -63px;
-	bottom: 100px;
+	margin-left: -68px;
+	bottom: 95px;
+	width: 136px;
+	height: 136px;
+	background-color: #fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
 }
 
 
@@ -386,7 +385,7 @@ p {
 }
 .gridContainer .page li {
 	width: 220px;
-	margin: 10px;
+	margin: 10px 20px 10px 0;
 	height: 150px;
 	float: left;
 	background-color: rgba(255,0,0,0.5);
@@ -496,11 +495,12 @@ p {
 .page .images,
 .item .images {
 	position: absolute;
-	height: 150px;
-	width: 210px;
+	height: 140px;
+	width: 200px;
 	overflow: hidden;
-	top: 0;
+	top: 0;	
 }
+
 .page .images .top,
 .item .images .top {
 	position: absolute;

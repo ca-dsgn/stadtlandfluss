@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 15. Jun 2012 um 13:27
+-- Erstellungszeit: 15. Jun 2012 um 14:12
 -- Server Version: 5.5.16
 -- PHP-Version: 5.3.8
 
@@ -57,17 +57,31 @@ CREATE TABLE IF NOT EXISTS `images` (
   `alt` varchar(255) DEFAULT NULL,
   `Video_ID` int(5) DEFAULT NULL,
   PRIMARY KEY (`Image_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- Daten für Tabelle `images`
 --
 
 INSERT INTO `images` (`Image_ID`, `url`, `alt`, `Video_ID`) VALUES
-(0, 'http://www.amerika-forum.de/gallery/files/11427-LandscapeArch.jpg', 'Buntsandstein', 0),
-(1, 'http://www.kidsgeo.com/images/landscape.jpg', 'See', 1),
-(2, 'http://www.kidsgeo.com/images/landscape.jpg', 'See1', 2),
-(3, 'http://www.blyphoto.com/images/gallery/landscape/landscape01-010.jpg', 'Gewitter', 2);
+(0, '/img/grid/motorcross_main.png', 'Test', 0),
+(1, '/img/grid/motorcross_main.png', 'Test', 0),
+(2, '/img/grid/motorcross_main.png', 'Test', 0),
+(3, '/img/grid/motorcross_main.png', 'Test', 5),
+(4, '/img/grid/motorcross_main.png', 'Test', 1),
+(5, '/img/grid/motorcross_main.png', 'Test', 1),
+(6, '/img/grid/motorcross_main.png', 'Test', 4),
+(7, '/img/grid/motorcross_main.png', 'Test', 4),
+(8, '/img/grid/motorcross_main.png', 'Test', 4),
+(9, '/img/grid/motorcross_main.png', 'Test', 3),
+(10, '/img/grid/motorcross_main.png', 'Test', 3),
+(11, '/img/grid/motorcross_main.png', 'Test', 3),
+(12, '/img/grid/motorcross_main.png', 'Test', 2),
+(13, '/img/grid/motorcross_main.png', 'Test', 2),
+(14, '/img/grid/motorcross_main.png', 'Test', 2),
+(15, '/img/grid/motorcross_main.png', 'Test', 1),
+(16, '/img/grid/motorcross_main.png', 'Test', 5),
+(17, '/img/grid/motorcross_main.png', 'Test', 5);
 
 -- --------------------------------------------------------
 

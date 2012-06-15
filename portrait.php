@@ -33,7 +33,7 @@
 			</li>
 			
 			<li class="following contentBox">
-				<div class="picture"><img src="img/portraits/tierheim2.png" /></div>
+				<div class="picture"><img src="img/portraits/tierheim.png" /></div>
 				<div class="playButton"></div>
 				<div class="description">
 				<hgroup>

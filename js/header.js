@@ -53,10 +53,10 @@ function blow_play() {
 	
 	$(".playButtonEcho").animate({
 		
-		width: "+=4%",
-		height: "+=8%",
-		left: "-=2%",
-		bottom: "-=4%",
+		width: "+=40px",
+		height: "+=40px",
+		'margin-left': "-=20px",
+		'margin-top': "-=20px",
 		opacity: 0
 	}, 2000, function() {
 		
@@ -125,7 +125,7 @@ function slideshow_move(direction) {
 
 function slidehowDraggable() {
 
-	$(".contentBox").draggable({
+	$("#protagonistContent .contentBox").draggable({
 		
 		axis: "x",
 		stop: function(event,ui) {

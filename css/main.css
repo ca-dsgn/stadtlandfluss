@@ -256,7 +256,7 @@ p {
 	position: absolute;
 	left: 50%;
 	margin-left: -63px;
-	bottom: 100px;
+	margin-top: 280px;
 	background-color: rgb(35,37,39);
 
 	background-image: url('../img/play.png');
@@ -278,7 +278,7 @@ p {
 	width: 136px;
 	height: 136px;
 	margin-left: -68px;
-	bottom: 95px;
+	margin-top: 275px;
 	background-color: rgb(96,206,240);
 	background-image: url('../img/play-over.png');
 }
@@ -288,7 +288,7 @@ p {
 	position: absolute;
 	left: 50%;
 	margin-left: -68px;
-	bottom: 95px;
+	margin-top: 275px;
 	width: 136px;
 	height: 136px;
 	background-color: #fff;
@@ -306,7 +306,6 @@ p {
 .arrowTop,
 .arrowBottom {
 	position: absolute;
-	top: 50%;
 	width: 70px;
 	height: 70px;
 	margin-top: -10px;
@@ -323,6 +322,7 @@ p {
 }
 
 .arrowLeft {
+	top: 50%;
 	left: 0px;
 	-webkit-transform:rotate(-180deg);
 	-ms-transform:rotate(-180deg);
@@ -332,7 +332,16 @@ p {
 }
 
 .arrowTop {
-	top: -30px;
+	top: -20px;
+	left: 80px;
+	-webkit-transform:rotate(270deg);
+	-ms-transform:rotate(270deg);
+	-o-transform:rotate(270deg);
+	-moz-transform:rotate(270deg);
+}
+.arrowBottom {
+	top: 490px;
+	left: 80px;
 	-webkit-transform:rotate(90deg);
 	-ms-transform:rotate(90deg);
 	-o-transform:rotate(90deg);
@@ -348,6 +357,7 @@ p {
 
 
 .arrowRight {
+	top: 50%;
 	right: 0;
 }
 

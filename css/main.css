@@ -576,3 +576,19 @@ p {
 }
 
 
+/*--- ABOUT.PHP ---*/
+
+div#about {	margin: 0 auto; width: 25%; max-width: 960px; min-width: 720px; }
+
+iframe#trailer { margin-top: 100px; }
+
+h2.zitat {
+	margin: 30px 0 30px 0;
+	background-color: rgba(96,206,240,0.6);
+	padding: 20px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius:10px;
+}
+
+p#last { margin-bottom: 100px; }

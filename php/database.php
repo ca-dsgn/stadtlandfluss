@@ -12,7 +12,7 @@ class Database {
     private $connection;
     private $servername = "localhost";
     private $mysqluser = "root";
-    private $mysqlpasswd = "";
+    private $mysqlpasswd = "root";
    
     /**
      * connect to database

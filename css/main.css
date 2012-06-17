@@ -10,9 +10,7 @@ html {
 }
 
 body {
-	background-color: #ddd;
-	background-image: url('../img/backgrounds/currentBack.jpg');
-	background-position: top center;
+	background-color: #c2d0d6;
 	color: #cbcbcb;
 }
 
@@ -149,6 +147,11 @@ p {
 	background-color: white;
 }
 
+.infoLink:hover {
+	background-color: rgb(96,206,240);
+	color: #fff;
+}
+
 .playlistLink {
 	display: inline-block;
 	height: 19px;
@@ -201,6 +204,10 @@ p {
 	left: 0;
 	right: 0;
 	overflow: hidden;
+		
+	/*background-image: url('../img/backgrounds/test.jpg');
+	background-position: center center;*/
+
 }
 
 #protagonistContent ul {

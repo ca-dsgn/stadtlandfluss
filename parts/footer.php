@@ -68,7 +68,7 @@
 					<li><a href="">Kontakt</a></li>
 					<li><a href="">Impressum</a></li>
 				</ul>
-				<a href="/" class="logoSmall">Über das Projekt</a>
+				<a href="./about.php" class="logoSmall">Über das Projekt</a>
 			</div>
 		
 

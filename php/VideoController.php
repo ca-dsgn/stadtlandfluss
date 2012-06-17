@@ -16,7 +16,7 @@ class VideoController
 	function __construct()
 	{
 		$dbConnection = new Database();
-		$resultSet = $dbConnection->query("Select MAX(Video_ID) from videos", "stadtlandfluss", "ro");
+		$resultSet = $dbConnection->query("Select MAX(Video_ID) from videos", "usr_p167191_1", "ro");
 		$this->idMax = $resultSet[0];
 	}
 	
@@ -26,7 +26,7 @@ class VideoController
 	public function getNumOfVideos()
 	{
 		$dbConnection = new Database();
-		$resultSet = $dbConnection->query("SELECT COUNT(Video_ID) FROM videos", "stadtlandfluss", "ro");
+		$resultSet = $dbConnection->query("SELECT COUNT(Video_ID) FROM videos", "usr_p167191_1", "ro");
 		return $resultSet[0];
 	}
 	
@@ -36,7 +36,7 @@ class VideoController
 	public function getVideo($p_iCurrentIndex)
 	{
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".$p_iCurrentIndex, "usr_p167191_1", "ro");
 			return json_encode($resultSet);
 	}
 	
@@ -48,13 +48,13 @@ class VideoController
 			if($p_iCurrentIndex == 0)
 			{
 				$dbConnection = new Database();
-				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID=(Select MAX(Video_ID) from videos)", "stadtlandfluss", "ro");
+				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID=(Select MAX(Video_ID) from videos)", "usr_p167191_1", "ro");
 				return json_encode($resultSet);
 			}
 			else
 			{
 				$dbConnection = new Database();
-				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".--$p_iCurrentIndex, "stadtlandfluss", "ro");
+				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".--$p_iCurrentIndex, "usr_p167191_1", "ro");
 				return json_encode($resultSet);
 			}
 	}
@@ -67,13 +67,13 @@ class VideoController
 			if($p_iCurrentIndex == $this->idMax)
 			{
 				$dbConnection = new Database();
-				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID=(Select MIN(Video_ID) from videos)", "stadtlandfluss", "ro");
+				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID=(Select MIN(Video_ID) from videos)", "usr_p167191_1", "ro");
 				return json_encode($resultSet);
 			}
 			else
 			{
 				$dbConnection = new Database();
-				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".++$p_iCurrentIndex, "stadtlandfluss", "ro");
+				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".++$p_iCurrentIndex, "usr_p167191_1", "ro");
 				return json_encode($resultSet);
 			}
 	}
@@ -84,7 +84,7 @@ class VideoController
 	public function getTags($p_iCurrentIndex)
 	{
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("Select * from tags where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			$resultSet = $dbConnection->queryAssoc("Select * from tags where Video_ID = ".$p_iCurrentIndex, "usr_p167191_1", "ro");
 			return json_encode($resultSet);
 	}
 	
@@ -94,7 +94,7 @@ class VideoController
 	public function getImages($p_iCurrentIndex)
 	{
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("Select * from images where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			$resultSet = $dbConnection->queryAssoc("Select * from images where Video_ID = ".$p_iCurrentIndex, "usr_p167191_1", "ro");
 			return json_encode($resultSet);
 	}
 	
@@ -104,7 +104,7 @@ class VideoController
 	public function getComments($p_iCurrentIndex)
 	{
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("Select * from comments where Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			$resultSet = $dbConnection->queryAssoc("Select * from comments where Video_ID = ".$p_iCurrentIndex, "usr_p167191_1", "ro");
 			return json_encode($resultSet);
 	}
 	
@@ -114,7 +114,7 @@ class VideoController
 	public function getPersons($p_iCurrentIndex)
 	{
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("SELECT * FROM Persons JOIN person2video ON person2video.Person_ID = Persons.Person_ID WHERE Video_ID = ".$p_iCurrentIndex, "stadtlandfluss", "ro");
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM Persons JOIN person2video ON person2video.Person_ID = Persons.Person_ID WHERE Video_ID = ".$p_iCurrentIndex, "usr_p167191_1", "ro");
 			return json_encode($resultSet);
 	}
 	
@@ -126,7 +126,7 @@ class VideoController
 			$dbConnection = new Database();
 			//$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, "stadtlandfluss", "ro");
 			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
-			$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= ".$p_iStart." and videos.Video_ID <".$p_iNum, "stadtlandfluss", "ro");
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= ".$p_iStart." and videos.Video_ID <".$p_iNum, "usr_p167191_1", "ro");
 			return json_encode($resultSet);
 	}
 	
@@ -136,7 +136,7 @@ class VideoController
 	public function getAllLocations()
 	{
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("SELECT altitude, longitude, Video_ID FROM videos", "stadtlandfluss", "ro");
+			$resultSet = $dbConnection->queryAssoc("SELECT altitude, longitude, Video_ID FROM videos", "usr_p167191_1", "ro");
 			return json_encode($resultSet);
 	}
 	

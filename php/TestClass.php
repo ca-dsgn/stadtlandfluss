@@ -17,6 +17,8 @@ echo ("<br/><br/>Personen:<br/>");
 echo $vc->getPersons(0);
 echo ("<br/><br/>Rückgabe der MatrixView Videos:<br/>");
 echo $vc->getMatrixView(0,5);
+echo ("<br/><br/>Rückgabe der MatrixView Videos mit 3 Bildern zu jedem Video:<br/>");
+echo $vc->getMatrixViewWithImages(0,5);
 echo ("<br/><br/>Anzahl der eingepflegten Videos:<br/>");
 echo $vc->getNumOfVideos();
 echo ("<br/><br/>All Locations:<br/>");

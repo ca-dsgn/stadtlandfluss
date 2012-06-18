@@ -125,10 +125,22 @@ class VideoController
 	public function getMatrixView($p_iStart, $p_iNum)
 	{		
 			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, "stadtlandfluss", "ro");
+			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
+			//$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= ".$p_iStart." and videos.Video_ID <".$p_iNum, $dbConnection->get_database(), "ro");
+			return json_encode($resultSet);
+	}
+	
+	
+	public function getMatrixViewWithImages($p_iStart, $p_iNum)
+	{		
+			$dbConnection = new Database();
 			//$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, "stadtlandfluss", "ro");
 			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
-			$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= ".$p_iStart." and videos.Video_ID <".$p_iNum, $dbConnection->get_database(), "ro");
-			return json_encode($resultSet);
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM images WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, $dbConnection->get_database(), "ro");
+			$decVideos = json_decode($this->getMatrixView($p_iStart,$p_iNum));
+			
+			return json_encode($decVideos+$resultSet);
 	}
 	
 	/**

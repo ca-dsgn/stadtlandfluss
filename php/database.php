@@ -17,7 +17,7 @@ class Database {
 	
 	private $database;
    
-    public function Database() {
+    public function __construct() {
 	
 		if ($_SERVER["SERVER_NAME"] == "localhost") {
 			

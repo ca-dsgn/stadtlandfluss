@@ -418,7 +418,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 }
 .gridContainer .page li {
 	width: 220px;
-	margin: 10px 20px 10px 0;
+	margin: 10px;
 	height: 150px;
 	float: left;
 	background-color: rgba(255,0,0,0.5);
@@ -544,7 +544,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 .page .images,
 .item .images {
 	position: absolute;
-	height: 140px;
+	height: 150px;
 	width: 200px;
 	overflow: hidden;
 	top: 0;	

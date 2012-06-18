@@ -23,7 +23,24 @@ $(document).ready(function() {
 		resizeGridByWindowWidth();
 		positionGrid();
 	});
-	$(".page .item").live("mouseup", function() {
+	addItemListeners();
+	
+	$(".overlay").bind("mouseup", function() {
+		
+		close_box($(".is_shown .open"));
+	});
+	
+	if (get_cookie("playlist") == null) {
+		
+		set_cookie("playlist","");
+	}
+	playlist = get_cookie("playlist");
+	
+});
+
+function addItemListeners() {
+	
+	$(".page .item").bind("mouseup", function() {
 		
 		if ($(this).parent().hasClass("is_shown")) {
 			
@@ -37,18 +54,12 @@ $(document).ready(function() {
 		}
 		
 	});
-	$(".overlay").bind("mouseup", function() {
-		
-		close_box($(".is_shown .open"));
-	});
+}
+
+function removeItemListeners() {
 	
-	if (get_cookie("playlist") == null) {
-		
-		set_cookie("playlist","");
-	}
-	playlist = get_cookie("playlist");
-	
-});
+	$(".page .item").unbind("mouseup");
+}
 
 function resizeGridByWindowWidth() {
 	
@@ -247,8 +258,8 @@ function playListSortable() {
 				
 				$(this).parent().find(".info").fadeOut(300);
 			}
-			$(".is_shown .copy").show();
-			close_box($(".is_shown .copy"));
+			console.log($(".is_shown li[ref='" + $(ui.item).attr("ref") + "']"));
+			//close_box($(".is_shown li[ref='" + $(ui.item).attr("ref") + "']"));
 			$(".is_shown .copy").animate({ opacity: 0.5 },300);
 			$(".is_shown .copy").removeClass("item");
 			$(".is_shown .copy").removeClass("copy");
@@ -263,10 +274,6 @@ function playListSortable() {
 			}
 		},
 		over: function(event, ui) {
-			
-			$(".is_shown .item:hidden").after(ui.item.clone().addClass("copy"));
-			$(".is_shown .item:hidden").show();
-			$(".is_shown .item.copy").hide();
 		},
 		out: function(event, ui) {
 			
@@ -375,22 +382,18 @@ function matrixDraggable() {
 		}
 	});
 	
-	$(".page").sortable({
+	$(".page li").draggable({
 		start: function(event, ui) {
 			
-			close_box(ui.item);
-			close_box(ui.helper);
-		},
-		over: function() {
+			//close_box(ui.item);
+			close_box($(".is_shown li[ref='" + $(ui.helper).attr("ref") + "']"));
+			removeItemListeners();
 			
-			$(".is_shown .copy").prev().hide();
-			$(".is_shown .copy").hide();
 		},
 		stop: function() {
-			$(".is_shown .copy").prev().show();
-			$(".is_shown .copy").remove();
+			addItemListeners();
 		},
-		connectWith: ".playList ul",
+		connectToSortable: ".playList ul",
 		distance: 5,
 		placeholder: "placeholder",
 		helper: "clone",

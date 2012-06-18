@@ -33,7 +33,7 @@ function initialize() {
 			center: mosbach,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
-		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		
         <?php
 	
@@ -42,12 +42,15 @@ function initialize() {
             print 'var marker'.$location->Video_ID.' = new google.maps.Marker({
 			  position: location'.$location->Video_ID.', 
 			  map: map, 
-			  title:"Bla"
+			  title:\''.$location->title.'\'
 			});'."\n";
 			
-			print 'google.maps.event.addListener(marker'.$location->Video_ID.', \'mouseover\', function() {
+			print 'google.maps.event.addListener(marker'.$location->Video_ID.', \'click\', function() {
 				
-				alert("My id is '.$location->Video_ID.'");
+				console.log("My id is '.$location->Video_ID.'");
+				
+				map.panTo(location'.$location->Video_ID.');
+				
 			});';
 			
 			print 'markersArray.push(marker'.$location->Video_ID.')'."\n";

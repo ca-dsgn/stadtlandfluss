@@ -21,14 +21,14 @@
 		
 		$html = '<li class="item" ref="'.$id.'">';
 		$html.= '<div class="box">';
-		$html.= '<img src="img/grid/motorcross_main.png" alt="'.$title.'"/>';
+		$html.= '<img src="'.$images[0]->url.'" alt="'.$images[0]->alt.'"/>';
 		$html.= '</div>';
 		$html.= '<div class="images">';
 		$html.= '<div class="top">';
-		$html.= '<img src="img/grid/motorcross_main.png" alt="'.$title.'"/>';
+		$html.= '<img src="'.$images[1]->url.'" alt="'.$images[1]->alt.'"/>';
 		$html.= '</div>';
 		$html.= '<div class="bottom">';
-		$html.= '<img src="img/grid/motorcross_main.png" alt="'.$title.'"/>';
+		$html.= '<img src="'.$images[2]->url.'" alt="'.$images[2]->alt.'"/>';
 		$html.= '</div>';
 		$html.= '</div>';
 		$html.= '<div class="info">';
@@ -55,6 +55,8 @@
 						$page = 1;
 						
 						$max_videos = $vc->getNumOfVideos();
+						
+						$num_pages = 1;
 						
 						if ($max_videos-11 > 0) {
 							
@@ -83,7 +85,7 @@
 							
 							foreach($grid_elements as $element) {
 								
-								print getVideoTemplate($element->Video_ID,$element->title,$element->description,NULL);
+								print getVideoTemplate($element->Video_ID,$element->title,$element->description,$element->images);
 							}
 		            		print "</ul>";
 						}

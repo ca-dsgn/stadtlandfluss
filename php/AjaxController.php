@@ -1,5 +1,7 @@
 <?php
 
+	include_once("VideoController.php");
+
 /**
  * Class AjaxController
  * contains video functions
@@ -10,7 +12,11 @@ if (isset($_POST["action"])) {
 	
 	switch ($_POST["action"]) {
 		
-		case "getVideo":
+		case "getVideoById":
+		
+			$_POST["id"] = $Video_ID;
+			
+			
 		
 			$videoController = new VideoController();
 			break;

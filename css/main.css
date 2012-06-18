@@ -74,7 +74,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	padding: 6px 8px;
 
 	text-decoration: none;
-	color: #D3DBE1;
+	color: #fff;
 	font-size: 0.9em;
 	font-weight: 600;
 	text-shadow: 1px 1px 1px #44779a;
@@ -95,14 +95,14 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 
 .blueButton:hover {
 	color: #fff;
-	background: #9cd4fa;
-	background: -webkit-gradient(linear, left top, left bottom, from(#9cd4fa), to(#5796c1)); /* 	Saf4+, Chrome */
-	background: -webkit-linear-gradient(top,  #9cd4fa 8%, #5796c1 100%); /* Chrome 10+, Saf5.1+ */
-	background: -moz-linear-gradient(top,  #9cd4fa 8%, #5796c1 100%); /* FF3.6+ */
-	background: -ms-linear-gradient(top,  #9cd4fa 8%, #5796c1 100%); /* IE10 */
-	background: -o-linear-gradient(top,  #9cd4fa 8%, #5796c1 100%); /* Opera 11.10+ */
-	background: linear-gradient(top,  #9cd4fa 8%, #5796c1 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9cd4fa', endColorstr='#5796c1',GradientType=0 ); /* IE6-9 */
+	background: #44779a;
+	background: -webkit-gradient(linear, left top, left bottom, from(#44779a), to(#5FCEEF)); /* 	Saf4+, Chrome */
+	background: -webkit-linear-gradient(top,  #44779a 8%, #5FCEEF 100%); /* Chrome 10+, Saf5.1+ */
+	background: -moz-linear-gradient(top,  #44779a 8%, #5FCEEF 100%); /* FF3.6+ */
+	background: -ms-linear-gradient(top,  #44779a 8%, #5FCEEF 100%); /* IE10 */
+	background: -o-linear-gradient(top,  #44779a 8%, #5FCEEF 100%); /* Opera 11.10+ */
+	background: linear-gradient(top,  #44779a 8%, #5FCEEF 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44779a', endColorstr='#5FCEEF',GradientType=0 ); /* IE6-9 */
 	
 }
 

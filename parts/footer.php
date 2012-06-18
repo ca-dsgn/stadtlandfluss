@@ -6,7 +6,7 @@
 					<div id="pageFooterLeft">
 						<h2>Kennenlernen</h2>
 						<!--p>Wer steckt hinter dem Projekt?</p-->
-						<iframe width="224" height="126" src="http://www.youtube.com/embed/qqLaRYxJeno?rel=0" frameborder="0" allowfullscreen></iframe>
+						<img src="img/trailer-thumb.jpg" />
 						<p class="floatRight">Du möchtest <a href="" class="blueButton">mehr erfahren</a></p>
 					</div>
 					<div id="pageFooterMiddle">

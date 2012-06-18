@@ -3,6 +3,7 @@ var playlist;
 $(document).ready(function() {
 	
 	matrixDraggable();
+	addDraggableToItems(".page .item");
 	matrixArrows();
 	playListSortable();
 	
@@ -196,8 +197,6 @@ function positionGrid() {
 
 function addToPlayList(ref) {
 	
-	console.log(ref);
-	
 	seperator = "-";
 	
 	if (playlist == "") {
@@ -212,8 +211,6 @@ function removeFromPlayList(ref) {
 	
 	refs = playlist.split("-");
 	
-	console.log(refs);
-	
 	new_playlist = "";
 	seperator = "-";
 	
@@ -226,7 +223,6 @@ function removeFromPlayList(ref) {
 		else {
 			seperator = "-";
 		}
-		console.log(seperator);
 		
 		if (refs[i] != ref) {
 			
@@ -261,16 +257,11 @@ function playListSortable() {
 				$(this).parent().find(".info").fadeOut(300);
 			}
 			$(".is_shown li[ref='" + $(ui.item).attr("ref") + "']").animate({ opacity: 0.5 },300);
-			$(".is_shown li[ref='" + $(ui.item).attr("ref") + "']").removeClass("item");
+			$(".is_shown li[ref='" + $(ui.item).attr("ref") + "']").draggable("destroy");
 			
 			addToPlayList($(ui.item).attr("ref"));
 		},
 		remove: function(event, ui) {
-			
-			if ($(this).find("li").length == 0) {
-				
-				$(this).parent().find(".info").fadeIn(300);
-			}
 		},
 		over: function(event, ui) {
 		},
@@ -295,11 +286,12 @@ function playListSortable() {
 									opacity: 1
 								},300, function() {
 									
-									$(this).addClass("item");
+									addDraggableToItems($(this));
 								});
-								if ($(this).find("li").length == 0) {
+								
+								if ($("playList ul li").length == 0) {
 									
-									$(this).parent().find(".info").fadeIn(300);
+									$("playList").find(".info").fadeIn(300);
 								}
 							}
 						});
@@ -380,8 +372,11 @@ function matrixDraggable() {
 			}
 		}
 	});
+}
+
+function addDraggableToItems(selector) {
 	
-	$(".page li").draggable({
+	$(selector).draggable({
 		start: function(event, ui) {
 			
 			//close_box(ui.item);

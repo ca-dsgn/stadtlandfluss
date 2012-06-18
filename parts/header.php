@@ -15,7 +15,7 @@
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/footer.js"></script>
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-        <script type="text/javascript" src="js/maps.js"></script>
+        <script type="text/javascript" src="js/maps.php"></script>
     </head>
     <body onload="initialize();">
     <div class="overlay" style="display: none;"></div>

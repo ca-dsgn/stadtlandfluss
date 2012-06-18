@@ -60,9 +60,6 @@
 							foreach($grid_elements as $element) {
 								
 								print getVideoTemplate($element->Video_ID,$element->title,$element->description,NULL);
-								
-								//for debugging
-								//print_r($element);
 							}
 						?>
 		            </ul>

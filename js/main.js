@@ -196,6 +196,8 @@ function positionGrid() {
 
 function addToPlayList(ref) {
 	
+	console.log(ref);
+	
 	seperator = "-";
 	
 	if (playlist == "") {
@@ -258,11 +260,8 @@ function playListSortable() {
 				
 				$(this).parent().find(".info").fadeOut(300);
 			}
-			console.log($(".is_shown li[ref='" + $(ui.item).attr("ref") + "']"));
-			//close_box($(".is_shown li[ref='" + $(ui.item).attr("ref") + "']"));
-			$(".is_shown .copy").animate({ opacity: 0.5 },300);
-			$(".is_shown .copy").removeClass("item");
-			$(".is_shown .copy").removeClass("copy");
+			$(".is_shown li[ref='" + $(ui.item).attr("ref") + "']").animate({ opacity: 0.5 },300);
+			$(".is_shown li[ref='" + $(ui.item).attr("ref") + "']").removeClass("item");
 			
 			addToPlayList($(ui.item).attr("ref"));
 		},

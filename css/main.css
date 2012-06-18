@@ -269,30 +269,28 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	left: 50%;
 	margin-left: -63px;
 	margin-top: 280px;
-	background-color: rgb(35,37,39);
+	/*background-color: rgb(35,37,39);*/
 
 	background-image: url('../img/play.png');
 	background-repeat: no-repeat;
-	background-position: 30px 22px;	
+	background-position: 0 0;	
 	
-	width: 126px;
-	height: 126px;
+	width: 100px;
+	height: 80px;
 	cursor: pointer;
-	-webkit-border-radius: 50%;
+	/*-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
-	border-radius: 50%;	
+	border-radius: 50%;	*/
 	z-index: 500;
 	
 
 }
 
 .playButton:hover {
-	width: 136px;
-	height: 136px;
-	margin-left: -68px;
-	margin-top: 275px;
-	background-color: rgb(96,206,240);
-	background-image: url('../img/play-over.png');
+	/*background-color: rgb(96,206,240);*/
+	background-image: url('../img/play.png');
+	background-repeat: no-repeat;
+	background-position: 0 -80px;
 }
 
 
@@ -300,9 +298,9 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	position: absolute;
 	left: 50%;
 	margin-left: -68px;
-	margin-top: 275px;
-	width: 136px;
-	height: 136px;
+	margin-top: 260px;
+	width: 120px;
+	height: 120px;
 	background-color: #fff;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;

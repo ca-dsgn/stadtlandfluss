@@ -596,6 +596,7 @@ div#singlepageContent {
 	left: 0;
 	right: 0;
 	overflow-y: scroll;
+	background: #fff url('../img/backgrounds/currentBack.jpg') center no-repeat fixed;
 }
 
 div#text {	margin: 0 auto; width: 25%; max-width: 960px; min-width: 720px; padding-top: 100px;}

@@ -10,15 +10,15 @@ class DatabaseException extends Exception {
 class Database {
 
     private $connection;
-<<<<<<< HEAD
+	
     private $servername = "localhost";
     private $mysqluser = "root";
     private $mysqlpasswd = "root";
-=======
+	/*
     private $servername = "db1105.mydbserver.com";
     private $mysqluser = "p167191";
     private $mysqlpasswd = "c4S!#gX4";
->>>>>>> 6b4bdc20daac854478b110a064751d1500649af0
+	*/
    
     /**
      * connect to database

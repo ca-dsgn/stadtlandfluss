@@ -45,7 +45,7 @@ function initialize() {
 			  title:"Bla"
 			});'."\n";
 			
-			print 'google.maps.event.addListener(marker'.$location->Video_ID.', \'click\', function() {
+			print 'google.maps.event.addListener(marker'.$location->Video_ID.', \'mouseover\', function() {
 				
 				alert("My id is '.$location->Video_ID.'");
 			});';

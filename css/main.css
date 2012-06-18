@@ -37,14 +37,18 @@ h2 {
 	margin: -15px 0 7px 0;
 }
 
-p {
+p, td {
 	font-size: 0.9em;
 	margin-bottom: 0.9em;
 	color: rgb(102,102,102);
 	line-height: 1.7em;
 }
 
-
+input[type=text], input[type=submit], input[type=reset], textarea {
+	padding: 3px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
 
 .hidden {
 	display: none;

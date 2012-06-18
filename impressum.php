@@ -66,7 +66,7 @@
 
 		<p>Sollten einzelne Regelungen oder Formulierungen dieses Haftungsausschlusses unwirksam sein oder werden, bleiben die übrigen Regelungen in ihrem Inhalt und ihrer Gültigkeit hiervon unberührt.</p>
 
-		<p>Stand: 03.07.2012</p>
+		<p id="last">Stand: 03.07.2012</p>
 </p>
 		</div>
 	</div>

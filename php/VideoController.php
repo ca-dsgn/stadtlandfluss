@@ -7,6 +7,28 @@ include_once ("database.php");
  * @author ON09 DHBW Mosbach 2012
  */
  
+class Helper {
+
+	private $ret;
+
+	public function array_push_associative(&$arr) {
+	
+	   $args = func_get_args();
+	   
+	   foreach ($args as $arg) {
+		   if (is_array($arg)) {
+			   foreach ($arg as $key => $value) {
+				   $arr[$key] = $value;
+				   $this->ret++;
+			   }
+		   }else{
+			   $arr[$arg] = "";
+		   }
+	   }
+	   return $this->ret;
+	}
+}
+ 
 class VideoController
 {
 	private $dbConnection;
@@ -142,18 +164,35 @@ class VideoController
 			for($i =0; $i <sizeof($resultSetVideos);$i++)
 			{
 				$tmp = $resultSetVideos[$i];
-				unset($resultSetVideos[$i]);
+				
 				$resultSetImages = $dbConnection->queryAssoc("SELECT * FROM images WHERE Video_ID =".$i, $dbConnection->get_database(), "ro");
-				foreach($resultSetImages AS $key => $value)
-				{
-					array_push($tmp,array('image'.$key=>$value));
+				
+				$image_array = Array();
+				
+				$helper = new Helper();
+				
+				foreach($resultSetImages AS $key => $value) {
+					
+					array_push($image_array,array(
+						
+						"Image_ID"=>$value["Image_ID"],
+						"url"=>$value["url"],
+						"alt"=>$value["alt"]
+						)
+					);
 				}
 				
-				array_push($resultSetVideos,$tmp);
-			}
+				for ($i=0; $i<5;$i++) {
 				
+					$helper->array_push_associative($resultSetVideos[$i],array("images" => $image_array));
+				}
+				
+				
+			}
+			
 			return json_encode($resultSetVideos);
 	}
+	
 	
 	/**
 	* returns the locations of the videos	

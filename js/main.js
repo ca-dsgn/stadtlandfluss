@@ -57,11 +57,8 @@ function addItemListeners() {
 		
 		if ($(this).parent().hasClass("is_shown")) {
 			
-			if ($(this).hasClass("ui-sortable-helper")) {
+			if (!$(this).hasClass("ui-sortable-helper") && !$(this).parent().parent().hasClass("ui-draggable-dragging")) {
 				
-				
-			}
-			else {
 				open_box($(this));
 			}
 		}

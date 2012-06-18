@@ -65,8 +65,8 @@
 					</li>
 				</ul>
 				<ul id="footerNav">
-					<li><a href="">Kontakt</a></li>
-					<li><a href="">Impressum</a></li>
+					<li><a href="./kontakt.php">Kontakt</a></li>
+					<li><a href="./impressum.php">Impressum</a></li>
 				</ul>
 				<a href="./about.php" class="logoSmall">Über das Projekt</a>
 			</div>

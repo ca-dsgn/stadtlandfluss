@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Stadt Land Fluss Geschichten</title>
+        <title>StadtLandFluss-Geschichten</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="css/main.css" type="text/css"/>
         <link rel="shortcut icon" href="./favicon.png" type="image/png"/>

@@ -583,11 +583,9 @@ p {
 }
 
 
-/*--- ABOUT.PHP ---*/
+/*--- EINZELSEITEN ---*/
 
-div#about {	margin: 0 auto; width: 25%; max-width: 960px; min-width: 720px; }
-
-iframe#trailer { margin-top: 100px; }
+div#text {	margin: 0 auto; width: 25%; max-width: 960px; min-width: 720px; padding-top: 100px;}
 
 h2.zitat {
 	margin: 30px 0 30px 0;
@@ -597,5 +595,7 @@ h2.zitat {
 	-webkit-border-radius: 10px;
 	border-radius:10px;
 }
+
+div#text h2 { margin-top: 15px; }
 
 p#last { margin-bottom: 100px; }

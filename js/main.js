@@ -347,7 +347,7 @@ function matrixDraggable() {
 				i++;
 			});
 			
-			moving_factor = ($(window).width()-$("#content").width())/2 - ui.offset.left - (y*current_width);
+			moving_factor = ($(window).width()-$("#gridContent .wrapper").width())/2 - ui.offset.left - (y*current_width);
 			
 			if (moving_factor > 0) {
 				

@@ -36,8 +36,20 @@ $(document).ready(function() {
 		set_cookie("playlist","");
 	}
 	playlist = get_cookie("playlist");
+	removeDraggableFromItemsByCookie();
 	
 });
+
+function removeDraggableFromItemsByCookie() {
+	
+	refs = playlist.split("-");
+	
+	for (var i = 0; i < refs.length; i++) {
+		
+		$(".is_shown li[ref='" + refs[i] + "']").css("opacity", 0.5);
+		$(".is_shown li[ref='" + refs[i] + "']").draggable("destroy");
+	}
+}
 
 function addItemListeners() {
 	

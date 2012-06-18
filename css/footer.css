@@ -56,20 +56,27 @@
 	font-size: 16px;
 	margin-bottom: 10px;
 	color: #fff;
+	text-shadow: 1px 1px 1px #656565;
 }
 
 #pageFooterSliderContent p {
 	font-size: 0.8em;
 	margin-bottom: 0.8em;
+	color: #D3DBE1;
 }
 
 #socialList {
-	margin-left: 15px;
+	margin-left: 0;
+	list-style-type: none;
 }
 
 #socialList li {
 	color: #5FCEEF;
 	line-height: 1.3em;
+}
+
+#socialList li a {
+	text-decoration: none;
 }
 
 #socialList li p {
@@ -103,7 +110,8 @@
 	float: right;
 	width: 150px;
 	height: 200px;
-	margin: 20px 0 0 0;	padding-top: 10px;
+	margin: 20px 0 0 0;	
+	padding-top: 10px;
 
 }
 
@@ -114,7 +122,8 @@
 	position: absolute;
 	left: 20px;
 	right: 290px;
-	top: 0;padding-top: 10px;
+	top: 0;
+	padding-top: 10px;
 }
 
 #topList {
@@ -128,16 +137,12 @@
 	height: 40px;
 	border: 1px solid #5b6168;
 	background-color: #656c73;
+	font-size: 0.9em;
 }
 
 #topList li:hover {
 	background-color: #737b83;
 }
-
-
-
-
-
 
 #tellAStory {
 	width: 250px;
@@ -152,25 +157,6 @@
 	margin: 0 0 5px 0;
 	border: 1px solid #5b6168;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*	PAGE_FOOTER ------------------------------------------------------ [BEGIN] --	*/

@@ -589,6 +589,15 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 
 /*--- EINZELSEITEN ---*/
 
+div#singlepageContent {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0;
+	right: 0;
+	overflow-y: scroll;
+}
+
 div#text {	margin: 0 auto; width: 25%; max-width: 960px; min-width: 720px; padding-top: 100px;}
 
 h2.zitat {

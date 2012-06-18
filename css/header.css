@@ -43,23 +43,20 @@
 #pageNav {
 	position: relative;
 	float: right;
-	margin: 10px 0 0 0;
+	margin: 0 0 0 0;
 	list-style-type: none;
 	background-color: #fff;
 	background-image: url('../img/arrowDown.png');
 	background-repeat: no-repeat;
-	background-position: 20px 19px;
+	background-position: 20px 26px;
 	list-style-type: none;
-			-moz-box-shadow:    1px 1px 2px #232527;
-	-webkit-box-shadow: 1px 1px 2px #232527;
-	box-shadow:         1px 1px 2px #232527;
 }
 
 #pageNav li {
 	width: 300px;
-	height: 55px;
+	height: 70px;
 	display: block;
-	line-height: 60px;
+	line-height: 70px;
 	font-size: 14px;
 	color: #232527;
 }
@@ -67,9 +64,10 @@
 #pageNav li a {
 	display: block;
 	width: 300px;
-	height: 55px;
-	line-height: 55px;
+	height: 70px;
+	line-height: 70px;
 	text-indent: 55px;
+	text-decoration: none;
 }
 
 #pageNav ul  {
@@ -102,7 +100,7 @@
 #navPortrait {
 	background-image: url('../img/portrait.png');
 	background-repeat: no-repeat;
-	background-position: 15px 10px;
+	background-position: 15px 16px;
 }
 
 #navPortrait:hover {
@@ -113,7 +111,7 @@
 #navMap {
 	background-image: url('../img/map.png');
 	background-repeat: no-repeat;
-	background-position: 15px 10px;
+	background-position: 15px 16px;
 }
 
 #navMap:hover {
@@ -123,7 +121,7 @@
 #navGrid {
 	background-image: url('../img/grid.png');
 	background-repeat: no-repeat;
-	background-position: 15px 10px;
+	background-position: 15px 16px;
 }
 
 #navGrid:hover {

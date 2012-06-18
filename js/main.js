@@ -36,8 +36,20 @@ $(document).ready(function() {
 		set_cookie("playlist","");
 	}
 	playlist = get_cookie("playlist");
+	removeDraggableFromItemsByCookie();
 	
 });
+
+function removeDraggableFromItemsByCookie() {
+	
+	refs = playlist.split("-");
+	
+	for (var i = 0; i < refs.length; i++) {
+		
+		$(".is_shown li[ref='" + refs[i] + "']").css("opacity", 0.5);
+		$(".is_shown li[ref='" + refs[i] + "']").draggable("destroy");
+	}
+}
 
 function addItemListeners() {
 	
@@ -45,11 +57,8 @@ function addItemListeners() {
 		
 		if ($(this).parent().hasClass("is_shown")) {
 			
-			if ($(this).hasClass("ui-sortable-helper")) {
+			if (!$(this).hasClass("ui-sortable-helper") && !$(this).parent().parent().hasClass("ui-draggable-dragging")) {
 				
-				
-			}
-			else {
 				open_box($(this));
 			}
 		}

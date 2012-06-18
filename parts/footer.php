@@ -50,20 +50,6 @@
 
 
 			<div class="wrapper">
-				<ul id="pageNav">
-					<li><a href="">Ansicht wechseln</a>
-						<ul>
-							<?php
-								if (!isset($_GET["section"])) {
-									$_GET["section"] = "portrait";
-								}
-							?>
-							<li<?php ($_GET["section"] == "portrait" ? print ' class="active"':'')?>><a href="index.php?section=portrait" id="navPortrait">Portrait</a></li>				
-							<li<?php ($_GET["section"] == "map" ? print ' class="active"':'')?>><a href="index.php?section=map" id="navMap">Landkarte</a></li>
-							<li<?php ($_GET["section"] == "grid" ? print ' class="active"':'')?>><a href="index.php?section=grid" id="navGrid">Raster</a></li>
-						</ul>
-					</li>
-				</ul>
 				<ul id="footerNav">
 					<li><a href="./kontakt.php">Kontakt</a></li>
 					<li><a href="./impressum.php">Impressum</a></li>

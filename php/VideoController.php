@@ -135,19 +135,24 @@ class VideoController
 	public function getMatrixViewWithImages($p_iStart, $p_iNum)
 	{		
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, "stadtlandfluss", "ro");
+			$resultSetVideos = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, "stadtlandfluss", "ro");
 			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
-			//$resultSet = $dbConnection->queryAssoc("SELECT * FROM images WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, $dbConnection->get_database(), "ro");
 			
-			for($i =0; $i <sizeof($resultSet);$i++)
+			
+			for($i =0; $i <sizeof($resultSetVideos);$i++)
 			{
-				$tmp = $resultSet[$i];
-				unset($resultSet[$i]);
-				array_push($tmp,array('imagesAsCSV'=>'http://bla1.jpg,http://bla2.jpg,http://bla3.jpg'));
-				array_push($resultSet,$tmp);
+				$tmp = $resultSetVideos[$i];
+				unset($resultSetVideos[$i]);
+				$resultSetImages = $dbConnection->queryAssoc("SELECT * FROM images WHERE Video_ID =".$i, $dbConnection->get_database(), "ro");
+				foreach($resultSetImages AS $key => $value)
+				{
+					array_push($tmp,array('image'.$key=>$value));
+				}
+				
+				array_push($resultSetVideos,$tmp);
 			}
 				
-			return json_encode($resultSet);
+			return json_encode($resultSetVideos);
 	}
 	
 	/**

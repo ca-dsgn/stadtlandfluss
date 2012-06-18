@@ -138,9 +138,8 @@ class VideoController
 			//$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, "stadtlandfluss", "ro");
 			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
 			$resultSet = $dbConnection->queryAssoc("SELECT * FROM images WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, $dbConnection->get_database(), "ro");
-			$decVideos = json_decode($this->getMatrixView($p_iStart,$p_iNum));
 			
-			return json_encode($decVideos+$resultSet);
+			return json_encode($resultSet);
 	}
 	
 	/**
@@ -148,8 +147,9 @@ class VideoController
 	*/
 	public function getAllLocations()
 	{
+	//hier noch name
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("SELECT altitude, longitude, Video_ID FROM videos", $dbConnection->get_database(), "ro");
+			$resultSet = $dbConnection->queryAssoc("SELECT altitude, longitude, title, Video_ID FROM videos", $dbConnection->get_database(), "ro");
 			return json_encode($resultSet);
 	}
 	

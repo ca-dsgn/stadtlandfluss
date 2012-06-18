@@ -11,14 +11,29 @@ class Database {
 
     private $connection;
 	
-    private $servername = "localhost";
-    private $mysqluser = "root";
-    private $mysqlpasswd = "root";
-	/*
-    private $servername = "db1105.mydbserver.com";
-    private $mysqluser = "p167191";
-    private $mysqlpasswd = "c4S!#gX4";
-	*/
+    private $servername;
+    private $mysqluser;
+    private $mysqlpasswd;
+	
+	private $database;
+   
+    public function Database() {
+	
+		if ($_SERVER["SERVER_NAME"] == "localhost") {
+			
+			$this->servername = "localhost";
+			$this->mysqluser = "root";
+			$this->mysqlpasswd = "";
+			$this->database = "stadtlandfluss";
+		}
+		else {
+			
+			$this->servername = "db1105.mydbserver.com";
+			$this->mysqluser = "p167191";
+			$this->mysqlpasswd = "c4S!#gX4";
+			$this->database = "usr_p167191_1";
+		}
+	}
    
     /**
      * connect to database
@@ -97,6 +112,11 @@ class Database {
 		$this->disconnect();
 		return $arr;
     }
+	
+	public function get_database() {
+		
+		return $this->database;
+	}
 	
 }
 ?>

@@ -37,6 +37,13 @@ h2 {
 	margin: -15px 0 7px 0;
 }
 
+h3 {
+	font-weight: 300;
+	font-size: 0.9em;
+	margin-bottom: 5px;
+	color: #252627;
+}
+
 p, td {
 	font-size: 0.9em;
 	margin-bottom: 0.9em;
@@ -60,7 +67,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	max-width: 1280px;
 	height: 100%;
 	position: relative;
-	margin: 0 auto;
+	margin: 0 auto 50px auto;
 }
 
 .floatRight {
@@ -509,33 +516,65 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	overflow-y: scroll;
 }
 
-
-
-
-
+#detailContent h2 {
+	font-weight: 600;
+	font-size: 1.1em;
+	margin: 0 0 5px 0;
+	text-shadow: none;
+	color: #5FCEEF;
+}
 
 #detailVideoPlayer {
-	width: 860px;
-	height: 500px;
-	background-color: black;
-	margin: 90px 0 0 0px;
-	float: left;
+	width: 100%;
+	max-width: 800px;
+	min-width: 400px;
 }
 
-#detailLocationBox {
+
+video {
+    width: 100%;
+}
+
+
+
+#movieDetailBox {
 	position: absolute;
 	top: 90px;
-	left: 860px;
 	right: 0px;
-	min-width: 200px;
-	height: 500px;
-	background-color: blue;
+	width: 220px;
+	height: 480px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
+#movieDetailBox span {
+	display: inline-block;
+	line-height: 25px;
+	width: 210px;
+	padding: 5px;
+	background-color: #fff;
+}
+
+#movieDetailMap {
+	width: 220px;
+	height: 200px;
+	background-color: blue;
+		margin: 0 0 5px 0;
+
+}
+
+/*
 #detailCommentBox {
-	clear: both;
+	position: absolute;
+	top: 490px;
+	left: 0px;
+	right: 0px;
 	background-color: fuchsia;
 }
+*/
+
+
+
 
 .page li,
 .playList ul li {

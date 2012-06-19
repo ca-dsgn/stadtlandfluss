@@ -1,9 +1,8 @@
 <div id="protagonistContent">
+	<div class="backgroundImage"></div>
 	<div class="wrapper">
-		
 		<ul>
-			<li class="previous contentBox">
-				<!--img src="img/portraits/motocross.png" class="picture" /-->
+			<li class="contentBox">
 				<div class="playButton"></div>
 				<div class="description">
 					<hgroup>
@@ -19,7 +18,6 @@
 			</li>
 
 			<li class="current contentBox">
-				<!--img src="img/portraits/motocross.png" class="picture" /-->
 				<div class="playButton"></div>
 				<div class="description">
 					<hgroup>
@@ -34,8 +32,7 @@
 				</div>
 			</li>
 			
-			<li class="following contentBox">
-				<img src="img/portraits/tierheim.png" />
+			<li class="contentBox">
 				<div class="playButton"></div>
 				<div class="description">
 				<hgroup>
@@ -50,9 +47,7 @@
 				</div>
 			</li>
 		</ul>
-
 		<div class="arrowLeft"></div>
 		<div class="arrowRight"></div>
-
 	</div>
 </div>

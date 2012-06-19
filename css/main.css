@@ -7,7 +7,7 @@
 html {
 	font-family: 'Open Sans', sans-serif;	
 	overflow-x: hidden;
-	overflow-y: scroll;
+	overflow-y: hidden;
 }
 body {
 	background-color: #c2d0d6;
@@ -511,6 +511,13 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 /********* Detail-View *********/
 
 #detailContent {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0;
+	right: 0;
+	overflow-y: scroll;
+	background: #fff url('../img/backgrounds/currentBack.jpg') center no-repeat fixed;
 }
 
 #detailContent h2 {
@@ -519,6 +526,13 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	font-weight: normal;
 	text-shadow: 1px 1px #999;
 	font-size: 1.3em;
+}
+
+#detailContent h3 {
+	font-weight: normal;
+	font-size: 0.9em;
+	margin: 20px 0 5px 0;
+	color: #656565;
 }
 
 #detailVideoPlayer {
@@ -646,7 +660,11 @@ div#singlepageContent {
 
 div#text {	margin: 0 auto; width: 25%; max-width: 960px; min-width: 720px; padding-top: 100px;}
 
-h2.zitat {
+blockquote.zitat {
+	font-weight: normal;
+	color: white;
+	text-shadow: 1px 1px #999;
+	font-size: 1.3em;
 	margin: 30px 0 30px 0;
 	background-color: rgba(96,206,240,0.6);
 	padding: 20px;

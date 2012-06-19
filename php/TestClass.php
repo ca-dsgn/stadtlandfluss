@@ -28,4 +28,6 @@ echo $vc->getMatrixView(0,5);
 echo $vc->getNumOfVideos();
 echo ("<br/><br/>All Locations:<br/>");
 echo $vc->getAllLocations();
+echo ("<br/><br/>Get Suggestions from bis Anz:<br/>");
+echo $vc->getSuggestions(0,2);
 ?>

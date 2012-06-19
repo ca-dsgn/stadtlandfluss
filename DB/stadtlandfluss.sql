@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 19. Jun 2012 um 13:59
+-- Erstellungszeit: 19. Jun 2012 um 15:11
 -- Server Version: 5.5.16
 -- PHP-Version: 5.3.8
 
@@ -157,13 +157,21 @@ CREATE TABLE IF NOT EXISTS `stories` (
 
 CREATE TABLE IF NOT EXISTS `suggestions` (
   `name` varchar(255) DEFAULT NULL,
-  `timestamp` varchar(255) DEFAULT NULL,
+  `timestamp` timestamp NULL DEFAULT NULL,
   `story` varchar(4000) DEFAULT NULL,
   `phone` varchar(50) DEFAULT NULL,
   `mail` varchar(80) DEFAULT NULL,
   `Suggestion_ID` bigint(7) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`Suggestion_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Daten für Tabelle `suggestions`
+--
+
+INSERT INTO `suggestions` (`name`, `timestamp`, `story`, `phone`, `mail`, `Suggestion_ID`) VALUES
+('TestName', '2012-06-19 12:22:50', 'lorem ipsum dolem bla bla', '293049324-93/249324', 'afasdfdsf.de', 0),
+('Test1Name', '2012-06-19 12:57:04', 'waads wadw  story', '342324324/324324', '234423erre.com', 1);
 
 -- --------------------------------------------------------
 

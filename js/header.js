@@ -66,58 +66,142 @@ function blow_play() {
 
 function slideShowPositioning() {
 	
-	current_width = $(".contentBox.current").width();
+	current_width = $(".contentBox").width();
 	
-	$(".contentBox.previous").css("left", "-" + current_width + "px");
-	$(".contentBox.following").css("left", current_width + "px");
+	i = -2;
+	
+	$(".contentBox").each(function() {
+		
+		width = i*current_width;
+		
+		$(this).css("left", width + "px");
+		$(this).css("opacity",0);
+		if (width == 0) {
+			
+			$(this).addClass("current");
+			$(this).css("opacity",1);
+			$(this).prev().addClass("prev");
+			$(this).next().addClass("next");
+		}
+		i++;
+	});
 }
 
 function slideshow_move(direction) {
 	
-	current_width = $(".contentBox.current").width();
+	contentBoxWidth = $(".contentBox").width();
 	
 	switch(direction) {
 		
 		case "right":
 		
-			$(".contentBox.following").animate({
-				left: "0",
-				opacity: 1
+			$(".contentBox").each(function() {
+				
+				current_width = parseInt($(this).css("left"));
+				
+				if ($(this).hasClass("current")) {
+					
+					current_width = 0;
+				}
+				
+				if ($(this).hasClass("current")) {
+				
+					$(this).animate({
+						left: (current_width-contentBoxWidth),
+						opacity: 0
+					});
+				}
+				else if ($(this).hasClass("next")) {
+					
+					$(this).animate({
+						left: (current_width-contentBoxWidth),
+						opacity: 1
+					}, function() {
+						
+						$(".contentBox.prev").removeClass("prev");
+						$(".contentBox.current").addClass("prev");
+						$(".contentBox.current").removeClass("current");
+						$(this).addClass("current");
+						$(this).removeClass("next");
+						$(this).next().addClass("next");
+					});
+				}
+				else if ($(this).is(":last-child")) {
+					
+					$(this).animate({
+						left: (current_width-contentBoxWidth),
+						opacity: 0
+					}, function() {
+						
+						$(".contentBox:last-child").after($(".contentBox:first-child").css("left","2560px"));
+					});
+				}
+				else {
+					
+					$(this).animate({
+						left: (current_width-contentBoxWidth),
+						opacity: 0
+					});
+				}
 			});
-			$(".contentBox.current").animate({
-				left: "-" + current_width,
-				opacity: 0
-			});
-			$(".contentBox.previous").remove();
 			
-			$(".contentBox.current").addClass("previous");
-			$(".contentBox.current").removeClass("current");
-			
-			$(".contentBox.following").addClass("current");
-			$(".contentBox.following").removeClass("following");
-			
-			loadContentBox("previous");
+			slidehowDraggable();
 			
 			break;
 		case "left":
 		
-			$(".contentBox.previous").animate({
-				left: "0",
-				opacity: 1
+			$(".contentBox").each(function() {
+				
+				current_width = parseInt($(this).css("left"));
+				
+				if ($(this).hasClass("current")) {
+					
+					current_width = 0;
+				}
+				
+				if ($(this).hasClass("current")) {
+					
+					$(this).animate({
+						left: (current_width+contentBoxWidth),
+						opacity: 0
+					});
+				}
+				else if ($(this).hasClass("prev")) {
+					
+					$(this).animate({
+						left: (current_width+contentBoxWidth),
+						opacity: 1
+					}, function() {
+						
+						$(".contentBox.next").removeClass("next");
+						$(".contentBox.current").addClass("next");
+						$(".contentBox.current").removeClass("current");
+						$(this).addClass("current");
+						$(this).removeClass("prev");
+						$(this).prev().addClass("prev");
+					});
+				}
+				else if ($(this).is(":last-child")) {
+					
+					$(this).animate({
+						left: (current_width+contentBoxWidth),
+						opacity: 0
+					}, function() {
+						
+						$(".contentBox:first-child").before($(".contentBox:last-child").css("left","-2560px"));
+					});
+				}
+				else {
+					$(this).animate({
+						left: (current_width+contentBoxWidth),
+						opacity: 0
+					});
+				}
+				
 			});
-			$(".contentBox.current").animate({
-				left: current_width,
-				opacity: 0
-			});
-			$(".contentBox.following").remove();
+			$(".contentBox:first-child").css("left","-2560px");
 			
-			$(".contentBox.current").addClass("following");
-			$(".contentBox.current").removeClass("current");
-			
-			$(".contentBox.previous").addClass("current");
-			$(".contentBox.previous").removeClass("previous");
-			
-			loadContentBox("following");
+			slidehowDraggable();
 			
 			break;
 	}

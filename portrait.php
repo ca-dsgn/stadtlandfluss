@@ -3,7 +3,7 @@
 		
 		<ul>
 			<li class="previous contentBox">
-				<img src="img/portraits/motocross.png" class="picture" />
+				<!--img src="img/portraits/motocross.png" class="picture" /-->
 				<div class="playButton"></div>
 				<div class="description">
 					<hgroup>
@@ -19,7 +19,7 @@
 			</li>
 
 			<li class="current contentBox">
-				<img src="img/portraits/motocross.png" class="picture" />
+				<!--img src="img/portraits/motocross.png" class="picture" /-->
 				<div class="playButton"></div>
 				<div class="description">
 					<hgroup>

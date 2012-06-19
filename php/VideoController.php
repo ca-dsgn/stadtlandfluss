@@ -240,14 +240,28 @@ class VideoController
 	 *@param story
 	 *@param phone
 	 *@param mail
-	*/
-	
+	*/	
 	public function createSuggestion($p_name, $p_story, $p_phone, $p_mail)
 	{
 		$dbConnection = new Database();
 		$affectedRows = $dbConnection->queryInsertion("INSERT INTO suggestions (name, timestamp, story, phone, mail) VALUES ('".$p_name."',NOW(),'".$p_story."','".$p_phone."','".$p_mail."')", "stadtlandfluss", "ro");
 		return $affectedRows;		
 	}
+	
+	/*
+	 * creates a new story
+	 *@param title
+	 *@param description
+	 *@param visible binary 0 or 1 -> 1 for visible; 0 for invisible
+	*/	
+	public function createStory($p_title, $p_description, $p_visible)
+	{
+		$dbConnection = new Database();
+		$affectedRows = $dbConnection->queryInsertion("INSERT INTO stories (title, description, visible) VALUES ('".$p_title."','".$p_description."','".$p_visible."')", "stadtlandfluss", "ro");
+		return $affectedRows;		
+	}
+	
+	
 	
 	/*
 	 * returns the suggestion to the given ID

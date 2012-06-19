@@ -42,5 +42,6 @@ echo ("<br/><br/>Available suggestions:<br/>");
 echo $vc->getNumOfSuggestions();
 echo ("<br/><br/>Available stories:<br/>");
 echo $vc->getNumOfStories();
-
+echo ("<br/><br/>Creating story:<br/>");
+echo $vc->createStory('Der, der niemals heimging', 'lorem ipsum...', 1);
 ?>

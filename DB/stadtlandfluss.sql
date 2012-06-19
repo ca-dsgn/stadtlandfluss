@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 19. Jun 2012 um 16:54
+-- Erstellungszeit: 19. Jun 2012 um 17:45
 -- Server Version: 5.5.16
 -- PHP-Version: 5.3.8
 
@@ -146,17 +146,19 @@ CREATE TABLE IF NOT EXISTS `stories` (
   `description` varchar(2000) DEFAULT NULL,
   `title` varchar(200) DEFAULT NULL,
   `votes` bigint(7) unsigned zerofill DEFAULT NULL,
-  `show` binary(1) DEFAULT '0',
+  `visible` binary(1) DEFAULT '0',
   PRIMARY KEY (`Story_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Daten für Tabelle `stories`
 --
 
-INSERT INTO `stories` (`Story_ID`, `description`, `title`, `votes`, `show`) VALUES
+INSERT INTO `stories` (`Story_ID`, `description`, `title`, `votes`, `visible`) VALUES
 (0, 'lorem Ipsumkpdsffsd', 'Der alte Mann am Baum', 0000001, '0'),
-(1, 'Und er flog in den Neckar....', 'Der verlorene Reifen', 0000018, '0');
+(1, 'Und er flog in den Neckar....', 'Der verlorene Reifen', 0000029, '0'),
+(5, 'lorem ipsum...', 'Der, der niemals heimging', NULL, '1'),
+(6, 'lorem ipsum...', 'Der, der niemals heimging', NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -172,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `suggestions` (
   `mail` varchar(80) DEFAULT NULL,
   `Suggestion_ID` bigint(7) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`Suggestion_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Daten für Tabelle `suggestions`
@@ -183,7 +185,18 @@ INSERT INTO `suggestions` (`name`, `timestamp`, `story`, `phone`, `mail`, `Sugge
 ('name', '2012-06-19 14:46:18', 'story', 'phone', 'mail', 7),
 ('name', '2012-06-19 14:46:26', 'story', 'phone', 'mail', 8),
 ('name', '2012-06-19 14:52:26', 'story', 'phone', 'mail', 9),
-('name', '2012-06-19 14:52:49', 'story', 'phone', 'mail', 10);
+('name', '2012-06-19 14:52:49', 'story', 'phone', 'mail', 10),
+('name', '2012-06-19 15:03:09', 'story', 'phone', 'mail', 11),
+('name', '2012-06-19 15:16:03', 'story', 'phone', 'mail', 12),
+('name', '2012-06-19 15:18:10', 'story', 'phone', 'mail', 13),
+('name', '2012-06-19 15:18:26', 'story', 'phone', 'mail', 14),
+('name', '2012-06-19 15:18:39', 'story', 'phone', 'mail', 15),
+('name', '2012-06-19 15:37:38', 'story', 'phone', 'mail', 16),
+('name', '2012-06-19 15:38:21', 'story', 'phone', 'mail', 17),
+('name', '2012-06-19 15:41:09', 'story', 'phone', 'mail', 18),
+('name', '2012-06-19 15:41:53', 'story', 'phone', 'mail', 19),
+('name', '2012-06-19 15:45:27', 'story', 'phone', 'mail', 20),
+('name', '2012-06-19 15:45:37', 'story', 'phone', 'mail', 21);
 
 -- --------------------------------------------------------
 

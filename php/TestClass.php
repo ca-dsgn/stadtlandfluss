@@ -29,9 +29,18 @@ echo $vc->getNumOfVideos();
 echo ("<br/><br/>All Locations:<br/>");
 echo $vc->getAllLocations();
 echo ("<br/><br/>Get Suggestions from bis Anz:<br/>");
-echo $vc->getSuggestions(0,2);
+echo $vc->getSuggestions(0,8);
 echo "<br/>Erfolgreich hochgezählte Datensätze: ".$vc->incrementVote(1);
 echo "<br/>Erfolgreich erstellte suggestions: ".$vc->createSuggestion('name','story','phone','mail');
 echo ("<br/><br/>Show suggestion with ID 7:<br/>");
 echo $vc->getSuggestion(7);
+echo ("<br/><br/>Show the highest suggestion ID<br/>");
+echo $vc->getMaxNumberOfSuggestions();
+echo ("<br/><br/>Show the highest story ID<br/>");
+echo $vc->getMaxNumberOfStories();
+echo ("<br/><br/>Available suggestions:<br/>");
+echo $vc->getNumOfSuggestions();
+echo ("<br/><br/>Available stories:<br/>");
+echo $vc->getNumOfStories();
+
 ?>

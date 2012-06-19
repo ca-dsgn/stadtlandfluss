@@ -70,7 +70,7 @@ function slideShowPositioning() {
 	
 	i = -2;
 	
-	$(".contentBox").each(function() {
+	$("#protagonistContent .contentBox").each(function() {
 		
 		width = i*current_width;
 		

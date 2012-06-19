@@ -310,18 +310,15 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 .playButtonEcho {
 	position: absolute;
 	left: 50%;
-	margin-left: -68px;
-	margin-top: 260px;
-	width: 120px;
-	height: 120px;
+	margin-left: -52px;
+	margin-top: 265px;
+	width: 100px;
+	height: 100px;
 	background-color: #fff;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
 }
-
-
-
 
 
 .arrowLeft,

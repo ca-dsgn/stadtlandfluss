@@ -1,48 +1,9 @@
 <?php
 	include_once ("php/VideoController.php");
+	include_once ("php/helper.php");
 			
 	$vc = new VideoController();
-	
-	function getVideoTemplateById($id) {
-								
-		global $vc;
-		
-		$element = json_decode($vc->getVideo($id));
-		
-		return getTemplate($element[0]->Video_ID,$element[0]->title,$element[0]->description,NULL);
-	}
-	
-	function getVideoTemplate($id,$title,$description,$images) {
-		
-		return getTemplate($id,$title,$description,$images);
-	}
-	
-	function getTemplate($id,$title,$description,$images) {
-		
-		$html = '<li class="item" ref="'.$id.'">';
-		$html.= '<div class="box">';
-		$html.= '<img src="'.$images[0]->url.'" alt="'.$images[0]->alt.'"/>';
-		$html.= '</div>';
-		$html.= '<div class="images">';
-		$html.= '<div class="top">';
-		$html.= '<img src="'.$images[1]->url.'" alt="'.$images[1]->alt.'"/>';
-		$html.= '</div>';
-		$html.= '<div class="bottom">';
-		$html.= '<img src="'.$images[2]->url.'" alt="'.$images[2]->alt.'"/>';
-		$html.= '</div>';
-		$html.= '</div>';
-		$html.= '<div class="info">';
-		$html.= '<div class="info_box">';
-		$html.= '<h2>'.$title.'</h2>';
-		$html.= '<p>'.$description.'</p>';
-		$html.= '<a>Link</a>';
-		$html.= '<a>Link</a>';
-		$html.= '</div>';
-		$html.= '</div>';
-		$html.= '</li>';
-		
-		return $html;
-	}
+	$helper = new Helper();
 ?>
 
 <div id="gridContent">
@@ -85,7 +46,7 @@
 							
 							foreach($grid_elements as $element) {
 								
-								print getVideoTemplate($element->Video_ID,$element->title,$element->description,$element->images);
+								print $helper->getVideoTemplate($element->Video_ID,$element->title,$element->description,$element->images);
 							}
 		            		print "</ul>";
 						}
@@ -103,7 +64,7 @@
                         
                         foreach ($ids as $id) {
                         
-                            $playlist .= getVideoTemplateById($id);
+                            $playlist .= $helper->getVideoTemplateById($id);
                         }
                         
                     }

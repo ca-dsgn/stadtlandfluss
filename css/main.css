@@ -218,6 +218,11 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	overflow: hidden;
 }
 
+.portraitIMG {
+	position: absolute;
+	bottom: -200px;
+}
+
 #protagonistContent .backgroundImage {
 	position: absolute;
 	top: 0px;

@@ -525,16 +525,13 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 }
 
 #detailVideoPlayer {
-	width: 100%;
-	max-width: 800px;
-	min-width: 400px;
+	position: absolute;
+	right: 240px;
+	left: 0px;
+	top: 90px;
+	height: 500px;
+	background-color: black;
 }
-
-
-video {
-    width: 100%;
-}
-
 
 
 #movieDetailBox {
@@ -563,16 +560,32 @@ video {
 
 }
 
-/*
-#detailCommentBox {
+#moreDetailsBox {
 	position: absolute;
-	top: 490px;
+	top: 590px;
 	left: 0px;
 	right: 0px;
-	background-color: fuchsia;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin-bottom: 50px;
 }
-*/
 
+#moreDetailsBoxContent {
+	position: absolute;
+	top: 590px;
+	left: 0px;
+	right: 0px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin-bottom: 50px;
+}
+
+#movieCommentsBox {
+	float: right;
+	margin-bottom: 50px;	
+	width: 50%;
+	padding: 10px;
+}
 
 
 

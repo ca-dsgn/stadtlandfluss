@@ -16,10 +16,22 @@
 			<div id="movieDetailMap"></div>
 			<h3>ein Film von:</h3>
 			<p><span>Elina Wetsch, Lisa Simon, Christian Albert, Sebastian Lauer, René Preußer</span></p>
-
 		</div>
 		
-		<div id="detailCommentBox"><div id="disqus_thread"></div>
+    <div id="moreDetailsBox">
+    	<div id="moreDetailsBoxContent">
+	    	<h2>Film-Informationen</h2>
+	    	<p>asdasd<br/>asdasd<br/>asdasd<br/>asdasd<br/>asdasd<br/>asdasd<br/>asdasd<br/>asdasd<br/></p>
+	    	<h3>Lorem ipsum</h3>
+	    	<p>asdasd<br/>asdasd</p>
+	    	<h3>Lorem ipsum</h3>
+	    	<p>asdasd<br/>asdasd</p>
+    	</div>
+		
+		
+    	<div id="movieCommentsBox">
+		
+		<div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'stadtlandflussgeschichten'; // required: replace example with your forum shortname
@@ -32,7 +44,15 @@
             })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+    	</div>
+        
+        
+        
+      
+    </div>
 		
 		
 	</div>

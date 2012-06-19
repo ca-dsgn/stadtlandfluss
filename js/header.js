@@ -85,6 +85,11 @@ function slideShowPositioning() {
 		}
 		i++;
 	});
+	
+	$(".backgroundImage").each(function() {
+		
+		
+	});
 }
 
 function slideshow_move(direction) {
@@ -133,7 +138,7 @@ function slideshow_move(direction) {
 						opacity: 0
 					}, function() {
 						
-						$(".contentBox:last-child").after($(".contentBox:first-child").css("left","2560px"));
+						$(".contentBox:last-child").after($(".contentBox:first-child").css("left",(contentBoxWidth*2) + "px"));
 					});
 				}
 				else {
@@ -188,7 +193,7 @@ function slideshow_move(direction) {
 						opacity: 0
 					}, function() {
 						
-						$(".contentBox:first-child").before($(".contentBox:last-child").css("left","-2560px"));
+						$(".contentBox:first-child").before($(".contentBox:last-child").css("left","-" + (contentBoxWidth*2) + "px"));
 					});
 				}
 				else {

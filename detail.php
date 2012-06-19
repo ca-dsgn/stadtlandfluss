@@ -1,11 +1,29 @@
+<?php
+	
+	include_once ("php/VideoController.php");
+	include_once ("php/helper.php");
+			
+	$vc = new VideoController();
+	$helper = new Helper();
+	
+	$Video_ID = $_GET["video_id"];
+	
+	$element = json_decode($vc->getVideoWithImages($Video_ID));
+	
+	print_r($element);
+	
+?>
 <div id="detailContent">
 	<div class="wrapper">
 		
 		<div id="detailVideoPlayer">
-			<video loop="" autoplay="" tabindex="0">
-				<source type="video/mp4" src="01.mp4"></source>
-				<source type="video/webm" src="01.webm"></source>
-			</video>	
+			<object>
+            	<param value="<?php print $element[0]->source?>" name="movie">
+                <param value="opaque" name="wmode">
+                <param value="true" name="allowFullScreen">
+                <param value="always" name="allowScriptAccess">
+                <embed allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="<?php print $element[0]->source?>" wmode="opaque">
+            </object>
 		</div>
 		
 		<div id="movieMetaBox">

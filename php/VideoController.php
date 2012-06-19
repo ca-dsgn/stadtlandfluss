@@ -229,8 +229,6 @@ class VideoController
 	public function getSuggestion($p_ID)
 	{
 		
-	}
-	
-	
+	}	
 }
 ?>

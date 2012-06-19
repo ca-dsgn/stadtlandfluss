@@ -113,6 +113,20 @@ class Database {
 		return $arr;
     }
 	
+	/**
+     * Insertion or Update queries
+     * @param string $query the querytext
+	 * @param string $dbName name of the database
+	 * @param string $mode null or ro for readonly
+	 * @return affected rows! If return = 0 -> there had been no changes in DB or -1 for failure
+     */
+    public function queryInsertion($query, $dbName, $mode) 
+	{
+		$this->connect($dbName, $mode);
+		mysql_query($query);
+		return mysql_affected_rows();
+    }
+	
 	public function get_database() {
 		
 		return $this->database;

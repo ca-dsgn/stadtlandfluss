@@ -47,7 +47,27 @@ function initialize() {
 			
 			print 'google.maps.event.addListener(marker'.$location->Video_ID.', \'click\', function() {
 				
-				console.log("My id is '.$location->Video_ID.'");
+				$.ajax({
+						
+					type: "POST",
+					
+					data: "action=getVideoById&id='.$location->Video_ID.'",
+					
+					url: "php/AjaxController.php",
+					
+					success: function(data) {
+						
+						data = data.replace(/li/g,"div");
+						
+						$("body").append(data);
+						
+						$(".item").css("position", "absolute");
+						$(".item").css("left",($(window).width()/2) + "px");
+						$(".item").css("top",($(window).height()/2) -100 + "px");
+						
+						open_box($(".item"));
+					}
+				});
 				
 				map.panTo(location'.$location->Video_ID.');
 				

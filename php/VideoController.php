@@ -10,7 +10,7 @@ include_once ("helper.php");
 class VideoController
 {
 	private $dbConnection;
-	private $idMax; //the maximum ID of the database
+	private $idMax; //the maximum video ID of the database
 	private $defaultVideoSource = "./videos/defaultVideo.mp4";
 	private $helper;
 	
@@ -224,12 +224,14 @@ class VideoController
 	}
 	
 	/*
-	 * increases the number of votes 4 a given suggestion ID
+	 * increases the number of votes 4 a given story ID
 	*/
 	
-	public function incrementVote($p_SuggestionID)
+	public function incrementVote($p_storyID)
 	{
-		//###
+		$dbConnection = new Database();
+		$affectedRows = $dbConnection->queryInsertion("UPDATE stories SET votes = votes+1 WHERE Story_ID = ".$p_storyID, "stadtlandfluss", "ro");
+		return $affectedRows;
 	}
 	
 	/*
@@ -238,12 +240,28 @@ class VideoController
 	 *@param story
 	 *@param phone
 	 *@param mail
-	*/
-	
+	*/	
 	public function createSuggestion($p_name, $p_story, $p_phone, $p_mail)
 	{
-		//###
+		$dbConnection = new Database();
+		$affectedRows = $dbConnection->queryInsertion("INSERT INTO suggestions (name, timestamp, story, phone, mail) VALUES ('".$p_name."',NOW(),'".$p_story."','".$p_phone."','".$p_mail."')", "stadtlandfluss", "ro");
+		return $affectedRows;		
 	}
+	
+	/*
+	 * creates a new story
+	 *@param title
+	 *@param description
+	 *@param visible binary 0 or 1 -> 1 for visible; 0 for invisible
+	*/	
+	public function createStory($p_title, $p_description, $p_visible)
+	{
+		$dbConnection = new Database();
+		$affectedRows = $dbConnection->queryInsertion("INSERT INTO stories (title, description, visible) VALUES ('".$p_title."','".$p_description."','".$p_visible."')", "stadtlandfluss", "ro");
+		return $affectedRows;		
+	}
+	
+	
 	
 	/*
 	 * returns the suggestion to the given ID
@@ -251,7 +269,50 @@ class VideoController
 	
 	public function getSuggestion($p_ID)
 	{
-		//###
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM suggestions WHERE Suggestion_ID = ".$p_ID, $dbConnection->get_database(), "ro");
+			return json_encode($resultSet);
 	}	
+	
+	
+	/**
+	* returns the max ID of suggestions
+	*/
+	public function getMaxNumberOfSuggestions()
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->query("Select MAX(Suggestion_ID) from suggestions", $dbConnection->get_database(), "ro");
+		return $resultSet[0];
+	}
+	
+	/**
+	* returns the number of available suggestions
+	*/
+	public function getNumOfSuggestions()
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->query("SELECT COUNT(Suggestion_ID) FROM suggestions", $dbConnection->get_database(), "ro");
+		return $resultSet[0];
+	}
+	
+	/**
+	* returns the max ID of stories
+	*/
+	public function getMaxNumberOfStories()
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->query("Select MAX(Story_ID) from stories", $dbConnection->get_database(), "ro");
+		return $resultSet[0];
+	}
+	
+	/**
+	* returns the number of available stories
+	*/
+	public function getNumOfStories()
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->query("SELECT COUNT(Story_ID) FROM stories", $dbConnection->get_database(), "ro");
+		return $resultSet[0];
+	}
 }
 ?>

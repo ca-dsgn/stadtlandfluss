@@ -51,9 +51,8 @@ class Helper {
 		$html.= '<div class="info">';
 		$html.= '<div class="info_box">';
 		$html.= '<h2>'.$title.'</h2>';
-		$html.= '<p>'.$description.'</p>';
-		$html.= '<a>Link</a>';
-		$html.= '<a>Link</a>';
+		$html.= '<p>'.substr($description,0,150).' [...]</p>';
+		$html.= '<a href="index.php?section=detail&video_id='.$id.'">Weitere Infos</a>';
 		$html.= '</div>';
 		$html.= '</div>';
 		$html.= '</li>';

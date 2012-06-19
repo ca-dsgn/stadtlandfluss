@@ -2,18 +2,15 @@
 	<div class="wrapper">
 		
 		<div id="detailVideoPlayer">
-			<video loop="" autoplay="" tabindex="0">
-				<source type="video/mp4" src="01.mp4"></source>
-				<source type="video/webm" src="01.webm"></source>
-			</video>	
+			<iframe width="100%" height="100%" src="http://www.youtube.com/embed/qqLaRYxJeno?rel=0" frameborder="0" allowfullscreen></iframe>	
 		</div>
 		
 		<div id="movieMetaBox">
 			<h2>Film-Informationen</h2>
 			<h3>Protagonist:</h3>
 			<p><span>Uli Körber</span></p>
-			<h3>Wo war das?:</h3>
-			<div id="movieDetailMap"></div>
+			<h3>Wo war das?</h3>
+			<div id="movieDetailMap"><iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.de/maps?q=Mosbach&amp;ie=UTF8&amp;hq=&amp;hnear=Mosbach,+Karlsruhe,+Baden-W%C3%BCrttemberg&amp;ll=49.348915,9.129383&amp;spn=0.131958,0.363579&amp;t=h&amp;z=12&amp;output=embed"></iframe></div>
 			<h3>ein Film von:</h3>
 			<p><span>Elina Wetsch, Lisa Simon, Christian Albert, Sebastian Lauer, René Preußer</span></p>
 		</div>
@@ -25,7 +22,7 @@
 	    	<h3>Lorem ipsum</h3>
 	    	<p>asdasd<br/>asdasd</p>
 	    	<h3>Lorem ipsum</h3>
-	    	<p>asdasd<br/>asdasd</p>
+	    	<p id="last">asdasd<br/>asdasd</p>
     	</div>
 		
 		

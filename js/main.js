@@ -119,7 +119,7 @@ function addItemListeners() {
 
 function removeItemListeners() {
 	
-	$(".page .item").unbind("mouseup");
+	$(".page .item").die("mouseup");
 }
 
 function resizeGridByWindowWidth() {
@@ -159,7 +159,7 @@ function set_cookie(name, value) {
 
 function open_box(elem) {
 	
-	if ($(elem).parent().hasClass("page")) {
+	if ($(elem).parent().hasClass("page") || $(elem).parent()[0].tagName == "BODY") {
 	
 		$(elem).addClass("open");
 		$(elem).css("z-index","550");
@@ -200,6 +200,14 @@ function close_box(elem) {
 		$(elem).find(".images").css("z-index","auto");
 		$(elem).find(".box").css("z-index","auto");
 	});
+	//IF WE ARE ON MAPS
+	if ((elem).parent()[0].tagName == "BODY") {
+		
+		$(elem).fadeOut(300, function() {
+			
+			$(this).remove();
+		});
+	}
 }
 
 function changeObjectsInGrid(num) {

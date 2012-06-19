@@ -1,6 +1,7 @@
 <?php
 
 	include_once("VideoController.php");
+	include_once("helper.php");
 
 /**
  * Class AjaxController
@@ -14,11 +15,11 @@ if (isset($_POST["action"])) {
 		
 		case "getVideoById":
 		
-			$_POST["id"] = $Video_ID;
+			$Video_ID = $_POST["id"];
 			
-			
-		
-			$videoController = new VideoController();
+			$vc = new VideoController();
+			$helper = new Helper();
+			print $helper->getVideoTemplateById($Video_ID);
 			break;
 		
 		default: 

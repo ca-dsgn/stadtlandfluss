@@ -7,8 +7,8 @@
 html {
 	font-family: 'Open Sans', sans-serif;	
 	overflow-x: hidden;
+	overflow-y: scroll;
 }
-
 body {
 	background-color: #c2d0d6;
 	color: #cbcbcb;
@@ -511,13 +511,6 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 /********* Detail-View *********/
 
 #detailContent {
-	position: absolute;
-	top: 0px;
-	bottom: 0px;
-	left: 0;
-	right: 0;
-	overflow-x: hidden;
-	overflow-y: scroll;
 }
 
 #detailContent h2 {

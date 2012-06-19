@@ -23,6 +23,7 @@ class VideoController
 		$this->helper = new Helper();
 	}
 	
+	
 	/**
 	* returns the number of available videos
 	*/
@@ -144,22 +145,22 @@ class VideoController
 	}
 	
 	/**
-	* returns a video array with the given number of videos	beginning with the given startIndex
+	* returns a video array from index param1 to index param2
 	*/
-	public function getMatrixView($p_iStart, $p_iNum)
+	public function getMatrixView($p_iStart, $p_iEnd)
 	{		
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iStart+$p_iNum, "stadtlandfluss", "ro");
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iEnd, "stadtlandfluss", "ro");
 			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
 			//$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= ".$p_iStart." and videos.Video_ID <".$p_iNum, $dbConnection->get_database(), "ro");
 			return json_encode($resultSet);
 	}
 	
 	
-	public function getMatrixViewWithImages($p_iStart, $p_iNum)
+	public function getMatrixViewWithImages($p_iStart, $p_iEnd)
 	{		
 			$dbConnection = new Database();
-			$resultSetVideos = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iStart+$p_iNum, "stadtlandfluss", "ro");
+			$resultSetVideos = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iEnd, "stadtlandfluss", "ro");
 			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
 			
 			for($i =0; $i <sizeof($resultSetVideos);$i++)
@@ -212,15 +213,14 @@ class VideoController
 	}
 	
 	/*
-	 * returns the given number of suggestions as JSON starting at the given index
+	 * returns the suggestions from startID param1 to endID param2
 	*/
 	
-	public function getSuggestions($p_iStart, $p_iNum)
+	public function getSuggestions($p_iStart, $p_iEnd)
 	{
-		//###
-		//Select * from suggestions WHERE Suggestion_ID >= 0 AND Suggestion_ID <5
-		
-		
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM suggestions WHERE Suggestion_ID >= ".$p_iStart." and Suggestion_ID <".$p_iEnd, "stadtlandfluss", "ro");
+			return json_encode($resultSet);
 	}
 	
 	/*

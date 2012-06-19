@@ -280,30 +280,30 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 .playButton {
 	position: absolute;
 	left: 50%;
-	margin-left: -63px;
-	margin-top: 280px;
-	/*background-color: rgb(35,37,39);*/
+	margin-left: -50px;
+	margin-top: 265px;
+	background-color: rgb(35,37,39);
 
-	background-image: url('../img/play.png');
+/*	background-image: url('../img/play.png');
 	background-repeat: no-repeat;
 	background-position: 0 0;	
-	
+	*/
 	width: 100px;
-	height: 80px;
+	height: 100px;
 	cursor: pointer;
-	/*-webkit-border-radius: 50%;
+	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
-	border-radius: 50%;	*/
+	border-radius: 50%;	
 	z-index: 500;
 	
 
 }
 
 .playButton:hover {
-	/*background-color: rgb(96,206,240);*/
-	background-image: url('../img/play.png');
+	background-color: rgb(96,206,240);
+/*	background-image: url('../img/play.png');
 	background-repeat: no-repeat;
-	background-position: 0 -80px;
+	background-position: 0 -80px;*/
 }
 
 

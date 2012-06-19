@@ -31,4 +31,7 @@ echo $vc->getAllLocations();
 echo ("<br/><br/>Get Suggestions from bis Anz:<br/>");
 echo $vc->getSuggestions(0,2);
 echo "<br/>Erfolgreich hochgezählte Datensätze: ".$vc->incrementVote(1);
+echo "<br/>Erfolgreich erstellte suggestions: ".$vc->createSuggestion('name','story','phone','mail');
+echo ("<br/><br/>Show suggestion with ID 7:<br/>");
+echo $vc->getSuggestion(7);
 ?>

@@ -244,7 +244,9 @@ class VideoController
 	
 	public function createSuggestion($p_name, $p_story, $p_phone, $p_mail)
 	{
-		//###
+		$dbConnection = new Database();
+		$affectedRows = $dbConnection->queryInsertion("INSERT INTO suggestions (name, timestamp, story, phone, mail) VALUES ('".$p_name."',NOW(),'".$p_story."','".$p_phone."','".$p_mail."')", "stadtlandfluss", "ro");
+		return $affectedRows;		
 	}
 	
 	/*
@@ -253,7 +255,9 @@ class VideoController
 	
 	public function getSuggestion($p_ID)
 	{
-		//###
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM suggestions WHERE Suggestion_ID = ".$p_ID, $dbConnection->get_database(), "ro");
+			return json_encode($resultSet);
 	}	
 }
 ?>

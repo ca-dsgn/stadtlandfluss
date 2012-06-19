@@ -20,9 +20,13 @@ function footerJumpEveryTime() {
 	
 	$("body").everyTime(5000, function() {
 		
-		if ($("#pageFooterSlider").attr("class") == "ui-draggable") {
+		if ($("#pageFooterSlider").attr("class").indexOf("is_down") != -1) {
 			
 			footerJump();
+		}
+		if ($("#pageFooterSlider").attr("class").indexOf("is_up") != -1) {
+			
+			
 		}
 	});
 }

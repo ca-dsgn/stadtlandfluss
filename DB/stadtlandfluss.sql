@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 19. Jun 2012 um 15:50
+-- Erstellungszeit: 19. Jun 2012 um 16:54
 -- Server Version: 5.5.16
 -- PHP-Version: 5.3.8
 
@@ -146,16 +146,17 @@ CREATE TABLE IF NOT EXISTS `stories` (
   `description` varchar(2000) DEFAULT NULL,
   `title` varchar(200) DEFAULT NULL,
   `votes` bigint(7) unsigned zerofill DEFAULT NULL,
+  `show` binary(1) DEFAULT '0',
   PRIMARY KEY (`Story_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Daten für Tabelle `stories`
 --
 
-INSERT INTO `stories` (`Story_ID`, `description`, `title`, `votes`) VALUES
-(1, 'lorem Ipsumkpdsffsd', 'Der alte Mann am Baum', 0000000),
-(2, 'Und er flog in den Neckar....', 'Der verlorene Reifen', 0000000);
+INSERT INTO `stories` (`Story_ID`, `description`, `title`, `votes`, `show`) VALUES
+(0, 'lorem Ipsumkpdsffsd', 'Der alte Mann am Baum', 0000001, '0'),
+(1, 'Und er flog in den Neckar....', 'Der verlorene Reifen', 0000018, '0');
 
 -- --------------------------------------------------------
 
@@ -171,15 +172,18 @@ CREATE TABLE IF NOT EXISTS `suggestions` (
   `mail` varchar(80) DEFAULT NULL,
   `Suggestion_ID` bigint(7) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`Suggestion_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Daten für Tabelle `suggestions`
 --
 
 INSERT INTO `suggestions` (`name`, `timestamp`, `story`, `phone`, `mail`, `Suggestion_ID`) VALUES
-('TestName', '2012-06-19 12:22:50', 'lorem ipsum dolem bla bla', '293049324-93/249324', 'afasdfdsf.de', 0),
-('Test1Name', '2012-06-19 12:57:04', 'waads wadw  story', '342324324/324324', '234423erre.com', 1);
+('name1', '2012-06-19 14:39:32', 'adda', '234324-324324', 'adw@asdads.de', 6),
+('name', '2012-06-19 14:46:18', 'story', 'phone', 'mail', 7),
+('name', '2012-06-19 14:46:26', 'story', 'phone', 'mail', 8),
+('name', '2012-06-19 14:52:26', 'story', 'phone', 'mail', 9),
+('name', '2012-06-19 14:52:49', 'story', 'phone', 'mail', 10);
 
 -- --------------------------------------------------------
 

@@ -23,7 +23,7 @@ h1 {
 	font-weight: 300;
 	margin-bottom: 15px;
 	letter-spacing: -1px;
-	font-size: 2em;
+	font-size: 1.8em;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	line-height: 1.2em;
@@ -157,6 +157,10 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	background-repeat: no-repeat;
 	background-position: 10px 9px;
 	background-color: white;
+	-moz-box-shadow: 1px 1px 1px #999;
+	-webkit-box-shadow: 1px 1px 1px #999;
+	box-shadow: 1px 1px 1px #999;
+	text-decoration: none;
 }
 
 .infoLink:hover {
@@ -221,6 +225,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 .portraitIMG {
 	position: absolute;
 	bottom: -200px;
+	left: -60px;
 }
 
 #protagonistContent .backgroundImage {
@@ -282,10 +287,10 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 
 #protagonistContent .description {
 	position: absolute;
-	bottom: 250px;
+	bottom: 270px;
 	left: 50%;
 	margin-left: 40px;
-	width: 390px;
+	width: 400px;
 	line-height: 1.5em;
 }
 
@@ -298,16 +303,16 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 .playButton {
 	position: absolute;
 	left: 50%;
-	margin-left: -50px;
-	margin-top: 265px;
+	margin-left: -65px;
+	margin-top: 275px;
 	background-color: rgb(35,37,39);
 
 /*	background-image: url('../img/play.png');
 	background-repeat: no-repeat;
 	background-position: 0 0;	
 	*/
-	width: 100px;
-	height: 100px;
+	width: 130px;
+	height: 130px;
 	cursor: pointer;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;

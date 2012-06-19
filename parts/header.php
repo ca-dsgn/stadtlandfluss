@@ -24,7 +24,7 @@
             <a href="./" class="logoBig">StadtLandFluss-Geschichten</a>
 
         <ul id="pageNav">
-					<li><a href="">Ansicht wechseln</a>
+					<li><a href="">Menü</a>
 						<ul>
 							<?php
 								if (!isset($_GET["section"])) {

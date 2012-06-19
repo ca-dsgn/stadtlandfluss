@@ -534,7 +534,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 }
 
 
-#movieDetailBox {
+#movieMetaBox {
 	position: absolute;
 	top: 90px;
 	right: 0px;
@@ -544,7 +544,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
-#movieDetailBox span {
+#movieMetaBox span {
 	display: inline-block;
 	line-height: 25px;
 	width: 210px;
@@ -560,7 +560,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 
 }
 
-#moreDetailsBox {
+#movieInfoBox {
 	position: absolute;
 	top: 590px;
 	left: 0px;
@@ -570,21 +570,14 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	margin-bottom: 50px;
 }
 
-#moreDetailsBoxContent {
-	position: absolute;
-	top: 590px;
-	left: 0px;
-	right: 0px;
-	padding: 10px;
-	background-color: rgba(255, 255, 255, 0.5);
-	margin-bottom: 50px;
+#movieDetailBox {
+	float: left;
+	width: 50%;
 }
 
 #movieCommentsBox {
 	float: right;
-	margin-bottom: 50px;	
 	width: 50%;
-	padding: 10px;
 }
 
 

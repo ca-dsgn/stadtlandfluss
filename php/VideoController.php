@@ -10,7 +10,7 @@ include_once ("helper.php");
 class VideoController
 {
 	private $dbConnection;
-	private $idMax; //the maximum ID of the database
+	private $idMax; //the maximum video ID of the database
 	private $defaultVideoSource = "./videos/defaultVideo.mp4";
 	private $helper;
 	
@@ -259,5 +259,46 @@ class VideoController
 			$resultSet = $dbConnection->queryAssoc("SELECT * FROM suggestions WHERE Suggestion_ID = ".$p_ID, $dbConnection->get_database(), "ro");
 			return json_encode($resultSet);
 	}	
+	
+	
+	/**
+	* returns the max ID of suggestions
+	*/
+	public function getMaxNumberOfSuggestions()
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->query("Select MAX(Suggestion_ID) from suggestions", $dbConnection->get_database(), "ro");
+		return $resultSet[0];
+	}
+	
+	/**
+	* returns the number of available suggestions
+	*/
+	public function getNumOfSuggestions()
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->query("SELECT COUNT(Suggestion_ID) FROM suggestions", $dbConnection->get_database(), "ro");
+		return $resultSet[0];
+	}
+	
+	/**
+	* returns the max ID of stories
+	*/
+	public function getMaxNumberOfStories()
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->query("Select MAX(Story_ID) from stories", $dbConnection->get_database(), "ro");
+		return $resultSet[0];
+	}
+	
+	/**
+	* returns the number of available stories
+	*/
+	public function getNumOfStories()
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->query("SELECT COUNT(Story_ID) FROM stories", $dbConnection->get_database(), "ro");
+		return $resultSet[0];
+	}
 }
 ?>

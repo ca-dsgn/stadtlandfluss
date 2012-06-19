@@ -10,6 +10,8 @@
 	
 	$element = json_decode($vc->getVideoWithImages($Video_ID));
 	
+	$video_url = "http://www.youtube.com/v/".substr($element[0]->source,strpos($element[0]->source,"v=")+2,strlen($element[0]->source));
+	
 	print_r($element);
 	
 ?>
@@ -25,11 +27,11 @@
 		?>
 		<div id="detailVideoPlayer">
 			<object>
-            	<param value="<?php print $element[0]->source?>" name="movie">
+            	<param value="<?php print $video_url?>" name="movie">
                 <param value="opaque" name="wmode">
                 <param value="true" name="allowFullScreen">
                 <param value="always" name="allowScriptAccess">
-                <embed allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="<?php print $element[0]->source?>" wmode="opaque">
+                <embed style="width: 100%; height: 100%" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="<?php print $video_url?>" wmode="opaque">
             </object>
 		</div>
 		

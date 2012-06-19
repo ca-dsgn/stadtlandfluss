@@ -49,6 +49,20 @@ $(document).ready(function() {
 	
 });
 
+function checkArrowVisibility() {
+	
+	if ($(".playList ul li").length > 3) {
+		
+		$(".arrowBottom").fadeIn(300);
+		$(".arrowTop").fadeIn(300);
+	}
+	else {
+		
+		$(".arrowBottom").fadeOut(300);
+		$(".arrowTop").fadeOut(300);
+	}
+}
+
 function playListMove(direction) {
 	
 	if ($(".playList ul li").length > 3) {
@@ -297,6 +311,8 @@ function playListSortable() {
 			$(".is_shown li[ref='" + $(ui.item).attr("ref") + "']").draggable("destroy");
 			
 			addToPlayList($(ui.item).attr("ref"));
+			
+			checkArrowVisibility();
 		},
 		remove: function(event, ui) {
 		},
@@ -347,6 +363,8 @@ function playListSortable() {
 						$(".playList ul").sortable("cancel");
 						
 						$(".delete_this").remove();
+						
+						checkArrowVisibility();
 					});
 				}
 			}

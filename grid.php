@@ -61,6 +61,8 @@
                     if ($_COOKIE["playlist"] != null && $_COOKIE["playlist"] != "") {
                         
                         $ids = explode("-",$_COOKIE["playlist"]);
+						
+						$num_playlist = count($ids);
                         
                         foreach ($ids as $id) {
                         
@@ -82,8 +84,17 @@
 		    	<ul>
 		        	<?php print $playlist ?>
 		        </ul>
-		        <div class="arrowBottom"></div>
-		    	<div class="arrowTop"></div>
+                <?php
+				
+					$not_visible = "";
+				
+					if ($num_playlist <= 3) {
+						
+						$not_visible = ' style="display: none;"';
+					}
+				?>
+		        <div class="arrowBottom"<?php print $not_visible?>></div>
+		    	<div class="arrowTop"<?php print $not_visible?>></div>
 		    </div>
 		    <div class="clear"></div>
 		    <div class="naviPages">

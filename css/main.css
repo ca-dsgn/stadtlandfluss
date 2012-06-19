@@ -229,9 +229,22 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	bottom: 0px;
 	left: 0;
 	right: 0;
-	background-image: url('../img/backgrounds/wind.jpg');
 	background-position: center center;
 }
+
+#backWind {
+		background-image: url('../img/backgrounds/wind.jpg');
+}
+
+#backModerne {
+		background-image: url('../img/backgrounds/moderne.jpg');
+}
+
+#backWinsun {
+		background-image: url('../img/backgrounds/winsun.jpg');
+}
+
+
 
 #protagonistContent ul {
 	list-style-type: none;

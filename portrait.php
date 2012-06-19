@@ -1,5 +1,11 @@
 <div id="protagonistContent">
-	<div class="backgroundImage"></div>
+	<div class="backgroundImages">
+    	<div class="backgroundImage"></div>
+        <div class="backgroundImage"></div>
+        <div class="backgroundImage"></div>
+        <div class="backgroundImage"></div>
+        <div class="backgroundImage"></div>
+    </div>
 	<div class="wrapper">
 		<ul>
 			<li class="contentBox">
@@ -17,7 +23,7 @@
 				</div>
 			</li>
 
-			<li class="current contentBox">
+			<li class="contentBox">
 				<div class="playButton"></div>
 				<div class="description">
 					<hgroup>
@@ -33,6 +39,36 @@
 			</li>
 			
 			<li class="contentBox">
+				<div class="playButton"></div>
+				<div class="description">
+				<hgroup>
+					<h2>Brigitte Schmitt</h2>
+					<h1>Tierheim Dallau – Jeder Käfig hat seine Geschichte</h1>
+				</hgroup>
+					<p>
+						<a href="" class="infoLink">weitere Infos</a>
+						<a href="" class="playlistLink">zur Playlist hinzufügen</a>
+						<a href="" class="commentLink">Kommentare</a>
+					</p>
+				</div>
+			</li>
+            
+            <li class="contentBox">
+				<div class="playButton"></div>
+				<div class="description">
+				<hgroup>
+					<h2>Brigitte Schmitt</h2>
+					<h1>Tierheim Dallau – Jeder Käfig hat seine Geschichte</h1>
+				</hgroup>
+					<p>
+						<a href="" class="infoLink">weitere Infos</a>
+						<a href="" class="playlistLink">zur Playlist hinzufügen</a>
+						<a href="" class="commentLink">Kommentare</a>
+					</p>
+				</div>
+			</li>
+            
+            <li class="contentBox">
 				<div class="playButton"></div>
 				<div class="description">
 				<hgroup>

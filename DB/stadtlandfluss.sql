@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 19. Jun 2012 um 15:11
+-- Erstellungszeit: 19. Jun 2012 um 15:50
 -- Server Version: 5.5.16
 -- PHP-Version: 5.3.8
 
@@ -64,24 +64,24 @@ CREATE TABLE IF NOT EXISTS `images` (
 --
 
 INSERT INTO `images` (`Image_ID`, `url`, `alt`, `Video_ID`) VALUES
-(0, '/img/grid/motorcross_main.png', 'Test', 0),
-(1, '/img/grid/motorcross_main.png', 'Test', 0),
-(2, '/img/grid/motorcross_main.png', 'Test', 0),
-(3, '/img/grid/motorcross_main.png', 'Test', 5),
-(4, '/img/grid/motorcross_main.png', 'Test', 1),
-(5, '/img/grid/motorcross_main.png', 'Test', 1),
-(6, '/img/grid/motorcross_main.png', 'Test', 4),
-(7, '/img/grid/motorcross_main.png', 'Test', 4),
-(8, '/img/grid/motorcross_main.png', 'Test', 4),
-(9, '/img/grid/motorcross_main.png', 'Test', 3),
-(10, '/img/grid/motorcross_main.png', 'Test', 3),
-(11, '/img/grid/motorcross_main.png', 'Test', 3),
-(12, '/img/grid/motorcross_main.png', 'Test', 2),
-(13, '/img/grid/motorcross_main.png', 'Test', 2),
-(14, '/img/grid/motorcross_main.png', 'Test', 2),
-(15, '/img/grid/motorcross_main.png', 'Test', 1),
-(16, '/img/grid/motorcross_main.png', 'Test', 5),
-(17, '/img/grid/motorcross_main.png', 'Test', 5);
+(0, 'img/grid/motorcross_main.png', 'Test', 0),
+(1, 'img/grid/motorcross_main.png', 'Test', 0),
+(2, 'img/grid/motorcross_main.png', 'Test', 0),
+(3, 'img/grid/motorcross_main.png', 'Test', 5),
+(4, 'img/grid/motorcross_main.png', 'Test', 1),
+(5, 'img/grid/motorcross_main.png', 'Test', 1),
+(6, 'img/grid/motorcross_main.png', 'Test', 4),
+(7, 'img/grid/motorcross_main.png', 'Test', 4),
+(8, 'img/grid/motorcross_main.png', 'Test', 4),
+(9, 'img/grid/motorcross_main.png', 'Test', 3),
+(10, 'img/grid/motorcross_main.png', 'Test', 3),
+(11, 'img/grid/motorcross_main.png', 'Test', 3),
+(12, 'img/grid/motorcross_main.png', 'Test', 2),
+(13, 'img/grid/motorcross_main.png', 'Test', 2),
+(14, 'img/grid/motorcross_main.png', 'Test', 2),
+(15, 'img/grid/motorcross_main.png', 'Test', 1),
+(16, 'img/grid/motorcross_main.png', 'Test', 5),
+(17, 'img/grid/motorcross_main.png', 'Test', 5);
 
 -- --------------------------------------------------------
 
@@ -143,11 +143,19 @@ INSERT INTO `persons` (`Person_ID`, `name`, `function`, `type`) VALUES
 
 CREATE TABLE IF NOT EXISTS `stories` (
   `Story_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
-  `Name` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `suggestion` varchar(2000) DEFAULT NULL,
+  `description` varchar(2000) DEFAULT NULL,
+  `title` varchar(200) DEFAULT NULL,
+  `votes` bigint(7) unsigned zerofill DEFAULT NULL,
   PRIMARY KEY (`Story_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Daten für Tabelle `stories`
+--
+
+INSERT INTO `stories` (`Story_ID`, `description`, `title`, `votes`) VALUES
+(1, 'lorem Ipsumkpdsffsd', 'Der alte Mann am Baum', 0000000),
+(2, 'Und er flog in den Neckar....', 'Der verlorene Reifen', 0000000);
 
 -- --------------------------------------------------------
 
@@ -225,11 +233,11 @@ CREATE TABLE IF NOT EXISTS `videos` (
 --
 
 INSERT INTO `videos` (`Video_ID`, `date`, `title`, `subtitle`, `source`, `description`, `backgroundimage`, `keyvisual`, `longitude`, `altitude`) VALUES
-(0, '2012-06-12 13:05:11', 'Trailer StadtLandFluss-Geschichten', 'subtitle aus DB', 'http://www.youtube.com/watch?v=zYXjLbMZFmo', 'Seit Jahren entstehen am Studiengang Onlinemedien an der DHBW Mosbach kurze Portraits von Personen rund um Mosbach. Die Filmemacher Daniela Michel und Alexander Kleider leiten das jährlich stattfindende Dokumentarfilmseminar. Der Trailer zum darauf basierenden Projekt StadtLandFluss-Geschichten (www.stadtlandfluss-geschichten.de), das von Prof. Dr. Thomas Wirth initiiert wurde, schaut den Studenten bei der Filmarbeit über die Schulter und lässt Dozenten und Studenten zu Wort kommen.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.148206', '49.3515'),
-(1, '2012-05-22 02:02:44', 'Santa Farina – Das Göttlichste, was man sich erlauben kann', 'subtitle aus DB', 'http://www.youtube.com/watch?v=NSFIv7HgNdk', 'Sigfried Raether, von allen Siggi genannt, ist leidenschaftlicher Pizzabäcker. Seine Pizzeria „Santa Farina“ befindet sich in der Nähe der S-Bahnhaltstellte Mosbach (Baden). Siggi ist durch seine charmante italienische Art stadtbekannt. Durch seine ganz besonderen Techniken die Zutaten auf die Pizza zu bringen, ist es schon ein Highlight ihm beim Backen zuzuschauen. Mehrere Studierende von ON09 sind regelmäßig in der Mittagspause zu Gast bei Siggi und wollten mehr über diese außergewöhnliche Persönlichkeit, die der Pizzeria einen heimeligen Flair verleiht, erfahren.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.144452', '49.351591'),
-(2, '2012-05-22 01:57:27', 'Benzin im Blut - Zwischen Motocross und CorelDraw', 'subtitle aus DB ', 'http://www.youtube.com/watch?v=3ZdMAk9aqU0&feature=g-upl', 'Uli Körber ist selbstständiger Grafikdesigner in Schefflenz. Doch das ist nicht alles. Uli hat Benzin im Blut! Um einen Ausgleich zu seinem Beruf zu haben, geht er regelmäßig MotoCross fahren. Mit Hilfe dieses außergewöhnlichen Hobbys und dessen Preisgeldern konnte er sein Studium finanzieren. Uli wurde sogar Deutscher- und Europameister! Sabine Bennebach von der Bürgerstiftung für die Region Mosbach gab uns den Tipp zu diesem Portrait.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.254093', '49.394022'),
-(3, '2012-06-15 13:01:05', 'Tierheim Dallau - Jeder Käfig hat seine Geschichte', 'subtitle aus DB', 'http://www.youtube.com/watch?v=NSFIv7HgNdk', 'Mit einem besonders großen Einzugsgebiet im Neckar-Odenwald-Kreis bietet das Tierheim Dallau vielen Tieren ein temporäres Zuhause - manchen länger, anderen nur kurz. Wir haben Brigitte Schmitt, eines der langjährigen Mitglieder des Vereins begleitet, wie sie um das Schicksal des Schäferhundrüden „Sultan" bangt, der fünf Jahre lang nicht vermittelt werden konnte. Florian Eberle und Matthias Weise (Studierende des Jahrgangs 2009) wollten eine Tierheimgeschichte erzählen und sind so auf das Mosbacher Tierheim in Dallau gestoßen.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.2004', '49.384641'),
-(4, '2012-06-15 13:13:57', 'Vorsicht, Kontrolle!', 'subtitle aus DB', 'http://www.youtube.com/watch?v=NSFIv7HgNdk', 'Werner Simon ist stellvertretender Dienstgruppenführer der Verkehrspolizei Mosbach und sorgt mit der Überwachung des Schwerverkehrs für mehr Sicherheit auf den Straßen in und um Mosbach. Der Kontakt kam über Lisa Simon (ON09) zustande.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.146783', '49.355092');
+(0, '2012-06-12 13:05:11', 'Trailer StadtLandFluss-Geschichten', 'subtitle aus DB', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Seit Jahren entstehen am Studiengang Onlinemedien an der DHBW Mosbach kurze Portraits von Personen rund um Mosbach. Die Filmemacher Daniela Michel und Alexander Kleider leiten das jährlich stattfindende Dokumentarfilmseminar. Der Trailer zum darauf basierenden Projekt StadtLandFluss-Geschichten (www.stadtlandfluss-geschichten.de), das von Prof. Dr. Thomas Wirth initiiert wurde, schaut den Studenten bei der Filmarbeit über die Schulter und lässt Dozenten und Studenten zu Wort kommen.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.148206', '49.3515'),
+(1, '2012-05-22 02:02:44', 'Santa Farina – Das Göttlichste, was man sich erlauben kann', 'subtitle aus DB', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Sigfried Raether, von allen Siggi genannt, ist leidenschaftlicher Pizzabäcker. Seine Pizzeria „Santa Farina“ befindet sich in der Nähe der S-Bahnhaltstellte Mosbach (Baden). Siggi ist durch seine charmante italienische Art stadtbekannt. Durch seine ganz besonderen Techniken die Zutaten auf die Pizza zu bringen, ist es schon ein Highlight ihm beim Backen zuzuschauen. Mehrere Studierende von ON09 sind regelmäßig in der Mittagspause zu Gast bei Siggi und wollten mehr über diese außergewöhnliche Persönlichkeit, die der Pizzeria einen heimeligen Flair verleiht, erfahren.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.144452', '49.351591'),
+(2, '2012-05-22 01:57:27', 'Benzin im Blut - Zwischen Motocross und CorelDraw', 'subtitle aus DB ', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Uli Körber ist selbstständiger Grafikdesigner in Schefflenz. Doch das ist nicht alles. Uli hat Benzin im Blut! Um einen Ausgleich zu seinem Beruf zu haben, geht er regelmäßig MotoCross fahren. Mit Hilfe dieses außergewöhnlichen Hobbys und dessen Preisgeldern konnte er sein Studium finanzieren. Uli wurde sogar Deutscher- und Europameister! Sabine Bennebach von der Bürgerstiftung für die Region Mosbach gab uns den Tipp zu diesem Portrait.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.254093', '49.394022'),
+(3, '2012-06-15 13:01:05', 'Tierheim Dallau - Jeder Käfig hat seine Geschichte', 'subtitle aus DB', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Mit einem besonders großen Einzugsgebiet im Neckar-Odenwald-Kreis bietet das Tierheim Dallau vielen Tieren ein temporäres Zuhause - manchen länger, anderen nur kurz. Wir haben Brigitte Schmitt, eines der langjährigen Mitglieder des Vereins begleitet, wie sie um das Schicksal des Schäferhundrüden „Sultan" bangt, der fünf Jahre lang nicht vermittelt werden konnte. Florian Eberle und Matthias Weise (Studierende des Jahrgangs 2009) wollten eine Tierheimgeschichte erzählen und sind so auf das Mosbacher Tierheim in Dallau gestoßen.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.2004', '49.384641'),
+(4, '2012-06-15 13:13:57', 'Vorsicht, Kontrolle!', 'subtitle aus DB', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Werner Simon ist stellvertretender Dienstgruppenführer der Verkehrspolizei Mosbach und sorgt mit der Überwachung des Schwerverkehrs für mehr Sicherheit auf den Straßen in und um Mosbach. Der Kontakt kam über Lisa Simon (ON09) zustande.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.146783', '49.355092');
 
 -- --------------------------------------------------------
 

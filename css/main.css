@@ -37,6 +37,13 @@ h2 {
 	margin: -15px 0 7px 0;
 }
 
+h3 {
+	font-weight: 300;
+	font-size: 0.9em;
+	margin-bottom: 5px;
+	color: #252627;
+}
+
 p, td {
 	font-size: 0.9em;
 	margin-bottom: 0.9em;
@@ -60,7 +67,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	max-width: 1280px;
 	height: 100%;
 	position: relative;
-	margin: 0 auto;
+	margin: 0 auto 50px auto;
 }
 
 .floatRight {
@@ -447,6 +454,8 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	list-style: none;
 	width: 240px;
 	min-height: 500px;
+	height: 500px;
+	overflow: hidden;
 	float: right;
 }
 .playList ul li {
@@ -506,33 +515,71 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	overflow-y: scroll;
 }
 
-
-
-
-
+#detailContent h2 {
+	font-weight: 600;
+	font-size: 1.1em;
+	margin: 0 0 5px 0;
+	text-shadow: none;
+	color: #5FCEEF;
+}
 
 #detailVideoPlayer {
-	width: 860px;
+	position: absolute;
+	right: 240px;
+	left: 0px;
+	top: 90px;
 	height: 500px;
 	background-color: black;
-	margin: 90px 0 0 0px;
-	float: left;
 }
 
-#detailLocationBox {
+
+#movieMetaBox {
 	position: absolute;
 	top: 90px;
-	left: 860px;
 	right: 0px;
-	min-width: 200px;
-	height: 500px;
-	background-color: blue;
+	width: 220px;
+	height: 480px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
-#detailCommentBox {
-	clear: both;
-	background-color: fuchsia;
+#movieMetaBox span {
+	display: inline-block;
+	line-height: 25px;
+	width: 210px;
+	padding: 5px;
+	background-color: #fff;
 }
+
+#movieDetailMap {
+	width: 220px;
+	height: 200px;
+	background-color: blue;
+		margin: 0 0 5px 0;
+
+}
+
+#movieInfoBox {
+	position: absolute;
+	top: 590px;
+	left: 0px;
+	right: 0px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin-bottom: 50px;
+}
+
+#movieDetailBox {
+	float: left;
+	width: 50%;
+}
+
+#movieCommentsBox {
+	float: right;
+	width: 50%;
+}
+
+
 
 .page li,
 .playList ul li {

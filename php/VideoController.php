@@ -1,34 +1,12 @@
 <?php
 include_once ("database.php");
+include_once ("helper.php");
 
 /**
  * Class VideoController
  * contains video functions
  * @author ON09 DHBW Mosbach 2012
  */
- 
-class Helper {
-
-	private $ret;
-
-	public function array_push_associative(&$arr) {
-	
-	   $args = func_get_args();
-	   
-	   foreach ($args as $arg) {
-		   if (is_array($arg)) {
-			   foreach ($arg as $key => $value) {
-				   $arr[$key] = $value;
-				   $this->ret++;
-			   }
-		   }else{
-			   $arr[$arg] = "";
-		   }
-	   }
-	   return $this->ret;
-	}
-}
- 
 class VideoController
 {
 	private $dbConnection;

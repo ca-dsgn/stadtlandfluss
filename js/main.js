@@ -2,7 +2,11 @@ var playlist;
 
 $(document).ready(function() {
 	
+	playlist = get_cookie("playlist");
+	
 	matrixDraggable();
+	
+	removeDraggableFromItemsByCookie();
 	addDraggableToItems(".page .item");
 	matrixArrows();
 	playListSortable();
@@ -28,15 +32,13 @@ $(document).ready(function() {
 	
 	$(".overlay").bind("mouseup", function() {
 		
-		close_box($(".is_shown .open"));
+		close_box($(".open"));
 	});
 	
 	if (get_cookie("playlist") == null) {
 		
 		set_cookie("playlist","");
 	}
-	playlist = get_cookie("playlist");
-	removeDraggableFromItemsByCookie();
 	
 	$(".arrowBottom").live("click",function() {
 		
@@ -96,12 +98,13 @@ function removeDraggableFromItemsByCookie() {
 		
 		$(".is_shown li[ref='" + refs[i] + "']").css("opacity", 0.5);
 		$(".is_shown li[ref='" + refs[i] + "']").draggable("destroy");
+		$(".is_shown li[ref='" + refs[i] + "']").removeClass("item");
 	}
 }
 
 function addItemListeners() {
 	
-	$(".page .item").bind("mouseup", function() {
+	$(".page .item").live("mouseup", function() {
 		
 		if ($(this).parent().hasClass("is_shown")) {
 			
@@ -293,7 +296,6 @@ function playListSortable() {
 			
 			y_original = event.screenX;
 			ready_to_kill = false;
-			$(ui.item).unbind("mouseup");
 		},
 		stop: function(event, ui) {
 			$(ui.item).bind("mouseup", function() {
@@ -308,7 +310,10 @@ function playListSortable() {
 				$(this).parent().find(".info").fadeOut(300);
 			}
 			$(".is_shown li[ref='" + $(ui.item).attr("ref") + "']").animate({ opacity: 0.5 },300);
+			$(".is_shown li[ref='" + $(ui.item).attr("ref") + "']").removeClass("item");
 			$(".is_shown li[ref='" + $(ui.item).attr("ref") + "']").draggable("destroy");
+			
+			$(".is_shown li[ref='" + $(ui.item).attr("ref") + "']").unbind("mouseup");
 			
 			addToPlayList($(ui.item).attr("ref"));
 			
@@ -340,12 +345,8 @@ function playListSortable() {
 								},300, function() {
 									
 									addDraggableToItems($(this));
+									$(this).addClass("item");
 								});
-								
-								if ($("playList ul li").length == 0) {
-									
-									$("playList").find(".info").fadeIn(300);
-								}
 							}
 						});
 					});
@@ -365,6 +366,11 @@ function playListSortable() {
 						$(".delete_this").remove();
 						
 						checkArrowVisibility();
+							
+						if ($(".playList ul li").length == 0) {
+							
+							$(".playList").find(".info").fadeIn(300);
+						}
 					});
 				}
 			}

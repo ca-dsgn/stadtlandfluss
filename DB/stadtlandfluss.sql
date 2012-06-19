@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 15. Jun 2012 um 14:12
+-- Erstellungszeit: 19. Jun 2012 um 13:59
 -- Server Version: 5.5.16
 -- PHP-Version: 5.3.8
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Datenbank: `usr_p167191_1`
+-- Datenbank: `stadtlandfluss`
 --
 
 -- --------------------------------------------------------
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   `Image_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `url` varchar(255) DEFAULT NULL,
   `alt` varchar(255) DEFAULT NULL,
-  `Video_ID` int(5) DEFAULT NULL,
+  `Video_ID` int(5) unsigned DEFAULT NULL,
   PRIMARY KEY (`Image_ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
@@ -90,9 +90,9 @@ INSERT INTO `images` (`Image_ID`, `url`, `alt`, `Video_ID`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `person2video` (
-  `p2v_ID` int(6) NOT NULL AUTO_INCREMENT,
-  `Video_ID` int(5) DEFAULT NULL,
-  `Person_ID` int(5) DEFAULT NULL,
+  `p2v_ID` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `Video_ID` int(5) unsigned DEFAULT NULL,
+  `Person_ID` int(5) unsigned DEFAULT NULL,
   PRIMARY KEY (`p2v_ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
@@ -142,12 +142,28 @@ INSERT INTO `persons` (`Person_ID`, `name`, `function`, `type`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `stories` (
-  `Story_ID` int(5) NOT NULL AUTO_INCREMENT,
+  `Story_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `suggestion` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`Story_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `suggestions`
+--
+
+CREATE TABLE IF NOT EXISTS `suggestions` (
+  `name` varchar(255) DEFAULT NULL,
+  `timestamp` varchar(255) DEFAULT NULL,
+  `story` varchar(4000) DEFAULT NULL,
+  `phone` varchar(50) DEFAULT NULL,
+  `mail` varchar(80) DEFAULT NULL,
+  `Suggestion_ID` bigint(7) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`Suggestion_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -214,12 +230,12 @@ INSERT INTO `videos` (`Video_ID`, `date`, `title`, `subtitle`, `source`, `descri
 --
 
 CREATE TABLE IF NOT EXISTS `votings` (
-  `Voting_ID` int(5) NOT NULL DEFAULT '0',
+  `Voting_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `headline` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `votes` bigint(8) DEFAULT NULL,
   PRIMARY KEY (`Voting_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

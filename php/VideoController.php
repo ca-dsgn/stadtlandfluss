@@ -211,26 +211,44 @@ class VideoController
 		}
 	}
 	
+	/*
+	 * returns the given number of suggestions as JSON starting at the given index
+	*/
+	
 	public function getSuggestions($p_iStart, $p_iNum)
 	{
-		
+		//###
 	}
+	
+	/*
+	 * increases the number of votes 4 a given suggestion ID
+	*/
 	
 	public function incrementVote($p_SuggestionID)
 	{
-		
+		//###
 	}
+	
+	/*
+	 * creates a new suggestion
+	 *@param name
+	 *@param story
+	 *@param phone
+	 *@param mail
+	*/
 	
 	public function createSuggestion($p_name, $p_story, $p_phone, $p_mail)
 	{
-	
+		//###
 	}
+	
+	/*
+	 * returns the suggestion to the given ID
+	*/
 	
 	public function getSuggestion($p_ID)
 	{
-		
-	}
-	
-	
+		//###
+	}	
 }
 ?>

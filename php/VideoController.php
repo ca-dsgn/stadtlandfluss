@@ -160,36 +160,26 @@ class VideoController
 			$resultSetVideos = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, "stadtlandfluss", "ro");
 			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
 			
+			$helper = new Helper();
 			
 			for($i =0; $i <sizeof($resultSetVideos);$i++)
 			{
 				$tmp = $resultSetVideos[$i];
-				
 				$resultSetImages = $dbConnection->queryAssoc("SELECT * FROM images WHERE Video_ID =".$i, $dbConnection->get_database(), "ro");
-				
 				$image_array = Array();
-				
-				$helper = new Helper();
-				
 				foreach($resultSetImages AS $key => $value) {
-					
 					array_push($image_array,array(
-						
 						"Image_ID"=>$value["Image_ID"],
 						"url"=>$value["url"],
 						"alt"=>$value["alt"]
 						)
 					);
 				}
-				
-				for ($i=0; $i<5;$i++) {
-				
+				for ($i=0; $i<5;$i++) 
+				{				
 					$helper->array_push_associative($resultSetVideos[$i],array("images" => $image_array));
-				}
-				
-				
+				}				
 			}
-			
 			return json_encode($resultSetVideos);
 	}
 	
@@ -219,6 +209,26 @@ class VideoController
 		{
 			return false;
 		}
+	}
+	
+	public function getSuggestions($p_iStart, $p_iNum)
+	{
+		
+	}
+	
+	public function incrementVote($p_SuggestionID)
+	{
+		
+	}
+	
+	public function createSuggestion($p_name, $p_story, $p_phone, $p_mail)
+	{
+	
+	}
+	
+	public function getSuggestion($p_ID)
+	{
+		
 	}
 	
 	

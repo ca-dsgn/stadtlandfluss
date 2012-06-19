@@ -7,9 +7,9 @@
 								
 		global $vc;
 		
-		$element = json_decode($vc->getVideo($id));
+		$element = json_decode($vc->getVideoWithImages($id));
 		
-		return getTemplate($element[0]->Video_ID,$element[0]->title,$element[0]->description,NULL);
+		return getTemplate($element[0]->Video_ID,$element[0]->title,$element[0]->description,$element[0]->images);
 	}
 	
 	function getVideoTemplate($id,$title,$description,$images) {

@@ -34,6 +34,7 @@ class VideoController
 	private $dbConnection;
 	private $idMax; //the maximum ID of the database
 	private $defaultVideoSource = "./videos/defaultVideo.mp4";
+	private $helper;
 	
 	function __construct()
 	{
@@ -41,6 +42,7 @@ class VideoController
 		
 		$resultSet = $dbConnection->query("Select MAX(Video_ID) from videos", $dbConnection->get_database(), "ro");
 		$this->idMax = $resultSet[0];
+		$this->helper = new Helper();
 	}
 	
 	/**
@@ -60,6 +62,28 @@ class VideoController
 	{
 			$dbConnection = new Database();
 			$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".$p_iCurrentIndex, $dbConnection->get_database(), "ro");
+			return json_encode($resultSet);
+	}
+	
+	public function getVideoWithImages($p_iCurrentIndex)
+	{
+			$dbConnection = new Database();
+			$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".$p_iCurrentIndex, $dbConnection->get_database(), "ro");
+			
+			$resultSetImages = $dbConnection->queryAssoc("SELECT * FROM images WHERE Video_ID =".$p_iCurrentIndex, $dbConnection->get_database(), "ro");
+			
+			$image_array = Array();
+			foreach($resultSetImages AS $key => $value) {
+				
+				array_push($image_array,array(
+					"Image_ID"=>$value["Image_ID"],
+					"url"=>$value["url"],
+					"alt"=>$value["alt"]
+					)
+				);
+			}
+			$this->helper->array_push_associative($resultSet[0],array("images" => $image_array));
+			
 			return json_encode($resultSet);
 	}
 	
@@ -160,8 +184,6 @@ class VideoController
 			$resultSetVideos = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, "stadtlandfluss", "ro");
 			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
 			
-			$helper = new Helper();
-			
 			for($i =0; $i <sizeof($resultSetVideos);$i++)
 			{
 				$tmp = $resultSetVideos[$i];
@@ -177,7 +199,7 @@ class VideoController
 				}
 				for ($i=0; $i<5;$i++) 
 				{				
-					$helper->array_push_associative($resultSetVideos[$i],array("images" => $image_array));
+					$this->helper->array_push_associative($resultSetVideos[$i],array("images" => $image_array));
 				}				
 			}
 			return json_encode($resultSetVideos);

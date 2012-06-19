@@ -30,4 +30,5 @@ echo ("<br/><br/>All Locations:<br/>");
 echo $vc->getAllLocations();
 echo ("<br/><br/>Get Suggestions from bis Anz:<br/>");
 echo $vc->getSuggestions(0,2);
+echo "<br/>Erfolgreich hochgezählte Datensätze: ".$vc->incrementVote(1);
 ?>

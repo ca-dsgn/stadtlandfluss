@@ -224,12 +224,14 @@ class VideoController
 	}
 	
 	/*
-	 * increases the number of votes 4 a given suggestion ID
+	 * increases the number of votes 4 a given story ID
 	*/
 	
-	public function incrementVote($p_SuggestionID)
+	public function incrementVote($p_storyID)
 	{
-		//###
+		$dbConnection = new Database();
+		$affectedRows = $dbConnection->queryInsertion("UPDATE stories SET votes = votes+1 WHERE Story_ID = ".$p_storyID, "stadtlandfluss", "ro");
+		return $affectedRows;
 	}
 	
 	/*

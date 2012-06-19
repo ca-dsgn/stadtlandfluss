@@ -1,9 +1,9 @@
 <?php
 	include_once ("php/VideoController.php");
+	include_once ("php/helper.php");
 			
 	$vc = new VideoController();
-	
-	
+	$helper = new Helper();
 ?>
 
 <div id="gridContent">
@@ -46,7 +46,7 @@
 							
 							foreach($grid_elements as $element) {
 								
-								print getVideoTemplate($element->Video_ID,$element->title,$element->description,$element->images);
+								print $helper->getVideoTemplate($element->Video_ID,$element->title,$element->description,$element->images);
 							}
 		            		print "</ul>";
 						}
@@ -64,7 +64,7 @@
                         
                         foreach ($ids as $id) {
                         
-                            $playlist .= getVideoTemplateById($id);
+                            $playlist .= $helper->getVideoTemplateById($id);
                         }
                         
                     }

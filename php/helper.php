@@ -26,12 +26,12 @@ class Helper {
 		
 		$element = json_decode($vc->getVideoWithImages($id));
 		
-		return getTemplate($element[0]->Video_ID,$element[0]->title,$element[0]->description,$element[0]->images);
+		return $this->getTemplate($element[0]->Video_ID,$element[0]->title,$element[0]->description,$element[0]->images);
 	}
 	
 	public function getVideoTemplate($id,$title,$description,$images) {
 		
-		return getTemplate($id,$title,$description,$images);
+		return $this->getTemplate($id,$title,$description,$images);
 	}
 	
 	public function getTemplate($id,$title,$description,$images) {

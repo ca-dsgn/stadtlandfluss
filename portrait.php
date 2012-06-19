@@ -6,7 +6,6 @@
         <div class="backgroundImage"></div>
         <div class="backgroundImage"></div>
     </div>
-    </div>
 	<div class="wrapper">
 		<ul>
 			<li class="contentBox">

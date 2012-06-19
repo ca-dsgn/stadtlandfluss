@@ -447,6 +447,8 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	list-style: none;
 	width: 240px;
 	min-height: 500px;
+	height: 500px;
+	overflow: hidden;
 	float: right;
 }
 .playList ul li {

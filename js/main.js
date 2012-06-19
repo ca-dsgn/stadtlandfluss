@@ -38,7 +38,41 @@ $(document).ready(function() {
 	playlist = get_cookie("playlist");
 	removeDraggableFromItemsByCookie();
 	
+	$(".arrowBottom").live("click",function() {
+		
+		playListMove("down");
+	});
+	$(".arrowTop").live("click",function() {
+		
+		playListMove("up");
+	});
+	
 });
+
+function playListMove(direction) {
+	
+	if ($(".playList ul li").length > 3) {
+	
+		switch (direction) {
+			
+			case "down":
+				
+				$(".playList ul").animate({
+					
+					scrollTop: "+=" + 170
+				});
+				break;
+				
+			case "up":
+			
+				$(".playList ul").animate({
+					
+					scrollTop: "-=" + 170
+				});
+				break;
+		}
+	}
+}
 
 function removeDraggableFromItemsByCookie() {
 	
@@ -225,19 +259,13 @@ function removeFromPlayList(ref) {
 	
 	for (var i = 0; i < refs.length; i++) {
 		
-		if (i==0 || refs[i-1] == ref) {
-			
-			seperator = "";
-		}
-		else {
-			seperator = "-";
-		}
-		
 		if (refs[i] != ref) {
 			
-			new_playlist+= seperator + refs[i];
+			new_playlist+= refs[i] + seperator;
 		}
 	}
+	new_playlist = new_playlist.substr(0,new_playlist.length-1);
+	
 	playlist = new_playlist;
 	
 	set_cookie("playlist",playlist);

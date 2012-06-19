@@ -7,6 +7,28 @@ include_once ("database.php");
  * @author ON09 DHBW Mosbach 2012
  */
  
+class Helper {
+
+	private $ret;
+
+	public function array_push_associative(&$arr) {
+	
+	   $args = func_get_args();
+	   
+	   foreach ($args as $arg) {
+		   if (is_array($arg)) {
+			   foreach ($arg as $key => $value) {
+				   $arr[$key] = $value;
+				   $this->ret++;
+			   }
+		   }else{
+			   $arr[$arg] = "";
+		   }
+	   }
+	   return $this->ret;
+	}
+}
+ 
 class VideoController
 {
 	private $dbConnection;
@@ -135,21 +157,51 @@ class VideoController
 	public function getMatrixViewWithImages($p_iStart, $p_iNum)
 	{		
 			$dbConnection = new Database();
-			//$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, "stadtlandfluss", "ro");
+			$resultSetVideos = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, "stadtlandfluss", "ro");
 			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
-			$resultSet = $dbConnection->queryAssoc("SELECT * FROM images WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iNum, $dbConnection->get_database(), "ro");
-			$decVideos = json_decode($this->getMatrixView($p_iStart,$p_iNum));
 			
-			return json_encode($decVideos+$resultSet);
+			
+			for($i =0; $i <sizeof($resultSetVideos);$i++)
+			{
+				$tmp = $resultSetVideos[$i];
+				
+				$resultSetImages = $dbConnection->queryAssoc("SELECT * FROM images WHERE Video_ID =".$i, $dbConnection->get_database(), "ro");
+				
+				$image_array = Array();
+				
+				$helper = new Helper();
+				
+				foreach($resultSetImages AS $key => $value) {
+					
+					array_push($image_array,array(
+						
+						"Image_ID"=>$value["Image_ID"],
+						"url"=>$value["url"],
+						"alt"=>$value["alt"]
+						)
+					);
+				}
+				
+				for ($i=0; $i<5;$i++) {
+				
+					$helper->array_push_associative($resultSetVideos[$i],array("images" => $image_array));
+				}
+				
+				
+			}
+			
+			return json_encode($resultSetVideos);
 	}
+	
 	
 	/**
 	* returns the locations of the videos	
 	*/
 	public function getAllLocations()
 	{
+	//hier noch name
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("SELECT altitude, longitude, Video_ID FROM videos", $dbConnection->get_database(), "ro");
+			$resultSet = $dbConnection->queryAssoc("SELECT altitude, longitude, title, Video_ID FROM videos", $dbConnection->get_database(), "ro");
 			return json_encode($resultSet);
 	}
 	

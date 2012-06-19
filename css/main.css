@@ -74,7 +74,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	padding: 6px 8px;
 
 	text-decoration: none;
-	color: #D3DBE1;
+	color: #fff;
 	font-size: 0.9em;
 	font-weight: 600;
 	text-shadow: 1px 1px 1px #44779a;
@@ -95,14 +95,14 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 
 .blueButton:hover {
 	color: #fff;
-	background: #9cd4fa;
-	background: -webkit-gradient(linear, left top, left bottom, from(#9cd4fa), to(#5796c1)); /* 	Saf4+, Chrome */
-	background: -webkit-linear-gradient(top,  #9cd4fa 8%, #5796c1 100%); /* Chrome 10+, Saf5.1+ */
-	background: -moz-linear-gradient(top,  #9cd4fa 8%, #5796c1 100%); /* FF3.6+ */
-	background: -ms-linear-gradient(top,  #9cd4fa 8%, #5796c1 100%); /* IE10 */
-	background: -o-linear-gradient(top,  #9cd4fa 8%, #5796c1 100%); /* Opera 11.10+ */
-	background: linear-gradient(top,  #9cd4fa 8%, #5796c1 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9cd4fa', endColorstr='#5796c1',GradientType=0 ); /* IE6-9 */
+	background: #44779a;
+	background: -webkit-gradient(linear, left top, left bottom, from(#44779a), to(#5FCEEF)); /* 	Saf4+, Chrome */
+	background: -webkit-linear-gradient(top,  #44779a 8%, #5FCEEF 100%); /* Chrome 10+, Saf5.1+ */
+	background: -moz-linear-gradient(top,  #44779a 8%, #5FCEEF 100%); /* FF3.6+ */
+	background: -ms-linear-gradient(top,  #44779a 8%, #5FCEEF 100%); /* IE10 */
+	background: -o-linear-gradient(top,  #44779a 8%, #5FCEEF 100%); /* Opera 11.10+ */
+	background: linear-gradient(top,  #44779a 8%, #5FCEEF 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44779a', endColorstr='#5FCEEF',GradientType=0 ); /* IE6-9 */
 	
 }
 
@@ -269,30 +269,28 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	left: 50%;
 	margin-left: -63px;
 	margin-top: 280px;
-	background-color: rgb(35,37,39);
+	/*background-color: rgb(35,37,39);*/
 
 	background-image: url('../img/play.png');
 	background-repeat: no-repeat;
-	background-position: 30px 22px;	
+	background-position: 0 0;	
 	
-	width: 126px;
-	height: 126px;
+	width: 100px;
+	height: 80px;
 	cursor: pointer;
-	-webkit-border-radius: 50%;
+	/*-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
-	border-radius: 50%;	
+	border-radius: 50%;	*/
 	z-index: 500;
 	
 
 }
 
 .playButton:hover {
-	width: 136px;
-	height: 136px;
-	margin-left: -68px;
-	margin-top: 275px;
-	background-color: rgb(96,206,240);
-	background-image: url('../img/play-over.png');
+	/*background-color: rgb(96,206,240);*/
+	background-image: url('../img/play.png');
+	background-repeat: no-repeat;
+	background-position: 0 -80px;
 }
 
 
@@ -300,9 +298,9 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	position: absolute;
 	left: 50%;
 	margin-left: -68px;
-	margin-top: 275px;
-	width: 136px;
-	height: 136px;
+	margin-top: 260px;
+	width: 120px;
+	height: 120px;
 	background-color: #fff;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;

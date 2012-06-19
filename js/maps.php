@@ -1,3 +1,11 @@
+<?php
+	include_once ("../php/VideoController.php");
+			
+	$vc = new VideoController();
+	$locations = json_decode($vc->getAllLocations());
+	
+?>
+
 var directionDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
@@ -9,27 +17,47 @@ function initialize() {
 	if (document.getElementById("map_canvas") != null) {
 		
 		directionsDisplay = new google.maps.DirectionsRenderer();
-		var allekotte = new google.maps.LatLng(50.542296,7.241529);
+        
+        var mosbach = new google.maps.LatLng(49.348691,9.129383);
+        <?php
+	
+        foreach($locations as $location) {
+            
+            echo 'var location'.$location->Video_ID.' = new google.maps.LatLng('.$location->altitude.','.$location->longitude.');'."\n";
+        }
+		
+		?>
 		
 		var myOptions = {
-			zoom: 16,
-			center: allekotte,
+			zoom: 12,
+			center: mosbach,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
-		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		
-		var marker = new google.maps.Marker({
-		  position: allekotte, 
-		  map: map, 
-		  title:"Bla"
-		});
-		
-		google.maps.event.addListener(marker, 'click', function() {
+        <?php
+	
+        foreach($locations as $location) {
+            
+            print 'var marker'.$location->Video_ID.' = new google.maps.Marker({
+			  position: location'.$location->Video_ID.', 
+			  map: map, 
+			  title:\''.$location->title.'\'
+			});'."\n";
 			
-			alert("TEST");
-		});
+			print 'google.maps.event.addListener(marker'.$location->Video_ID.', \'click\', function() {
+				
+				console.log("My id is '.$location->Video_ID.'");
+				
+				map.panTo(location'.$location->Video_ID.');
+				
+			});';
+			
+			print 'markersArray.push(marker'.$location->Video_ID.')'."\n";
+        }
 		
-		markersArray.push(marker);
+		?>
+		
 		directionsDisplay.setMap(map);
 	}
 }
@@ -42,6 +70,9 @@ function removeMarkers() {
 }
 
 function addMarkers() {
+
+	console.log("added markers");
+
 	for (i in markersArray) {
 		markersArray[i].setMap(map);
 	}

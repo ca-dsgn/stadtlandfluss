@@ -347,11 +347,6 @@ function playListSortable() {
 									addDraggableToItems($(this));
 									$(this).addClass("item");
 								});
-								
-								if ($("playList ul li").length == 0) {
-									
-									$("playList").find(".info").fadeIn(300);
-								}
 							}
 						});
 					});
@@ -371,6 +366,11 @@ function playListSortable() {
 						$(".delete_this").remove();
 						
 						checkArrowVisibility();
+							
+						if ($(".playList ul li").length == 0) {
+							
+							$(".playList").find(".info").fadeIn(300);
+						}
 					});
 				}
 			}

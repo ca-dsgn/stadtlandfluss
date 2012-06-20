@@ -57,11 +57,11 @@
 		<div id="" class="videoLayer">
 			<div class="videoPlayer">
 				<object>
-					<param value="http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp" name="movie">
+					<param value="http://www.youtube.com/v/p74Ui12Y55c" name="movie">
 	        <param value="opaque" name="wmode">
 	        <param value="true" name="allowFullScreen">
 	        <param value="always" name="allowScriptAccess">
-	        <embed style="width: 100%; height: 100%" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp" wmode="opaque">
+	        <embed style="width: 100%; height: 100%" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://www.youtube.com/v/p74Ui12Y55c" wmode="opaque">
 	      </object>
       </div>
 			<a href="" class="closeButton">close</a>

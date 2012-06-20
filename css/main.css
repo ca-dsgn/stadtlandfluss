@@ -311,8 +311,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgb(35,37,39);
-	opacity: 0.97;
+	background-color: rgba(35,37,39, 0.98);
 	z-index: 100;
 }
 
@@ -325,6 +324,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	width: 800px;
 	height: 500px;
 	background-color: #b117b8;
+	opacity: 1;
 }
 
 .closeButton {

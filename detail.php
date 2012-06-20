@@ -12,6 +12,11 @@
 	
 	$video_url = "http://www.youtube.com/v/".substr($element[0]->source,strpos($element[0]->source,"v=")+2,strlen($element[0]->source));
 	
+	if ($_GET["autoplay"] == "1") {
+		
+		$video_url.= "&autoplay=1";
+	}
+	
 	print_r($element);
 	
 ?>

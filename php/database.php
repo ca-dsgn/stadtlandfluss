@@ -23,7 +23,7 @@ class Database {
 			
 			$this->servername = "localhost";
 			$this->mysqluser = "root";
-			$this->mysqlpasswd = "";
+			$this->mysqlpasswd = "root";
 			$this->database = "stadtlandfluss";
 		}
 		else {

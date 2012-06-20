@@ -590,10 +590,27 @@ function matrixArrows() {
 	
 }
 
-function videoLayerOpen() {
-	$('.videoLayer').show();
+function videoLayerOpen() {	
+	
+	$('.videoLayer').show().animate({
+    opacity: 1,
+    left: '-=50',
+    right: '-=50',
+    top: '-=50',
+    bottom: '-=50'
+  }, 250, function() {
+  });
+	
 }
 
 function videoLayerClose() {
-	$('.videoLayer').hide();
+	$('.videoLayer').animate({
+    opacity: 0,
+    left: '+=50',
+    right: '+=50',
+    top: '+=50',
+    bottom: '+=50'
+  }, 250, function() {
+  	$(this).hide();
+  });
 }

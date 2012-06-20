@@ -330,8 +330,8 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 }
 
 .playButton:hover {
-	background-color: rgb(96,206,240);
-	background-image: url('../img/playButton.png');
+	background-color: rgb(255,255,255);
+	background-image: url('../img/playButtonOver.png');
 	background-repeat: no-repeat;
 }
 

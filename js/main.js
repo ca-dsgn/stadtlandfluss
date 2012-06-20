@@ -50,7 +50,12 @@ $(document).ready(function() {
 	
 	$(".playButton").live("click",function(e) {	
 	  e.preventDefault();
-		videoLayer();
+		videoLayerOpen();
+	});
+	
+	$(".closeButton").live("click",function(e) {	
+	  e.preventDefault();
+		videoLayerClose();
 	});
 	
 	
@@ -585,7 +590,10 @@ function matrixArrows() {
 	
 }
 
+function videoLayerOpen() {
+	$('.videoLayer').show();
+}
 
-function videoLayer() {
-	
+function videoLayerClose() {
+	$('.videoLayer').hide();
 }

@@ -47,6 +47,13 @@ $(document).ready(function() {
 		
 		playListMove("up");
 	});
+	
+	$(".playButton").live("click",function(e) {	
+	  e.preventDefault();
+		videoLayer();
+	});
+	
+	
 });
 
 function checkArrowVisibility() {
@@ -575,4 +582,10 @@ function matrixArrows() {
 			$(this).append('<li class="arrow right"></li>');
 		}
 	});
+	
+}
+
+
+function videoLayer() {
+	
 }

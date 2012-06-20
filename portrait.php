@@ -34,7 +34,7 @@
 				$html = '';
 				$html.= '<li class="contentBox">';
 				$html.= '<img src="'.$element[0]->keyvisual.'" class="portraitIMG" alt="moderne-single"/>';
-				$html.= '<div class="playButton" onclick="javascript:window.location.href=\'index.php?section=detail&video_id='.$element[0]->Video_ID.'&autoplay=1\'"></div>';
+				$html.= '<div class="playButton"></div>';
 				$html.= '<div class="description">';
 				$html.= '<hgroup>';
 				$html.= '<h2>'.$protagonist.'</h2>';
@@ -57,11 +57,11 @@
 		<div id="" class="videoLayer">
 			<div class="videoPlayer">
 				<object>
-					<param value="http://www.youtube.com/v/p74Ui12Y55c" name="movie">
+					<param value="http://www.youtube.com/v/p74Ui12Y55c&showinfo=0" name="movie">
 	        <param value="opaque" name="wmode">
 	        <param value="true" name="allowFullScreen">
 	        <param value="always" name="allowScriptAccess">
-	        <embed style="width: 100%; height: 100%" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://www.youtube.com/v/p74Ui12Y55c" wmode="opaque">
+	        <embed style="width: 100%; height: 100%" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://www.youtube.com/v/p74Ui12Y55c&showinfo=0" wmode="opaque">
 	      </object>
       </div>
 			<a href="" class="closeButton">close</a>

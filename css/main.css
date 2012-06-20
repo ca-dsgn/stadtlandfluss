@@ -313,6 +313,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	bottom: 0;
 	background-color: rgba(35,37,39, 0.98);
 	z-index: 100;
+	display: none;
 }
 
 .videoPlayer {

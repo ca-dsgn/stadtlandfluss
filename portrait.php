@@ -21,13 +21,23 @@
 				
 				$element = json_decode($vc->getVideoWithImages($i));
 				
+				$persons = json_decode($vc->getPersons($i));
+				
+				foreach($persons as $person) {
+					
+					if ($person->type == "Protagonist") {
+						
+						$protagonist = $person->name;
+					}
+				}
+				
 				$html = '';
 				$html.= '<li class="contentBox">';
 				$html.= '<img src="'.$element[0]->keyvisual.'" class="portraitIMG" alt="moderne-single"/>';
 				$html.= '<div class="playButton" onclick="javascript:window.location.href=\'index.php?section=detail&video_id='.$element[0]->Video_ID.'&autoplay=1\'"></div>';
 				$html.= '<div class="description">';
 				$html.= '<hgroup>';
-				$html.= '<h2></h2>';
+				$html.= '<h2>'.$protagonist.'</h2>';
 				$html.= '<h1>'.$element[0]->title.'</h1>';
 				$html.= '</hgroup>';
 				$html.= '<p>';

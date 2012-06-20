@@ -1,3 +1,10 @@
+<?php
+	include_once ("php/VideoController.php");
+	include_once ("php/helper.php");
+			
+	$vc = new VideoController();
+	$helper = new Helper();
+?>
 <div id="protagonistContent">
 	<div class="backgroundImages">
 		<div class="backgroundImage" id="backModerne"></div>
@@ -8,84 +15,34 @@
   </div>
 	<div class="wrapper">
 		<ul>
-			<li class="contentBox">
-				<img src="img/backgrounds/moderne-single.jpg" class="portraitIMG" alt="moderne-single" width="780" height="780" />
-				<div class="playButton"></div>
-				<div class="description">
-					<hgroup>
-						<h2>Baron Dajo von Gemmingen-Hornberg</h2>
-						<h1>Zwischen Tradition und Moderne</h1>
-					</hgroup>
-					<p>
-						<a href="" class="infoLink">weitere Infos</a>
-						<a href="" class="playlistLink">zur Playlist hinzufügen</a>
-						<a href="" class="commentLink">Kommentare</a>
-					</p>
-				</div>
-			</li>
-
-			<li class="contentBox">
-				<img src="img/backgrounds/wind-single.png" class="portraitIMG" alt="wind-single" width="780" height="780" />
-				<div class="playButton"></div>
-				<div class="description">
-					<hgroup>
-						<h2>Michaela Pusch</h2>
-						<h1>Soweit der Wind sie trägt</h1>
-					</hgroup>
-					<p>
-						<a href="" class="infoLink">weitere Infos</a>
-						<a href="" class="playlistLink">zur Playlist hinzufügen</a>
-						<a href="" class="commentLink">Kommentare</a>
-					</p>
-				</div>
-			</li>
-			
-			<li class="contentBox">
-				<img src="img/backgrounds/motocross-single.png" class="portraitIMG" alt="motocross-single" width="780" height="700" />
-				<div class="playButton"></div>
-				<div class="description">
-				<hgroup>
-					<h2>Uli Körber</h2>
-					<h1>Benzin im Blut – Zwischen Motocross und Corel Draw</h1>
-				</hgroup>
-					<p>
-						<a href="" class="infoLink">weitere Infos</a>
-						<a href="" class="playlistLink">zur Playlist hinzufügen</a>
-						<a href="" class="commentLink">Kommentare</a>
-					</p>
-				</div>
-			</li>
-            
-      <li class="contentBox">
-				<div class="playButton"></div>
-				<div class="description">
-				<hgroup>
-					<h2>Sigfried Raether</h2>
-					<h1>Santa Farina – Das Göttlichste, was man sich erlauben kann</h1>
-				</hgroup>
-					<p>
-						<a href="" class="infoLink">weitere Infos</a>
-						<a href="" class="playlistLink">zur Playlist hinzufügen</a>
-						<a href="" class="commentLink">Kommentare</a>
-					</p>
-				</div>
-			</li>
-            
-      <li class="contentBox">
-      	<img src="img/backgrounds/winsun-single.jpg" class="portraitIMG"  alt="winsun-single" width="1184" height="724" />
-				<div class="playButton"></div>
-				<div class="description">
-				<hgroup>
-					<h2>Serdar Batmaz</h2>
-					<h1>WingTsun – Kämpfen lernen, um nicht kämpfen zu müssen</h1>
-				</hgroup>
-					<p>
-						<a href="" class="infoLink">weitere Infos</a>
-						<a href="" class="playlistLink">zur Playlist hinzufügen</a>
-						<a href="" class="commentLink">Kommentare</a>
-					</p>
-				</div>
-			</li>
+		<?php
+		
+			for ($i=0; $i<5; $i++) {
+				
+				$element = json_decode($vc->getVideoWithImages($i));
+				
+				$html = '';
+				$html.= '<li class="contentBox">';
+				$html.= '<img src="'.$element[0]->keyvisual.'" class="portraitIMG" alt="moderne-single"/>';
+				$html.= '<div class="playButton" onclick="javascript:window.location.href=\'index.php?section=detail&video_id='.$element[0]->Video_ID.'&autoplay=1\'"></div>';
+				$html.= '<div class="description">';
+				$html.= '<hgroup>';
+				$html.= '<h2></h2>';
+				$html.= '<h1>'.$element[0]->title.'</h1>';
+				$html.= '</hgroup>';
+				$html.= '<p>';
+				$html.= '<a href="index.php?section=detail&video_id='.$element[0]->Video_ID.'" class="infoLink">weitere Infos</a>';
+				$html.= '<a href="" class="playlistLink" alt="Zur Playlist hinzufügen">zur Playlist hinzufügen</a>';
+				$html.= '</p>';
+				$html.= '</div>';
+				$html.= '</li>';
+				
+				print $html;
+				
+				//print_r($element);
+			}
+		
+		?>
 		</ul>
 		<div class="arrowLeft"></div>
 		<div class="arrowRight"></div>

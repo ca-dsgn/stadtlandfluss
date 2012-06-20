@@ -628,7 +628,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 .item .images {
 	position: absolute;
 	height: 150px;
-	width: 200px;
+	width: 220px;
 	overflow: hidden;
 	top: 0;	
 }

@@ -139,7 +139,8 @@ class VideoController
 	public function getPersons($p_iCurrentIndex)
 	{
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("SELECT * FROM Persons JOIN person2video ON person2video.Person_ID = Persons.Person_ID WHERE Video_ID = ".$p_iCurrentIndex, $dbConnection->get_database(), "ro");
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM persons JOIN person2video ON person2video.Person_ID = persons.Person_ID WHERE Video_ID = ".$p_iCurrentIndex, $dbConnection->get_database(), "ro");
+			
 			return json_encode($resultSet);
 	}
 	

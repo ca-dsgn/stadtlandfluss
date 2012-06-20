@@ -166,7 +166,7 @@ function open_box(elem) {
 		
 		$(elem).find(".images").animate({
 				
-			height: '470',
+			height: '475',
 			top: '-160px'
 		},500);
 		$(elem).find(".info").animate({

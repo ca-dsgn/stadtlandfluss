@@ -515,6 +515,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	position: relative;
 	z-index: 10;
 	width: 240px;
+	background-image: url(../img/playlist.png);
 	background-color: rgba(255,255,255,0.5);
 	float: right;
 	min-height: 510px;

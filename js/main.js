@@ -2,6 +2,10 @@ var playlist;
 
 $(document).ready(function() {
 	
+	if (get_cookie("playlist") == null) {
+		
+		set_cookie("playlist","");
+	}
 	playlist = get_cookie("playlist");
 	
 	matrixDraggable();
@@ -34,11 +38,6 @@ $(document).ready(function() {
 		
 		close_box($(".open"));
 	});
-	
-	if (get_cookie("playlist") == null) {
-		
-		set_cookie("playlist","");
-	}
 	
 	$(".arrowBottom").live("click",function() {
 		

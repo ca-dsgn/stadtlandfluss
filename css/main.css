@@ -305,6 +305,46 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 
 
 
+.videoLayer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(35,37,39, 0.98);
+	z-index: 100;
+}
+
+.videoPlayer {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -250px;
+	margin-left: -400px;
+	width: 800px;
+	height: 500px;
+	background-color: #b117b8;
+	opacity: 1;
+}
+
+.closeButton {
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	width: 70px;
+	height: 70px;
+	z-index: 700;
+	cursor: pointer;
+	background-image: url('../img/close.png');
+	text-indent: -9999px;
+}
+
+.closeButton:hover {
+	background-image: url('../img/closeOver.png');
+}
+
+
+
 
 /*	PLAY-BUTTON -------------------------------------- */
 

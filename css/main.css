@@ -253,6 +253,10 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 		background-image: url('../img/backgrounds/motocross.jpg');
 }
 
+#backPizza {
+		background-image: url('../img/backgrounds/pizza.jpg');
+}
+
 
 
 #protagonistContent ul {

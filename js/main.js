@@ -23,19 +23,6 @@ $(document).ready(function() {
 		
 		matrixMove("left");
 	});
-	$(window).keyup(function(event) {
-		
-		if (event.keyCode == 37) {
-			
-			//LEFT
-			matrixMove("left");
-		}
-		if (event.keyCode == 39) {
-			
-			//RIGHT
-			matrixMove("right");
-		}
-	});
 	
 	resizeGridByWindowWidth();
 	positionGrid();
@@ -60,7 +47,6 @@ $(document).ready(function() {
 		
 		playListMove("up");
 	});
-	
 });
 
 function checkArrowVisibility() {

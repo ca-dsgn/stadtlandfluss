@@ -21,6 +21,20 @@ $(document).ready(function() {
 		slideShowPositioning();
 	});
 	slidehowDraggable();
+	
+	$(window).keyup(function(event) {
+		
+		if (event.keyCode == 37) {
+			
+			//LEFT
+			slideshow_move("left");
+		}
+		if (event.keyCode == 39) {
+			
+			//RIGHT
+			slideshow_move("right");
+		}
+	});
 });
 
 function blow_play_automat(on_or_off) {

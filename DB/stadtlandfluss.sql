@@ -1,24 +1,19 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
+-- version 3.2.0.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 19. Jun 2012 um 17:45
--- Server Version: 5.5.16
--- PHP-Version: 5.3.8
+-- Erstellungszeit: 20. Juni 2012 um 10:17
+-- Server Version: 5.1.37
+-- PHP-Version: 5.3.0
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Datenbank: `stadtlandfluss`
 --
+CREATE DATABASE `stadtlandfluss` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `stadtlandfluss`;
 
 -- --------------------------------------------------------
 
@@ -94,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `person2video` (
   `Video_ID` int(5) unsigned DEFAULT NULL,
   `Person_ID` int(5) unsigned DEFAULT NULL,
   PRIMARY KEY (`p2v_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Daten für Tabelle `person2video`
@@ -108,7 +103,12 @@ INSERT INTO `person2video` (`p2v_ID`, `Video_ID`, `Person_ID`) VALUES
 (4, 1, 2),
 (5, 2, 0),
 (6, 3, 4),
-(7, 4, 3);
+(7, 4, 3),
+(8, 0, 10),
+(9, 1, 7),
+(10, 2, 8),
+(11, 3, 9),
+(12, 4, 5);
 
 -- --------------------------------------------------------
 
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `persons` (
   `function` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Person_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Daten für Tabelle `persons`
@@ -133,7 +133,12 @@ INSERT INTO `persons` (`Person_ID`, `name`, `function`, `type`) VALUES
 (1, 'Daniela', 'Schnitt', 'dozent'),
 (2, 'Christoph', 'Aufnahmeleiter', 'student'),
 (3, 'Brigitte Schmitt', 'Tierheim Dallau', 'Protagonist'),
-(4, 'Werner Simon', 'Polizei Mosbach', 'Protagonist');
+(4, 'Werner Simon', 'Polizei Mosbach', 'Protagonist'),
+(5, 'Serdar Batmaz', '', 'Protagonist'),
+(7, 'Michaela Pusch', '', 'Protagonist'),
+(8, 'Uli Körber', '', 'Protagonist'),
+(9, 'Sigfried Raether', '', 'Protagonist'),
+(10, 'Baron Dajo von Gemmingen-Hornberg', '', 'Protagonist');
 
 -- --------------------------------------------------------
 
@@ -146,19 +151,16 @@ CREATE TABLE IF NOT EXISTS `stories` (
   `description` varchar(2000) DEFAULT NULL,
   `title` varchar(200) DEFAULT NULL,
   `votes` bigint(7) unsigned zerofill DEFAULT NULL,
-  `visible` binary(1) DEFAULT '0',
   PRIMARY KEY (`Story_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Daten für Tabelle `stories`
 --
 
-INSERT INTO `stories` (`Story_ID`, `description`, `title`, `votes`, `visible`) VALUES
-(0, 'lorem Ipsumkpdsffsd', 'Der alte Mann am Baum', 0000001, '0'),
-(1, 'Und er flog in den Neckar....', 'Der verlorene Reifen', 0000029, '0'),
-(5, 'lorem ipsum...', 'Der, der niemals heimging', NULL, '1'),
-(6, 'lorem ipsum...', 'Der, der niemals heimging', NULL, '1');
+INSERT INTO `stories` (`Story_ID`, `description`, `title`, `votes`) VALUES
+(1, 'lorem Ipsumkpdsffsd', 'Der alte Mann am Baum', 0000002),
+(2, 'Und er flog in den Neckar....', 'Der verlorene Reifen', 0000000);
 
 -- --------------------------------------------------------
 
@@ -174,29 +176,16 @@ CREATE TABLE IF NOT EXISTS `suggestions` (
   `mail` varchar(80) DEFAULT NULL,
   `Suggestion_ID` bigint(7) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`Suggestion_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Daten für Tabelle `suggestions`
 --
 
 INSERT INTO `suggestions` (`name`, `timestamp`, `story`, `phone`, `mail`, `Suggestion_ID`) VALUES
-('name1', '2012-06-19 14:39:32', 'adda', '234324-324324', 'adw@asdads.de', 6),
-('name', '2012-06-19 14:46:18', 'story', 'phone', 'mail', 7),
-('name', '2012-06-19 14:46:26', 'story', 'phone', 'mail', 8),
-('name', '2012-06-19 14:52:26', 'story', 'phone', 'mail', 9),
-('name', '2012-06-19 14:52:49', 'story', 'phone', 'mail', 10),
-('name', '2012-06-19 15:03:09', 'story', 'phone', 'mail', 11),
-('name', '2012-06-19 15:16:03', 'story', 'phone', 'mail', 12),
-('name', '2012-06-19 15:18:10', 'story', 'phone', 'mail', 13),
-('name', '2012-06-19 15:18:26', 'story', 'phone', 'mail', 14),
-('name', '2012-06-19 15:18:39', 'story', 'phone', 'mail', 15),
-('name', '2012-06-19 15:37:38', 'story', 'phone', 'mail', 16),
-('name', '2012-06-19 15:38:21', 'story', 'phone', 'mail', 17),
-('name', '2012-06-19 15:41:09', 'story', 'phone', 'mail', 18),
-('name', '2012-06-19 15:41:53', 'story', 'phone', 'mail', 19),
-('name', '2012-06-19 15:45:27', 'story', 'phone', 'mail', 20),
-('name', '2012-06-19 15:45:37', 'story', 'phone', 'mail', 21);
+('TestName', '2012-06-19 14:22:26', 'lorem ipsum dolem bla bla', '293049324-93/249324', 'afasdfdsf.de', 0),
+('Test1Name', '2012-06-19 14:56:40', 'waads wadw  story', '342324324/324324', '234423erre.com', 1),
+('name', '2012-06-19 17:09:13', 'story', 'phone', 'mail', 3);
 
 -- --------------------------------------------------------
 
@@ -250,11 +239,11 @@ CREATE TABLE IF NOT EXISTS `videos` (
 --
 
 INSERT INTO `videos` (`Video_ID`, `date`, `title`, `subtitle`, `source`, `description`, `backgroundimage`, `keyvisual`, `longitude`, `altitude`) VALUES
-(0, '2012-06-12 13:05:11', 'Trailer StadtLandFluss-Geschichten', 'subtitle aus DB', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Seit Jahren entstehen am Studiengang Onlinemedien an der DHBW Mosbach kurze Portraits von Personen rund um Mosbach. Die Filmemacher Daniela Michel und Alexander Kleider leiten das jährlich stattfindende Dokumentarfilmseminar. Der Trailer zum darauf basierenden Projekt StadtLandFluss-Geschichten (www.stadtlandfluss-geschichten.de), das von Prof. Dr. Thomas Wirth initiiert wurde, schaut den Studenten bei der Filmarbeit über die Schulter und lässt Dozenten und Studenten zu Wort kommen.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.148206', '49.3515'),
-(1, '2012-05-22 02:02:44', 'Santa Farina – Das Göttlichste, was man sich erlauben kann', 'subtitle aus DB', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Sigfried Raether, von allen Siggi genannt, ist leidenschaftlicher Pizzabäcker. Seine Pizzeria „Santa Farina“ befindet sich in der Nähe der S-Bahnhaltstellte Mosbach (Baden). Siggi ist durch seine charmante italienische Art stadtbekannt. Durch seine ganz besonderen Techniken die Zutaten auf die Pizza zu bringen, ist es schon ein Highlight ihm beim Backen zuzuschauen. Mehrere Studierende von ON09 sind regelmäßig in der Mittagspause zu Gast bei Siggi und wollten mehr über diese außergewöhnliche Persönlichkeit, die der Pizzeria einen heimeligen Flair verleiht, erfahren.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.144452', '49.351591'),
-(2, '2012-05-22 01:57:27', 'Benzin im Blut - Zwischen Motocross und CorelDraw', 'subtitle aus DB ', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Uli Körber ist selbstständiger Grafikdesigner in Schefflenz. Doch das ist nicht alles. Uli hat Benzin im Blut! Um einen Ausgleich zu seinem Beruf zu haben, geht er regelmäßig MotoCross fahren. Mit Hilfe dieses außergewöhnlichen Hobbys und dessen Preisgeldern konnte er sein Studium finanzieren. Uli wurde sogar Deutscher- und Europameister! Sabine Bennebach von der Bürgerstiftung für die Region Mosbach gab uns den Tipp zu diesem Portrait.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.254093', '49.394022'),
-(3, '2012-06-15 13:01:05', 'Tierheim Dallau - Jeder Käfig hat seine Geschichte', 'subtitle aus DB', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Mit einem besonders großen Einzugsgebiet im Neckar-Odenwald-Kreis bietet das Tierheim Dallau vielen Tieren ein temporäres Zuhause - manchen länger, anderen nur kurz. Wir haben Brigitte Schmitt, eines der langjährigen Mitglieder des Vereins begleitet, wie sie um das Schicksal des Schäferhundrüden „Sultan" bangt, der fünf Jahre lang nicht vermittelt werden konnte. Florian Eberle und Matthias Weise (Studierende des Jahrgangs 2009) wollten eine Tierheimgeschichte erzählen und sind so auf das Mosbacher Tierheim in Dallau gestoßen.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.2004', '49.384641'),
-(4, '2012-06-15 13:13:57', 'Vorsicht, Kontrolle!', 'subtitle aus DB', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Werner Simon ist stellvertretender Dienstgruppenführer der Verkehrspolizei Mosbach und sorgt mit der Überwachung des Schwerverkehrs für mehr Sicherheit auf den Straßen in und um Mosbach. Der Kontakt kam über Lisa Simon (ON09) zustande.', 'http://www.backgroundlabs.com/twitter/4.jpg', 'http://www.dorsch.com/_images/_coolhunting_images_puma-Bike-Profile.jpg', '9.146783', '49.355092');
+(0, '2012-06-12 13:05:11', 'Zwischen Tradition und Moderne', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Baron Dajo von Gemmingen-Hornberg erzählt von seinem Leben auf der Burg und seinem Leben zwischen der Arbeit als Winzer und den Pflichten als Gutsverwalter. In vergangenen Zeiten brachte ein Adelstitel viele Vorzüge im Leben mit sich. Doch wie ist es heute? Sind Adelstitel in der modernen Gesellschaft unwichtig geworden? Fabian Stein (Student des Jahrgangs 2010) wohnt auf der Burg Hornberg und ist zudem mit Baron Dajo von Gemmingen-Hornberg befreundet.', 'img/backgrounds/moderne.jpg', 'img/backgrounds/moderne-single.jpg', '9.145575', '49.315947'),
+(1, '2012-05-22 02:02:44', 'Soweit der Wind sie trägt', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Gleitschirmfliegen ist ein Stück Freiheit. Der Wettkampf mit dem Wind und der Thermik, aber auch das Kribbeln im Bauch, die Ruhe und Schönheit der Natur faszinieren Michaela Pusch schon lange. In ihrer Freizeit spielt sie zudem mit René Preisler (Student des Jahrgangs 2009) im selben Verein Tischtennis.', 'img/backgrounds/wind.jpg', 'img/backgrounds/wind-single.png', '9.104696', '49.362253'),
+(2, '2012-05-22 01:57:27', 'Benzin im Blut - Zwischen Motocross und CorelDraw', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Uli Körber ist selbstständiger Grafikdesigner in Schefflenz. Doch das ist nicht alles. Uli hat Benzin im Blut! Um einen Ausgleich zu seinem Beruf zu haben, geht er regelmäßig MotoCross fahren. Mit Hilfe dieses außergewöhnlichen Hobbys und dessen Preisgeldern konnte er sein Studium finanzieren. Uli wurde sogar Deutscher- und Europameister! Sabine Bennebach von der Bürgerstiftung für die Region Mosbach gab uns den Tipp zu diesem Portrait.', 'img/backgrounds/motocross.jpg', 'img/backgrounds/motocross-single.png', '9.254093', '49.394022'),
+(3, '2012-06-15 13:01:05', 'Santa Farina – Das Göttlichste, was man sich erlauben kann', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Sigfried Raether, von allen Siggi genannt, ist leidenschaftlicher Pizzabäcker. Seine Pizzeria „Santa Farina“ befindet sich in der Nähe der S-Bahnhaltstellte Mosbach (Baden). Siggi ist durch seine charmante italienische Art stadtbekannt. Durch seine ganz besonderen Techniken die Zutaten auf die Pizza zu bringen, ist es schon ein Highlight ihm beim Backen zuzuschauen. Mehrere Studierende von ON09 sind regelmäßig in der Mittagspause zu Gast bei Siggi und wollten mehr über diese außergewöhnliche Persönlichkeit, die der Pizzeria einen heimeligen Flair verleiht, erfahren.', '', '', '9.144452', '49.351591'),
+(4, '2012-06-15 13:13:57', 'WingTsun - Kämpfen lernen, um nicht kämpfen zu müssen', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Serdar Batmaz ist professioneller Kampfkünstler, der mit Leib und Seele WingTsun unterrichtet und lebt. Er ist einer der Wenigen, die den 5. Praktikergrad erreicht haben. Seine Philosophie: "Kämpfen lernen, um nicht kämpfen zu müssen." Serdar trainiert im Fitnesscenter Muskelkater in Mosbach, wo Melanie Hiller (Studentin des Jahrgangs 2010) auf ihn aufmerksam wurde.', 'img/backgrounds/winsun.jpg', 'img/backgrounds/winsun-single.jpg', '9.131995', '49.343943');
 
 -- --------------------------------------------------------
 
@@ -270,6 +259,7 @@ CREATE TABLE IF NOT EXISTS `votings` (
   PRIMARY KEY (`Voting_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- Daten für Tabelle `votings`
+--
+

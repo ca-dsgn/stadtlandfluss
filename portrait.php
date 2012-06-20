@@ -41,7 +41,6 @@
 				
 				//print_r($element);
 			}
-		
 		?>
 		</ul>
 		<div class="arrowLeft"></div>

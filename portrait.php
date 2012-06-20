@@ -72,7 +72,7 @@
 			</li>
             
       <li class="contentBox">
-      	<img src="img/backgrounds/winsun-single.jpg" class="portraitIMG"  alt="winsun-single" width="1184" height="724" />
+      	<img src="img/backgrounds/winsun-single.jpg" class="portraitIMG"  alt="winsun-single" width="1244" height="761" />
 				<div class="playButton"></div>
 				<div class="description">
 				<hgroup>

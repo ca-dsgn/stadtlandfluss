@@ -591,7 +591,8 @@ function matrixArrows() {
 }
 
 function videoLayerOpen() {	
-	  	$('.videoPlayer').show(500);
+	  
+	$('.videoPlayer').show(250);
 
 	$('.videoLayer').show().animate({
     opacity: 1,

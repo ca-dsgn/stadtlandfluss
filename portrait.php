@@ -41,7 +41,7 @@
 			</li>
 			
 			<li class="contentBox">
-				<img src="img/backgrounds/motocross-single.png" class="portraitIMG" alt="motocross-single" width="500" height="700" />
+				<img src="img/backgrounds/motocross-single.png" class="portraitIMG" alt="motocross-single" width="780" height="700" />
 				<div class="playButton"></div>
 				<div class="description">
 				<hgroup>

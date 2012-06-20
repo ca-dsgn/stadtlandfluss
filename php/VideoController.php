@@ -17,7 +17,6 @@ class VideoController
 	function __construct()
 	{
 		$dbConnection = new Database();
-		
 		$resultSet = $dbConnection->query("Select MAX(Video_ID) from videos", $dbConnection->get_database(), "ro");
 		$this->idMax = $resultSet[0];
 		$this->helper = new Helper();

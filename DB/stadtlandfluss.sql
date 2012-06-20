@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 20. Juni 2012 um 14:07
+-- Erstellungszeit: 20. Juni 2012 um 16:12
 -- Server Version: 5.1.37
 -- PHP-Version: 5.3.0
 
@@ -59,9 +59,9 @@ CREATE TABLE IF NOT EXISTS `images` (
 --
 
 INSERT INTO `images` (`Image_ID`, `url`, `alt`, `Video_ID`) VALUES
-(0, 'img/grid/motorcross_main.png', 'Test', 0),
-(1, 'img/grid/motorcross_main.png', 'Test', 0),
-(2, 'img/grid/motorcross_main.png', 'Test', 0),
+(0, 'img/grid/0-1.png', 'Test', 0),
+(1, 'img/grid/0-2.png', 'Test', 0),
+(2, 'img/grid/0-3.png', 'Test', 0),
 (3, 'img/grid/motorcross_main.png', 'Test', 5),
 (4, 'img/grid/motorcross_main.png', 'Test', 1),
 (5, 'img/grid/motorcross_main.png', 'Test', 1),

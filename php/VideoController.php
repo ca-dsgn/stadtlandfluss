@@ -162,24 +162,12 @@ class VideoController
 			$dbConnection = new Database();
 			$resultSetVideos = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iEnd, "stadtlandfluss", "ro");
 			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
-			
-			for($i =0; $i <sizeof($resultSetVideos);$i++)
-			{
-				$tmp = $resultSetVideos[$i];
-				$resultSetImages = $dbConnection->queryAssoc("SELECT * FROM images WHERE Video_ID =".$i, $dbConnection->get_database(), "ro");
-				$image_array = Array();
-				foreach($resultSetImages AS $key => $value) {
-					array_push($image_array,array(
-						"Image_ID"=>$value["Image_ID"],
-						"url"=>$value["url"],
-						"alt"=>$value["alt"]
-						)
-					);
-				}
-				for ($i=0; $i<5;$i++) 
-				{				
-					$this->helper->array_push_associative($resultSetVideos[$i],array("images" => $image_array));
-				}				
+			$id_array = Array();
+			$i=0;
+			foreach($resultSetVideos AS $key => $value)
+			{									
+					$this->helper->array_push_associative($resultSetVideos[$i],array("images" => json_decode($this->getImages($value['Video_ID']),true)));
+					$i++;
 			}
 			return json_encode($resultSetVideos);
 	}

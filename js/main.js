@@ -339,7 +339,10 @@ function playListSortable() {
 			y_original = event.screenX;
 			ready_to_kill = false;
 			
-			$(".playList > ul").scrollTop(playListScrollTop);
+			if ($(".playList > ul > li").length > 3) {
+				
+				$(".playList > ul").scrollTop(playListScrollTop);
+			}
 		},
 		stop: function(event, ui) {
 			$(ui.item).bind("mouseup", function() {

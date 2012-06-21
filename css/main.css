@@ -319,7 +319,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin: -250px 0 0 -400px;;
+	margin: -250px 0 0 -400px;
 	width: 800px;
 	height: 500px;
 	background-color: #b117b8;
@@ -586,8 +586,8 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 #detailContent h2 {
 	margin: 0 0 5px 0;
 	color: #5FCEEF;
-	font-weight: normal;
-	text-shadow: 1px 1px #999;
+	font-weight: 600;
+	text-shadow: none;
 	font-size: 1.3em;
 }
 
@@ -597,6 +597,19 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	margin: 20px 0 5px 0;
 	color: #656565;
 }
+
+
+
+
+#movieDetailDescription {margin: 100px 0 0 0; padding: 10px;}
+#movieDetailMeta {padding: 10px;}
+#movieDetailMeta .left {float: left; width: 50%;}
+#movieDetailMeta .right {float: right; width: 50%;}
+.borderWhite {clear: both; background-color: rgba(255, 255, 255, 0.5); padding: 10px;}
+
+
+/*
+
 
 #detailVideoPlayer {
 	position: absolute;
@@ -651,7 +664,9 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 #movieCommentsBox {
 	float: right;
 	width: 48%;
-}
+}*/
+
+
 
 
 

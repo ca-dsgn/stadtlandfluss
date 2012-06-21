@@ -592,15 +592,14 @@ function matrixArrows() {
 
 function videoLayerOpen() {	
 	  
-	$('.videoPlayer').show(250);
-
 	$('.videoLayer').show().animate({
     opacity: 1,
-    left: '-=50',
-    right: '-=50',
-    top: '-=50',
-    bottom: '-=50'
+    left: '-=30',
+    right: '-=30',
+    top: '-=30',
+    bottom: '-=30'
   }, 250, function() {
+  	$('.videoPlayer').show();
   });
   
   
@@ -611,11 +610,12 @@ function videoLayerOpen() {
 function videoLayerClose() {
 	$('.videoLayer').animate({
     opacity: 0,
-    left: '+=50',
-    right: '+=50',
-    top: '+=50',
-    bottom: '+=50'
+    left: '+=30',
+    right: '+=30',
+    top: '+=30',
+    bottom: '+=30'
   }, 250, function() {
+    $('.videoPlayer').hide();
   	$(this).hide();
   });
 }

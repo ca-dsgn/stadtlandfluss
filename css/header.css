@@ -73,13 +73,13 @@
 
 #pageNav ul  {
 	position: absolute;
-	top: -9999px;
+	top: 0px;
 	background-color: #fff;
-  opacity: 0;
-  -webkit-transition: opacity .4s ease-in-out;
-  -moz-transition: opacity .4s ease-in-out;
-  -o-transition: opacity .4s ease-in-out;
-  transition: opacity .4s ease-in-out;
+	display: none;
+	-webkit-transition: opacity .4s ease-in-out;
+	-moz-transition: opacity .4s ease-in-out;
+	-o-transition: opacity .4s ease-in-out;
+	transition: opacity .4s ease-in-out;
 }
 
 #pageNav ul li a {
@@ -90,11 +90,6 @@
 	cursor: pointer;
 	background-color: #000;
 	color: #fff;
-}
-
-#pageNav li:hover ul  {
-	opacity: 1;
-	top: 0px;
 }
 
 

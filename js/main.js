@@ -60,7 +60,24 @@ $(document).ready(function() {
 		e.preventDefault();
 		videoLayerClose();
 	});
-	
+	$("#pageNav > li").mouseenter(function() {
+		
+		var li = $(this);
+		
+		$(this).addClass("has_focus");
+		
+		setTimeout(function(){
+				
+		  if ($(li).hasClass("has_focus")) {
+			   
+			$(li).find("ul").slideDown(300);
+		  }
+		}, 500);
+	}).mouseleave( function() {
+		
+		$(this).find("ul").slideUp();
+		$(this).removeClass("has_focus");
+	});
 	
 });
 

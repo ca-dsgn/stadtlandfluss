@@ -150,7 +150,7 @@ class VideoController
 	public function getMatrixView($p_iStart, $p_iEnd)
 	{		
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iEnd, "stadtlandfluss", "ro");
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iEnd, $dbConnection->get_database(), "ro");
 			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
 			//$resultSet = $dbConnection->queryAssoc("SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= ".$p_iStart." and videos.Video_ID <".$p_iNum, $dbConnection->get_database(), "ro");
 			return json_encode($resultSet);
@@ -160,7 +160,7 @@ class VideoController
 	public function getMatrixViewWithImages($p_iStart, $p_iEnd)
 	{		
 			$dbConnection = new Database();
-			$resultSetVideos = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iEnd, "stadtlandfluss", "ro");
+			$resultSetVideos = $dbConnection->queryAssoc("SELECT * FROM videos WHERE Video_ID >= ".$p_iStart." and Video_ID <".$p_iEnd, $dbConnection->get_database(), "ro");
 			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
 			$id_array = Array();
 			$i=0;
@@ -207,7 +207,7 @@ class VideoController
 	public function getSuggestions($p_iStart, $p_iEnd)
 	{
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("SELECT * FROM suggestions WHERE Suggestion_ID >= ".$p_iStart." and Suggestion_ID <".$p_iEnd, "stadtlandfluss", "ro");
+			$resultSet = $dbConnection->queryAssoc("SELECT * FROM suggestions WHERE Suggestion_ID >= ".$p_iStart." and Suggestion_ID <".$p_iEnd, $dbConnection->get_database(), "ro");
 			return json_encode($resultSet);
 	}
 	
@@ -218,7 +218,7 @@ class VideoController
 	public function incrementVote($p_storyID)
 	{
 		$dbConnection = new Database();
-		$affectedRows = $dbConnection->queryInsertion("UPDATE stories SET votes = votes+1 WHERE Story_ID = ".$p_storyID, "stadtlandfluss", "ro");
+		$affectedRows = $dbConnection->queryInsertion("UPDATE stories SET votes = votes+1 WHERE Story_ID = ".$p_storyID, $dbConnection->get_database(), "ro");
 		return $affectedRows;
 	}
 	
@@ -232,7 +232,7 @@ class VideoController
 	public function createSuggestion($p_name, $p_story, $p_phone, $p_mail)
 	{
 		$dbConnection = new Database();
-		$affectedRows = $dbConnection->queryInsertion("INSERT INTO suggestions (name, timestamp, story, phone, mail) VALUES ('".$p_name."',NOW(),'".$p_story."','".$p_phone."','".$p_mail."')", "stadtlandfluss", "ro");
+		$affectedRows = $dbConnection->queryInsertion("INSERT INTO suggestions (name, timestamp, story, phone, mail) VALUES ('".$p_name."',NOW(),'".$p_story."','".$p_phone."','".$p_mail."')", $dbConnection->get_database(), "ro");
 		return $affectedRows;		
 	}
 	
@@ -245,7 +245,7 @@ class VideoController
 	public function createStory($p_title, $p_description, $p_visible)
 	{
 		$dbConnection = new Database();
-		$affectedRows = $dbConnection->queryInsertion("INSERT INTO stories (title, description, visible) VALUES ('".$p_title."','".$p_description."','".$p_visible."')", "stadtlandfluss", "ro");
+		$affectedRows = $dbConnection->queryInsertion("INSERT INTO stories (title, description, visible) VALUES ('".$p_title."','".$p_description."','".$p_visible."')", $dbConnection->get_database(), "ro");
 		return $affectedRows;		
 	}
 	

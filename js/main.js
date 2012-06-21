@@ -210,8 +210,9 @@ function open_box(elem) {
 		
 		$(elem).find(".images").animate({
 				
-			height: '475',
-			top: '-160px'
+			height: '470',
+			top: '-180px',
+			opacity: 1
 		},500);
 		$(elem).find(".info").animate({
 			
@@ -229,7 +230,8 @@ function close_box(elem) {
 	$(elem).find(".images").animate({
 			
 		height: '150',
-		top: '0'
+		top: '0',
+		opacity: 0
 	},500);
 	$(elem).find(".info").animate({
 		

@@ -316,15 +316,18 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 }
 
 .videoPlayer {
-	margin: 0 auto;
-	width: 500px;
-	height: 400px;
-	margin-top: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -250px 0 0 -400px;;
+	width: 800px;
+	height: 500px;
 	background-color: #b117b8;
 }
 
 .closeButton {
 	position: absolute;
+	top: 25px;
 	right: 25px;
 	width: 70px;
 	height: 70px;

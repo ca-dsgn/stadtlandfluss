@@ -9,10 +9,10 @@
 	<div class="backgroundImages">
 		<div class="backgroundImage" id="backModerne"></div>
 		<div class="backgroundImage" id="backWind"></div>
-        <div class="backgroundImage" id="backMotocross"></div>
-        <div class="backgroundImage" id="backPizza"></div>
-        <div class="backgroundImage" id="backWinsun"></div>
-    </div>
+    <div class="backgroundImage" id="backMotocross"></div>
+    <div class="backgroundImage" id="backPizza"></div>
+    <div class="backgroundImage" id="backWinsun"></div>
+  </div>
 	<div class="wrapper">
 		<ul>
 		<?php

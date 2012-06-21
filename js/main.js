@@ -650,6 +650,6 @@ function videoLayerClose() {
 	$('.videoLayer').animate({
 		opacity: 0
 	}, 300, function() {
-		$('.videoLayer .videoPlayer').hide();
+		$('.videoLayer, .videoPlayer').hide();
 	});
 }

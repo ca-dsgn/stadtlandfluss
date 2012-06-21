@@ -49,12 +49,14 @@ $(document).ready(function() {
 	});
 	
 	$(".playButton").live("click",function(e) {	
-	  e.preventDefault();
+	
+		e.preventDefault();
 		videoLayerOpen();
 	});
 	
-	$(".closeButton").live("click",function(e) {	
-	  e.preventDefault();
+	$(".closeButton").live("click",function(e) {
+			
+		e.preventDefault();
 		videoLayerClose();
 	});
 	
@@ -66,7 +68,6 @@ function checkArrowVisibility() {
 	if ($(".playList ul li").length > 3) {
 		
 		$(".arrowBottom").fadeIn(300);
-		$(".arrowTop").fadeIn(300);
 	}
 	else {
 		
@@ -86,6 +87,13 @@ function playListMove(direction) {
 				$(".playList ul").animate({
 					
 					scrollTop: "+=" + 170
+				}, function() {
+					
+					if (($(".playList ul li").length - 3)*170 == $(".playList ul").scrollTop()) {
+					
+						$(".playList .arrowBottom").hide();	
+						$(".playList .arrowTop").fadeIn(300);
+					}
 				});
 				break;
 				
@@ -94,6 +102,13 @@ function playListMove(direction) {
 				$(".playList ul").animate({
 					
 					scrollTop: "-=" + 170
+				}, function() {
+					
+					if ($(".playList ul").scrollTop() == 0) {
+					
+						$(".playList .arrowTop").hide();	
+						$(".playList .arrowBottom").fadeIn(300);
+					}
 				});
 				break;
 		}
@@ -590,32 +605,29 @@ function matrixArrows() {
 	
 }
 
-function videoLayerOpen() {	
-	  
+function videoLayerOpen() {
+
 	$('.videoLayer').show().animate({
-    opacity: 1,
-    left: '-=30',
-    right: '-=30',
-    top: '-=30',
-    bottom: '-=30'
-  }, 250, function() {
-  	$('.videoPlayer').show();
-  });
-  
-  
-  
-	
+		
+		opacity: 1
+	},300, function() {
+		
+		$('.videoLayer .videoPlayer').delay(300).animate({
+			width: "+=300",
+			height: "+=100"
+		},250);
+	});
 }
 
 function videoLayerClose() {
-	$('.videoLayer').animate({
-    opacity: 0,
-    left: '+=30',
-    right: '+=30',
-    top: '+=30',
-    bottom: '+=30'
-  }, 250, function() {
-    $('.videoPlayer').hide();
-  	$(this).hide();
-  });
+	$('.videoLayer').hide().animate({
+		
+		opacity: 0
+	}, 250, function() {
+		
+		$('.videoLayer .videoPlayer').animate({
+			width: "+=300",
+			height: "+=100"
+		},250);
+	});
 }

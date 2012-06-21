@@ -1,4 +1,18 @@
 	<!-- PAGE SLIDER-BOX [BEGIN] -->
+      <div id="" class="videoLayer">
+      	<div class="wrapper">
+          <a href="" class="closeButton">close</a>
+          <div class="videoPlayer">
+              <object>
+                <param value="http://www.youtube.com/v/p74Ui12Y55c&showinfo=0" name="movie">
+                <param value="opaque" name="wmode">
+                <param value="true" name="allowFullScreen">
+                <param value="always" name="allowScriptAccess">
+                <embed style="width: 100%; height: 100%" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://www.youtube.com/v/p74Ui12Y55c&showinfo=0" wmode="opaque">
+              </object>
+          </div>
+       </div>
+    </div>
 	<div id="pageFooterSlider" class="is_down">
 		<div id="pageFooterSliderButton"></div>
 		<div id="pageFooterSliderContent">

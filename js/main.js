@@ -639,28 +639,17 @@ function matrixArrows() {
 }
 
 function videoLayerOpen() {
-
 	$('.videoLayer').show().animate({
-		
 		opacity: 1
 	},300, function() {
-		
-		$('.videoLayer .videoPlayer').delay(300).animate({
-			width: "+=300",
-			height: "+=100"
-		},250);
+		$('.videoPlayer').show();
 	});
 }
 
 function videoLayerClose() {
-	$('.videoLayer').hide().animate({
-		
+	$('.videoLayer').animate({
 		opacity: 0
-	}, 250, function() {
-		
-		$('.videoLayer .videoPlayer').animate({
-			width: "+=300",
-			height: "+=100"
-		},250);
+	}, 300, function() {
+		$('.videoLayer .videoPlayer').hide();
 	});
 }

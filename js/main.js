@@ -1,4 +1,5 @@
 var playlist;
+var playListScrollTop;
 
 $(document).ready(function() {
 	
@@ -89,12 +90,16 @@ function playListMove(direction) {
 					scrollTop: "+=" + 170
 				}, function() {
 					
+					$(this).css("background-image","url(img/playlist.png)");
+					
 					if (($(".playList ul li").length - 3)*170 == $(".playList ul").scrollTop()) {
 					
 						$(".playList .arrowBottom").hide();	
 						$(".playList .arrowTop").fadeIn(300);
 					}
+					playListScrollTop = $(".playList ul").scrollTop();
 				});
+				$(".playList ul").css("background-image","none");
 				break;
 				
 			case "up":
@@ -104,12 +109,16 @@ function playListMove(direction) {
 					scrollTop: "-=" + 170
 				}, function() {
 					
+					$(this).css("background-image","url(img/playlist.png)");
+					
 					if ($(".playList ul").scrollTop() == 0) {
 					
 						$(".playList .arrowTop").hide();	
 						$(".playList .arrowBottom").fadeIn(300);
 					}
+					playListScrollTop = $(".playList ul").scrollTop();
 				});
+				$(".playList ul").css("background-image","none");
 				break;
 		}
 	}
@@ -329,6 +338,8 @@ function playListSortable() {
 			
 			y_original = event.screenX;
 			ready_to_kill = false;
+			
+			$(".playList > ul").scrollTop(playListScrollTop);
 		},
 		stop: function(event, ui) {
 			$(ui.item).bind("mouseup", function() {

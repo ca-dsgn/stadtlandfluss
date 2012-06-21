@@ -20,8 +20,7 @@ $(document).ready(function() {
 	$(window).resize(function() {
 		slideShowPositioning();
 	});
-	slidehowDraggable();
-	
+	slideShowDraggable();
 	$(window).keyup(function(event) {
 		
 		if (event.keyCode == 37) {
@@ -32,6 +31,7 @@ $(document).ready(function() {
 		if (event.keyCode == 39) {
 			
 			//RIGHT
+			
 			slideshow_move("right");
 		}
 	});
@@ -116,183 +116,186 @@ function slideshow_move(direction) {
 	
 	contentBoxWidth = $(".contentBox").width();
 	
-	switch(direction) {
+	if (!$(".contentBox").is(":animated")) {
 		
-		case "right":
-		
-			i=0;
-			$(".backgroundImage").each(function() {
-				
-				if (i == 3) {
-					$(this).animate({
-						
-						left: "-=100",
-						opacity: 1
-					});
-				}
-				else if (i == 4) {
-					
-					$(this).animate({
-						
-						left: "-=100",
-						opacity: 0
-					},function() {
-						
-						$(".backgroundImage:last-child").after($(".backgroundImage:first-child").css("left","200px"));
-					});
-				}
-				else {
-					$(this).animate({
-						
-						left: "-=100",
-						opacity: 0
-					});
-				}
-				i++;
-			});
-			$(".contentBox").each(function() {
-				
-				current_width = parseInt($(this).css("left"));
-				
-				if ($(this).hasClass("current")) {
-					
-					current_width = 0;
-				}
-				
-				if ($(this).hasClass("current")) {
-				
-					$(this).animate({
-						left: (current_width-contentBoxWidth),
-						opacity: 0
-					});
-				}
-				else if ($(this).hasClass("next")) {
-					
-					$(this).animate({
-						left: (current_width-contentBoxWidth),
-						opacity: 1
-					}, function() {
-						
-						$(".contentBox.prev").removeClass("prev");
-						$(".contentBox.current").addClass("prev");
-						$(".contentBox.current").removeClass("current");
-						$(this).addClass("current");
-						$(this).removeClass("next");
-						$(this).next().addClass("next");
-					});
-				}
-				else if ($(this).is(":last-child")) {
-					
-					$(this).animate({
-						left: (current_width-contentBoxWidth),
-						opacity: 0
-					}, function() {
-						
-						$(".contentBox:last-child").after($(".contentBox:first-child").css("left",(contentBoxWidth*2) + "px"));
-					});
-				}
-				else {
-					
-					$(this).animate({
-						left: (current_width-contentBoxWidth),
-						opacity: 0
-					});
-				}
-			});
+		switch(direction) {
 			
-			slidehowDraggable();
+			case "right":
 			
-			break;
-		case "left":
-		
-			i=0;
-			$(".backgroundImage").each(function() {
-				
-				if (i == 1) {
-					$(this).animate({
-						
-						left: "+=100",
-						opacity: 1
-					});
-				}
-				else if (i == 4) {
+				i=0;
+				$(".backgroundImage").each(function() {
 					
-					$(this).animate({
+					if (i == 3) {
+						$(this).animate({
+							
+							left: "-=100",
+							opacity: 1
+						});
+					}
+					else if (i == 4) {
 						
-						left: "+=100",
-						opacity: 0
-					},function() {
-						
-						$(".backgroundImage:first-child").before($(".backgroundImage:last-child").css("left","-200px"));
-					});
-				}
-				else {
-					$(this).animate({
-						
-						left: "+=100",
-						opacity: 0
-					});
-				}
-				i++;
-			});
-			$(".contentBox").each(function() {
-				
-				current_width = parseInt($(this).css("left"));
-				
-				if ($(this).hasClass("current")) {
+						$(this).animate({
+							
+							left: "-=100",
+							opacity: 0
+						},function() {
+							
+							$(".backgroundImage:last-child").after($(".backgroundImage:first-child").css("left","200px"));
+						});
+					}
+					else {
+						$(this).animate({
+							
+							left: "-=100",
+							opacity: 0
+						});
+					}
+					i++;
+				});
+				$(".contentBox").each(function() {
 					
-					current_width = 0;
-				}
-				
-				if ($(this).hasClass("current")) {
+					current_width = parseInt($(this).css("left"));
 					
-					$(this).animate({
-						left: (current_width+contentBoxWidth),
-						opacity: 0
-					});
-				}
-				else if ($(this).hasClass("prev")) {
-					
-					$(this).animate({
-						left: (current_width+contentBoxWidth),
-						opacity: 1
-					}, function() {
+					if ($(this).hasClass("current")) {
 						
-						$(".contentBox.next").removeClass("next");
-						$(".contentBox.current").addClass("next");
-						$(".contentBox.current").removeClass("current");
-						$(this).addClass("current");
-						$(this).removeClass("prev");
-						$(this).prev().addClass("prev");
-					});
-				}
-				else if ($(this).is(":last-child")) {
+						current_width = 0;
+					}
 					
-					$(this).animate({
-						left: (current_width+contentBoxWidth),
-						opacity: 0
-					}, function() {
+					if ($(this).hasClass("current")) {
+					
+						$(this).animate({
+							left: (current_width-contentBoxWidth),
+							opacity: 0
+						});
+					}
+					else if ($(this).hasClass("next")) {
 						
-						$(".contentBox:first-child").before($(".contentBox:last-child").css("left","-" + (contentBoxWidth*2) + "px"));
-					});
-				}
-				else {
-					$(this).animate({
-						left: (current_width+contentBoxWidth),
-						opacity: 0
-					});
-				}
+						$(this).animate({
+							left: (current_width-contentBoxWidth),
+							opacity: 1
+						}, function() {
+							
+							$(".contentBox.prev").removeClass("prev");
+							$(".contentBox.current").addClass("prev");
+							$(".contentBox.current").removeClass("current");
+							$(this).addClass("current");
+							$(this).removeClass("next");
+							$(this).next().addClass("next");
+						});
+					}
+					else if ($(this).is(":last-child")) {
+						
+						$(this).animate({
+							left: (current_width-contentBoxWidth),
+							opacity: 0
+						}, function() {
+							
+							$(".contentBox:last-child").after($(".contentBox:first-child").css("left",(contentBoxWidth*2) + "px"));
+						});
+					}
+					else {
+						
+						$(this).animate({
+							left: (current_width-contentBoxWidth),
+							opacity: 0
+						});
+					}
+				});
 				
-			});
-			$(".contentBox:first-child").css("left","-2560px");
+				slideShowDraggable();
+				
+				break;
+			case "left":
 			
-			slidehowDraggable();
-			
-			break;
+				i=0;
+				$(".backgroundImage").each(function() {
+					
+					if (i == 1) {
+						$(this).animate({
+							
+							left: "+=100",
+							opacity: 1
+						});
+					}
+					else if (i == 4) {
+						
+						$(this).animate({
+							
+							left: "+=100",
+							opacity: 0
+						},function() {
+							
+							$(".backgroundImage:first-child").before($(".backgroundImage:last-child").css("left","-200px"));
+						});
+					}
+					else {
+						$(this).animate({
+							
+							left: "+=100",
+							opacity: 0
+						});
+					}
+					i++;
+				});
+				$(".contentBox").each(function() {
+					
+					current_width = parseInt($(this).css("left"));
+					
+					if ($(this).hasClass("current")) {
+						
+						current_width = 0;
+					}
+					
+					if ($(this).hasClass("current")) {
+						
+						$(this).animate({
+							left: (current_width+contentBoxWidth),
+							opacity: 0
+						});
+					}
+					else if ($(this).hasClass("prev")) {
+						
+						$(this).animate({
+							left: (current_width+contentBoxWidth),
+							opacity: 1
+						}, function() {
+							
+							$(".contentBox.next").removeClass("next");
+							$(".contentBox.current").addClass("next");
+							$(".contentBox.current").removeClass("current");
+							$(this).addClass("current");
+							$(this).removeClass("prev");
+							$(this).prev().addClass("prev");
+						});
+					}
+					else if ($(this).is(":last-child")) {
+						
+						$(this).animate({
+							left: (current_width+contentBoxWidth),
+							opacity: 0
+						}, function() {
+							
+							$(".contentBox:first-child").before($(".contentBox:last-child").css("left","-" + (contentBoxWidth*2) + "px"));
+						});
+					}
+					else {
+						$(this).animate({
+							left: (current_width+contentBoxWidth),
+							opacity: 0
+						});
+					}
+					
+				});
+				$(".contentBox:first-child").css("left","-2560px");
+				
+				slideShowDraggable();
+				
+				break;
+		}
 	}
 }
 
-function slidehowDraggable() {
+function slideShowDraggable() {
 
 	$("#protagonistContent .contentBox").draggable({
 		
@@ -350,5 +353,5 @@ function loadContentBox(type) {
 			break;
 	}
 	/* Bring draggable to new staged elements */
-	slidehowDraggable();
+	slideShowDraggable();
 }

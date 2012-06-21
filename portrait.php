@@ -9,10 +9,10 @@
 	<div class="backgroundImages">
 		<div class="backgroundImage" id="backModerne"></div>
 		<div class="backgroundImage" id="backWind"></div>
-    <div class="backgroundImage" id="backMotocross"></div>
-    <div class="backgroundImage" id="backPizza"></div>
-    <div class="backgroundImage" id="backWinsun"></div>
-  </div>
+        <div class="backgroundImage" id="backMotocross"></div>
+        <div class="backgroundImage" id="backPizza"></div>
+        <div class="backgroundImage" id="backWinsun"></div>
+    </div>
 	<div class="wrapper">
 		<ul>
 		<?php
@@ -54,18 +54,5 @@
 		</ul>
 		<div class="arrowLeft"></div>
 		<div class="arrowRight"></div>
-		<div id="" class="videoLayer">
-			<div class="videoPlayer">
-				<object>
-					<param value="http://www.youtube.com/v/p74Ui12Y55c&showinfo=0" name="movie">
-	        <param value="opaque" name="wmode">
-	        <param value="true" name="allowFullScreen">
-	        <param value="always" name="allowScriptAccess">
-	        <embed style="width: 100%; height: 100%" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://www.youtube.com/v/p74Ui12Y55c&showinfo=0" wmode="opaque">
-	      </object>
-      </div>
-			<a href="" class="closeButton">close</a>
-		</div>
-		
 	</div>
 </div>

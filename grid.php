@@ -94,7 +94,7 @@
 					}
 				?>
 		        <div class="arrowBottom"<?php print $not_visible?>></div>
-		    	<div class="arrowTop"<?php print $not_visible?>></div>
+		    	<div class="arrowTop"<?php print ' style="display: none;"'?>></div>
 		    </div>
 		    <div class="clear"></div>
 		    <div class="naviPages">

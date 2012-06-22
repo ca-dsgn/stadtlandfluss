@@ -8,7 +8,7 @@
 		
 		<h1>Kontakt</h1>
 		
-		<p>Sie haben Fragen zu unserem Projekt? Dann können Sie folgendes Kontaktformular benutzen:</p>
+		<p>Sie haben Fragen zu unserem Projekt? Dann k&ouml;nnen Sie folgendes Kontaktformular benutzen:</p>
 		
 	    <?php
 	    // wenn das Formular übermittelt wurde
@@ -49,7 +49,7 @@
 	      } else {
 	        $mailbetreff="Kontaktformular ".$_SERVER['HTTP_HOST'];
 	        // HIER DIE EMPFÄNGER EMAIL-ADRESSE ANPASSEN!!!       
-	        echo (mail("katharina.franz@gmail.com", $mailbetreff, $mailnachricht, "From: $email")) ? "<p>Vielen Dank für Ihre eMail!</p>": "<p>Ein Fehler ist aufgetreten!</p>";
+	        echo (mail("katharina.franz@gmail.com", $mailbetreff, $mailnachricht, "From: $email")) ? "<p>Vielen Dank f&uuml;r Ihre eMail!</p>": "<p>Ein Fehler ist aufgetreten!</p>";
 	      }
 	    // das Formular welches als erstes dem Besucher angezeigt wird
 	    } else { ?>

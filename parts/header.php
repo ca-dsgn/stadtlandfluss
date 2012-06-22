@@ -2,7 +2,8 @@
 <html>
     <head>
         <title>StadtLandFluss-Geschichten</title>
-        <meta charset="utf-8"/>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/main.css" type="text/css"/>
         <link rel="shortcut icon" href="./favicon.png" type="image/png"/>
         <link rel="icon" href="./favicon.png" type="image/png"/>
@@ -24,7 +25,7 @@
             <a href="./" class="logoBig">StadtLandFluss-Geschichten</a>
 
         <ul id="pageNav">
-					<li><a href="">Menü</a>
+					<li><a href="">Men&uuml;</a>
 						<ul>
 							<?php
 								if (!isset($_GET["section"])) {

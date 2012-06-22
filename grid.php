@@ -75,8 +75,7 @@
                     <?php
 						if ($playlist == '') {
 					?>
-		        	<h3>PlayList</h3>
-		        	<p>Ziehen Sie die Filme in die PlayList</p>
+		        	<p>Um eine Playlist zu erstellen, ziehen Sie bitte die gew&uuml;nschten Filme von der rechten Seite auf die hier markierten Fl&auml;chen.</p>
                     <?php
 						}
 					?>

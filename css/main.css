@@ -577,6 +577,31 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	top: 200px;
 	color: #656565;
 }
+
+.playlistDown {
+	position: absolute;
+	width: 240px;
+	height: 29px;
+	margin-top: -10px;
+	z-index: 15;
+	cursor: pointer;
+	background-image: url('../img/playlist-down.png');
+	top: 491px;
+	left: 0;
+}
+
+.playlistUp {
+	position: absolute;
+	width: 240px;
+	height: 29px;
+	margin-top: -10px;
+	z-index: 15;
+	cursor: pointer;
+	background-image: url('../img/playlist-up.png');
+	top: 10px;
+	left: 0;
+}
+
 .clone {
 	background-color: green;
 }

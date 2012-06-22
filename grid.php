@@ -93,8 +93,8 @@
 						$not_visible = ' style="display: none;"';
 					}
 				?>
-		        <div class="arrowBottom"<?php print $not_visible?>></div>
-		    	<div class="arrowTop"<?php print ' style="display: none;"'?>></div>
+		        <div class="playlistDown"<?php print $not_visible?>></div>
+		    	<div class="playlistUp"<?php print ' style="display: none;"'?>></div>
 		    </div>
 		    <div class="clear"></div>
 		    <div class="naviPages">

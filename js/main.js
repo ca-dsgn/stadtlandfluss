@@ -40,11 +40,11 @@ $(document).ready(function() {
 		close_box($(".open"));
 	});
 	
-	$(".arrowBottom").live("click",function() {
+	$(".playlistDown").live("click",function() {
 		
 		playListMove("down");
 	});
-	$(".arrowTop").live("click",function() {
+	$(".playlistUp").live("click",function() {
 		
 		playListMove("up");
 	});
@@ -85,12 +85,12 @@ function checkArrowVisibility() {
 	
 	if ($(".playList ul li").length > 3) {
 		
-		$(".arrowBottom").fadeIn(300);
+		$(".playlistDown").fadeIn(300);
 	}
 	else {
 		
-		$(".arrowBottom").fadeOut(300);
-		$(".arrowTop").fadeOut(300);
+		$(".playlistDown").fadeOut(300);
+		$(".playlistUp").fadeOut(300);
 	}
 }
 
@@ -111,12 +111,12 @@ function playListMove(direction) {
 					
 					if (($(".playList ul li").length - 3)*170 == $(".playList ul").scrollTop()) {
 					
-						$(".playList .arrowBottom").hide();	
-						$(".playList .arrowTop").fadeIn(300);
+						$(".playList .playlistDown").hide();	
+						$(".playList .playlistUp").fadeIn(300);
 					}
 					if ($(".playList ul").scrollTop() <= ($(".playList ul li").length - 3)*170) {
 					
-						$(".playList .arrowTop").fadeIn(300);
+						$(".playList .playlistUp").fadeIn(300);
 					}
 					playListScrollTop = $(".playList ul").scrollTop();
 				});
@@ -134,12 +134,12 @@ function playListMove(direction) {
 					
 					if ($(".playList ul").scrollTop() == 0) {
 					
-						$(".playList .arrowTop").hide();	
-						$(".playList .arrowBottom").fadeIn(300);
+						$(".playList .playlistUp").hide();	
+						$(".playList .playlistDown").fadeIn(300);
 					}
 					if ($(".playList ul").scrollTop() <= ($(".playList ul li").length - 3)*170) {
 					
-						$(".playList .arrowBottom").fadeIn(300);
+						$(".playList .playlistDown").fadeIn(300);
 					}
 					playListScrollTop = $(".playList ul").scrollTop();
 				});

@@ -31,32 +31,39 @@
 			else {
 		?>
 		
-		<div id="movieDetailDescription">
-			<h1>Detailinformationen</h1>
-			<h2>Film-info</h2>
-			<p>affe</p>		
-		</div>
+		
+			<div class="contentScrollBox">
+		
+				<h2>Hans Müller</h2>
+				<h1>Lorem Ipsum</h1>
+		
+				<div id="movieDetailImage">Bild</div>
+				
+				<div id="movieDetailDescription">
+					<div id="movieDetailPreview">Video</div>
+					<h3>Film-Informationen</h3>
+					<p>asdjnasdjnasdjn</p>
+				</div>		
+	
+				<div id="movieDetailMeta">
+					<div class="left">
+						<p><strong>Ein Film von:</strong> Elina Wetsch, Lisa Simon, 
+Christian Albert, Sebastian Lauer, René Preußer 
+(Jahrgang 2009)</p>		
+					</div>
+					<div class="right">
+						<p><strong>Produktionsjahr:</strong> 2011<br/><strong>Drehort:</strong> Burg Hornberg</p>		
+					</div>
+				</div>
 
-		<div class="borderWhite">
-			<h2>Bildauszug</h2>		
-		</div>
+				<div id="movieDetailComments">
+					<h3>Kommentare</h3>
+				</div>
 				
-		<div id="movieDetailMeta">
-			<div class="left">
-				<h2>Meta-Angaben</h2>
-				<p>Blablablablab</p>		
 			</div>
-			<div class="right">
-				<h2>Meta-Angaben</h2>
-				<p>blablbla</p>		
-			</div>
-		</div>
-				
-		<div class="borderWhite">
-			<h2>Kommentare</h2>		
-		</div>
-		
-		
+			
+			
+			
 		<!--div id="detailVideoPlayer">
 			<object>
             	<param value="<?php print $video_url?>" name="movie">

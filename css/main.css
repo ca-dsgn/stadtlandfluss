@@ -201,6 +201,9 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 
 
 
+
+/*	CONTENT-BOXEN | NO SCROLL CENTER PAGE | SCROLL PAGE | ---------------------------[BEGIN] */
+
 .contentBox {
 	width: 100%;
 	height: 520px;	
@@ -209,6 +212,11 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	margin-top: -230px;
 }
 
+.contentScrollBox {
+	position: relative;
+	width: 720px;
+	margin: 110px auto 50px auto;
+}
 
 
 /*	PORTRAIT-VIEW -------------------------------------------------------------------[BEGIN] */
@@ -571,41 +579,51 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 }
 
 
+
 /********* Detail-View *********/
 
 #detailContent {
 	position: absolute;
-	top: 0px;
-	bottom: 0px;
+	top: 0;
+	bottom: 0;
 	left: 0;
 	right: 0;
 	overflow-y: scroll;
 	background: #fff url('../img/backgrounds/currentBack.jpg') center no-repeat fixed;
 }
 
-#detailContent h2 {
-	margin: 0 0 5px 0;
-	color: #5FCEEF;
-	font-weight: 600;
-	text-shadow: none;
-	font-size: 1.3em;
+#movieDetailImage {
+	background-image: url('');
+	background-repeat: no-repeat;
+	background-position: center center;
+	border: 1px solid #666666;
+	height: 100px;
+	width: 100%;
+	margin-bottom: 28px;
+	background-color: rgba(255, 255, 255, 0.5);	
 }
 
-#detailContent h3 {
-	font-weight: normal;
-	font-size: 0.9em;
-	margin: 20px 0 5px 0;
-	color: #656565;
+#movieDetailPreview {
+	width: 220px;
+	height: 150px;
+	background-color: aqua;
+	float: right;	
+	margin:0 0 28px 28px;	
+
 }
 
+#movieDetailDescription {
+	margin-bottom: 28px;	
+}
 
+#movieDetailMeta {clear: both;}
+#movieDetailMeta .left {float: left; width: 50%; margin-bottom: 28px;}
+#movieDetailMeta .right {float: right; width: 50%; margin-bottom: 28px;}
 
+#movieDetailComments {
+	clear: both;
+}
 
-#movieDetailDescription {margin: 100px 0 0 0; padding: 10px;}
-#movieDetailMeta {padding: 10px;}
-#movieDetailMeta .left {float: left; width: 50%;}
-#movieDetailMeta .right {float: right; width: 50%;}
-.borderWhite {clear: both; background-color: rgba(255, 255, 255, 0.5); padding: 10px;}
 
 
 /*

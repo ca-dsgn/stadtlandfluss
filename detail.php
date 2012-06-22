@@ -40,7 +40,7 @@
 				<div id="movieDetailImage">Bild</div>
 				
 				<div id="movieDetailDescription">
-					<div id="movieDetailPreview">Video</div>
+					<div id="movieDetailPreview"><a href="" class="playButtonSmall">Play Video</a></div>
 					<h3>Film-Informationen</h3>
 					<p>asdjnasdjnasdjn</p>
 				</div>		

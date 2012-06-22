@@ -396,6 +396,32 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 }
 
 
+.playButtonSmall {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	background-color: rgb(35,37,39);
+
+	background-image: url('../img/playButtonSmallOver.png');
+	background-repeat: no-repeat;
+	background-position: 15px 10px;	
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;	
+	z-index: 500;
+	text-indent: -9999px;
+}
+
+#movieDetailPreview:hover .playButtonSmall {
+	background-color: rgb(255,255,255);
+	background-image: url('../img/playButtonSmall.png');
+	background-repeat: no-repeat;
+}
+
+
 .arrowLeft,
 .arrowRight,
 .arrowTop,
@@ -604,11 +630,13 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 }
 
 #movieDetailPreview {
+	position: relative;
 	width: 220px;
 	height: 150px;
 	background-color: aqua;
 	float: right;	
 	margin:0 0 28px 28px;	
+	cursor: pointer;
 
 }
 

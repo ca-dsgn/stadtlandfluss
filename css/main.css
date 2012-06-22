@@ -38,7 +38,7 @@ h2 {
 }
 
 h3 {
-	font-weight: 300;
+	font-weight: normal;
 	font-size: 0.9em;
 	margin-bottom: 5px;
 	color: #252627;
@@ -157,9 +157,6 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	background-repeat: no-repeat;
 	background-position: 10px 9px;
 	background-color: white;
-	-moz-box-shadow: 1px 1px 1px #999;
-	-webkit-box-shadow: 1px 1px 1px #999;
-	box-shadow: 1px 1px 1px #999;
 	text-decoration: none;
 }
 
@@ -198,7 +195,29 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	background-image: url('../img/arrowCommentOver.png');
 }
 
+a#backButton {
+	display: inline-block;
+	height: 19px;
+	padding: 0 10px 6px 23px;
+	font-size: 0.9em;
+	position: absolute;
+	width: 80px;
+	left: 0;
+	top: 100px;
+	z-index: 500;
+	display: block;
+	background-color: #fff;
+	background-image: url("../img/arrowClear.png");
+    background-position: 10px 9px;
+    background-repeat: no-repeat;
+	text-decoration: none;
+	line-height: 1.7em;
+}
 
+a#backButton:hover {
+	background-color: #5FCEEF;
+	color: #fff;
+}
 
 
 
@@ -657,7 +676,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	margin-bottom: 0;
 }
 
-.contentScrollBox h3 {
+.contentScrollBox h3, div#text h2 {
 	font-size: 1.3em;
 	color: #5FCEEF;
 	text-shadow: none;

@@ -1,5 +1,6 @@
 ﻿<?php 
 	include "parts/header.php";
+	include "parts/backButton.php";
 ?>
 
 <div id="singlepageContent">

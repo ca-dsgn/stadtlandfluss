@@ -20,27 +20,18 @@
 			<div class="wrapper">
 				<div id="pageFooterLeft">
 					<h2>Kennenlernen</h2>
-					<!--p>Wer steckt hinter dem Projekt?</p-->
 					<img src="img/trailer-thumb.jpg" />
-					<p class="floatRight"><a href="" class="blueButton">Mehr erfahren?</a></p>
+					<p class="floatRight"><a href="./about.php" class="blueButton">Mehr erfahren?</a></p>
 				</div>
 				<div id="pageFooterMiddle">
 					<div id="voteBox">						
 						<h2>Was soll verfilmt werden?</h2>
-					<!--p>Welche Geschichte soll verfilmt werden?</p-->
 						<ul id="topList">
 							<li>asd</li>
 							<li>asd</li>
 							<li>asd</li>
 						</ul>						
 						<p class="floatRight"><a href="">alle Vorschläge ansehen</a> und <a href="" class="blueButton">abstimmen</a></p>
-					</div>
-					<div id="tellAStory">						
-						<h2>Geschichte erzählen</h2>
-						<!--p>Erzähle uns deine Geschichte!</p-->
-						<form id="tellAStoryForm">
-						</form>
-						<p class="floatRight"><a href="" class="blueButton">Geschichte erzählen</a></p>
 					</div>
 				</div>
 				<div id="pageFooterRight">
@@ -59,13 +50,15 @@
 					<!-- GOOGLE +1 END -->
 					
 					<!-- FACEBOOK Empfehlen-Button BEGIN -->
-					<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.stadtlandfluss-geschichten.de&amp;send=false&amp;layout=box_count&amp;width=150&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=90&amp;appId=351388158233394" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:90px;" allowTransparency="true"></iframe>
+					<iframe id="facebook-like" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.stadtlandfluss-geschichten.de&amp;send=false&amp;layout=box_count&amp;width=150&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=63&amp;appId=351388158233394" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:63px;" allowTransparency="true"></iframe>
 					<!-- FACEBOOK Empfehlen-Button END -->
-					
+					<br style="clear: both; margin-bottom:10px;"/>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.stadtlandfluss-geschichten.de" data-text="StadtLandFluss-Geschichten sind kurzweilige Filme über Menschen aus der Region Mosbach." data-lang="de">Twittern</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 					
 					<ul id="socialList">
-						<li><p><a href="https://www.facebook.com/pages/StadtLandFluss-Geschichten/297277040355842"><img src="img/social-facebook.png" align="absmiddle" /> Facebook</a></p></li>
-						<li><p><a href="http://www.youtube.com/channel/UCzK5rqDqYDlwcApMEc2r8ag"><img src="img/social-youtube.png" align="absmiddle" /> Youtube</a></p></li>
+						<li><a href="https://www.facebook.com/pages/StadtLandFluss-Geschichten/297277040355842"><img src="img/social-facebook.png" align="absmiddle" /> Facebook</a></li>
+						<li><a href="http://www.youtube.com/channel/UCzK5rqDqYDlwcApMEc2r8ag"><img src="img/social-youtube.png" align="absmiddle" /> Youtube</a></li>
 					</ul>
 				</div>
 			</div>

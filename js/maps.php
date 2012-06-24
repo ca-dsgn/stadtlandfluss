@@ -47,32 +47,39 @@ function initialize() {
 			
 			print 'google.maps.event.addListener(marker'.$location->Video_ID.', \'click\', function() {
 				
-				$.ajax({
-						
-					type: "POST",
+					$("body").append(\'<div class="maps_item_loading"><img src="img/ajax-loader.gif" alt="Bitte warten" class="ajax-loader"/></div>\');
 					
-					data: "action=getVideoById&id='.$location->Video_ID.'",
+					$(".maps_item_loading").css("position", "absolute");
+					$(".maps_item_loading").css("left",($(window).width()/2) -110 + "px");
+					$(".maps_item_loading").css("top",($(window).height()/2) -190 + "px");
 					
-					url: "php/AjaxController.php",
+					$.ajax({
+							
+						type: "POST",
+						
+						data: "action=getVideoById&id='.$location->Video_ID.'",
+						
+						url: "php/AjaxController.php",
+						
+						success: function(data) {
+							
+							//data = data.replace(/li/g,"div");
+							
+							$(".maps_item_loading").after(data);
+							$(".maps_item_loading").fadeOut(300);
+							
+							$(".maps_item").css("position", "absolute");
+							$(".maps_item").css("left",($(window).width()/2) -110 + "px");
+							$(".maps_item").css("top",($(window).height()/2) -190 + "px");
+							
+							open_maps_item($(".maps_item"));
+						}
+					});
 					
-					success: function(data) {
-						
-						//data = data.replace(/li/g,"div");
-						
-						$("body").append(data);
-						
-						$(".maps_item").css("position", "absolute");
-						$(".maps_item").css("left",($(window).width()/2) -110 + "px");
-						$(".maps_item").css("top",($(window).height()/2) -190 + "px");
-						
-						open_maps_item($(".maps_item"));
-					}
-				});
-				
-				map.panTo(location'.$location->Video_ID.');
-				
-			});';
-			
+					map.panTo(location'.$location->Video_ID.');
+					
+				});';
+					
 			print 'markersArray.push(marker'.$location->Video_ID.')'."\n";
         }
 		

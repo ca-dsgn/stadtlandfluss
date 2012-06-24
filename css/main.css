@@ -861,6 +861,16 @@ a.weiterlesenLink:hover {
 	margin-top: 0;
 	font-size: 14px;
 }
+.maps_item_loading .ajax-loader {
+	background-color: #000;
+	padding: 60px 95px 59px 94px;
+}
+.maps_item_loading {
+	position: relative;
+	height: 164px;
+	width: 220px;
+	background: url(../img/zipfel.png) no-repeat 96px 150px;
+}
 
 /*--- EINZELSEITEN ---*/
 

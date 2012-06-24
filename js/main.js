@@ -215,6 +215,13 @@ function addItemListeners() {
 	});
 }
 
+function close_item_box() {
+	$(".maps_item").fadeOut(300, function() {
+		
+		$(this).remove();
+	});
+}
+
 function removeItemListeners() {
 	
 	$(".page .item").die("mouseup");

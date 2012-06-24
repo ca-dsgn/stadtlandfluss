@@ -77,6 +77,11 @@ function initialize() {
         }
 		
 		?>
+        
+        google.maps.event.addListener(map, 'center_changed', function() {
+        	
+            close_item_box();
+        });
 		
 		directionsDisplay.setMap(map);
 	}

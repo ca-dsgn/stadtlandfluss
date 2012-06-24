@@ -9,6 +9,15 @@
 	$Video_ID = $_GET["video_id"];
 	
 	$element = json_decode($vc->getVideoWithImages($Video_ID));
+	$persons = json_decode($vc->getPersons($Video_ID));
+	
+	foreach($persons as $person) {
+					
+		if ($person->type == "Protagonist") {
+			
+			$protagonist = $person->name;
+		}
+	}
 	
 	$video_url = "http://www.youtube.com/v/".substr($element[0]->source,strpos($element[0]->source,"v=")+2,strlen($element[0]->source));
 	
@@ -17,7 +26,7 @@
 		$video_url.= "&autoplay=1";
 	}
 	
-	print_r($element);
+	//print_r($element);
 	
 ?>
 <div id="detailContent">
@@ -34,13 +43,13 @@
 		
 			<div class="contentScrollBox">
 		
-				<h2>Uli Körber</h2>
+				<h2><?php echo($protagonist) ?></h2>
 				<h1><?php print $element[0]->title?></h1>
 		
-				<div id="movieDetailBanner">Bild</div>
+				<div id="movieDetailBanner" style="background-image:url('img/banner/<?php print $Video_ID ?>.jpg');"></div>
 				
 				<div id="movieDetailDescription">
-					<div id="movieDetailPreview"><a href="" class="playButtonSmall">Play Video</a></div>
+					<div id="movieDetailPreview" style="background-image:url('<?php print $element[0]->images[0]->url ?>');"><a href="" class="playButtonSmall">Play Video</a></div>
 					<h3>Film-Informationen</h3>
 					<p><?php print $element[0]->description?></p>
 				</div>		

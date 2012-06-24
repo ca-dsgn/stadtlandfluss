@@ -802,29 +802,38 @@ a.weiterlesenLink:hover {
 	z-index: 500;
 }
 
-/* MAPS ITEM */
+/************ Maps Ansicht *****************/
+
+
 .maps_item {
 	position: relative;
 	height: 164px;
 	width: 220px;
-	background: url(../img/zipfel.png) no-repeat 96px 150px;
+	background: url('../img/zipfel.png') no-repeat 96px 150px;
 }
 .maps_item .left {
 	position: absolute;
 	height: 150px;
 	overflow: hidden;
+	border: 1px solid black;
 }
 .maps_item .left .title {
 	position: absolute;
 	bottom: 0;
-	min-height: 50px;
-	line-height: 25px;
-	color: #5FCEEF;
-	padding: 25px 45px 5px 5px;
-	background-image: url(../img/maps_title_layer.png);
-	background-repeat: no-repeat;
+	right: 0;
+	width: 170px;
+	min-height: 20px;
+	line-height: 1.2em;
+	color: #fff;
+	font-size: 0.9em;
+	text-shadow: 1px 1px #000;
+	padding: 55px 45px 5px 5px;
+	background-image: url('../img/maps_title_layer.png');
+	background-repeat: repeat-x;
 	background-position: bottom;
 	margin: 0;
+	vertical-align: bottom;
+	display: table-cell;
 }
 .maps_item .left .playButton {
 	margin-top: 100px;
@@ -847,6 +856,8 @@ a.weiterlesenLink:hover {
 	background-color: #232527;
 	overflow: hidden;
 	height: 150px;
+	border: 1px solid black;
+	border-left: none;
 }
 .maps_item .info .info_box {
 	width: 210px;

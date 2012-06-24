@@ -59,6 +59,17 @@ class Helper {
 		
 		return $html;
 	}
+	
+	public function makeYoutubeURL($source,$autoplay=FALSE) {
+		
+		$source = "http://www.youtube.com/v/".substr($source,strpos($source,"v=")+2,strlen($source));
+	
+		if ($autoplay) {
+			
+			$source.= "&autoplay=1";
+		}
+		return $source;
+	}
 }
 
 ?>

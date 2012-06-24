@@ -28,6 +28,8 @@
 	
 	//print_r($element);
 	
+	$video_url = $helper->makeYoutubeURL($element[0]->source);
+	
 ?>
 <div id="detailContent">
 	<div class="wrapper">

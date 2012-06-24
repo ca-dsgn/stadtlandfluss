@@ -9,7 +9,10 @@ echo $vc->getMatrixViewWithImages(0,5);
 
 
 echo ("<br/><br/>Anzahl der eingepflegten Videos:<br/>");
-echo ("GetVideo:<br/>");
+echo $vc->getNumOfVideos();
+echo ("<br/><br/>Maximale video ID:<br/>");
+echo $vc->getMaxVideoID();
+echo ("<br/><br/>Video Nr.2:<br/>");
 echo $vc->getVideo(2);
 echo ("<br/><br/>PreviousVideo:<br/>");
 echo $vc->getPreviousVideo(2);
@@ -23,6 +26,10 @@ echo ("<br/><br/>Kommentare:<br/>");
 echo $vc->getComments(2);
 echo ("<br/><br/>Personen:<br/>");
 echo $vc->getPersons(0);
+echo ("<br/><br/>Actors:<br/>");
+echo $vc->getActors(1);
+echo ("<br/><br/>FilmCrew:<br/>");
+echo $vc->getFilmCrew(1);
 echo ("<br/><br/>Rückgabe der MatrixView Videos:<br/>");
 echo $vc->getMatrixView(0,5);
 echo $vc->getNumOfVideos();

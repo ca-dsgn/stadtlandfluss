@@ -32,6 +32,18 @@ class VideoController
 		$resultSet = $dbConnection->query("SELECT COUNT(Video_ID) FROM videos", $dbConnection->get_database(), "ro");
 		return $resultSet[0];
 	}
+
+		
+	/**
+	* returns the number of available videos
+	*/
+	public function getMaxVideoID()
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->query("SELECT COUNT(Video_ID) FROM videos", $dbConnection->get_database(), "ro");
+		return $resultSet[0];
+	}
+
 	
 	/**
 	* returns the videoData as JSON to a given video index
@@ -140,9 +152,31 @@ class VideoController
 	{
 			$dbConnection = new Database();
 			$resultSet = $dbConnection->queryAssoc("SELECT * FROM persons JOIN person2video ON person2video.Person_ID = persons.Person_ID WHERE Video_ID = ".$p_iCurrentIndex, $dbConnection->get_database(), "ro");
-			
 			return json_encode($resultSet);
 	}
+	
+	
+	/**
+	* returns the filmcrew belonging to the given video ID	
+	*/
+	
+	public function getFilmCrew($p_iCurrentIndex)
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->queryAssoc("SELECT * FROM persons JOIN person2video ON person2video.Person_ID = persons.Person_ID WHERE Video_ID = ".$p_iCurrentIndex." AND person2video.isfilmcrew = '1'", $dbConnection->get_database(), "ro");
+		return json_encode($resultSet);
+	}
+
+	/**
+	* returns the actors belonging to the given video ID	
+	*/
+	
+	public function getActors($p_iCurrentIndex)
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->queryAssoc("SELECT * FROM persons JOIN person2video ON person2video.Person_ID = persons.Person_ID WHERE Video_ID = ".$p_iCurrentIndex." AND person2video.isfilmcrew = '0'", $dbConnection->get_database(), "ro");
+		return json_encode($resultSet);
+	}	
 	
 	/**
 	* returns a video array from index param1 to index param2

@@ -73,7 +73,7 @@
 
 #pageNav ul  {
 	position: absolute;
-	top: 0px;
+	top: 70px;
 	background-color: #fff;
 	display: none;
 	-webkit-transition: opacity .4s ease-in-out;

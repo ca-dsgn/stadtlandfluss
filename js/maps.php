@@ -66,7 +66,9 @@ function initialize() {
 							//data = data.replace(/li/g,"div");
 							
 							$(".maps_item_loading").after(data);
-							$(".maps_item_loading").fadeOut(300);
+							$(".maps_item_loading").fadeOut(300, function() {
+								$(this).remove();
+							});
 							
 							$(".maps_item").css("position", "absolute");
 							$(".maps_item").css("left",($(window).width()/2) -110 + "px");

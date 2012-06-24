@@ -57,15 +57,15 @@ function initialize() {
 					
 					success: function(data) {
 						
-						data = data.replace(/li/g,"div");
+						//data = data.replace(/li/g,"div");
 						
 						$("body").append(data);
 						
-						$(".item").css("position", "absolute");
-						$(".item").css("left",($(window).width()/2) + "px");
-						$(".item").css("top",($(window).height()/2) -100 + "px");
+						$(".maps_item").css("position", "absolute");
+						$(".maps_item").css("left",($(window).width()/2) -110 + "px");
+						$(".maps_item").css("top",($(window).height()/2) -190 + "px");
 						
-						open_box($(".item"));
+						open_maps_item($(".maps_item"));
 					}
 				});
 				

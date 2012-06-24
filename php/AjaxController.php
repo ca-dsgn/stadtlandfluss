@@ -19,7 +19,7 @@ if (isset($_POST["action"])) {
 			
 			$vc = new VideoController();
 			$helper = new Helper();
-			print $helper->getVideoTemplateById($Video_ID);
+			print $helper->getVideoTemplateById($Video_ID,"maps");
 			break;
 		
 		default: 

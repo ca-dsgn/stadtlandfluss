@@ -802,6 +802,65 @@ a.weiterlesenLink:hover {
 	z-index: 500;
 }
 
+/* MAPS ITEM */
+.maps_item {
+	position: relative;
+	height: 164px;
+	width: 220px;
+	background: url(../img/zipfel.png) no-repeat 96px 150px;
+}
+.maps_item .left {
+	position: absolute;
+	height: 150px;
+	overflow: hidden;
+}
+.maps_item .left .title {
+	position: absolute;
+	top: 70px;
+	height: 50px;
+	line-height: 25px;
+	color: #5FCEEF;
+	padding: 25px 45px 5px 5px;
+	background-image: url(../img/maps_title_layer.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	margin: 0;
+}
+.maps_item .left .playButton {
+	margin-top: 100px;
+	margin-left: 175px;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 40px;
+	background-image: url('../img/playButtonSmallOver.png');
+	background-repeat: no-repeat;
+	background-position: center;	
+}
+.maps_item .left .playButton:hover {
+	background-image: url('../img/playButtonOver.png') !important;	
+	background-position: 27px 20px;
+}
+.maps_item .info {
+	margin-left: 220px;
+	width: 0;
+	background-color: #232527;
+	overflow: hidden;
+	height: 150px;
+}
+.maps_item .info .info_box {
+	width: 210px;
+	padding: 5px;
+}
+.maps_item .info .info_box p {
+	font-size: 12px;
+	line-height: 14px;
+	color: #fff;
+}
+.maps_item .info .info_box h2 {
+	margin-top: 0;
+	font-size: 14px;
+}
 
 /*--- EINZELSEITEN ---*/
 

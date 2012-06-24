@@ -20,21 +20,40 @@ class Helper {
 	   }
 	   return $this->ret;
 	}
-	public function getVideoTemplateById($id) {
+	public function getVideoTemplateById($id,$type=NULL) {
 								
 		global $vc;
 		
 		$element = json_decode($vc->getVideoWithImages($id));
 		
-		return $this->getTemplate($element[0]->Video_ID,$element[0]->title,$element[0]->description,$element[0]->images);
+		if ($type != NULL) {
+			
+			switch ($type) {
+				
+				case "grid":
+				
+					$return = $this->getGridTemplate($element[0]->Video_ID,$element[0]->title,$element[0]->description,$element[0]->images);
+					break;
+				
+				case "maps":
+					
+					$return = $this->getMapsTemplate($element[0]->Video_ID,$element[0]->title,$element[0]->description,$element[0]->images,$element[0]->source);
+					break;
+			}
+		}
+		else {
+			return $this->getGridTemplate($element[0]->Video_ID,$element[0]->title,$element[0]->description,$element[0]->images);
+		}
+		
+		return $return;
 	}
 	
 	public function getVideoTemplate($id,$title,$description,$images) {
 		
-		return $this->getTemplate($id,$title,$description,$images);
+		return $this->getGridTemplate($id,$title,$description,$images);
 	}
 	
-	public function getTemplate($id,$title,$description,$images) {
+	public function getGridTemplate($id,$title,$description,$images) {
 		
 		$html = '<li class="item" ref="'.$id.'">';
 		$html.= '<div class="box">';
@@ -56,6 +75,28 @@ class Helper {
 		$html.= '</div>';
 		$html.= '</div>';
 		$html.= '</li>';
+		
+		return $html;
+	}
+	
+	public function getMapsTemplate($id,$title,$description,$images,$video_src) {
+		
+		$html = '<div class="maps_item" ref="'.$id.'">';
+		$html.= '<div class="left">';
+		$html.= '<img src="'.$images[0]->url.'" alt="'.$images[0]->alt.'"/>';
+		$html.= '<p class="title">'.$title.'</p>';
+		$html.= '<div class="playButton">';
+		$html.= '<input type="hidden" class="video_src" value="'.$this->makeYoutubeURL($video_src,true).'"/>';
+		$html.= '</div>';
+		$html.= '</div>';
+		$html.= '<div class="info">';
+		$html.= '<div class="info_box">';
+		$html.= '<h2>'.$title.'</h2>';
+		$html.= '<p>'.substr($description,0,150).'&hellip; <a class="weiterlesenLink" href="index.php?section=detail&video_id='.$id.'">&raquo; mehr Informationen</a></p>';
+		$html.= '';
+		$html.= '</div>';
+		$html.= '</div>';
+		$html.= '</div>';
 		
 		return $html;
 	}

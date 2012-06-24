@@ -174,6 +174,45 @@ function addItemListeners() {
 		}
 		
 	});
+	$(".maps_item").live("mouseenter",function() {
+		
+		$(this).find(".info").animate({
+			
+			width: '220'
+		});
+	});
+	$(".maps_item").live("mouseleave",function() {
+		
+		$(this).find(".info").animate({
+			
+			width: '0'
+		});
+	});
+	$(".maps_item .left").live("mouseenter",function() {
+		
+		$(this).find(".title").fadeOut(300);
+		$(this).find(".playButton").animate({
+			
+			width: 75,
+			height: 75,
+			'margin-left': 73,
+			'margin-top': 37
+		},300);
+		console.log($(this).find(".playButton").css("background-image"));
+		$(this).find(".playButton").css("background-image", "url('img/playButton.png')");	
+	});
+	$(".maps_item .left").live("mouseleave",function() {
+		
+		$(this).find(".title").fadeIn(300);
+		$(this).find(".playButton").animate({
+			
+			width: 40,
+			height: 40,
+			'margin-left': 175,
+			'margin-top': 100
+		},300);
+		$(this).find(".playButton").css("background-image", "url('img/playButtonSmallOver.png')");	
+	});
 }
 
 function removeItemListeners() {
@@ -261,14 +300,11 @@ function close_box(elem) {
 		$(elem).find(".images").css("z-index","auto");
 		$(elem).find(".box").css("z-index","auto");
 	});
-	//IF WE ARE ON MAPS
-	if ((elem).parent()[0].tagName == "BODY") {
-		
-		$(elem).fadeOut(300, function() {
-			
-			$(this).remove();
-		});
-	}
+}
+
+function open_maps_item(elem) {
+	
+	$(elem).fadeIn(300);
 }
 
 function changeObjectsInGrid(num) {

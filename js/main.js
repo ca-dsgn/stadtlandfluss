@@ -52,13 +52,13 @@ $(document).ready(function() {
 	$(".playButton").live("click",function(e) {	
 	
 		e.preventDefault();
-		videoLayerOpen();
+		videoLayerOpen(e);
 	});
 	
 	$(".closeButton").live("click",function(e) {
 			
 		e.preventDefault();
-		videoLayerClose();
+		videoLayerClose(e);
 	});
 	$("#pageNav > li").mouseenter(function() {
 		
@@ -655,15 +655,29 @@ function matrixArrows() {
 	
 }
 
-function videoLayerOpen() {
+function videoLayerOpen(event) {
+	
+	video_src = $(event.srcElement).find(".video_src").val();
+	
 	$('.videoLayer').show().animate({
 		opacity: 1
 	},300, function() {
 		$('.videoPlayer').show();
+		
+		html = '<object';
+      	html+= '<param value="' + video_src + '" name="movie">';
+        html+= '<param value="opaque" name="wmode">';
+        html+= '<param value="true" name="allowFullScreen">';
+        html+= '<param value="always" name="allowScriptAccess">';
+        html+= '<embed style="width: 100%; height: 100%" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="' + video_src + '" wmode="opaque">';
+      	html+= '</object>';
+		
+		$('.videoPlayer object').replaceWith(html);
+			
 	});
 }
 
-function videoLayerClose() {
+function videoLayerClose(event) {
 	$('.videoLayer').animate({
 		opacity: 0
 	}, 300, function() {

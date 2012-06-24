@@ -34,7 +34,9 @@
 				$html = '';
 				$html.= '<li class="contentBox">';
 				$html.= '<img src="'.$element[0]->keyvisual.'" class="portraitIMG" alt="moderne-single"/>';
-				$html.= '<div class="playButton"></div>';
+				$html.= '<div class="playButton">';
+				$html.= '<input type="hidden" class="video_src" value="'.$helper->makeYoutubeURL($element[0]->source,true).'"/>';
+				$html.= '</div>';
 				$html.= '<div class="description">';
 				$html.= '<hgroup>';
 				$html.= '<h2>'.$protagonist.'</h2>';

@@ -10,14 +10,7 @@
 	
 	$element = json_decode($vc->getVideoWithImages($Video_ID));
 	
-	$video_url = "http://www.youtube.com/v/".substr($element[0]->source,strpos($element[0]->source,"v=")+2,strlen($element[0]->source));
-	
-	if ($_GET["autoplay"] == "1") {
-		
-		$video_url.= "&autoplay=1";
-	}
-	
-	print_r($element);
+	$video_url = $helper->makeYoutubeURL($element[0]->source);
 	
 ?>
 <div id="detailContent">

@@ -51,7 +51,7 @@
 				<div id="movieDetailBanner" style="background-image:url('img/banner/<?php print $Video_ID ?>.jpg');"></div>
 				
 				<div id="movieDetailDescription">
-					<div id="movieDetailPreview" style="background-image:url('<?php print $element[0]->images[0]->url ?>');"><a href="" class="playButtonSmall">Play Video</a></div>
+					<div id="movieDetailPreview" style="background-image:url('<?php print $element[0]->images[0]->url ?>');"><a href="" class="playButtonSmall">play</a></div>
 					<h3>Film-Informationen</h3>
 					<p><?php print $element[0]->description?></p>
 				</div>		
@@ -60,9 +60,9 @@
 					<div class="left">
 						<p><strong>Ein Film von:</strong> Elina Wetsch, Lisa Simon, Christian Albert, Sebastian Lauer, René Preußer (Jahrgang 2009)</p>		
 					</div>
-					<div class="right">
+					<!--div class="right">
 						<p><strong>Produktionsjahr:</strong> 2011<br/><strong>Drehort:</strong> Burg Hornberg</p>		
-					</div>
+					</div-->
 				</div>
 
 				<div id="movieDetailComments">

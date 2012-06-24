@@ -79,7 +79,7 @@ class VideoController
 			else
 			{
 				$dbConnection = new Database();
-				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".--$p_iCurrentIndex, $dbConnection->get_database(), "ro");
+				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = (Select MAX(Video_ID) from videos where Video_ID < ".$p_iCurrentIndex.")", $dbConnection->get_database(), "ro");
 				return json_encode($resultSet);
 			}
 	}
@@ -98,7 +98,7 @@ class VideoController
 			else
 			{
 				$dbConnection = new Database();
-				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".++$p_iCurrentIndex, $dbConnection->get_database(), "ro");
+				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = (Select MIN(Video_ID) from videos where Video_ID > ".$p_iCurrentIndex.")", $dbConnection->get_database(), "ro");
 				return json_encode($resultSet);
 			}
 	}

@@ -92,7 +92,7 @@ class Helper {
 		$html.= '<div class="info">';
 		$html.= '<div class="info_box">';
 		$html.= '<h2>'.$title.'</h2>';
-		$html.= '<p>'.substr($description,0,150).'&hellip; <a class="weiterlesenLink" href="index.php?section=detail&video_id='.$id.'">&raquo; mehr Informationen</a></p>';
+		$html.= '<p>'.substr($description,0,125).'&hellip; <a class="weiterlesenLink" href="index.php?section=detail&video_id='.$id.'">&raquo; weiter</a></p>';
 		$html.= '';
 		$html.= '</div>';
 		$html.= '</div>';

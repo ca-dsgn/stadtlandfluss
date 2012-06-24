@@ -848,7 +848,7 @@ a.weiterlesenLink:hover {
 }
 .maps_item .left .playButton:hover {
 	background-image: url('../img/playButtonOver.png') !important;	
-	background-position: 27px 20px;
+	background-position: center;
 }
 .maps_item .info {
 	margin-left: 220px;
@@ -861,16 +861,18 @@ a.weiterlesenLink:hover {
 }
 .maps_item .info .info_box {
 	width: 210px;
-	padding: 5px;
+	padding: 10px;
+	padding-top: 5px;
 }
 .maps_item .info .info_box p {
-	font-size: 12px;
-	line-height: 14px;
+	font-size: 0.8em;
+	line-height: 1.3em;
 	color: #fff;
 }
 .maps_item .info .info_box h2 {
 	margin-top: 0;
-	font-size: 14px;
+	font-size: 0.9em;
+	line-height: 1.2em;
 }
 .maps_item_loading .ajax-loader {
 	background-color: #000;

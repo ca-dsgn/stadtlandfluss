@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 22. Juni 2012 um 16:56
+-- Erstellungszeit: 24. Juni 2012 um 15:27
 -- Server Version: 5.5.9
 -- PHP-Version: 5.3.6
 
@@ -21,7 +21,6 @@ USE `stadtlandfluss`;
 -- Tabellenstruktur für Tabelle `comments`
 --
 
-DROP TABLE IF EXISTS `comments`;
 CREATE TABLE IF NOT EXISTS `comments` (
   `Comment_ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `Video_ID` int(10) unsigned NOT NULL,
@@ -46,14 +45,13 @@ INSERT INTO `comments` VALUES(5, 2, 'Loreny', 'Chips sind nix, Bahlsen 4 the win
 -- Tabellenstruktur für Tabelle `images`
 --
 
-DROP TABLE IF EXISTS `images`;
 CREATE TABLE IF NOT EXISTS `images` (
   `Image_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `url` varchar(255) DEFAULT NULL,
   `alt` varchar(255) DEFAULT NULL,
   `Video_ID` int(5) unsigned DEFAULT NULL,
   PRIMARY KEY (`Image_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- Daten für Tabelle `images`
@@ -74,9 +72,12 @@ INSERT INTO `images` VALUES(11, 'img/grid/3-3.jpg', 'Test', 3);
 INSERT INTO `images` VALUES(12, 'img/grid/4-1.jpg', 'Test', 4);
 INSERT INTO `images` VALUES(13, 'img/grid/4-2.jpg', 'Test', 4);
 INSERT INTO `images` VALUES(14, 'img/grid/4-3.jpg', 'Test', 4);
-INSERT INTO `images` VALUES(15, 'img/grid/motorcross_main.png', 'Test', 1);
-INSERT INTO `images` VALUES(16, 'img/grid/motorcross_main.png', 'Test', 5);
-INSERT INTO `images` VALUES(17, 'img/grid/motorcross_main.png', 'Test', 5);
+INSERT INTO `images` VALUES(15, 'img/grid/motorcross_main.png', 'Test', 99);
+INSERT INTO `images` VALUES(16, 'img/grid/motorcross_main.png', 'Test', 99);
+INSERT INTO `images` VALUES(17, 'img/grid/motorcross_main.png', 'Test', 99);
+INSERT INTO `images` VALUES(18, 'img/grid/5-1.jpg', 'Tierheim Dallau', 5);
+INSERT INTO `images` VALUES(19, 'img/grid/5-2.jpg', 'Tierheim Dallau', 5);
+INSERT INTO `images` VALUES(20, 'img/grid/5-3.jpg', 'Tierheim Dallau', 5);
 
 -- --------------------------------------------------------
 
@@ -84,13 +85,12 @@ INSERT INTO `images` VALUES(17, 'img/grid/motorcross_main.png', 'Test', 5);
 -- Tabellenstruktur für Tabelle `person2video`
 --
 
-DROP TABLE IF EXISTS `person2video`;
 CREATE TABLE IF NOT EXISTS `person2video` (
   `p2v_ID` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `Video_ID` int(5) unsigned DEFAULT NULL,
   `Person_ID` int(5) unsigned DEFAULT NULL,
   PRIMARY KEY (`p2v_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Daten für Tabelle `person2video`
@@ -109,6 +109,7 @@ INSERT INTO `person2video` VALUES(9, 1, 7);
 INSERT INTO `person2video` VALUES(10, 2, 8);
 INSERT INTO `person2video` VALUES(11, 3, 9);
 INSERT INTO `person2video` VALUES(12, 4, 5);
+INSERT INTO `person2video` VALUES(13, 5, 11);
 
 -- --------------------------------------------------------
 
@@ -116,14 +117,13 @@ INSERT INTO `person2video` VALUES(12, 4, 5);
 -- Tabellenstruktur für Tabelle `persons`
 --
 
-DROP TABLE IF EXISTS `persons`;
 CREATE TABLE IF NOT EXISTS `persons` (
   `Person_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `function` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Person_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Daten für Tabelle `persons`
@@ -131,14 +131,15 @@ CREATE TABLE IF NOT EXISTS `persons` (
 
 INSERT INTO `persons` VALUES(0, 'Alex', 'kamera', 'dozent');
 INSERT INTO `persons` VALUES(1, 'Daniela', 'Schnitt', 'dozent');
-INSERT INTO `persons` VALUES(2, 'Christoph', 'Aufnahmeleiter', 'student');
+INSERT INTO `persons` VALUES(2, 'Christoph Muhr', '', 'filmcrew');
 INSERT INTO `persons` VALUES(3, 'Brigitte Schmitt', 'Tierheim Dallau', 'Protagonist');
 INSERT INTO `persons` VALUES(4, 'Werner Simon', 'Polizei Mosbach', 'Protagonist');
 INSERT INTO `persons` VALUES(5, 'Serdar Batmaz', '', 'Protagonist');
 INSERT INTO `persons` VALUES(7, 'Michaela Pusch', '', 'Protagonist');
 INSERT INTO `persons` VALUES(8, 'Uli Körber', '', 'Protagonist');
-INSERT INTO `persons` VALUES(9, 'Sigfried Raether', '', 'Protagonist');
+INSERT INTO `persons` VALUES(9, 'Siegfried Raether', '', 'Protagonist');
 INSERT INTO `persons` VALUES(10, 'Baron Dajo von Gemmingen-Hornberg', '', 'Protagonist');
+INSERT INTO `persons` VALUES(11, 'Brigitte Schmitt', '', 'Protagonist');
 
 -- --------------------------------------------------------
 
@@ -146,7 +147,6 @@ INSERT INTO `persons` VALUES(10, 'Baron Dajo von Gemmingen-Hornberg', '', 'Prota
 -- Tabellenstruktur für Tabelle `stories`
 --
 
-DROP TABLE IF EXISTS `stories`;
 CREATE TABLE IF NOT EXISTS `stories` (
   `Story_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `description` varchar(2000) DEFAULT NULL,
@@ -168,7 +168,6 @@ INSERT INTO `stories` VALUES(2, 'Und er flog in den Neckar....', 'Der verlorene 
 -- Tabellenstruktur für Tabelle `suggestions`
 --
 
-DROP TABLE IF EXISTS `suggestions`;
 CREATE TABLE IF NOT EXISTS `suggestions` (
   `name` varchar(255) DEFAULT NULL,
   `timestamp` timestamp NULL DEFAULT NULL,
@@ -193,7 +192,6 @@ INSERT INTO `suggestions` VALUES('name', '2012-06-19 17:09:13', 'story', 'phone'
 -- Tabellenstruktur für Tabelle `tags`
 --
 
-DROP TABLE IF EXISTS `tags`;
 CREATE TABLE IF NOT EXISTS `tags` (
   `Tag_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `start` varchar(30) DEFAULT NULL,
@@ -220,7 +218,6 @@ INSERT INTO `tags` VALUES(3, '41', '50', 'Hi Jack!', '9.12938280', '49.34891430'
 -- Tabellenstruktur für Tabelle `videos`
 --
 
-DROP TABLE IF EXISTS `videos`;
 CREATE TABLE IF NOT EXISTS `videos` (
   `Video_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `date` datetime DEFAULT NULL,
@@ -233,7 +230,7 @@ CREATE TABLE IF NOT EXISTS `videos` (
   `longitude` varchar(30) DEFAULT NULL,
   `altitude` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`Video_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Daten für Tabelle `videos`
@@ -241,9 +238,10 @@ CREATE TABLE IF NOT EXISTS `videos` (
 
 INSERT INTO `videos` VALUES(0, '2012-06-12 13:05:11', 'Zwischen Tradition und Moderne', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Baron Dajo von Gemmingen-Hornberg erzählt von seinem Leben auf der Burg und seinem Leben zwischen der Arbeit als Winzer und den Pflichten als Gutsverwalter. In vergangenen Zeiten brachte ein Adelstitel viele Vorzüge im Leben mit sich. Doch wie ist es heute? Sind Adelstitel in der modernen Gesellschaft unwichtig geworden? Fabian Stein (Student des Jahrgangs 2010) wohnt auf der Burg Hornberg und ist zudem mit Baron Dajo von Gemmingen-Hornberg befreundet.', 'img/backgrounds/moderne.jpg', 'img/backgrounds/moderne-single.jpg', '9.145575', '49.315947');
 INSERT INTO `videos` VALUES(1, '2012-05-22 02:02:44', 'Soweit der Wind sie trägt', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Gleitschirmfliegen ist ein Stück Freiheit. Der Wettkampf mit dem Wind und der Thermik, aber auch das Kribbeln im Bauch, die Ruhe und Schönheit der Natur faszinieren Michaela Pusch schon lange. In ihrer Freizeit spielt sie zudem mit René Preisler (Student des Jahrgangs 2009) im selben Verein Tischtennis.', 'img/backgrounds/wind.jpg', 'img/backgrounds/wind-single.png', '9.104696', '49.362253');
-INSERT INTO `videos` VALUES(2, '2012-05-22 01:57:27', 'Benzin im Blut - Zwischen Motocross und CorelDraw', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Uli Körber ist selbstständiger Grafikdesigner in Schefflenz. Doch das ist nicht alles. Uli hat Benzin im Blut! Um einen Ausgleich zu seinem Beruf zu haben, geht er regelmäßig MotoCross fahren. Mit Hilfe dieses außergewöhnlichen Hobbys und dessen Preisgeldern konnte er sein Studium finanzieren. Uli wurde sogar Deutscher- und Europameister! Sabine Bennebach von der Bürgerstiftung für die Region Mosbach gab uns den Tipp zu diesem Portrait.', 'img/backgrounds/motocross.jpg', 'img/backgrounds/motocross-single.png', '9.254093', '49.394022');
+INSERT INTO `videos` VALUES(2, '2012-05-22 01:57:27', 'Benzin im Blut – Zwischen Motocross und Corel Draw', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Uli Körber ist selbstständiger Grafikdesigner in Schefflenz. Doch das ist nicht alles. Uli hat Benzin im Blut! Um einen Ausgleich zu seinem Beruf zu haben, geht er regelmäßig MotoCross fahren. Mit Hilfe dieses außergewöhnlichen Hobbys und dessen Preisgeldern konnte er sein Studium finanzieren. Uli wurde sogar Deutscher- und Europameister! Sabine Bennebach von der Bürgerstiftung für die Region Mosbach gab uns den Tipp zu diesem Portrait.', 'img/backgrounds/motocross.jpg', 'img/backgrounds/motocross-single.png', '9.254093', '49.394022');
 INSERT INTO `videos` VALUES(3, '2012-06-15 13:01:05', 'Santa Farina – Das Göttlichste, was man sich erlauben kann', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Sigfried Raether, von allen Siggi genannt, ist leidenschaftlicher Pizzabäcker. Seine Pizzeria „Santa Farina“ befindet sich in der Nähe der S-Bahnhaltstellte Mosbach (Baden). Siggi ist durch seine charmante italienische Art stadtbekannt. Durch seine ganz besonderen Techniken die Zutaten auf die Pizza zu bringen, ist es schon ein Highlight ihm beim Backen zuzuschauen. Mehrere Studierende von ON09 sind regelmäßig in der Mittagspause zu Gast bei Siggi und wollten mehr über diese außergewöhnliche Persönlichkeit, die der Pizzeria einen heimeligen Flair verleiht, erfahren.', 'img/backgrounds/pizza.jpg', 'img/backgrounds/pizza-single.png', '9.144452', '49.351591');
-INSERT INTO `videos` VALUES(4, '2012-06-15 13:13:57', 'WingTsun - Kämpfen lernen, um nicht kämpfen zu müssen', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Serdar Batmaz ist professioneller Kampfkünstler, der mit Leib und Seele WingTsun unterrichtet und lebt. Er ist einer der Wenigen, die den 5. Praktikergrad erreicht haben. Seine Philosophie: "Kämpfen lernen, um nicht kämpfen zu müssen." Serdar trainiert im Fitnesscenter Muskelkater in Mosbach, wo Melanie Hiller (Studentin des Jahrgangs 2010) auf ihn aufmerksam wurde.', 'img/backgrounds/winsun.jpg', 'img/backgrounds/winsun-single.jpg', '9.131995', '49.343943');
+INSERT INTO `videos` VALUES(4, '2012-06-15 13:13:57', 'WingTsun – Kämpfen lernen, um nicht kämpfen zu müssen', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Serdar Batmaz ist professioneller Kampfkünstler, der mit Leib und Seele WingTsun unterrichtet und lebt. Er ist einer der Wenigen, die den 5. Praktikergrad erreicht haben. Seine Philosophie: "Kämpfen lernen, um nicht kämpfen zu müssen." Serdar trainiert im Fitnesscenter Muskelkater in Mosbach, wo Melanie Hiller (Studentin des Jahrgangs 2010) auf ihn aufmerksam wurde.', 'img/backgrounds/wingtsun.jpg', 'img/backgrounds/wingtsun-single.jpg', '9.131995', '49.343943');
+INSERT INTO `videos` VALUES(5, '2012-06-24 00:00:00', 'Tierheim Dallau – Jeder Käfig hat seine Geschichte', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Mit einem besonders großen Einzugsgebiet im Neckar-Odenwald-Kreis bietet das Tierheim Dallau vielen Tieren ein temporäres Zuhause - manchen länger, anderen nur kurz. Wir haben Brigitte Schmitt, eines der langjährigen Mitglieder des Vereins begleitet, wie sie um das Schicksal des Schäferhundrüden „Sultan" bangt, der fünf Jahre lang nicht vermittelt werden konnte. Florian Eberle, Marc Hitschericht und Matthias Weise (Studierende des Jahrgangs 2009) wollten eine Tierheimgeschichte erzählen und sind so auf das Mosbacher Tierheim in Dallau gestoßen.', '', '', '9.2004', '49.384641');
 
 -- --------------------------------------------------------
 
@@ -251,7 +249,6 @@ INSERT INTO `videos` VALUES(4, '2012-06-15 13:13:57', 'WingTsun - Kämpfen lerne
 -- Tabellenstruktur für Tabelle `votings`
 --
 
-DROP TABLE IF EXISTS `votings`;
 CREATE TABLE IF NOT EXISTS `votings` (
   `Voting_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `headline` varchar(255) DEFAULT NULL,

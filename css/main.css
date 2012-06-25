@@ -57,6 +57,16 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	font-size: 16px;
 }
 
+.error {
+	color: #f00;
+}
+
+ul.error {
+	font-size: 0.9em;
+	margin-left: 20px;
+}
+
+
 .hidden {
 	display: none;
 }
@@ -75,7 +85,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 }
 
 
-.blueButton {
+.blueButton, input[type=submit], input[type=reset] {
 	display: inline-block;
 	margin: 0;
 	padding: 6px 8px;
@@ -100,7 +110,7 @@ input[type=text], input[type=submit], input[type=reset], textarea {
 	box-shadow:         0px 0px 3px #444;
 }
 
-.blueButton:hover {
+.blueButton:hover, input[type=submit]:hover, input[type=reset]:hover {
 	color: #fff;
 	background: #44779a;
 	background: -webkit-gradient(linear, left top, left bottom, from(#44779a), to(#5FCEEF)); /* 	Saf4+, Chrome */
@@ -207,7 +217,7 @@ a#backButton {
 	z-index: 500;
 	display: block;
 	background-color: #fff;
-	background-image: url("../img/arrowClear.png");
+	background-image: url("../img/arrowBack.png");
     background-position: 10px 9px;
     background-repeat: no-repeat;
 	text-decoration: none;

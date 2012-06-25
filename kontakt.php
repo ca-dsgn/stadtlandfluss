@@ -23,16 +23,17 @@
 	      }
 	      $mailnachricht.="\nDatum/Zeit: ". date("d.m.Y H:i:s");
 	      // Überprüfen ob alle Pflichtfelder gefüllt sind
-	      empty($nachname) ? $err[] = "<p>- Bitte den Nachnamen angeben.</p>" : false;
-	      empty($vorname) ? $err[] = "<p>- Bitte den Vornamen angeben.</p>" : false;
-	      empty($email) ? $err[] = "<p>- Bitte die Email-Adresse angeben.</p>" : false;
-	      empty($text) ? $err[] = "<p>- Welchen Wunsch haben Sie? Bitte den Text eingeben.</p>" : false;
+	      empty($nachname) ? $err[] = "Nachname" : false;
+	      empty($vorname) ? $err[] = "Vorname" : false;
+	      empty($email) ? $err[] = "E-Mailadresse" : false;
+	      empty($text) ? $err[] = "Freitextfeld" : false;
 	      // wenn nicht, werden die Fehlermeldungen ausgegeben und das "halbgefüllte" Formular angezeigt
 	      if(!empty($err)) {
-	        echo "<p>Bitte korrigieren Sie folgende Fehler:</p>";
+	        echo "<p class='error'><strong>Ihre Daten konnten leider nicht versendet werden. Bitte &uuml;berpr&uuml;fen Sie folgende Felder auf Vollst&auml;ndigkeit:</strong></p><ul class='error'>";
 	        foreach($err as $fehler){
-	          echo $fehler;
-	        } ?>
+	          echo "<li>" . $fehler."</li>";
+	        } 
+	        echo "</ul>"?>
 	        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 	        <table width="100%" border="0" cellpadding="10" cellspacing="10">
 	        <tr><td width="140" align="right">*Nachname:</td><td align="left"><input type="text" name="nachname" value="<?php echo $nachname; ?>" style="width:100%;" /></td></tr>
@@ -45,12 +46,12 @@
 	        <tr><td colspan="2" align="center" nowrap><br /><input type="reset" value="Formular l&ouml;schen" style="width:200px;" />  <input type="submit" name="abschicken" class="button" value="Formular absenden" style="width:200px;" /></td></tr>
 	        </table>
 	        </form>
-	        <p>*Pflichtfelder</p>
+	        <p id="last">*Pflichtfelder</p>
 	    <?php    // sind keine Fehler vorhanden, wird die Email versendet
 	      } else {
 	        $mailbetreff="Kontaktformular ".$_SERVER['HTTP_HOST'];
 	        // HIER DIE EMPFÄNGER EMAIL-ADRESSE ANPASSEN!!!       
-	        echo (mail("katharina.franz@gmail.com", $mailbetreff, $mailnachricht, "From: $email")) ? "<p>Vielen Dank f&uuml;r Ihre eMail!</p>": "<p>Ein Fehler ist aufgetreten!</p>";
+	        echo (mail("katharina.franz@gmail.com", $mailbetreff, $mailnachricht, "From: $email")) ? "<p>Vielen Dank f&uuml;r Ihre eMail!</p>": "<p class='error'>Ein Fehler ist aufgetreten! Bitte kontaktieren Sie uns über die im Impressum genannten Informationen.</p>";
 	      }
 	    // das Formular welches als erstes dem Besucher angezeigt wird
 	    } else { ?>

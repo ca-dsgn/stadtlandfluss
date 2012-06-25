@@ -82,6 +82,10 @@
 	text-decoration: none;
 }
 
+#socialList li a:hover {
+	text-decoration: underline;
+}
+
 #g-plusone {
 	float:left;
 	display: block;
@@ -159,19 +163,6 @@ iframe#facebook-like {
 	background-color: #737b83;
 }
 
-#tellAStory {
-	width: 250px;
-	float: right;
-	padding-top: 10px;
-}
-
-
-#tellAStoryForm {
-	background-color: #656c73;
-	height: 124px;
-	margin: 0 0 5px 0;
-	border: 1px solid #5b6168;
-}
 
 
 /*	PAGE_FOOTER ------------------------------------------------------ [BEGIN] --	*/

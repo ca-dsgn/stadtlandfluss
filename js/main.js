@@ -311,19 +311,19 @@ function open_box(elem) {
 			
 			case 0:
 			
-				left_calc+= 240+120;
+				left_calc+= 240;
 				break;
 			case 1:
 			
-				left_calc+= 120;
+				left_calc+= 0;
 				break;
 			case 2:
 				
-				left_calc-= 120;
+				left_calc-= 240;
 				break;
 			case 3:
 			
-				left_calc-= 240+120;
+				left_calc-= 240+240;
 				break;
 		}
 		

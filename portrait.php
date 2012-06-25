@@ -4,26 +4,39 @@
 			
 	$vc = new VideoController();
 	$helper = new Helper();
+	
+	$portrait_elements = Array();
+	
+	for ($i=0; $i<5; $i++) {
+		
+		$element = json_decode($vc->getVideoWithImages($i));
+		$persons = json_decode($vc->getPersons($i));
+		
+		$portrait_element = Array("data" => $element[0],
+								  "persons" => $persons
+		);
+		array_push($portrait_elements,$portrait_element);
+	}
+	
+	
 ?>
 <div id="protagonistContent">
 	<div class="backgroundImages">
-		<div class="backgroundImage"></div>
-		<div class="backgroundImage"></div>
-    <div class="backgroundImage"></div>
-    <div class="backgroundImage"></div>
-    <div class="backgroundImage"></div>
-  </div>
+    	<?php
+		
+			foreach ($portrait_elements as $element) {
+        
+				print '<div class="backgroundImage"><img src="'.$element["data"]->backgroundimage.'" alt=""/></div>';
+			}
+		?>
+  	</div>
 	<div class="wrapper">
 		<ul>
 		<?php
 		
-			for ($i=0; $i<5; $i++) {
+			foreach ($portrait_elements as $element) {
 				
-				$element = json_decode($vc->getVideoWithImages($i));
-				
-				$persons = json_decode($vc->getPersons($i));
-				
-				foreach($persons as $person) {
+				foreach($element["persons"] as $person) {
 					
 					if ($person->type == "Protagonist") {
 						
@@ -33,24 +46,22 @@
 				
 				$html = '';
 				$html.= '<li class="contentBox">';
-				$html.= '<img src="'.$element[0]->keyvisual.'" class="portraitIMG" alt="moderne-single"/>';
+				$html.= '<img src="'.$element["data"]->keyvisual.'" class="portraitIMG" alt="moderne-single"/>';
 				$html.= '<div class="playButton">';
-				$html.= '<input type="hidden" class="video_src" value="'.$helper->makeYoutubeURL($element[0]->source,true).'"/>';
+				$html.= '<input type="hidden" class="video_src" value="'.$helper->makeYoutubeURL($element["data"]->source,true).'"/>';
 				$html.= '</div>';
 				$html.= '<div class="description">';
 				$html.= '<hgroup>';
 				$html.= '<h2>'.$protagonist.'</h2>';
-				$html.= '<h1>'.$element[0]->title.'</h1>';
+				$html.= '<h1>'.$element["data"]->title.'</h1>';
 				$html.= '</hgroup>';
 				$html.= '<p>';
-				$html.= '<a href="index.php?section=detail&video_id='.$element[0]->Video_ID.'" class="infoLink">weitere Infos</a>';
+				$html.= '<a href="index.php?section=detail&video_id='.$element["data"]->Video_ID.'" class="infoLink">weitere Infos</a>';
 				$html.= '</p>';
 				$html.= '</div>';
 				$html.= '</li>';
 				
 				print $html;
-				
-				//print_r($element);
 			}
 		?>
 		</ul>

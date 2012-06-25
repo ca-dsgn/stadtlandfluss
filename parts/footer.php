@@ -59,8 +59,8 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 					
 					<ul id="socialList">
-						<li><a href="https://www.facebook.com/pages/StadtLandFluss-Geschichten/297277040355842"><img src="img/social-facebook.png" align="absmiddle" /> Facebook</a></li>
-						<li><a href="http://www.youtube.com/channel/UCzK5rqDqYDlwcApMEc2r8ag"><img src="img/social-youtube.png" align="absmiddle" /> Youtube</a></li>
+						<li><img src="img/social-facebook.png" align="absmiddle" style="margin-right:5px;" /> <a href="https://www.facebook.com/pages/StadtLandFluss-Geschichten/297277040355842">Facebook</a></li>
+						<li><img src="img/social-youtube.png" align="absmiddle" style="margin-right:5px;" /> <a href="http://www.youtube.com/channel/UCzK5rqDqYDlwcApMEc2r8ag">Youtube</a></li>
 					</ul>
 				</div>
 			</div>

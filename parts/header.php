@@ -25,7 +25,7 @@
             <a href="./" class="logoBig">StadtLandFluss-Geschichten</a>
 
         <ul id="pageNav">
-					<li id="menue"><a href="">Men&uuml;</a>
+					<li id="menue"><a>Men&uuml;</a>
 						<ul>
 							<?php
 								if (!isset($_GET["section"])) {

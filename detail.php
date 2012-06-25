@@ -58,7 +58,8 @@
 	
 				<div id="movieDetailMeta">
 					<div class="left">
-						<p><strong>Ein Film von:</strong> Elina Wetsch, Lisa Simon, Christian Albert, Sebastian Lauer, René Preußer (Jahrgang 2009)</p>		
+						<p><strong>Ein Film von:</strong> 
+						<?php echo $vc->getFilmCrew($Video_ID); ?></p>		
 					</div>
 					<!--div class="right">
 						<p><strong>Produktionsjahr:</strong> 2011<br/><strong>Drehort:</strong> Burg Hornberg</p>		

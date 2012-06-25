@@ -207,9 +207,9 @@ a#backButton {
 	z-index: 500;
 	display: block;
 	background-color: #fff;
-	background-image: url("../img/arrowClear.png");
-    background-position: 10px 9px;
-    background-repeat: no-repeat;
+	background-image: url("../img/arrowClearLeft.png");
+  background-position: 10px 9px;
+  background-repeat: no-repeat;
 	text-decoration: none;
 	line-height: 1.7em;
 }

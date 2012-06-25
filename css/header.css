@@ -59,7 +59,7 @@
 	display: block;
 	line-height: 70px;
 	font-size: 14px;
-	color: #232527;
+	color: #222426;
 }
 
 #pageNav li a {
@@ -67,7 +67,7 @@
 	width: 260px;
 	height: 70px;
 	line-height: 70px;
-	text-indent: 55px;
+	text-indent: 70px;
 	text-decoration: none;
 }
 
@@ -89,6 +89,19 @@
 #pageNav li:hover {
 	cursor: pointer;
 	background-color: #000;
+	color: #fff;
+}
+
+#pageNav li#menue:hover {
+	cursor: pointer;
+	background-color: #5FCEEF;
+	background-image: url('../img/arrowDown.png');
+	background-repeat: no-repeat;
+	background-position: 20px 26px;
+	color: #fff;
+}
+
+#pageNav li#menue a:hover {
 	color: #fff;
 }
 

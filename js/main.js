@@ -1,4 +1,4 @@
-var playlist;
+var playlist = "";
 var playListScrollTop;
 
 $(document).ready(function() {
@@ -151,13 +151,15 @@ function playListMove(direction) {
 
 function removeDraggableFromItemsByCookie() {
 	
-	refs = playlist.split("-");
-	
-	for (var i = 0; i < refs.length; i++) {
+	if (playlist) {
+		refs = playlist.split("-");
 		
-		$(".is_shown li[ref='" + refs[i] + "']").css("opacity", 0.5);
-		$(".is_shown li[ref='" + refs[i] + "']").draggable("destroy");
-		$(".is_shown li[ref='" + refs[i] + "']").removeClass("item");
+		for (var i = 0; i < refs.length; i++) {
+			
+			$(".is_shown li[ref='" + refs[i] + "']").css("opacity", 0.5);
+			$(".is_shown li[ref='" + refs[i] + "']").draggable("destroy");
+			$(".is_shown li[ref='" + refs[i] + "']").removeClass("item");
+		}
 	}
 }
 
@@ -271,17 +273,64 @@ function open_box(elem) {
 		$(elem).find(".images").css("z-index","600");
 		$(elem).find(".box").css("z-index","650");
 		
-		$(elem).find(".images").animate({
+		$(elem).find(".images").delay(300).animate({
 				
-			height: '470',
+			height: '510',
 			top: '-180px',
 			opacity: 1
 		},500);
-		$(elem).find(".info").animate({
+		$(elem).find(".info").delay(300).animate({
 			
 			width: '400',
 			opacity: 1
 		},500);
+		
+		left_calc = 0;
+		top_calc = 0;
+		
+		position_left = ($(elem).offset().left-10 - ($(window).width()-$("#gridContent .wrapper").width())/2)/240;
+		position_top = ($(elem).offset().top-10 - $(".is_shown").offset().top)/170;
+		
+		switch (position_top) {
+			
+			case 0:
+			
+				top_calc+= 170;
+				break;
+			case 1:
+			
+				top_calc+= 0;
+				break;
+			case 2:
+				
+				top_calc-= 170;
+				break;
+		}
+		
+		switch (position_left) {
+			
+			case 0:
+			
+				left_calc+= 240+120;
+				break;
+			case 1:
+			
+				left_calc+= 120;
+				break;
+			case 2:
+				
+				left_calc-= 120;
+				break;
+			case 3:
+			
+				left_calc-= 240+120;
+				break;
+		}
+		
+		$(elem).animate({
+			left: left_calc,
+			top: top_calc
+		});
 		$(".overlay").fadeIn(300);
 	}
 }
@@ -301,11 +350,20 @@ function close_box(elem) {
 		width: '0',
 		opacity: 0
 	},500);
-	$(".overlay").fadeOut(300, function() {
+	$(".overlay").delay(300).fadeOut(300, function() {
 		
 		$(elem).css("z-index","auto");
 		$(elem).find(".images").css("z-index","auto");
 		$(elem).find(".box").css("z-index","auto");
+	});
+	
+	$(elem).animate({
+		left: 0,
+		top: 0
+	}, function() {
+		
+		$(this).css("left","");
+		$(this).css("top","");
 	});
 }
 

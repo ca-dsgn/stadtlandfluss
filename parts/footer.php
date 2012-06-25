@@ -1,9 +1,9 @@
 	<!-- VIDEO-LAYER [BEGIN] -->
   <div class="videoLayer">
 		<a href="" class="closeButton">close</a>
-		<a href="" class="playListLeft">Left</a>
-		<a href="" class="playListRight">Right</a>
     <div class="videoPlayer">
+			<a href="" class="playListLeft">Left</a>
+			<a href="" class="playListRight">Right</a>
       <object>
       	<param value="http://www.youtube.com/v/p74Ui12Y55c&showinfo=0" name="movie">
         <param value="opaque" name="wmode">

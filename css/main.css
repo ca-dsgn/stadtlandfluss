@@ -415,7 +415,6 @@ a#backButton:hover {
 	right: 5px;
 	bottom: 5px;
 	background-color: rgb(35,37,39);
-
 	background-image: url('../img/playButtonSmallOver.png');
 	background-repeat: no-repeat;
 	background-position: 15px 10px;	
@@ -429,17 +428,37 @@ a#backButton:hover {
 	text-indent: -9999px;
 }
 
-.playListLeft {
-	width: 20px;
-	height: 20px;
-	background: aqua;
+
+.playListRight, .playListLeft {
+	width: 40px;
+	height: 40px;
+	z-index: 15;
+	cursor: pointer;
+	background-image: url('../img/arrowSmall.png');
+	text-indent: -9999px;
+	display: none;
+}
+
+.playListRight:hover, .playListLeft:hover {
+	background-image: url('../img/arrowOverSmall.png');
 }
 
 .playListRight {
-	width: 20px;
-	height: 20px;
-	background: aqua;
+	position: absolute;
+	right: -20px;
+	top: 250px;
 }
+
+.playListLeft {
+	position: absolute;
+	left: -20px;
+	top: 250px;
+	-webkit-transform:rotate(-180deg);
+	-ms-transform:rotate(-180deg);
+	-o-transform:rotate(-180deg);
+	-moz-transform:rotate(-180deg);
+}
+
 
 
 #movieDetailPreview:hover .playButtonSmall {

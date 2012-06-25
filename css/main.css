@@ -274,26 +274,6 @@ a#backButton:hover {
 	background-position: center center;
 }
 
-#backWind {
-		background-image: url('../img/backgrounds/wind.jpg');
-}
-
-#backModerne {
-		background-image: url('../img/backgrounds/moderne.jpg');
-}
-
-#backWinsun {
-		background-image: url('../img/backgrounds/winsun.jpg');
-}
-
-#backMotocross {
-		background-image: url('../img/backgrounds/motocross.jpg');
-}
-
-#backPizza {
-		background-image: url('../img/backgrounds/pizza.jpg');
-}
-
 
 
 #protagonistContent ul {

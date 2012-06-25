@@ -7,11 +7,11 @@
 ?>
 <div id="protagonistContent">
 	<div class="backgroundImages">
-		<div class="backgroundImage" id="backModerne"></div>
-		<div class="backgroundImage" id="backWind"></div>
-    <div class="backgroundImage" id="backMotocross"></div>
-    <div class="backgroundImage" id="backPizza"></div>
-    <div class="backgroundImage" id="backWinsun"></div>
+		<div class="backgroundImage"></div>
+		<div class="backgroundImage"></div>
+    <div class="backgroundImage"></div>
+    <div class="backgroundImage"></div>
+    <div class="backgroundImage"></div>
   </div>
 	<div class="wrapper">
 		<ul>

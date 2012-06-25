@@ -420,9 +420,22 @@ a#backButton:hover {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;	
-	z-index: 500;
+	z-index: 14;
 	text-indent: -9999px;
 }
+
+.playListLeft {
+	width: 20px;
+	height: 20px;
+	background: aqua;
+}
+
+.playListRight {
+	width: 20px;
+	height: 20px;
+	background: aqua;
+}
+
 
 #movieDetailPreview:hover .playButtonSmall {
 	background-color: rgb(255,255,255);

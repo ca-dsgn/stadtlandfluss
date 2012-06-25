@@ -357,14 +357,13 @@ function close_box(elem) {
 		$(elem).find(".box").css("z-index","auto");
 	});
 	
-	$(elem).animate({
-		left: 0,
-		top: 0
-	}, function() {
+	if ($(".overlay").is(":visible")) {
 		
-		$(this).css("left","");
-		$(this).css("top","");
-	});
+		$(elem).animate({
+			left: 0,
+			top: 0
+		});
+	}
 }
 
 function open_maps_item(elem) {

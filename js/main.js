@@ -511,49 +511,54 @@ function playListSortable() {
 				
 				if (y_original - event.pageX > 250 || y_original - event.pageX < -250) {
 					
-					$(".page").each(function() {
+					if (ready_to_kill) {
 						
-						$(this).find("li").each(function() {
-						
-							if ($(this).attr("ref") == $(ui.item).attr("ref")) {
+						ready_to_kill = false;
+					
+						$(".page").each(function() {
 							
-								$(this).animate({
-									
-									opacity: 1
-								},300, function() {
-									
-									addDraggableToItems($(this));
-									$(this).addClass("item");
-								});
+							$(this).find("li").each(function() {
+							
+								if ($(this).attr("ref") == $(ui.item).attr("ref")) {
+								
+									$(this).animate({
+										
+										opacity: 1
+									},300, function() {
+										
+										addDraggableToItems($(this));
+										$(this).addClass("item");
+									});
+								}
+							});
+						});
+						
+						ui.item.addClass("delete_this");
+						
+						ui.item.fadeOut(300, function() {
+							
+							removeFromPlayList($(ui.item).attr("ref"));
+							$(this).remove();
+						});
+						ui.placeholder.slideUp(300, function() {
+								
+							$(this).remove();
+							$(".playList ul").sortable("cancel");
+							
+							$(".delete_this").remove();
+							
+							checkArrowVisibility();
+								
+							if ($(".playList ul li").length == 0) {
+								
+								$(".playList").find(".info").fadeIn(300);
 							}
 						});
-					});
-					
-					ui.item.addClass("delete_this");
-					
-					ui.item.fadeOut(300, function() {
-						
-						removeFromPlayList($(ui.item).attr("ref"));
-						$(this).remove();
-					});
-					ui.placeholder.slideUp(300, function() {
+						playListScrollTop = playListScrollTop-170;
+						if ($(".playList ul li").length > 3) {
 							
-						$(this).remove();
-						$(".playList ul").sortable("cancel");
-						
-						$(".delete_this").remove();
-						
-						checkArrowVisibility();
-							
-						if ($(".playList ul li").length == 0) {
-							
-							$(".playList").find(".info").fadeIn(300);
+							$(".playList ul").scrollTop(playListScrollTop);
 						}
-					});
-					playListScrollTop = playListScrollTop-170;
-					if ($(".playList ul li").length > 3) {
-						
-						$(".playList ul").scrollTop(playListScrollTop);
 					}
 				}
 			}

@@ -15,6 +15,8 @@
 	width: 75px; 
 	height: 25px; 
 	margin: 0 auto;
+	position: relative;
+	top: -25px;
 	z-index: 15;
 	cursor: pointer;
 	
@@ -49,6 +51,8 @@
 	background: -ms-linear-gradient(45deg,  #44494d 2%,#616971 78%,#3a3c3e 100%);
 	background: linear-gradient(45deg,  #44494d 2%,#616971 78%,#3a3c3e 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44494d', endColorstr='#3a3c3e',GradientType=1 );
+	position: relative;
+	top: -25px;
 }
 
 

@@ -416,6 +416,8 @@ function changeObjectsInGrid(num) {
 		
 		case 9:
 			
+			num_pages = Math.ceil((count_items-8)/7)+1;
+			
 			for (i=1;i<=count_items;i++) {
 				
 				if (i<=8) {
@@ -458,6 +460,8 @@ function changeObjectsInGrid(num) {
 			}
 			break;
 		case 12:
+		
+			num_pages = Math.ceil((count_items-11)/10)+1;
 		
 			for (i=1;i<=count_items;i++) {
 				
@@ -502,6 +506,29 @@ function changeObjectsInGrid(num) {
 	}
 	
 	addDraggableToItems(".page .item");
+	
+	/* Update Pagination */
+	$(".naviPages ul li").remove();
+	
+	for (i=0; i<num_pages; i++) {
+		
+		if (i == 0) {
+			
+			$(".naviPages ul").append('<li class="current"></li>');
+		}
+		else {
+			$(".naviPages ul").append('<li></li>');
+		}
+	}
+	$(".naviPages ul").css("width", num_pages*30 + "px");
+	if (num_pages > 1) {
+		
+		$(".naviPages").fadeIn(300);
+	}
+	else {
+		
+		$(".naviPages").fadeOut(300);
+	}
 }
 
 function positionGrid() {

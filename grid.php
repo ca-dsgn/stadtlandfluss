@@ -10,10 +10,9 @@
 	<div class="wrapper">
 		<div class="distance">
 		<div class="contentBox">
-            <div class="naviPages">
+            <div class="naviPages" style="display: none;">
                 <ul>
                     <li class="current"></li>
-                    <li></li>
                 </ul>
             </div>
 			<div class="gridContainer">

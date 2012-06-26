@@ -400,6 +400,14 @@ a#backButton:hover {
 	background-image: url('../img/playButtonBigEcho.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
+	
+	
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+src='../img/playButtonBigEcho.png',
+sizingMethod='scale');
+
+
+	
 }
 
 

@@ -4,6 +4,8 @@
         <title>StadtLandFluss-Geschichten</title>
         <meta charset="UTF-8"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- FIXING PROBLEMS IN IE -->
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
         <link rel="stylesheet" href="css/main.css" type="text/css"/>
         <link rel="shortcut icon" href="./favicon.png" type="image/png"/>
         <link rel="icon" href="./favicon.png" type="image/png"/>

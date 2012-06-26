@@ -91,6 +91,7 @@ function checkArrowVisibility() {
 		
 		$(".playlistDown").addClass('inactive');
 		$(".playlistUp").addClass('inactive');
+
 	}
 }
 
@@ -134,7 +135,7 @@ function playListMove(direction) {
 					
 					if ($(".playList ul").scrollTop() == 0) {
 					
-						$(".playList .playlistUp").addClass('inactive');		
+						$(".playList .playlistUp").addClass('inactive');	
 						$(".playList .playlistDown").removeClass('inactive');
 					}
 					if ($(".playList ul").scrollTop() <= ($(".playList ul li").length - 3)*170) {

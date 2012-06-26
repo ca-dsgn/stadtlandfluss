@@ -246,7 +246,6 @@ a#backButton:hover {
 	position: absolute;
 	top: 50%;
 	margin-top: -235px;
-	background-color: aqua;
 }
 
 .contentScrollBox {
@@ -410,6 +409,15 @@ a#backButton:hover {
 	height: 100%;
 }
 
+.playList .playButton {
+	width: 0px;
+	height: 0px;
+	margin-top: 193px;
+}
+
+.playList .playButtonEcho {
+	margin-top: 193px;
+}
 
 .playButtonSmall {
 	position: absolute;
@@ -640,25 +648,25 @@ a#backButton:hover {
 .playlistDown {
 	position: absolute;
 	width: 240px;
-	height: 29px;
+	height: 45px;
 	margin-top: -10px;
 	z-index: 15;
 	cursor: pointer;
 	background-image: url('../img/playlist-down.png');
-	top: 491px;
-	left: 0;
+	bottom: 0px;
+	left: 0px;
 }
 
 .playlistUp {
 	position: absolute;
 	width: 240px;
-	height: 29px;
+	height: 45px;
 	margin-top: -10px;
 	z-index: 15;
 	cursor: pointer;
 	background-image: url('../img/playlist-up.png');
 	top: 10px;
-	left: 0;
+	left: 0px;
 }
 
 .clone {

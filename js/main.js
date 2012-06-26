@@ -157,9 +157,9 @@ function removeDraggableFromItemsByCookie() {
 		
 		for (var i = 0; i < refs.length; i++) {
 			
-			$(".is_shown li[ref='" + refs[i] + "']").css("opacity", 0.5);
-			$(".is_shown li[ref='" + refs[i] + "']").draggable("destroy");
-			$(".is_shown li[ref='" + refs[i] + "']").removeClass("item");
+			$(".page li[ref='" + refs[i] + "']").css("opacity", 0.5);
+			$(".page li[ref='" + refs[i] + "']").draggable("destroy");
+			$(".page li[ref='" + refs[i] + "']").removeClass("item");
 		}
 	}
 }
@@ -377,10 +377,13 @@ function changeObjectsInGrid(num) {
 	// NOW MAKE A NEW SORT OF ALL ELEMENTS THAT ARE HIDDEN TO PLACE THEM ON THE NEXT PAGE
 	items = Array();
 	
-	$(".page > .item").each(function() {
+	$(".page > li").each(function() {
 		
-		items.push($(this));
-		$(this).remove();
+		if (!$(this).hasClass("arrow")) {
+			
+			items.push($(this));
+			$(this).remove();
+		}
 	});
 	
 	// Remove all right buttons to add them dynamically again

@@ -391,7 +391,7 @@ function changeObjectsInGrid(num) {
 	
 	count_items = items.length;
 	
-	new_page = true;
+	next_page_arrow = false;
 	
 	last_page = 1;
 	
@@ -404,35 +404,29 @@ function changeObjectsInGrid(num) {
 				if (i<=8) {
 					
 					$(".page:nth-child(1)").append(items[i-1]);
-					
-					if ($(".page:nth-child(1) .right").length > 0) {
-						
-						$(".page:nth-child(1)").append($(".page:nth-child(1) .right"));
-					}
 				}
 				else {
 					
 					current_page = Math.ceil((i-8)/7)+1;
 					
-					if (new_page) {
+					if (next_page_arrow) {
 						
 						$(".page:nth-child(" + (current_page-1) + ")").append('<li class="arrow right"></li>');
-						new_page = false;
+						
+						next_page_arrow = false;
 					}
 					
 					if ($(".page:nth-child(" + current_page + ")").length > 0) {
 						
 						if (last_page != current_page) {
 							
-							new_page = true;
+							next_page_arrow = true;
 							last_page = current_page;
 						}
 						
 						$(".page:nth-child(" + current_page + ")").append(items[i-1]);
 					}
 					else {
-						
-						new_page = true;
 						
 						new_page = '<ul class="page" id="' + current_page + '" style="opacity: 0;">'
 						new_page+= '<li class="arrow left"></li>';
@@ -453,20 +447,15 @@ function changeObjectsInGrid(num) {
 				if (i<=11) {
 					
 					$(".page:nth-child(1)").append(items[i-1]);
-					
-					if ($(".page:nth-child(1) .right")) {
-						
-						$(".page:nth-child(1)").append($(".page:nth-child(1) .right"));
-					}
 				}
 				else {
 					
 					current_page = Math.ceil((i-11)/10)+1;
 					
-					if (new_page) {
+					if (next_page_arrow) {
 						
 						$(".page:nth-child(" + (current_page-1) + ")").append('<li class="arrow right"></li>');
-						new_page = false;
+						next_page_arrow = false;
 					}
 					
 					if ($(".page:nth-child(" + current_page + ")").length > 0) {
@@ -475,13 +464,11 @@ function changeObjectsInGrid(num) {
 						
 						if (last_page != current_page) {
 							
-							new_page = true;
+							next_page_arrow = true;
 							last_page = current_page;
 						}
 					}
 					else {
-						
-						new_page = true;
 						
 						new_page = '<ul class="page" id="' + current_page + '" style="opacity: 0;">'
 						new_page+= '<li class="arrow left"></li>';
@@ -496,6 +483,8 @@ function changeObjectsInGrid(num) {
 			}
 			break;
 	}
+	
+	addDraggableToItems(".page .item");
 }
 
 function positionGrid() {

@@ -85,12 +85,12 @@ function checkArrowVisibility() {
 	
 	if ($(".playList ul li").length > 3) {
 		
-		$(".playlistDown").fadeIn(300);
+		$(".playlistDown").removeClass('inactive');
 	}
 	else {
 		
-		$(".playlistDown").fadeOut(300);
-		$(".playlistUp").fadeOut(300);
+		$(".playlistDown").addClass('inactive');
+		$(".playlistUp").addClass('inactive');
 	}
 }
 
@@ -111,12 +111,12 @@ function playListMove(direction) {
 					
 					if (($(".playList ul li").length - 3)*170 == $(".playList ul").scrollTop()) {
 					
-						$(".playList .playlistDown").hide();	
-						$(".playList .playlistUp").fadeIn(300);
+						$(".playList .playlistDown").addClass('inactive');	
+						$(".playList .playlistUp").removeClass('inactive');
 					}
 					if ($(".playList ul").scrollTop() <= ($(".playList ul li").length - 3)*170) {
 					
-						$(".playList .playlistUp").fadeIn(300);
+						$(".playList .playlistUp").removeClass('inactive');
 					}
 					playListScrollTop = $(".playList ul").scrollTop();
 				});
@@ -134,12 +134,12 @@ function playListMove(direction) {
 					
 					if ($(".playList ul").scrollTop() == 0) {
 					
-						$(".playList .playlistUp").hide();	
-						$(".playList .playlistDown").fadeIn(300);
+						$(".playList .playlistUp").addClass('inactive');		
+						$(".playList .playlistDown").removeClass('inactive');
 					}
 					if ($(".playList ul").scrollTop() <= ($(".playList ul li").length - 3)*170) {
 					
-						$(".playList .playlistDown").fadeIn(300);
+						$(".playList .playlistDown").removeClass('inactive');
 					}
 					playListScrollTop = $(".playList ul").scrollTop();
 				});
@@ -464,7 +464,8 @@ function playListSortable() {
 		start: function(event,ui) {
 			
 			y_original = event.screenX;
-			ready_to_kill = false;
+			
+			_kill = false;
 			
 			if ($(".playList > ul > li").length > 3) {
 				

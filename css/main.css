@@ -606,7 +606,7 @@ a#backButton:hover {
 	position: relative;
 	z-index: 10;
 	width: 240px;
-	background-color: rgba(255,255,255,0.5);
+	background-color: #e1e7e9;
 	float: right;
 	min-height: 510px;
 	max-height: 510px;
@@ -648,7 +648,7 @@ a#backButton:hover {
 .playlistDown {
 	position: absolute;
 	width: 240px;
-	height: 45px;
+	height: 35px;
 	margin-top: -10px;
 	z-index: 15;
 	cursor: pointer;
@@ -657,16 +657,28 @@ a#backButton:hover {
 	left: 0px;
 }
 
+.playlistDown:hover { 
+	background-image: url('../img/playlist-down-over.png');
+}
+
 .playlistUp {
 	position: absolute;
 	width: 240px;
-	height: 45px;
+	height: 35px;
 	margin-top: -10px;
 	z-index: 15;
 	cursor: pointer;
 	background-image: url('../img/playlist-up.png');
 	top: 10px;
 	left: 0px;
+}
+
+.playlistUp:hover { 
+	background-image: url('../img/playlist-up-over.png');
+}
+
+.inactive {
+	opacity: 0.2;
 }
 
 .clone {

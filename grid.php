@@ -89,15 +89,15 @@
 		        </ul>
                 <?php
 				
-					$not_visible = "";
+					$not_active = "";
 				
 					if ($num_playlist <= 3) {
 						
-						$not_visible = ' style="display: none;"';
+						$not_active = ' inactive';
 					}
 				?>
-		        <div class="playlistDown"<?php print $not_visible?>></div>
-		    	<div class="playlistUp"<?php print ' style="display: none;"'?>></div>
+		        <div class="playlistDown<?php print $not_active ?>"></div>
+		    	<div class="playlistUp inactive"></div>
 		    </div>
 		    <div class="clear"></div>
 		    <div class="naviPages">

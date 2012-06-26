@@ -564,7 +564,6 @@ sizingMethod='scale');
 .gridContainer {
 	width: 75%;
 	float: left;
-	height: 520px;
 }
 .gridContainer .page {
 	width: 25%;

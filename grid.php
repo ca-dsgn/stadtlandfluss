@@ -57,10 +57,6 @@
 		        </div>
 		    </div>
 		    <div class="playList">
-		    
-		    	<div class="playButton"></div>
-		    	<div class="playButton"></div>
-		    
 				<?php
                     
                     $playlist = '';
@@ -101,6 +97,10 @@
 				?>
 		      <div class="playlistDown<?php print $not_active ?>"></div>
 		    	<div class="playlistUp inactive"></div>
+		    	
+		    			    
+		    	<div class="playButtonPlaylist"></div>
+		    	<div class="deleteButtonPlaylist"></div>
 		    </div>
 		    <div class="clear"></div>
 		    <div class="naviPages">

@@ -409,15 +409,35 @@ a#backButton:hover {
 	height: 100%;
 }
 
-.playList .playButton {
-	width: 0px;
-	height: 0px;
-	margin-top: 193px;
+.playButtonPlaylist {
+	position: absolute;
+	right: 0;
+	top: 210px;
+	width: 46px;
+	cursor: pointer;
+	height: 40px;
+	background-image: url('../img/playButtonPlaylist.png');
 }
 
-.playList .playButtonEcho {
-	margin-top: 193px;
+.playButtonPlaylist:hover {
+	background-image: url('../img/playButtonPlaylistOver.png');
+
 }
+.deleteButtonPlaylist {
+	position: absolute;
+	right: 0;
+	top: 250px;
+	width: 46px;
+	cursor: pointer;
+	height: 39px;
+	background-image: url('../img/deleteButtonPlaylist.png');
+}
+
+.deleteButtonPlaylist:hover {
+	background-image: url('../img/deleteButtonPlaylistOver.png');
+
+}
+
 
 .playButtonSmall {
 	position: absolute;

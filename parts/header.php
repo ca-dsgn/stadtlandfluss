@@ -17,6 +17,11 @@
         <script type="text/javascript" src="js/footer.js"></script>
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script type="text/javascript" src="js/maps.php"></script>
+        
+        <!--[if lt IE 9]>
+    			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      	<![endif]-->
+          
     </head>
     <body onload="initialize();">
     <div class="overlay" style="display: none;"></div>

@@ -176,7 +176,7 @@ iframe#facebook-like {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	height: 35px;
+	height: 25px;
 
 
 	background-color: #252729;
@@ -204,7 +204,7 @@ iframe#facebook-like {
 
 #footerNav {
 	float: right;
-	line-height: 35px;
+	line-height: 23px;
 	list-style-type: none;
 }
 

@@ -23,12 +23,12 @@
 .logoSmall {
 	position: relative;
 	width: 200px;
-	height: 35px;
-	line-height: 35px;
+	height: 25px;
+	line-height: 23px;
 	display: block;
 	background-image: url('../img/logoSmall.png');
 	background-repeat: no-repeat;
-	background-position: 0px 9px;
+	background-position: 0px 3px;
 	text-indent: 30px;
 	text-transform: uppercase;
 	text-decoration: none;

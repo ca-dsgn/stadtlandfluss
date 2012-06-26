@@ -79,9 +79,23 @@ $(document).ready(function() {
 		$(this).removeClass("has_focus");
 	});
 	
+<<<<<<< HEAD
 	
 	$(".playButtonPlaylist").live("click",function() {
 		videoLayerPlaylistOpen();
+=======
+	$(".deleteButtonPlaylist").live("click", function() {
+		
+		$(".playList ul > li").each(function() {
+			
+			$(this).fadeOut(300, function() {
+				
+				$(this).remove();
+			});
+		});
+		set_cookie("playlist","");
+		$(".playList .info").delay(300).fadeIn(300);
+>>>>>>> 31a5dac77a5ebc91e84472dc61ed54b2a5fd9df5
 	});
 	
 });

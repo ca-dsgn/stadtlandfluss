@@ -67,7 +67,7 @@ class Helper {
 		$html.= '<img src="'.$images[2]->url.'" alt="'.$images[2]->alt.'"/>';
 		$html.= '</div>';
 		$html.= '</div>';
-		$html.= '<div class="info">';
+		$html.= '<div class="info" style="opacity: 0" >';
 		$html.= '<div class="info_box">';
 		$html.= '<h2>'.$title.'</h2>';
 		$html.= '<p>'.substr($description,0,200).'&hellip; <a class="weiterlesenLink" href="index.php?section=detail&video_id='.$id.'">&raquo; weiterlesen</a></p>';

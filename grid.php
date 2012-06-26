@@ -7,7 +7,8 @@
 ?>
 
 <div id="gridContent">
-	<div class="wrapper">	
+	<div class="wrapper">
+		<div class="distance"></div>
 		<div class="contentBox">
 			<div class="gridContainer">
 		    	<div class="slider">

@@ -713,12 +713,12 @@ a#backButton:hover {
 	margin-top: -50px;
 }
 .naviPages li.current {
-	background-color: #1e1e1e;
+	background-image: url(../img/pagination_current.png);
 }
 .naviPages ul {
 	list-style: none;
-	height: 35px;
-	width: 70px;
+	height: 30px;
+	width: 60px;
 	margin: 0 auto;
 	padding: 5px;
 	background-color: #E1E7E9;
@@ -726,10 +726,10 @@ a#backButton:hover {
 .naviPages ul li {
 	display: inline;
 	float: left;
-	width: 15px;
-	height: 15px;
+	width: 10px;
+	height: 10px;
 	margin: 10px;
-	background-color: #fff;
+	background-image: url(../img/pagination.png);
 }
 .clear {
 	clear: both;

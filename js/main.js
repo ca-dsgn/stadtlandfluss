@@ -79,6 +79,19 @@ $(document).ready(function() {
 		$(this).removeClass("has_focus");
 	});
 	
+	$(".deleteButtonPlaylist").live("click", function() {
+		
+		$(".playList ul > li").each(function() {
+			
+			$(this).fadeOut(300, function() {
+				
+				$(this).remove();
+			});
+		});
+		set_cookie("playlist","");
+		$(".playList .info").delay(300).fadeIn(300);
+	});
+	
 });
 
 function checkArrowVisibility() {

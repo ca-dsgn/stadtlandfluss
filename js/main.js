@@ -373,44 +373,129 @@ function open_maps_item(elem) {
 
 function changeObjectsInGrid(num) {
 	
-	$(".page").each(function() {
+	// NOW MAKE A NEW SORT OF ALL ELEMENTS THAT ARE HIDDEN TO PLACE THEM ON THE NEXT PAGE
+	items = Array();
+	
+	$(".page > .item").each(function() {
 		
-		i = 1;
-		
-		if ($(this).is(":last-child")) {
-			
-			i=0;
-		}
-		else {
-		}
-		
-		$(this).find("li").each(function() {
-		
-			$(this).show();
-			
-			if (i>=num) {
-				
-				if ($(this).hasClass("arrow")) {
-					
-				}
-				else {
-					$(this).hide();
-				}
-			}
-			i++;
-		});
+		items.push($(this));
+		$(this).remove();
 	});
 	
-	/* NOW MAKE A NEW SORT OF ALL ELEMENTS THAT ARE HIDDEN TO PLACE THEM ON THE NEXT PAGE */
-	$(".page").each(function() {
+	// Remove all right buttons to add them dynamically again
+	
+	$(".page > .right").each(function() {
 		
-		current_page = $(this);
-		
-		$(this).find("li:hidden").each(function() {
-			
-			$(current_page).next().find("li:first-child").after($(this).show());
-		});
+		$(this).remove();
 	});
+	
+	count_items = items.length;
+	
+	new_page = true;
+	
+	last_page = 1;
+	
+	switch (num) {
+		
+		case 9:
+			
+			for (i=1;i<=count_items;i++) {
+				
+				if (i<=8) {
+					
+					$(".page:nth-child(1)").append(items[i-1]);
+					
+					if ($(".page:nth-child(1) .right").length > 0) {
+						
+						$(".page:nth-child(1)").append($(".page:nth-child(1) .right"));
+					}
+				}
+				else {
+					
+					current_page = Math.ceil((i-8)/7)+1;
+					
+					if (new_page) {
+						
+						$(".page:nth-child(" + (current_page-1) + ")").append('<li class="arrow right"></li>');
+						new_page = false;
+					}
+					
+					if ($(".page:nth-child(" + current_page + ")").length > 0) {
+						
+						if (last_page != current_page) {
+							
+							new_page = true;
+							last_page = current_page;
+						}
+						
+						$(".page:nth-child(" + current_page + ")").append(items[i-1]);
+					}
+					else {
+						
+						new_page = true;
+						
+						new_page = '<ul class="page" id="' + current_page + '" style="opacity: 0;">'
+						new_page+= '<li class="arrow left"></li>';
+						new_page+= '</ul>';
+						
+						$(".page:last-child").after(new_page);
+						
+						$(".page:nth-child(" + current_page + ")").append(items[i-1]);
+					}
+				}
+				
+			}
+			break;
+		case 12:
+		
+			for (i=1;i<=count_items;i++) {
+				
+				if (i<=11) {
+					
+					$(".page:nth-child(1)").append(items[i-1]);
+					
+					if ($(".page:nth-child(1) .right")) {
+						
+						$(".page:nth-child(1)").append($(".page:nth-child(1) .right"));
+					}
+				}
+				else {
+					
+					current_page = Math.ceil((i-11)/10)+1;
+					
+					if (new_page) {
+						
+						$(".page:nth-child(" + (current_page-1) + ")").append('<li class="arrow right"></li>');
+						new_page = false;
+					}
+					
+					if ($(".page:nth-child(" + current_page + ")").length > 0) {
+						
+						$(".page:nth-child(" + current_page + ")").append(items[i-1]);
+						
+						if (last_page != current_page) {
+							
+							new_page = true;
+							last_page = current_page;
+						}
+					}
+					else {
+						
+						new_page = true;
+						
+						new_page = '<ul class="page" id="' + current_page + '" style="opacity: 0;">'
+						new_page+= '<li class="arrow left"></li>';
+						new_page+= '</ul>';
+						
+						$(".page:last-child").after(new_page);
+						
+						$(".page:nth-child(" + current_page + ")").append(items[i-1]);
+					}
+				}
+				
+			}
+			break;
+	}
 }
 
 function positionGrid() {

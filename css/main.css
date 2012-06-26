@@ -243,7 +243,7 @@ a#backButton:hover {
 	height: 520px;	
 	position: absolute;
 	top: 50%;
-	bottom: 0;
+	margin-top: -230px;
 }
 
 .contentScrollBox {
@@ -283,6 +283,7 @@ a#backButton:hover {
 
 #protagonistContent ul {
 	list-style-type: none;
+	height: 679px;
 }
 
 
@@ -483,23 +484,25 @@ a#backButton:hover {
 	background-image: url(../img/arrowBigLeft.png);	
 }
 .arrowRight {
-	background-image: url(../img/arrowBigLeft.png);
+	background-image: url(../img/arrowBigRight.png);
 }
-.arrowLeft:hover,
-.arrowRight:hover,
-.arrowTop:hover,
 .arrowBottom:hover {
+}
+.arrowTop:hover {
+}
 
-	background-image: url('../img/arrowOver.png');
+.arrowLeft:hover {
+	
+	background-image: url('../img/arrowBigLeftOver.png');
+}
+.arrowRight:hover {
+	
+	background-image: url('../img/arrowBigRightOver.png');
 }
 
 .arrowLeft {
 	top: 50%;
 	left: 0px;
-	-webkit-transform:rotate(-180deg);
-	-ms-transform:rotate(-180deg);
-	-o-transform:rotate(-180deg);
-	-moz-transform:rotate(-180deg);
 
 }
 

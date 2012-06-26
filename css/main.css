@@ -818,6 +818,7 @@ a.weiterlesenLink:hover {
 	background-color: #fff;
 	overflow: hidden;
 	opacity: 0;
+	filter: inherit;
 }
 
 .page .info_box,

@@ -200,7 +200,7 @@ function addItemListeners() {
 			'margin-left': 73,
 			'margin-top': 37
 		},300);
-		console.log($(this).find(".playButton").css("background-image"));
+		
 		$(this).find(".playButton").css("background-image", "url('img/playButton.png')");	
 	});
 	$(".maps_item .left").live("mouseleave",function() {
@@ -266,7 +266,7 @@ function set_cookie(name, value) {
 
 function open_box(elem) {
 	
-	if ($(elem).parent().hasClass("page") || $(elem).parent()[0].tagName == "BODY") {
+	if (($(elem).parent().hasClass("page") || $(elem).parent()[0].tagName == "BODY") && !$(".overlay").is(":visible")) {
 	
 		$(elem).addClass("open");
 		$(elem).css("z-index","550");

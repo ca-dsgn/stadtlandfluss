@@ -374,25 +374,18 @@ a#backButton:hover {
 	left: 50%;
 	margin-left: -65px;
 	margin-top: 275px;
-	background-color: rgb(35,37,39);
 
-	background-image: url('../img/playButton.png');
+	background-image: url('../img/playButtonBig.png');
 	background-repeat: no-repeat;
-	background-position: 54px 47px;	
+	background-position: center center;	
 	width: 130px;
 	height: 130px;
 	cursor: pointer;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;	
 	z-index: 500;
-	
-
 }
 
 .playButton:hover {
-	background-color: rgb(255,255,255);
-	background-image: url('../img/playButtonOver.png');
+	background-image: url('../img/playButtonBigOver.png');
 	background-repeat: no-repeat;
 }
 
@@ -404,10 +397,9 @@ a#backButton:hover {
 	margin-top: 275px;
 	width: 130px;
 	height: 130px;
-	background-color: #fff;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
+	background-image: url('../img/playButtonBigEcho.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
 

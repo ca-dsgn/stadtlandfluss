@@ -10,6 +10,12 @@
 	<div class="wrapper">
 		<div class="distance">
 		<div class="contentBox">
+            <div class="naviPages">
+                <ul>
+                    <li class="current"></li>
+                    <li></li>
+                </ul>
+            </div>
 			<div class="gridContainer">
 		    	<div class="slider">
                 	<?php
@@ -103,19 +109,6 @@
 		    	<div class="deleteButtonPlaylist"></div>
 		    </div>
 		    <div class="clear"></div>
-		    <div class="naviPages">
-		    	<ul>
-                	<?php
-					
-						global $num_pages;
-					
-						for($i=1;$i<=$num_pages;$i++) {
-							
-							print '<li ref="'.$i.'"'.(($i==1) ? ' class="current"':'').'></li>';
-						}
-					?>
-		        </ul>
-		    </div>
     
     
     </div>

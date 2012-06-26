@@ -617,14 +617,13 @@ a#backButton:hover {
 }
 
 .gridContainer .page li.left {
-	background-color: #0E0;
+	background-image: url(../img/arrowGridLeft.png);
 }
 .gridContainer .page li.right {
-	background-color: #D00;
+	background-image: url(../img/arrowGridRight.png);
 }
 .playList {
 	position: relative;
-	z-index: 10;
 	width: 240px;
 	background-color: #e1e7e9;
 	float: right;
@@ -636,7 +635,6 @@ a#backButton:hover {
 	width: 240px;
 	min-height: 500px;
 	height: 500px;
-	overflow: hidden;
 	float: right;
 	background-image: url(../img/playlist.png);
 }
@@ -710,14 +708,16 @@ a#backButton:hover {
 }
 .naviPages {
 	width: 75%;
+	position: absolute;
+	margin-top: -50px;
 }
 .naviPages li.current {
 	background-color: #1e1e1e;
 }
 .naviPages ul {
 	list-style: none;
-	height: 100px;
-	width: 180px;
+	height: 45px;
+	width: 90px;
 	margin: 0 auto;
 }
 .naviPages ul li {
@@ -816,6 +816,10 @@ a.weiterlesenLink:hover {
 .page li,
 .playList ul li {
 	position: relative;
+}
+
+.item {
+	cursor: pointer;
 }
 
 .page .box,

@@ -373,33 +373,118 @@ function open_maps_item(elem) {
 
 function changeObjectsInGrid(num) {
 	
-	$(".page").each(function() {
+	// NOW MAKE A NEW SORT OF ALL ELEMENTS THAT ARE HIDDEN TO PLACE THEM ON THE NEXT PAGE
+	items = Array();
+	
+	$(".page > .item").each(function() {
 		
-		i = 1;
+		items.push($(this));
+		$(this).remove();
+	});
+	
+	// Remove all right buttons to add them dynamically again
+	
+	$(".page > .right").each(function() {
 		
-		if ($(this).is(":last-child")) {
+		$(this).remove();
+	});
+	
+	count_items = items.length;
+	
+	next_page_arrow = false;
+	
+	last_page = 1;
+	
+	switch (num) {
+		
+		case 9:
 			
-			i=0;
-		}
-		else {
-		}
-		
-		$(this).find("li").each(function() {
-		
-			$(this).show();
-			
-			if (i>=num) {
+			for (i=1;i<=count_items;i++) {
 				
-				if ($(this).hasClass("arrow")) {
+				if (i<=8) {
 					
+					$(".page:nth-child(1)").append(items[i-1]);
 				}
 				else {
-					$(this).hide();
+					
+					current_page = Math.ceil((i-8)/7)+1;
+					
+					if (next_page_arrow) {
+						
+						$(".page:nth-child(" + (current_page-1) + ")").append('<li class="arrow right"></li>');
+						
+						next_page_arrow = false;
+					}
+					
+					if ($(".page:nth-child(" + current_page + ")").length > 0) {
+						
+						if (last_page != current_page) {
+							
+							next_page_arrow = true;
+							last_page = current_page;
+						}
+						
+						$(".page:nth-child(" + current_page + ")").append(items[i-1]);
+					}
+					else {
+						
+						new_page = '<ul class="page" id="' + current_page + '" style="opacity: 0;">'
+						new_page+= '<li class="arrow left"></li>';
+						new_page+= '</ul>';
+						
+						$(".page:last-child").after(new_page);
+						
+						$(".page:nth-child(" + current_page + ")").append(items[i-1]);
+					}
 				}
+				
 			}
-			i++;
-		});
-	});
+			break;
+		case 12:
+		
+			for (i=1;i<=count_items;i++) {
+				
+				if (i<=11) {
+					
+					$(".page:nth-child(1)").append(items[i-1]);
+				}
+				else {
+					
+					current_page = Math.ceil((i-11)/10)+1;
+					
+					if (next_page_arrow) {
+						
+						$(".page:nth-child(" + (current_page-1) + ")").append('<li class="arrow right"></li>');
+						next_page_arrow = false;
+					}
+					
+					if ($(".page:nth-child(" + current_page + ")").length > 0) {
+						
+						$(".page:nth-child(" + current_page + ")").append(items[i-1]);
+						
+						if (last_page != current_page) {
+							
+							next_page_arrow = true;
+							last_page = current_page;
+						}
+					}
+					else {
+						
+						new_page = '<ul class="page" id="' + current_page + '" style="opacity: 0;">'
+						new_page+= '<li class="arrow left"></li>';
+						new_page+= '</ul>';
+						
+						$(".page:last-child").after(new_page);
+						
+						$(".page:nth-child(" + current_page + ")").append(items[i-1]);
+					}
+				}
+				
+			}
+			break;
+	}
+	
+	addDraggableToItems(".page .item");
 }
 
 function positionGrid() {

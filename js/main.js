@@ -400,6 +400,17 @@ function changeObjectsInGrid(num) {
 			i++;
 		});
 	});
+	
+	/* NOW MAKE A NEW SORT OF ALL ELEMENTS THAT ARE HIDDEN TO PLACE THEM ON THE NEXT PAGE */
+	$(".page").each(function() {
+		
+		current_page = $(this);
+		
+		$(this).find("li:hidden").each(function() {
+			
+			$(current_page).next().find("li:first-child").after($(this).show());
+		});
+	});
 }
 
 function positionGrid() {

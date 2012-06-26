@@ -32,18 +32,20 @@
 							if ($i == 1) {
 								
 								$max_elements = 11;
+								$page_plus_one = 0;
 								$is_shown = " is_shown";
 								$style = "";
 							}
 							else {
 								
-								$max_elements = 10;
+								$max_elements = 11;
+								$page_plus_one = 1;
 								$is_shown = "";
 								$style = ' style="opacity: 0;"';
 							}
 							print '<ul class="page'.$is_shown.'" id="'.$i.'"'.$style.'>';
 						
-							$grid_elements = json_decode($vc->getMatrixViewWithImages(0,$max_elements));
+							$grid_elements = json_decode($vc->getMatrixViewWithImages(($i-1)*$max_elements+$page_plus_one,($i*$max_elements)+1));
 							
 							foreach($grid_elements as $element) {
 								

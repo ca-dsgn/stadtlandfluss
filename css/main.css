@@ -576,7 +576,6 @@ a#backButton:hover {
 	margin: 10px;
 	height: 150px;
 	float: left;
-	background-color: rgba(255,0,0,0.5);
 }
 .gridContainer .page li.arrow {
 	cursor: pointer;
@@ -607,7 +606,6 @@ a#backButton:hover {
 	background-image: url(../img/playlist.png);
 }
 .playList ul li {
-	background-color: rgba(255,0,0,0.5);
 	height: 150px;
 	width: 220px;
 	margin: 10px;
@@ -783,7 +781,7 @@ a.weiterlesenLink:hover {
 	top: 0;
 	background-image: url(../img/filmstrip.png);
 	background-repeat: repeat-y;
-	padding: 20px;
+	padding: 0 20px;
 	background-position: center;
 	opacity: 0;
 	left: -20px;

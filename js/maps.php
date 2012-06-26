@@ -91,6 +91,11 @@ function initialize() {
         	
             close_item_box();
         });
+        
+        google.maps.event.addListener(map, 'drag', function() {
+        
+        	close_item_box();
+        });
 		
 		directionsDisplay.setMap(map);
 	}

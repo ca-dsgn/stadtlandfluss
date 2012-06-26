@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 24. Jun 2012 um 16:27
+-- Erstellungszeit: 25. Jun 2012 um 19:00
 -- Server Version: 5.5.16
 -- PHP-Version: 5.3.8
 
@@ -57,34 +57,38 @@ CREATE TABLE IF NOT EXISTS `images` (
   `alt` varchar(255) DEFAULT NULL,
   `Video_ID` int(5) unsigned DEFAULT NULL,
   PRIMARY KEY (`Image_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
 -- Daten für Tabelle `images`
 --
 
 INSERT INTO `images` (`Image_ID`, `url`, `alt`, `Video_ID`) VALUES
-(0, 'img/grid/0-1.jpg', 'Test', 0),
-(1, 'img/grid/0-2.jpg', 'Test', 0),
-(2, 'img/grid/0-3.jpg', 'Test', 0),
-(3, 'img/grid/1-1.jpg', 'Test', 1),
-(4, 'img/grid/1-2.jpg', 'Test', 1),
-(5, 'img/grid/1-3.jpg', 'Test', 1),
-(6, 'img/grid/2-1.jpg', 'Test', 2),
-(7, 'img/grid/2-2.jpg', 'Test', 2),
-(8, 'img/grid/2-3.jpg', 'Test', 2),
-(9, 'img/grid/3-1.jpg', 'Test', 3),
-(10, 'img/grid/3-2.jpg', 'Test', 3),
-(11, 'img/grid/3-3.jpg', 'Test', 3),
-(12, 'img/grid/4-1.jpg', 'Test', 4),
-(13, 'img/grid/4-2.jpg', 'Test', 4),
-(14, 'img/grid/4-3.jpg', 'Test', 4),
+(0, 'img/grid/0-1.jpg', 'Zwischen Tradition und Moderne', 0),
+(1, 'img/grid/0-2.jpg', 'Zwischen Tradition und Moderne', 0),
+(2, 'img/grid/0-3.jpg', 'Zwischen Tradition und Moderne', 0),
+(3, 'img/grid/1-1.jpg', 'Soweit der Wind sie trägt', 1),
+(4, 'img/grid/1-2.jpg', 'Soweit der Wind sie trägt', 1),
+(5, 'img/grid/1-3.jpg', 'Soweit der Wind sie trägt', 1),
+(6, 'img/grid/2-1.jpg', 'Benzin im Blut', 2),
+(7, 'img/grid/2-2.jpg', 'Benzin im Blut', 2),
+(8, 'img/grid/2-3.jpg', 'Benzin im Blut', 2),
+(9, 'img/grid/3-1.jpg', 'Santa Farina', 3),
+(10, 'img/grid/3-2.jpg', 'Santa Farina', 3),
+(11, 'img/grid/3-3.jpg', 'Santa Farina', 3),
+(12, 'img/grid/4-1.jpg', 'WingTsun', 4),
+(13, 'img/grid/4-2.jpg', 'WingTsun', 4),
+(14, 'img/grid/4-3.jpg', 'WingTsun', 4),
 (15, 'img/grid/motorcross_main.png', 'Test', 99),
 (16, 'img/grid/motorcross_main.png', 'Test', 99),
 (17, 'img/grid/motorcross_main.png', 'Test', 99),
 (18, 'img/grid/5-1.jpg', 'Tierheim Dallau', 5),
 (19, 'img/grid/5-2.jpg', 'Tierheim Dallau', 5),
-(20, 'img/grid/5-3.jpg', 'Tierheim Dallau', 5);
+(20, 'img/grid/5-3.jpg', 'Tierheim Dallau', 5),
+(21, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 6),
+(22, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 6),
+(23, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 6),
+(24, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -99,31 +103,51 @@ CREATE TABLE IF NOT EXISTS `person2video` (
   `isfilmcrew` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `function` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`p2v_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=56 ;
 
 --
 -- Daten für Tabelle `person2video`
 --
 
 INSERT INTO `person2video` (`p2v_ID`, `Video_ID`, `Person_ID`, `isfilmcrew`, `function`) VALUES
-(0, 0, 0, 0, 'Kameraspezialist'),
-(1, 0, 1, 0, 'Schnittspezialist'),
-(2, 0, 2, 0, 'Regie'),
-(3, 1, 1, 0, 'Schnittspezialist'),
-(4, 1, 2, 1, 'Regie'),
-(5, 2, 0, 0, 'Kameraspezialist'),
-(6, 3, 4, 0, 'Polizei Mosbach'),
-(7, 4, 3, 0, 'Tierheim Dallau'),
-(8, 0, 10, 0, 'Baron'),
-(9, 1, 7, 0, 'Paragliderin'),
-(10, 2, 8, 0, 'Motocrossfahrer'),
-(11, 3, 9, 0, 'Pizzabäcker'),
-(12, 4, 5, 0, 'Kampftechnik'),
-(13, 5, 11, 0, 'Tierheim Dallau'),
-(14, 1, 12, 1, 'Ton'),
-(15, 1, 14, 1, 'Regie'),
-(16, 1, 15, 1, 'Kamera'),
-(17, 1, 16, 1, 'Licht');
+(18, 0, 31, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(19, 0, 32, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(20, 0, 34, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(21, 0, 35, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(22, 0, 36, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(23, 0, 10, 0, 'Baron'),
+(24, 1, 19, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(25, 1, 15, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(26, 1, 16, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(27, 1, 12, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(28, 1, 7, 0, 'Paragliderin'),
+(29, 2, 19, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(30, 2, 18, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(31, 2, 13, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(32, 2, 17, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(33, 2, 25, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(34, 2, 8, 0, 'Motocross Fahrer und Grafikdesigner'),
+(35, 3, 19, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(36, 3, 18, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(37, 3, 13, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(38, 3, 17, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(39, 3, 25, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(40, 3, 9, 0, 'Pizzabäcker'),
+(41, 4, 26, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(42, 4, 27, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(43, 4, 28, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(44, 4, 29, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(45, 4, 30, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(46, 4, 5, 0, 'WingTsun Meister?'),
+(47, 5, 22, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(48, 5, 23, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(49, 5, 24, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(50, 5, 3, 0, 'Tierheim Dallau?'),
+(51, 6, 18, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(52, 6, 13, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(53, 6, 25, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(54, 6, 37, 1, 'Funktion noch nicht klar (Kamera etc.)'),
+(55, 6, 4, 0, 'Polizei Mosbach?');
 
 -- --------------------------------------------------------
 
@@ -136,15 +160,15 @@ CREATE TABLE IF NOT EXISTS `persons` (
   `name` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Person_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38 ;
 
 --
 -- Daten für Tabelle `persons`
 --
 
 INSERT INTO `persons` (`Person_ID`, `name`, `type`) VALUES
-(0, 'Alex', 'Dozent'),
-(1, 'Daniela', 'Dozent'),
+(0, 'Alexander Kleider', 'Dozent Dokwerk'),
+(1, 'Daniela Michel', 'Dozent Dokwerk'),
 (2, 'Christoph Muhr', 'Student ON09'),
 (3, 'Brigitte Schmitt', 'Protagonist'),
 (4, 'Werner Simon', 'Protagonist'),
@@ -153,12 +177,29 @@ INSERT INTO `persons` (`Person_ID`, `name`, `type`) VALUES
 (8, 'Uli Körber', 'Protagonist'),
 (9, 'Siegfried Raether', 'Protagonist'),
 (10, 'Baron Dajo von Gemmingen-Hornberg', 'Protagonist'),
-(11, 'Brigitte Schmitt', 'Protagonist'),
 (12, 'René Preisler', 'Student ON09'),
 (13, 'René Preußer', 'Student ON09'),
 (14, 'Clara Gieß', 'Student ON09'),
 (15, 'Julia Beck', 'Student ON09'),
-(16, 'Katharina Franz', 'Student ON09');
+(16, 'Katharina Franz', 'Student ON09'),
+(17, 'Elina Wetsch', 'Student ON09'),
+(18, 'Sebastian Lauer', 'Student ON09'),
+(19, 'Christian Albert', 'Student ON09'),
+(22, 'Florian Eberle', 'Student ON09'),
+(23, 'Marc Hitscherich', 'Student ON09'),
+(24, 'Matthias Weise', 'Student ON09'),
+(25, 'Lisa Simon', 'Student ON09'),
+(26, 'Liesa Burgey', 'Student ON10'),
+(27, 'Stephan Fischer', 'Student ON10'),
+(28, 'Melanie Hiller', 'Student ON10'),
+(29, 'Martin Keil', 'Student ON10'),
+(30, 'Sebastian Tröster', 'Student ON10'),
+(31, 'Mona Bien', 'Student ON10'),
+(32, 'Ines Heberle', 'Student ON10'),
+(34, 'Nina Rehwald', 'Student ON10'),
+(35, 'Fabian Stein', 'Student ON10'),
+(36, 'Theresia Zorn', 'Student ON10'),
+(37, 'Paul Rohrbeck', 'Student ON09');
 
 -- --------------------------------------------------------
 
@@ -179,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `stories` (
 --
 
 INSERT INTO `stories` (`Story_ID`, `description`, `title`, `votes`) VALUES
-(1, 'lorem Ipsumkpdsffsd', 'Der alte Mann am Baum', 0000003),
+(1, 'lorem Ipsumkpdsffsd', 'Der alte Mann am Baum', 0000005),
 (2, 'Und er flog in den Neckar....', 'Der verlorene Reifen', 0000000);
 
 -- --------------------------------------------------------
@@ -196,7 +237,7 @@ CREATE TABLE IF NOT EXISTS `suggestions` (
   `mail` varchar(80) DEFAULT NULL,
   `Suggestion_ID` bigint(7) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`Suggestion_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Daten für Tabelle `suggestions`
@@ -206,7 +247,9 @@ INSERT INTO `suggestions` (`name`, `timestamp`, `story`, `phone`, `mail`, `Sugge
 ('TestName', '2012-06-19 12:22:26', 'lorem ipsum dolem bla bla', '293049324-93/249324', 'afasdfdsf.de', 0),
 ('Test1Name', '2012-06-19 12:56:40', 'waads wadw  story', '342324324/324324', '234423erre.com', 1),
 ('name', '2012-06-19 15:09:13', 'story', 'phone', 'mail', 3),
-('name', '2012-06-24 14:22:59', 'story', 'phone', 'mail', 4);
+('name', '2012-06-24 14:22:59', 'story', 'phone', 'mail', 4),
+('name', '2012-06-24 14:49:19', 'story', 'phone', 'mail', 5),
+('name', '2012-06-25 16:58:43', 'story', 'phone', 'mail', 6);
 
 -- --------------------------------------------------------
 
@@ -254,7 +297,7 @@ CREATE TABLE IF NOT EXISTS `videos` (
   `altitude` varchar(30) DEFAULT NULL,
   `banner` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`Video_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Daten für Tabelle `videos`
@@ -266,7 +309,8 @@ INSERT INTO `videos` (`Video_ID`, `date`, `title`, `subtitle`, `source`, `descri
 (2, '2012-05-22 01:57:27', 'Benzin im Blut – Zwischen Motocross und Corel Draw', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Uli Körber ist selbstständiger Grafikdesigner in Schefflenz. Doch das ist nicht alles. Uli hat Benzin im Blut! Um einen Ausgleich zu seinem Beruf zu haben, geht er regelmäßig MotoCross fahren. Mit Hilfe dieses außergewöhnlichen Hobbys und dessen Preisgeldern konnte er sein Studium finanzieren. Uli wurde sogar Deutscher- und Europameister! Sabine Bennebach von der Bürgerstiftung für die Region Mosbach gab uns den Tipp zu diesem Portrait.', 'img/backgrounds/motocross.jpg', 'img/backgrounds/motocross-single.png', '9.254093', '49.394022', 'img/backgrounds/wind.jpg'),
 (3, '2012-06-15 13:01:05', 'Santa Farina – Das Göttlichste, was man sich erlauben kann', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Sigfried Raether, von allen Siggi genannt, ist leidenschaftlicher Pizzabäcker. Seine Pizzeria „Santa Farina“ befindet sich in der Nähe der S-Bahnhaltstellte Mosbach (Baden). Siggi ist durch seine charmante italienische Art stadtbekannt. Durch seine ganz besonderen Techniken die Zutaten auf die Pizza zu bringen, ist es schon ein Highlight ihm beim Backen zuzuschauen. Mehrere Studierende von ON09 sind regelmäßig in der Mittagspause zu Gast bei Siggi und wollten mehr über diese außergewöhnliche Persönlichkeit, die der Pizzeria einen heimeligen Flair verleiht, erfahren.', 'img/backgrounds/pizza.jpg', 'img/backgrounds/pizza-single.png', '9.144452', '49.351591', 'img/backgrounds/wingtsun.jpg'),
 (4, '2012-06-15 13:13:57', 'WingTsun – Kämpfen lernen, um nicht kämpfen zu müssen', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Serdar Batmaz ist professioneller Kampfkünstler, der mit Leib und Seele WingTsun unterrichtet und lebt. Er ist einer der Wenigen, die den 5. Praktikergrad erreicht haben. Seine Philosophie: "Kämpfen lernen, um nicht kämpfen zu müssen." Serdar trainiert im Fitnesscenter Muskelkater in Mosbach, wo Melanie Hiller (Studentin des Jahrgangs 2010) auf ihn aufmerksam wurde.', 'img/backgrounds/wingtsun.jpg', 'img/backgrounds/wingtsun-single.jpg', '9.131995', '49.343943', 'img/backgrounds/pizza.jpg'),
-(5, '2012-06-24 00:00:00', 'Tierheim Dallau – Jeder Käfig hat seine Geschichte', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Mit einem besonders großen Einzugsgebiet im Neckar-Odenwald-Kreis bietet das Tierheim Dallau vielen Tieren ein temporäres Zuhause - manchen länger, anderen nur kurz. Wir haben Brigitte Schmitt, eines der langjährigen Mitglieder des Vereins begleitet, wie sie um das Schicksal des Schäferhundrüden „Sultan" bangt, der fünf Jahre lang nicht vermittelt werden konnte. Florian Eberle, Marc Hitschericht und Matthias Weise (Studierende des Jahrgangs 2009) wollten eine Tierheimgeschichte erzählen und sind so auf das Mosbacher Tierheim in Dallau gestoßen.', '', '', '9.2004', '49.384641', NULL);
+(5, '2012-06-24 00:00:00', 'Tierheim Dallau – Jeder Käfig hat seine Geschichte', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Mit einem besonders großen Einzugsgebiet im Neckar-Odenwald-Kreis bietet das Tierheim Dallau vielen Tieren ein temporäres Zuhause - manchen länger, anderen nur kurz. Wir haben Brigitte Schmitt, eines der langjährigen Mitglieder des Vereins begleitet, wie sie um das Schicksal des Schäferhundrüden „Sultan" bangt, der fünf Jahre lang nicht vermittelt werden konnte. Florian Eberle, Marc Hitschericht und Matthias Weise (Studierende des Jahrgangs 2009) wollten eine Tierheimgeschichte erzählen und sind so auf das Mosbacher Tierheim in Dallau gestoßen.', '', '', '9.2004', '49.384641', 'img/backgrounds/wingtsun.jpg'),
+(6, '2012-06-25 14:46:37', 'Vorsicht, Kontrolle!', NULL, 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Werner Simon ist stellvertretender Dienstgruppenführer der Verkehrspolizei Mosbach und sorgt mit der Überwachung des Schwerverkehrs für mehr Sicherheit auf den Straßen in und um Mosbach. Der Kontakt kam über Lisa Simon (Studentin des Jahrgangs 2009) zustande.', 'img/backgrounds/wind.jpg', 'img/backgrounds/wind-single.png', '9.144452', '49.343943', 'img/backgrounds/wingtsun.jpg');
 
 -- --------------------------------------------------------
 

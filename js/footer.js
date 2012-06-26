@@ -46,7 +46,7 @@ function footerJump() {
 
 function footerPosition() {
 	
-	$("#pageFooterSlider").css("top",(parseFloat($(window).height()))-60);
+	$("#pageFooterSlider").css("top",(parseFloat($(window).height()))-35);
 }
 
 function showFooter() {
@@ -63,7 +63,7 @@ function showFooter() {
 function hideFooter() {
 
 	$("#pageFooterSlider").animate({
-		top: $(window).height()-$("#pageFooter").height()-$("#pageFooterSliderButton").height(),
+		top: $(window).height()-$("#pageFooter").height()-$("#pageFooterSliderButton").height()+25,
 		easing: 'swing',
 		duration: animation_time
 	});
@@ -101,7 +101,7 @@ function footerDraggable() {
 			
 			if ($("#pageFooterSlider").hasClass("is_down")) {
 				
-				if (ui.originalPosition.top - ui.offset.top > 20) {
+				if (ui.originalPosition.top - ui.offset.top > 30) {
 					
 					//Is DOWN wants to go UP
 					showFooter();
@@ -116,7 +116,7 @@ function footerDraggable() {
 			}
 			else {
 				
-				if (ui.originalPosition.top - ui.offset.top > 20) {
+				if (ui.originalPosition.top - ui.offset.top > 30) {
 					
 					//Is UP wants to go UP
 					$("#pageFooterSlider").animate({

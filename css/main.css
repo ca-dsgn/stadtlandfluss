@@ -406,6 +406,11 @@ a#backButton:hover {
 src='../img/playButtonBigEcho.png',
 sizingMethod='scale');
 
+-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(
+src='../img/playButtonBigEcho.png',
+sizingMethod='scale')";
+
+
 
 	
 }

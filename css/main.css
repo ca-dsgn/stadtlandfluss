@@ -688,14 +688,16 @@ a#backButton:hover {
 }
 .naviPages {
 	width: 75%;
+	position: absolute;
+	margin-top: -50px;
 }
 .naviPages li.current {
 	background-color: #1e1e1e;
 }
 .naviPages ul {
 	list-style: none;
-	height: 100px;
-	width: 180px;
+	height: 45px;
+	width: 90px;
 	margin: 0 auto;
 }
 .naviPages ul li {

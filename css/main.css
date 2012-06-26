@@ -478,7 +478,12 @@ a#backButton:hover {
 	margin-top: -10px;
 	z-index: 15;
 	cursor: pointer;
-	background-image: url('../img/arrow.png');
+}
+.arrowLeft {
+	background-image: url(../img/arrowSmallLeft.png);	
+}
+.arrowRight {
+	background-image: url(../img/arrowSmallLeft.png);
 }
 .arrowLeft:hover,
 .arrowRight:hover,

@@ -79,6 +79,11 @@ $(document).ready(function() {
 		$(this).removeClass("has_focus");
 	});
 	
+	
+	$(".playButtonPlaylist").live("click",function() {
+		videoLayerPlaylistOpen();
+	});
+	
 });
 
 function checkArrowVisibility() {
@@ -876,5 +881,18 @@ function videoLayerClose(event) {
 		opacity: 0
 	}, 300, function() {
 		$('.videoLayer, .videoPlayer').hide();
+	});
+}
+
+
+
+
+function videoLayerPlaylistOpen() {
+	$('.videoLayer').show().animate({
+		opacity: 1
+	},300, function() {
+		$('.videoPlayer').show();
+		$('.playListLeft').show();
+		$('.playListRight').show();
 	});
 }

@@ -463,32 +463,33 @@ a#backButton:hover {
 	height: 40px;
 	z-index: 15;
 	cursor: pointer;
-	background-image: url('../img/arrowSmall.png');
 	text-indent: -9999px;
 	display: none;
 }
 
-.playListRight:hover, .playListLeft:hover {
-	background-image: url('../img/arrowOverSmall.png');
-}
+
 
 .playListRight {
 	position: absolute;
-	right: -20px;
+	right: -50px;
 	top: 250px;
+	background-image: url('../img/arrowSmallRight.png');
+}
+
+.playListRight:hover {
+	background-image: url('../img/arrowSmallRightOver.png');
 }
 
 .playListLeft {
 	position: absolute;
-	left: -20px;
+	left: -50px;
 	top: 250px;
-	-webkit-transform:rotate(-180deg);
-	-ms-transform:rotate(-180deg);
-	-o-transform:rotate(-180deg);
-	-moz-transform:rotate(-180deg);
+	background-image: url('../img/arrowSmallLeft.png');
 }
 
-
+.playListLeft:hover {
+	background-image: url('../img/arrowSmallLeftOver.png');
+}
 
 #movieDetailPreview:hover .playButtonSmall {
 	background-color: rgb(255,255,255);

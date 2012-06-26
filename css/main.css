@@ -246,7 +246,6 @@ a#backButton:hover {
 	position: absolute;
 	top: 50%;
 	margin-top: -235px;
-	background-color: aqua;
 }
 
 .contentScrollBox {
@@ -817,7 +816,6 @@ a.weiterlesenLink:hover {
 	padding: 20px 20px 20px 280px;
 	background-color: #fff;
 	overflow: hidden;
-	opacity: 0;
 	filter: inherit;
 }
 

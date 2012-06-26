@@ -597,10 +597,10 @@ a#backButton:hover {
 }
 
 .gridContainer .page li.left {
-	background-color: #0E0;
+	background-image: url(../img/arrowGridLeft.png);
 }
 .gridContainer .page li.right {
-	background-color: #D00;
+	background-image: url(../img/arrowGridRight.png);
 }
 .playList {
 	position: relative;
@@ -794,6 +794,10 @@ a.weiterlesenLink:hover {
 .page li,
 .playList ul li {
 	position: relative;
+}
+
+.item {
+	cursor: pointer;
 }
 
 .page .box,

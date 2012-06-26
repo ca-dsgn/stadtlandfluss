@@ -266,7 +266,7 @@ function set_cookie(name, value) {
 
 function open_box(elem) {
 	
-	if ($(elem).parent().hasClass("page") || $(elem).parent()[0].tagName == "BODY") {
+	if (($(elem).parent().hasClass("page") || $(elem).parent()[0].tagName == "BODY") && !$(".overlay").is(":visible")) {
 	
 		$(elem).addClass("open");
 		$(elem).css("z-index","550");

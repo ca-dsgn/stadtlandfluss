@@ -58,7 +58,7 @@ function blow_play_automat(on_or_off) {
 
 function blow_play() {
 	
-	ghost_button = '<div class="playButtonEcho"></div>';
+	ghost_button = '<div class="playButtonEcho"><img src="img/playButtonBigEcho.png"/></div>';
 	
 	$(".playButton").after(ghost_button);
 	

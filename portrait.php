@@ -26,7 +26,7 @@
 		
 			foreach ($portrait_elements as $element) {
         
-				print '<div class="backgroundImage"><img src="'.$element["data"]->backgroundimage.'" alt=""/></div>';
+				print '<div class="backgroundImage" style="background-image: url('.$element["data"]->backgroundimage.')" /></div>';
 			}
 		?>
   	</div>

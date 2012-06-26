@@ -243,7 +243,7 @@ a#backButton:hover {
 	height: 520px;	
 	position: absolute;
 	top: 50%;
-	margin-top: -230px;
+	bottom: 0;
 }
 
 .contentScrollBox {
@@ -480,10 +480,10 @@ a#backButton:hover {
 	cursor: pointer;
 }
 .arrowLeft {
-	background-image: url(../img/arrowSmallLeft.png);	
+	background-image: url(../img/arrowBigLeft.png);	
 }
 .arrowRight {
-	background-image: url(../img/arrowSmallLeft.png);
+	background-image: url(../img/arrowBigLeft.png);
 }
 .arrowLeft:hover,
 .arrowRight:hover,

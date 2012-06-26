@@ -376,10 +376,13 @@ function changeObjectsInGrid(num) {
 	// NOW MAKE A NEW SORT OF ALL ELEMENTS THAT ARE HIDDEN TO PLACE THEM ON THE NEXT PAGE
 	items = Array();
 	
-	$(".page > li[class!~'arrow']").each(function() {
+	$(".page > li").each(function() {
 		
-		items.push($(this));
-		$(this).remove();
+		if (!$(this).hasClass("arrow")) {
+			
+			items.push($(this));
+			$(this).remove();
+		}
 	});
 	
 	// Remove all right buttons to add them dynamically again

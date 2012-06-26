@@ -200,7 +200,7 @@ function addItemListeners() {
 			'margin-left': 73,
 			'margin-top': 37
 		},300);
-		console.log($(this).find(".playButton").css("background-image"));
+		
 		$(this).find(".playButton").css("background-image", "url('img/playButton.png')");	
 	});
 	$(".maps_item .left").live("mouseleave",function() {

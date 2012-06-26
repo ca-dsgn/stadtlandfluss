@@ -677,8 +677,12 @@ a#backButton:hover {
 	background-image: url('../img/playlist-up-over.png');
 }
 
-.inactive {
-	opacity: 0.2;
+.playlistDown.inactive {
+	background-image: url('../img/playlist-down-inactive.png');
+}
+
+.playlistUp.inactive {
+	background-image: url('../img/playlist-up-inactive.png');
 }
 
 .clone {

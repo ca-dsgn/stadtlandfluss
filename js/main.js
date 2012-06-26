@@ -464,8 +464,7 @@ function playListSortable() {
 		start: function(event,ui) {
 			
 			y_original = event.screenX;
-			
-			_kill = false;
+			ready_to_kill = false;
 			
 			if ($(".playList > ul > li").length > 3) {
 				

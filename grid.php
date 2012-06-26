@@ -55,6 +55,9 @@
 		        </div>
 		    </div>
 		    <div class="playList">
+		    
+		    	<div class="playButton"></div>
+		    
 				<?php
                     
                     $playlist = '';

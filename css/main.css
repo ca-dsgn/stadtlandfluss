@@ -618,6 +618,10 @@ a#backButton:hover {
 	z-index: 8 !important;
 }
 
+#pageFooterSlider.ui-draggable-dragging {
+	z-index: 15 !important;
+}
+
 .playButtonPlaylist, .deleteButtonPlaylist {
 	z-index: 10;
 }

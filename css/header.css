@@ -72,8 +72,7 @@
 }
 
 #pageNav ul  {
-	position: absolute;
-	top: 70px;
+	position: relative;
 	background-color: #fff;
 	display: none;
 	-webkit-transition: opacity .4s ease-in-out;
@@ -92,6 +91,9 @@
 	color: #fff;
 }
 
+#pageNav:hover > li > a {
+	color: #fff;
+}
 #pageNav li#menue:hover {
 	cursor: pointer;
 	background-color: #5FCEEF;

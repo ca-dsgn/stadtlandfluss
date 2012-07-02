@@ -108,6 +108,7 @@ class Helper {
 		//Enable Javascript API
 		$source.= "&enablejsapi=1";
 		$source.= "&playerapiid=player";
+		$source.= "&rel=0";
 		if ($autoplay) {
 			
 			$source.= "&autoplay=1";

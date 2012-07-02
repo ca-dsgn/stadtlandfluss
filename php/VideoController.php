@@ -55,6 +55,11 @@ class VideoController
 			return json_encode($resultSet);
 	}
 	
+	
+	/**
+	*	returns the Video including the images belonging to it
+	*/
+	
 	public function getVideoWithImages($p_iCurrentIndex)
 	{
 			$dbConnection = new Database();
@@ -76,6 +81,29 @@ class VideoController
 			
 			return json_encode($resultSet);
 	}
+	
+	/*
+	* returns the given number of latest videos having a background image and a keyvisual
+	*/
+	
+	public function getLatestVideosForPortrait($p_iNum)
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->queryAssoc("Select * from videos WHERE backgroundimage!='' AND keyvisual!='' order by Video_id desc LIMIT ".$p_iNum, $dbConnection->get_database(), "ro");
+		return json_encode($resultSet);
+	}
+
+	/*
+	* returns the given number of latest videos
+	*/
+	
+	public function getLatestVideos($p_iNum)
+	{
+		$dbConnection = new Database();
+		$resultSet = $dbConnection->queryAssoc("Select * from videos order by Video_id desc LIMIT ".$p_iNum, $dbConnection->get_database(), "ro");
+		return json_encode($resultSet);
+	}
+
 	
 	/**
 	* returns the videoData as JSON of the previous video to the given index

@@ -96,15 +96,22 @@ $(document).ready(function() {
 				
 		  if ($(li).hasClass("has_focus")) {
 			   
-			$(li).find("ul").slideDown(300);
+			   if (!$(li).find("ul").is(":animated")) {
+				   
+					$(li).find("ul").slideDown(300);
+			   }
 		  }
 		}, 500);
 	}).mouseleave( function() {
 		
+		$(this).find("ul").stop();
 		$(this).find("ul").slideUp();
 		$(this).removeClass("has_focus");
 	});
-	
+	$("#pageNav > li").click(function() {
+		
+		$(this).find("ul").slideUp();
+	});
 	
 	$(".playButtonPlaylist").live("click",function() {
 		
@@ -115,7 +122,6 @@ $(document).ready(function() {
 	});	
 		
 	$(".deleteButtonPlaylist").live("click", function() {
-		
 		
 		$(".page > li").each(function() {
 

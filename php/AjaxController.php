@@ -11,15 +11,23 @@
 
 if (isset($_POST["action"])) {
 	
+	$vc = new VideoController();
+	$helper = new Helper();
+	
 	switch ($_POST["action"]) {
 		
 		case "getVideoById":
 		
 			$Video_ID = $_POST["id"];
+			$result = $helper->getVideoTemplateById($Video_ID,"maps");
+			break;
 			
-			$vc = new VideoController();
-			$helper = new Helper();
-			print $helper->getVideoTemplateById($Video_ID,"maps");
+		case "getVideoUrlById":
+		
+			$Video_ID = $_POST["id"];
+			$video_object = json_decode($vc->getVideo($Video_ID));
+			
+			$result = $helper->makeYoutubeURL($video_object[0]->source,true);
 			break;
 		
 		default: 
@@ -31,7 +39,7 @@ if (isset($_POST["action"])) {
 			);
 			break;
 	}
-	print json_encode($result);
+	print $result;
 }
 
 ?>

@@ -7,7 +7,7 @@
 html {
 	font-family: 'Open Sans', sans-serif;	
 	overflow-x: hidden;
-	overflow-y: hidden;
+	overflow-y: scroll;
 }
 body {
 	background-color: #c2d0d6;
@@ -84,7 +84,7 @@ ul.error {
 	max-width: 1280px;
 	height: 100%;
 	position: relative;
-	margin: 0 auto 50px auto;
+	margin: 0 auto 0 auto;
 }
 
 .floatRight {
@@ -338,7 +338,7 @@ a#backButton:hover {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(35,37,39, 0.98);
+	background: url('../img/video-bg.png') fixed repeat;
 	z-index: 100;
 	display: none;
 	opacity: 0;
@@ -613,6 +613,15 @@ a#backButton:hover {
 	height: 150px;
 	float: left;
 }
+
+.ui-draggable-dragging {
+	z-index: 8 !important;
+}
+
+.playButtonPlaylist, .deleteButtonPlaylist {
+	z-index: 10;
+}
+
 .gridContainer .page li.arrow {
 	cursor: pointer;
 }
@@ -638,7 +647,7 @@ a#backButton:hover {
 	height: 500px;
 	float: right;
 	overflow: hidden;
-	background-image: url(../img/playlist.png);
+	background-image: url('../img/playlist.png');
 }
 .playList ul li {
 	height: 150px;
@@ -657,7 +666,6 @@ a#backButton:hover {
 	top: 210px;
 	left: 20px;
 	width: 200px;
-	
 }
 
 .playList .info p {
@@ -670,7 +678,7 @@ a#backButton:hover {
 	width: 240px;
 	height: 35px;
 	margin-top: -10px;
-	z-index: 15;
+	z-index: 10;
 	cursor: pointer;
 	background-image: url('../img/playlist-down.png');
 	bottom: 0px;
@@ -686,7 +694,7 @@ a#backButton:hover {
 	width: 240px;
 	height: 35px;
 	margin-top: -10px;
-	z-index: 15;
+	z-index: 10;
 	cursor: pointer;
 	background-image: url('../img/playlist-up.png');
 	top: 10px;
@@ -705,16 +713,13 @@ a#backButton:hover {
 	background-image: url('../img/playlist-up-inactive.png');
 }
 
-.clone {
-	background-color: green;
-}
 .naviPages {
 	width: 75%;
 	position: absolute;
 	margin-top: -50px;
 }
 .naviPages li.current {
-	background-image: url(../img/pagination_current.png);
+	background-image: url('../img/pagination_current.png');
 }
 .naviPages ul {
 	list-style: none;
@@ -883,7 +888,7 @@ a.weiterlesenLink:hover {
 	height: 100%;
 	position: fixed;
 	top: 0;
-	background-color: rgba(0,0,0,0.8);
+	background: url('../img/video-bg.png') scroll repeat;
 	z-index: 500;
 }
 
@@ -973,16 +978,14 @@ a.weiterlesenLink:hover {
 /*--- EINZELSEITEN ---*/
 
 div#singlepageContent {
-	position: absolute;
 	top: 0px;
 	bottom: 0px;
 	left: 0;
 	right: 0;
-	overflow-y: scroll;
 	background: #fff url('../img/backgrounds/currentBack.jpg') center no-repeat fixed;
 }
 
-div#text {	margin: 0 auto; width: 25%; max-width: 960px; min-width: 720px; padding-top: 100px;}
+div#text {	margin: 0 auto; padding-bottom: 100px; width: 25%; max-width: 960px; min-width: 720px; padding-top: 100px;}
 
 blockquote.zitat {
 	font-weight: normal;
@@ -999,7 +1002,7 @@ blockquote.zitat {
 
 div#text h2 { margin-top: 15px; }
 
-p#last { margin-bottom: 100px; }
+/*p#last { margin-bottom: 100px; }*/
 
 /*--- DISQUS ---*/
 

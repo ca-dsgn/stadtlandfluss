@@ -176,7 +176,7 @@ iframe#facebook-like {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	height: 25px;
+	height: 30px;
 
 
 	background-color: #252729;
@@ -190,8 +190,13 @@ iframe#facebook-like {
 		
 }
 
+#pageFooter .wrapper {
+	margin-top: 3px;
+}
+
 #pageFooter a {
-	color: #707070;
+	color: #CBCBCB;
+	font-size: 1.2em;
 	text-decoration: none;
 }
 

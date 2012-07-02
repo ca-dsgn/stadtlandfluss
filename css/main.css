@@ -883,7 +883,7 @@ a.weiterlesenLink:hover {
 	height: 100%;
 	position: fixed;
 	top: 0;
-	background-color: rgba(0,0,0,0.8);
+	background: url('../img/video-bg.png') scroll repeat;
 	z-index: 500;
 }
 

@@ -613,6 +613,15 @@ a#backButton:hover {
 	height: 150px;
 	float: left;
 }
+
+.ui-draggable-dragging {
+	z-index: 8 !important;
+}
+
+.playButtonPlaylist, .deleteButtonPlaylist {
+	z-index: 10;
+}
+
 .gridContainer .page li.arrow {
 	cursor: pointer;
 }
@@ -638,7 +647,7 @@ a#backButton:hover {
 	height: 500px;
 	float: right;
 	overflow: hidden;
-	background-image: url(../img/playlist.png);
+	background-image: url('../img/playlist.png');
 }
 .playList ul li {
 	height: 150px;
@@ -657,7 +666,6 @@ a#backButton:hover {
 	top: 210px;
 	left: 20px;
 	width: 200px;
-	
 }
 
 .playList .info p {
@@ -705,16 +713,13 @@ a#backButton:hover {
 	background-image: url('../img/playlist-up-inactive.png');
 }
 
-.clone {
-	background-color: green;
-}
 .naviPages {
 	width: 75%;
 	position: absolute;
 	margin-top: -50px;
 }
 .naviPages li.current {
-	background-image: url(../img/pagination_current.png);
+	background-image: url('../img/pagination_current.png');
 }
 .naviPages ul {
 	list-style: none;

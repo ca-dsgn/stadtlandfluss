@@ -35,12 +35,12 @@ class VideoController
 
 		
 	/**
-	* returns the number of available videos
+	* returns the highest VideoID
 	*/
 	public function getMaxVideoID()
 	{
 		$dbConnection = new Database();
-		$resultSet = $dbConnection->query("SELECT COUNT(Video_ID) FROM videos", $dbConnection->get_database(), "ro");
+		$resultSet = $dbConnection->query("SELECT MAX(Video_ID) FROM videos", $dbConnection->get_database(), "ro");
 		return $resultSet[0];
 	}
 

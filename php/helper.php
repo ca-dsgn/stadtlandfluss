@@ -105,6 +105,9 @@ class Helper {
 		
 		$source = "http://www.youtube.com/v/".substr($source,strpos($source,"v=")+2,strlen($source));
 	
+		//Enable Javascript API
+		$source.= "&enablejsapi=1";
+		$source.= "&playerapiid=player";
 		if ($autoplay) {
 			
 			$source.= "&autoplay=1";

@@ -616,15 +616,17 @@ function positionGrid() {
 	$(".slider").css("left","-" + y*current_width + "px");
 }
 
-function addToPlayList(ref) {
+function PlayListUpdate() {
 	
+	playlist = "";
 	seperator = "-";
 	
-	if (playlist == "") {
+	$(".playList ul li").each(function() {
 		
-		seperator = "";
-	}
-	playlist += seperator + ref;
+		playlist += $(this).attr("ref") + seperator;
+	});
+	playlist = playlist.substr(0,playlist.length-1);
+	console.log(playlist);
 	set_cookie("playlist",playlist);
 }
 
@@ -672,6 +674,7 @@ function playListSortable() {
 				
 				open_box(ui.item);
 			});
+			PlayListUpdate();
 		},
 		receive: function(event,ui) {
 			
@@ -685,7 +688,7 @@ function playListSortable() {
 			
 			$(".is_shown li[ref='" + $(ui.item).attr("ref") + "']").unbind("mouseup");
 			
-			addToPlayList($(ui.item).attr("ref"));
+			PlayListUpdate();
 			
 			checkArrowVisibility();
 		},
@@ -1092,8 +1095,9 @@ function getPrevVideoFromPlaylist() {
 
 function videoLayerPlaylistOpen() {
 	
+	current_video = null;
+	
 	playlist = get_cookie("playlist");
-	console.log(playlist);
 	
 	playlist_mode = "on";
 	

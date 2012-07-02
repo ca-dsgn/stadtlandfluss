@@ -16,19 +16,23 @@ $(document).ready(function() {
 
 function footerJumpEveryTime() {
 	
-	footerJump();
-	
-	$("body").everyTime(5000, function() {
+	if (get_cookie("dont_move_again") == null) {
 		
-		if ($("#pageFooterSlider").attr("class").indexOf("is_down") != -1) {
+		footerJump();
+		
+		$("body").everyTime(5000, function() {
 			
-			footerJump();
-		}
-		if ($("#pageFooterSlider").attr("class").indexOf("is_up") != -1) {
-			
-			
-		}
-	});
+			if ($("#pageFooterSlider").attr("class").indexOf("is_down") != -1) {
+				
+				footerJump();
+			}
+			if ($("#pageFooterSlider").attr("class").indexOf("is_up") != -1) {
+				
+				$("body").stopTime();
+				set_cookie("dont_move_again","yes");
+			}
+		});
+	}
 }
 
 function footerJump() {

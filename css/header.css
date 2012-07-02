@@ -1,7 +1,7 @@
 #pageHeader {
 	position: fixed;
 	top: 0;
-	z-index: 15;
+	z-index: 600;
 	min-width: 960px;	
 	width: 100%;
 }

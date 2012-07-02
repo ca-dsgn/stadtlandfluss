@@ -190,7 +190,13 @@ function slideshow_move(direction) {
 							opacity: 0
 						}, function() {
 							
-							$(".contentBox:last-child").after($(".contentBox:first-child").css("left",(contentBoxWidth*2) + "px"));
+							first = $(".contentBox:first-child").clone();
+							
+							$(first).removeClass("ui-draggable");
+							
+							$(".contentBox:last-child").after($(first).css("left",(contentBoxWidth*2) + "px"));
+							
+							$(".contentBox:first-child").remove();
 						});
 					}
 					else {
@@ -275,7 +281,13 @@ function slideshow_move(direction) {
 							opacity: 0
 						}, function() {
 							
-							$(".contentBox:first-child").before($(".contentBox:last-child").css("left","-" + (contentBoxWidth*2) + "px"));
+							last = $(".contentBox:last-child").clone();
+							
+							$(last).removeClass("ui-draggable");
+							
+							$(".contentBox:first-child").before($(last).css("left","-" + (contentBoxWidth*2) + "px"));
+							
+							$(".contentBox:last-child").remove();
 						});
 					}
 					else {

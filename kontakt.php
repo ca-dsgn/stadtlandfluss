@@ -51,7 +51,7 @@
 	      } else {
 	        $mailbetreff="Kontaktformular ".$_SERVER['HTTP_HOST'];
 	        // HIER DIE EMPFÄNGER EMAIL-ADRESSE ANPASSEN!!!       
-	        echo (mail("katharina.franz@gmail.com", $mailbetreff, $mailnachricht, "From: $email")) ? "<p>Vielen Dank f&uuml;r Ihre eMail!</p>": "<p class='error'>Ein Fehler ist aufgetreten! Bitte kontaktieren Sie uns über die im Impressum genannten Informationen.</p>";
+	        echo (mail("wirth@dhbw-mosbach.de", $mailbetreff, $mailnachricht, "From: $email")) ? "<p>Vielen Dank f&uuml;r Ihre eMail!</p>": "<p class='error'>Ein Fehler ist aufgetreten! Bitte kontaktieren Sie uns über die im Impressum genannten Informationen.</p>";
 	      }
 	    // das Formular welches als erstes dem Besucher angezeigt wird
 	    } else { ?>

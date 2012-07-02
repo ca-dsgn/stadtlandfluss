@@ -63,6 +63,29 @@ $(document).ready(function() {
 		e.preventDefault();
 		videoLayerClose(e);
 	});
+	
+	$(".playListRight").live("click",function(e) {
+		
+		e.preventDefault();
+		video_src = getNextVideoFromPlaylist();
+			
+		if (video_src != null) {
+			
+			video_player.loadVideoByUrl(video_src);
+		}
+	});
+	
+	$(".playListLeft").live("click",function(e) {
+		
+		e.preventDefault();
+		video_src = getPrevVideoFromPlaylist();
+			
+		if (video_src != null) {
+			
+			video_player.loadVideoByUrl(video_src);
+		}
+	});
+	
 	$("#pageNav > li").mouseenter(function() {
 		
 		var li = $(this);
@@ -84,7 +107,11 @@ $(document).ready(function() {
 	
 	
 	$(".playButtonPlaylist").live("click",function() {
-		videoLayerPlaylistOpen();
+		
+		if ($(".playList ul li").length > 0) {
+			
+			videoLayerPlaylistOpen();
+		}
 	});	
 		
 	$(".deleteButtonPlaylist").live("click", function() {
@@ -97,6 +124,7 @@ $(document).ready(function() {
 			});
 		});
 		set_cookie("playlist","");
+		
 		$(".playList .info").delay(300).fadeIn(300);
 	});
 	
@@ -945,7 +973,7 @@ function getNextVideoFromPlaylist() {
 			
 			if (video_ids[i] == current_video) {
 				
-				if (video_ids[i+1] != null) {
+				if (video_ids[i+1] != undefined) {
 					
 					next_video_id = video_ids[i+1];
 					next_video = true;
@@ -954,9 +982,10 @@ function getNextVideoFromPlaylist() {
 			}
 		}
 	}
-	current_video = next_video_id;
 	
 	if (next_video) {
+		
+		current_video = next_video_id;
 		
 		$.ajax({
 								
@@ -976,7 +1005,60 @@ function getNextVideoFromPlaylist() {
 	return return_value;
 }
 
+function getPrevVideoFromPlaylist() {
+	
+	video_ids = playlist.split("-");
+	prev_video_id = null;
+	
+	prev_video = false;
+	
+	if (current_video == null) {
+		
+		prev_video_id = video_ids[video_ids.length-1];
+		prev_video = true;
+	}
+	else {
+		
+		for(var i=0; i<video_ids.length; i++) {
+			
+			if (video_ids[i] == current_video) {
+				
+				if (video_ids[i-1] != undefined) {
+					
+					prev_video_id = video_ids[i-1];
+					prev_video = true;
+				}
+				continue;
+			}
+		}
+	}
+	
+	if (prev_video) {
+		
+		current_video = prev_video_id;
+		
+		$.ajax({
+								
+			type: "POST",
+			data: "action=getVideoUrlById&id=" + prev_video_id,
+			async: false,
+			url: "php/AjaxController.php",
+			success: function(data) {
+				
+				return_value = data;
+			}
+		});
+	}
+	else {
+		return_value = null;
+	}
+	return return_value;
+}
+
 function videoLayerPlaylistOpen() {
+	
+	playlist = get_cookie("playlist");
+	console.log(playlist);
 	
 	playlist_mode = "on";
 	

@@ -670,7 +670,7 @@ a#backButton:hover {
 	width: 240px;
 	height: 35px;
 	margin-top: -10px;
-	z-index: 15;
+	z-index: 10;
 	cursor: pointer;
 	background-image: url('../img/playlist-down.png');
 	bottom: 0px;
@@ -686,7 +686,7 @@ a#backButton:hover {
 	width: 240px;
 	height: 35px;
 	margin-top: -10px;
-	z-index: 15;
+	z-index: 10;
 	cursor: pointer;
 	background-image: url('../img/playlist-up.png');
 	top: 10px;

@@ -110,7 +110,13 @@ $(document).ready(function() {
 	});
 	$("#pageNav > li").click(function() {
 		
-		$(this).find("ul").slideUp();
+		if ($(this).find("ul").is(":visible")) {
+			
+			$(this).find("ul").slideUp();
+		}
+		else {
+			$(this).find("ul").slideDown();
+		}
 	});
 	
 	$(".playButtonPlaylist").live("click",function() {

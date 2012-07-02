@@ -7,7 +7,6 @@
 ?>
 
 var directionDisplay;
-var directionsService = new google.maps.DirectionsService();
 var map;
 
 var markersArray = [];
@@ -31,7 +30,18 @@ function initialize() {
 		var myOptions = {
 			zoom: 12,
 			center: mosbach,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                position: google.maps.ControlPosition.BOTTOM_CENTER
+            },
+            panControl: false,
+            zoomControl: true,
+            zoomControlOptions: {
+                style: google.maps.ZoomControlStyle.LARGE,
+                position: google.maps.ControlPosition.LEFT_CENTER
+            }
 		};
 		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		
@@ -115,41 +125,4 @@ function addMarkers() {
 	for (i in markersArray) {
 		markersArray[i].setMap(map);
 	}
-}
-
-function calcRoute() {
-	
-	var start = "50.542296,7.241529";
-	var end = document.getElementById("maps_from").value;
-
-	if (end != "") {
-		
-		var request = {
-			origin:end, 
-			destination:start,
-			travelMode: google.maps.DirectionsTravelMode.DRIVING
-		};
-		
-		directionsService.route(request, function(result, status) {
-			
-			if (status == google.maps.DirectionsStatus.OK) {
-				
-				directionsDisplay.setMap(map);
-				directionsDisplay.setDirections(result);
-				removeMarkers();
-			}
-			else {
-				
-				directionsDisplay.setMap(null);
-				addMarkers();
-				alert("Leider wurde kein Ort zu Ihrer Anfrage gefunden - bitte versuchen Sie es erneut");
-			}
-		});
-	}
-	else {
-		
-		alert('Ungültige Adresse');
-	}
-	
-	
 }

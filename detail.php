@@ -58,8 +58,22 @@
 	
 				<div id="movieDetailMeta">
 					<div class="left">
-						<p><strong>Ein Film von:</strong> 
-						<?php echo $vc->getFilmCrew($Video_ID); ?></p>		
+						<p><strong>Ein Film von:</strong></p>
+                        <ul>
+						<?php 
+						
+							//print_r(json_decode($vc->getFilmCrew($Video_ID)));
+                            
+                            $persons = json_decode($vc->getFilmCrew($Video_ID));
+                            
+                            foreach($persons as $person) {
+								
+								$html .= "<li>".$person->name."</li>";
+							}
+							print substr($html,0,strlen($html)-2);
+							
+						?>
+                        </ul>		
 					</div>
 					<!--div class="right">
 						<p><strong>Produktionsjahr:</strong> 2011<br/><strong>Drehort:</strong> Burg Hornberg</p>		

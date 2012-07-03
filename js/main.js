@@ -138,6 +138,10 @@ function addItemListeners() {
 	});
 	$(".maps_item").live("mouseenter",function() {
 		
+		if ($(this).find(".info").is(":animated")) {
+			
+			$(this).find(".info").stop();
+		}
 		$(this).find(".info").animate({
 			
 			width: '220'
@@ -145,6 +149,10 @@ function addItemListeners() {
 	});
 	$(".maps_item").live("mouseleave",function() {
 		
+		if ($(this).find(".info").is(":animated")) {
+			
+			$(this).find(".info").stop();
+		}
 		$(this).find(".info").animate({
 			
 			width: '0'
@@ -152,7 +160,15 @@ function addItemListeners() {
 	});
 	$(".maps_item .left").live("mouseenter",function() {
 		
+		$(this).find(".title").show();
+		if ($(this).find(".title").is(":animated")) {
+			$(this).find(".title").stop();
+		}
 		$(this).find(".title").fadeOut(300);
+		if ($(this).find(".playButton").is(":animated")) {
+			
+			$(this).find(".playButton").stop();
+		}
 		$(this).find(".playButton").animate({
 			
 			width: 75,
@@ -165,7 +181,15 @@ function addItemListeners() {
 	});
 	$(".maps_item .left").live("mouseleave",function() {
 		
+		$(this).find(".title").hide();
+		if ($(this).find(".title").is(":animated")) {
+			$(this).find(".title").stop();
+		}
 		$(this).find(".title").fadeIn(300);
+		if ($(this).find(".playButton").is(":animated")) {
+			
+			$(this).find(".playButton").stop();
+		}
 		$(this).find(".playButton").animate({
 			
 			width: 40,

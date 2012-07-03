@@ -223,4 +223,6 @@ iframe#facebook-like {
 	letter-spacing: 1;
 	text-transform: uppercase;
 }
-
+#trailerImg {
+	cursor: pointer;
+}

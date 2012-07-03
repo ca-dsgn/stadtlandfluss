@@ -63,6 +63,10 @@ $(document).ready(function() {
 		e.preventDefault();
 		videoLayerClose(e);
 	});
+	$("#movieDetailPreview").live("click",function(e) {
+		
+		videoLayerOpen(e);
+	});
 	
 	$(".playListRight").live("click",function(e) {
 		
@@ -964,10 +968,32 @@ function new_video_player(video_src) {
 	
 	if ($("#player_container").length > 0) {
 		
-		var params = { allowScriptAccess: "always" };
-		var atts = { id: "player" };
-		swfobject.embedSWF(video_src,
-						   "player_container", "800", "500", "8", null, null, params, atts);
+		
+		
+		if (swfobject.hasFlashPlayerVersion("8.0.0")) {
+			
+			var params = {	allowScriptAccess: "always",
+							movie: video_src,
+							wmode: "opaque",
+							"allowFullScreen": true
+			};
+			var atts = { id: "player" };
+			swfobject.embedSWF(video_src,
+							   "player_container", "800", "500", "8", null, null, params, atts);
+		}
+		else {
+			
+			html = '<object id="player" data="' + video_src + '" width="800" height="500">';
+			html+= '<param name="movie" value="' + video_src + '">';
+			html+= '<param name="wmode" value="opaque"/>';
+			html+= '<param name="allowFullScreen" value="true">';
+			html+= '<param name="allowScriptAccess" value="always">';
+			html+= '<embed wmode="opaque" src="' + video_src + '" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always">';
+			html+= '</object>';
+			html = '<iframe class="youtube-player" type="text/html" width="640" height="385" src="' + video_src + '" frameborder="0"></iframe>';
+			
+			$("#player_container").replaceWith(html);
+		}
 	}
 }
 
@@ -1115,12 +1141,14 @@ function videoLayerPlaylistOpen() {
 }
 
 function onYouTubePlayerReady(playerId) {
-	
+
 	video_player = document.getElementById(playerId);
 	
 	video_player.addEventListener("onStateChange","onytplayerStateChange");
 }
 function onytplayerStateChange(newState) {
+
+	console.log("test");
 
 	if (playlist_mode == "on") {
 		

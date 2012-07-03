@@ -44,13 +44,9 @@
 #pageNav {
 	position: relative;
 	float: right;
-	margin: 0 0 0 0;
-	list-style-type: none;
-	background-color: #fff;
-	background-image: url('../img/arrowDown.png');
-	background-repeat: no-repeat;
 	background-position: 23px 26px;
 	list-style-type: none;
+	background-color: #fff;	
 }
 
 #pageNav li {
@@ -59,59 +55,52 @@
 	display: block;
 	line-height: 70px;
 	font-size: 14px;
-	color: #222426;
 }
 
 #pageNav li a {
 	display: block;
-	width: 260px;
+	width: 240px;
 	height: 70px;
 	line-height: 70px;
 	text-indent: 70px;
 	text-decoration: none;
+	color: #000;
 }
 
-#pageNav ul  {
-	position: relative;
-	background-color: #fff;
-	display: none;
-	-webkit-transition: opacity .4s ease-in-out;
-	-moz-transition: opacity .4s ease-in-out;
-	-o-transition: opacity .4s ease-in-out;
-	transition: opacity .4s ease-in-out;
-}
-
-#pageNav ul li a {
-	text-indent: 70px;
-}
-
-#pageNav li:hover {
-	cursor: pointer;
+#pageNav li.active:hover {
 	background-color: #000;
-	color: #fff;
 }
 
-#pageNav:hover > li > a {
-	color: #fff;
-}
-#pageNav li#menue:hover {
-	cursor: pointer;
-	background-color: #5FCEEF;
-	background-image: url('../img/arrowDown.png');
-	background-repeat: no-repeat;
-	background-position: 23px 26px;
-	color: #fff;
+#pageNav li.active:hover a {
+		color: #fff;
 }
 
-#pageNav li#menue a:hover {
-	color: #fff;
+
+
+
+
+#menu {
+	display: none;
+	background-color: #fff;
 }
+
+li.active:hover #menu li a {color: #252729; background-color: #fff;}
+li.active:hover #menu li a:hover {color: #fff; background-color: #5FCEEF;
+;}
+
+
+
 
 
 #navPortrait {
-	background-image: url('../img/portrait.png');
 	background-repeat: no-repeat;
 	background-position: 15px 16px;
+		background-image: url('../img/portrait.png');
+
+}
+
+#menu #navPortrait {
+	background-image: url('../img/portrait.png');
 }
 
 #navPortrait:hover {
@@ -120,9 +109,14 @@
 
 
 #navMap {
-	background-image: url('../img/map.png');
 	background-repeat: no-repeat;
 	background-position: 15px 16px;
+		background-image: url('../img/map.png');
+
+}
+
+#menu #navMap {
+	background-image: url('../img/map.png');
 }
 
 #navMap:hover {
@@ -130,11 +124,30 @@
 }
 
 #navGrid {
-	background-image: url('../img/grid.png');
 	background-repeat: no-repeat;
+		background-image: url('../img/grid.png');
+
 	background-position: 15px 16px;
+}
+
+#menu #navGrid {
+	background-image: url('../img/grid.png');
 }
 
 #navGrid:hover {
 	background-image: url('../img/gridOver.png');
 }
+
+
+li.active:hover #navPortrait {
+	background-image: url('../img/portraitOver.png');
+}
+
+li.active:hover #navGrid {
+	background-image: url('../img/gridOver.png');
+}
+
+li.active:hover #navMap {
+	background-image: url('../img/mapOver.png');
+}
+

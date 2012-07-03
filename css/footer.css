@@ -159,12 +159,21 @@ iframe#facebook-like {
 	height: 40px;
 	border: 1px solid #5b6168;
 	background-color: #656c73;
-	font-size: 14,4px;
-	
 }
 
 #topList li:hover {
 	background-color: #737b83;
+}
+
+#topList li p {
+	font-size: 14px;
+	padding: 8px 0 0 10px;
+}
+
+#topList li span {
+	position: relative;
+	float: right;
+	margin-right: 10px;
 }
 
 
@@ -223,6 +232,7 @@ iframe#facebook-like {
 	letter-spacing: 1;
 	text-transform: uppercase;
 }
+
 #trailerImg {
 	cursor: pointer;
 }

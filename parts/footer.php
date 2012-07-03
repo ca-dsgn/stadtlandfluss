@@ -76,7 +76,7 @@
 								}
 							?>
 						</ul>						
-						<p class="floatRight"><a href="kontakt.php" class="blueButton">Vorschlag einsenden</a><a href="voting.php" class="blueButton">Jetzt abstimmen</a></p>
+						<p class="floatRight"><a href="kontakt.php">eigenen Vorschlag einsenden</a> oder <a href="voting.php" class="blueButton">Jetzt abstimmen</a></p>
 					</div>
 				</div>
 				<div id="pageFooterRight">

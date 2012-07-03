@@ -2,16 +2,6 @@ var animation_time = 500;
 
 $(document).ready(function() {
 	
-	footerPosition();
-	//showFooter();
-	addfooterEventListeners();
-	footerDraggable();
-	
-	$(window).resize(function() {
-		
-		footerPosition();
-	});
-	footerJumpEveryTime();
 });
 
 function footerJumpEveryTime() {

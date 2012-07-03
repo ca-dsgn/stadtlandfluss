@@ -616,15 +616,17 @@ function positionGrid() {
 	$(".slider").css("left","-" + y*current_width + "px");
 }
 
-function addToPlayList(ref) {
+function PlayListUpdate() {
 	
+	playlist = "";
 	seperator = "-";
 	
-	if (playlist == "") {
+	$(".playList ul li").each(function() {
 		
-		seperator = "";
-	}
-	playlist += seperator + ref;
+		playlist += $(this).attr("ref") + seperator;
+	});
+	playlist = playlist.substr(0,playlist.length-1);
+	
 	set_cookie("playlist",playlist);
 }
 
@@ -672,6 +674,7 @@ function playListSortable() {
 				
 				open_box(ui.item);
 			});
+			PlayListUpdate();
 		},
 		receive: function(event,ui) {
 			
@@ -685,7 +688,7 @@ function playListSortable() {
 			
 			$(".is_shown li[ref='" + $(ui.item).attr("ref") + "']").unbind("mouseup");
 			
-			addToPlayList($(ui.item).attr("ref"));
+			PlayListUpdate();
 			
 			checkArrowVisibility();
 		},
@@ -954,10 +957,18 @@ function matrixArrows() {
 
 function new_video_player(video_src) {
 	
-	var params = { allowScriptAccess: "always" };
-    var atts = { id: "player" };
-    swfobject.embedSWF(video_src,
-                       "player_container", "800", "500", "8", null, null, params, atts);
+	if ($(".videoPlayer object").length > 0) {
+		
+		$(".videoPlayer object").replaceWith('<div id="player_container"></div>');
+	}
+	
+	if ($("#player_container").length > 0) {
+		
+		var params = { allowScriptAccess: "always" };
+		var atts = { id: "player" };
+		swfobject.embedSWF(video_src,
+						   "player_container", "800", "500", "8", null, null, params, atts);
+	}
 }
 
 function videoLayerOpen(event) {
@@ -1084,16 +1095,15 @@ function getPrevVideoFromPlaylist() {
 
 function videoLayerPlaylistOpen() {
 	
+	current_video = null;
+	
 	playlist = get_cookie("playlist");
-	console.log(playlist);
 	
 	playlist_mode = "on";
 	
 	video_src = getNextVideoFromPlaylist();
 	
 	new_video_player(video_src);
-	
-	$(".videoPlayer object embed").attr("src",video_src);
 	
 	$('.videoLayer').show().animate({
 		opacity: 1
@@ -1121,10 +1131,22 @@ function onytplayerStateChange(newState) {
 			
 			if (video_src != null) {
 				
-				console.log("im here");
-				
 				video_player.loadVideoByUrl(video_src);
 			}
 		}
 	}
+}
+
+function openTrailer() {
+	
+	//Video SOURCE of Trailer
+	video_src = "http://www.youtube.com/v/p74Ui12Y55c&feature=plcp&enablejsapi=1&playerapiid=player&rel=0&autoplay=1";
+	
+	new_video_player(video_src);
+	
+	$('.videoLayer').show().animate({
+		opacity: 1
+	},300, function() {
+		$('.videoLayer, .videoPlayer').fadeIn(5000);
+	});
 }

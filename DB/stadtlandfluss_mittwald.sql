@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 02. Juli 2012 um 18:34
+-- Erstellungszeit: 03. Juli 2012 um 15:41
 -- Server Version: 5.1.37
 -- PHP-Version: 5.3.0
 
@@ -80,46 +80,9 @@ INSERT INTO `images` (`Image_ID`, `url`, `alt`, `Video_ID`) VALUES
 (18, 'img/grid/5-1.jpg', 'Tierheim Dallau', 5),
 (19, 'img/grid/5-2.jpg', 'Tierheim Dallau', 5),
 (20, 'img/grid/5-3.jpg', 'Tierheim Dallau', 5),
-(21, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 6),
-(22, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 6),
-(23, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 6),
-(24, NULL, NULL, NULL),
-(25, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 7),
-(26, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 7),
-(27, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 7),
-(28, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 8),
-(29, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 8),
-(30, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 8),
-(32, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 9),
-(33, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 9),
-(34, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 9),
-(35, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 10),
-(36, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 10),
-(37, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 10),
-(38, 'img/grid/2-3.jpg', 'Benzin im Blut', 11),
-(39, 'img/grid/3-1.jpg', 'Santa Farina', 11),
-(40, 'img/grid/3-2.jpg', 'Santa Farina', 11),
-(41, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 12),
-(42, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 12),
-(43, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 12),
-(44, 'img/grid/2-1.jpg', 'Benzin im Blut', 13),
-(45, 'img/grid/2-2.jpg', 'Benzin im Blut', 13),
-(46, 'img/grid/2-3.jpg', 'Benzin im Blut', 13),
-(47, 'img/grid/5-1.jpg', 'Tierheim Dallau', 14),
-(48, 'img/grid/5-2.jpg', 'Tierheim Dallau', 14),
-(49, 'img/grid/5-3.jpg', 'Tierheim Dallau', 14),
-(50, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 15),
-(51, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 15),
-(52, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 15),
-(53, 'img/grid/2-1.jpg', 'Benzin im Blut', 16),
-(54, 'img/grid/2-2.jpg', 'Benzin im Blut', 16),
-(55, 'img/grid/2-3.jpg', 'Benzin im Blut', 16),
-(56, 'img/grid/5-1.jpg', 'Tierheim Dallau', 17),
-(57, 'img/grid/5-2.jpg', 'Tierheim Dallau', 17),
-(58, 'img/grid/5-3.jpg', 'Tierheim Dallau', 17),
-(59, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 18),
-(60, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 18),
-(61, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 18);
+(21, 'img/grid/6-1.jpg', 'Vorsicht, Kontrolle!', 6),
+(22, 'img/grid/6-2.jpg', 'Vorsicht, Kontrolle!', 6),
+(23, 'img/grid/6-3.jpg', 'Vorsicht, Kontrolle!', 6);
 
 -- --------------------------------------------------------
 
@@ -275,12 +238,12 @@ CREATE TABLE IF NOT EXISTS `suggestions` (
 --
 
 INSERT INTO `suggestions` (`name`, `timestamp`, `story`, `phone`, `mail`, `Suggestion_ID`) VALUES
-('TestName', '2012-06-19 14:22:02', 'lorem ipsum dolem bla bla', '293049324-93/249324', 'afasdfdsf.de', 0),
-('Test1Name', '2012-06-19 14:56:16', 'waads wadw  story', '342324324/324324', '234423erre.com', 1),
-('name', '2012-06-19 17:08:49', 'story', 'phone', 'mail', 3),
-('name', '2012-06-24 16:22:35', 'story', 'phone', 'mail', 4),
-('name', '2012-06-24 16:48:55', 'story', 'phone', 'mail', 5),
-('name', '2012-06-25 18:58:19', 'story', 'phone', 'mail', 6);
+('TestName', '2012-06-19 12:22:02', 'lorem ipsum dolem bla bla', '293049324-93/249324', 'afasdfdsf.de', 0),
+('Test1Name', '2012-06-19 12:56:16', 'waads wadw  story', '342324324/324324', '234423erre.com', 1),
+('name', '2012-06-19 15:08:49', 'story', 'phone', 'mail', 3),
+('name', '2012-06-24 14:22:35', 'story', 'phone', 'mail', 4),
+('name', '2012-06-24 14:48:55', 'story', 'phone', 'mail', 5),
+('name', '2012-06-25 16:58:19', 'story', 'phone', 'mail', 6);
 
 -- --------------------------------------------------------
 
@@ -335,13 +298,13 @@ CREATE TABLE IF NOT EXISTS `videos` (
 --
 
 INSERT INTO `videos` (`Video_ID`, `date`, `title`, `subtitle`, `source`, `description`, `backgroundimage`, `keyvisual`, `longitude`, `altitude`, `banner`) VALUES
-(0, '2012-06-12 13:05:11', 'Zwischen Tradition und Moderne', '', 'http://www.youtube.com/watch?v=jku8r75dHJQ&feature=plcp', 'Baron Dajo von Gemmingen-Hornberg erzählt von seinem Leben auf der Burg und seinem Leben zwischen der Arbeit als Winzer und den Pflichten als Gutsverwalter. In vergangenen Zeiten brachte ein Adelstitel viele Vorzüge im Leben mit sich. Doch wie ist es heute? Sind Adelstitel in der modernen Gesellschaft unwichtig geworden? Fabian Stein (Student des Jahrgangs 2010) wohnt auf der Burg Hornberg und ist zudem mit Baron Dajo von Gemmingen-Hornberg befreundet.', 'img/backgrounds/moderne.jpg', 'img/backgrounds/moderne-single.jpg', '9.145575', '49.315947', 'img/backgrounds/motocross.jpg'),
-(1, '2012-05-22 02:02:44', 'Soweit der Wind sie trägt', '', 'http://www.youtube.com/watch?v=k_Bm7fLfab8&feature=plcp', 'Gleitschirmfliegen ist ein Stück Freiheit. Der Wettkampf mit dem Wind und der Thermik, aber auch das Kribbeln im Bauch, die Ruhe und Schönheit der Natur faszinieren Michaela Pusch schon lange. In ihrer Freizeit spielt sie zudem mit René Preisler (Student des Jahrgangs 2009) im selben Verein Tischtennis.', 'img/backgrounds/wind.jpg', 'img/backgrounds/wind-single.png', '9.104696', '49.362253', 'img/backgrounds/moderne.jpg'),
-(2, '2012-05-22 01:57:27', 'Benzin im Blut – Zwischen Motocross und Corel Draw', '', 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Uli Körber ist selbstständiger Grafikdesigner in Schefflenz. Doch das ist nicht alles. Uli hat Benzin im Blut! Um einen Ausgleich zu seinem Beruf zu haben, geht er regelmäßig MotoCross fahren. Mit Hilfe dieses außergewöhnlichen Hobbys und dessen Preisgeldern konnte er sein Studium finanzieren. Uli wurde sogar Deutscher- und Europameister! Sabine Bennebach von der Bürgerstiftung für die Region Mosbach gab uns den Tipp zu diesem Portrait.', 'img/backgrounds/motocross.jpg', 'img/backgrounds/motocross-single.png', '9.254093', '49.394022', 'img/backgrounds/wind.jpg'),
-(3, '2012-06-15 13:01:05', 'Santa Farina – Das Göttlichste, was man sich erlauben kann', '', 'http://www.youtube.com/watch?v=mAXbiDIY6yE', 'Sigfried Raether, von allen Siggi genannt, ist leidenschaftlicher Pizzabäcker. Seine Pizzeria „Santa Farina“ befindet sich in der Nähe der S-Bahnhaltstellte Mosbach (Baden). Siggi ist durch seine charmante italienische Art stadtbekannt. Durch seine ganz besonderen Techniken die Zutaten auf die Pizza zu bringen, ist es schon ein Highlight ihm beim Backen zuzuschauen. Mehrere Studierende von ON09 sind regelmäßig in der Mittagspause zu Gast bei Siggi und wollten mehr über diese außergewöhnliche Persönlichkeit, die der Pizzeria einen heimeligen Flair verleiht, erfahren.', 'img/backgrounds/pizza.jpg', 'img/backgrounds/pizza-single.png', '9.144452', '49.351591', 'img/backgrounds/wingtsun.jpg'),
-(4, '2012-06-15 13:13:57', 'WingTsun – Kämpfen lernen, um nicht kämpfen zu müssen', '', 'http://www.youtube.com/watch?v=5W5OYOAalrU', 'Serdar Batmaz ist professioneller Kampfkünstler, der mit Leib und Seele WingTsun unterrichtet und lebt. Er ist einer der Wenigen, die den 5. Praktikergrad erreicht haben. Seine Philosophie: "Kämpfen lernen, um nicht kämpfen zu müssen." Serdar trainiert im Fitnesscenter Muskelkater in Mosbach, wo Melanie Hiller (Studentin des Jahrgangs 2010) auf ihn aufmerksam wurde.', 'img/backgrounds/wingtsun.jpg', 'img/backgrounds/wingtsun-single.jpg', '9.131995', '49.343943', 'img/backgrounds/pizza.jpg'),
-(5, '2012-06-24 00:00:00', 'Tierheim Dallau – Jeder Käfig hat seine Geschichte', '', 'http://www.youtube.com/watch?v=j3jnztKygSU&feature=plcp', 'Mit einem besonders großen Einzugsgebiet im Neckar-Odenwald-Kreis bietet das Tierheim Dallau vielen Tieren ein temporäres Zuhause - manchen länger, anderen nur kurz. Wir haben Brigitte Schmitt, eines der langjährigen Mitglieder des Vereins begleitet, wie sie um das Schicksal des Schäferhundrüden „Sultan" bangt, der fünf Jahre lang nicht vermittelt werden konnte. Florian Eberle, Marc Hitschericht und Matthias Weise (Studierende des Jahrgangs 2009) wollten eine Tierheimgeschichte erzählen und sind so auf das Mosbacher Tierheim in Dallau gestoßen.', '', '', '9.2004', '49.384641', 'img/backgrounds/wingtsun.jpg'),
-(6, '2012-06-25 14:46:37', 'Vorsicht, Kontrolle!', NULL, 'http://www.youtube.com/watch?v=p74Ui12Y55c&feature=plcp', 'Werner Simon ist stellvertretender Dienstgruppenführer der Verkehrspolizei Mosbach und sorgt mit der Überwachung des Schwerverkehrs für mehr Sicherheit auf den Straßen in und um Mosbach. Der Kontakt kam über Lisa Simon (Studentin des Jahrgangs 2009) zustande.', 'img/backgrounds/wind.jpg', 'img/backgrounds/wind-single.png', '9.144452', '49.343943', 'img/backgrounds/wingtsun.jpg');
+(0, '2012-06-12 13:05:11', 'Zwischen Tradition und Moderne', '', 'http://www.youtube.com/watch?v=jku8r75dHJQ', 'In vergangenen Zeiten brachte ein Adelstitel viele Vorzüge im Leben mit sich. Doch wie ist es heute? Sind Adelstitel in der modernen Gesellschaft unwichtig geworden? Wie lebt es sich zwischen Tradition und Moderne? Baron Dajo von Gemmingen-Hornberg erzählt in diesem Film von seinem Leben auf der Burg, zwischen der Arbeit als Winzer und den Pflichten als Mitglied einer alten Adelsfamilie und Gutsverwalter. Fabian Stein (Onlinemedien-Student des Jahrgangs 2010) wohnt während seines Studium auf der Burg Hornberg und ist mit Baron Dajo von Gemmingen-Hornberg persönlich bekannt. Das Filmteam hatte es deshalb leicht, diesen besonderen Interview-Partner für einen Film zu gewinnen.', 'img/backgrounds/moderne.jpg', 'img/backgrounds/moderne-single.jpg', '9.145575', '49.315947', 'img/banner/0.jpg'),
+(1, '2012-05-22 02:02:44', 'Soweit der Wind sie trägt', '', 'http://www.youtube.com/watch?v=k_Bm7fLfab8', 'Wer durch das Neckartal flußaufwärts oder flußabwärts an den Hängen des Schreckhof bei Diedesheim entlang fährt, sieht bei geeignetem Wetter gelegentlich Gleitschirmflieger am Hang und über dem Fluss kreisen. Unsere Protagonistin, Michaela Pusch, ist eine von ihnen. Gleitschirmfliegen ist ein Stück Freiheit für sie. Der Wettkampf mit dem Wind und der Thermik, aber auch das Kribbeln im Bauch, die Ruhe und Schönheit der Natur faszinieren sie schon lange. In unserem Film erzählt sie davon.', 'img/backgrounds/wind.jpg', 'img/backgrounds/wind-single.png', '9.104696', '49.362253', 'img/banner/1.jpg'),
+(2, '2012-05-22 01:57:27', 'Benzin im Blut – Zwischen Motocross und Corel Draw', '', 'http://www.youtube.com/watch?v=H-lfkgp0nPI', 'Uli Körber ist selbstständiger Grafikdesigner in Schefflenz. Doch das ist nicht alles: Uli hat Benzin im Blut! Um einen Ausgleich zu seinem Beruf zu haben, geht er regelmäßig MotoCross fahren. Mit Hilfe dieses außergewöhnlichen Hobbys und dessen Preisgeldern konnte er sein Studium finanzieren. Uli wurde sogar Deutscher und Europameister! Sabine Bennebach von der Bürgerstiftung für die Region Mosbach gab uns den Tipp zu diesem Portrait.', 'img/backgrounds/motocross.jpg', 'img/backgrounds/motocross-single.png', '9.254093', '49.394022', 'img/banner/2.jpg'),
+(3, '2012-06-15 13:01:05', 'Santa Farina – Das Göttlichste, was man sich erlauben kann', '', 'http://www.youtube.com/watch?v=qy1ehE1BY34', 'Siegfried Raether, von allen Siggi genannt, ist leidenschaftlicher Pizzabäcker. Seine Pizzeria „Santa Farina" (sinngemäß zu übersetzen mit „Heiliges Mehl") befindet sich in unmittelbarer Nähe des Bahnhofs Mosbach (Baden). Siegfried ist durch seine charmante italienische Art stadtbekannt. Durch seine ganz besonderen Techniken, die Zutaten auf die Pizza zu bringen, ist es ein Highlight, ihm beim Backen zuzuschauen. Mit seiner Kundschaft geht er auf eine unverwechselbare, unkonventionell-lockere Art um. Mehrere Studierende von ON09 sind regelmäßig in der Mittagspause zu Gast bei Siggi und wollten mehr über diese außergewöhnliche Persönlichkeit, die der Pizza so ein besonderes Flair verleiht, erfahren.', 'img/backgrounds/pizza.jpg', 'img/backgrounds/pizza-single.png', '9.144452', '49.351591', 'img/banner/3.jpg'),
+(4, '2012-06-15 13:13:57', 'WingTsun – Kämpfen lernen, um nicht kämpfen zu müssen', '', 'http://www.youtube.com/watch?v=5W5OYOAalrU', 'Serdar Batmaz ist professioneller Kampfkünstler, der mit Leib und Seele WingTsun unterrichtet und lebt. Er ist einer der Wenigen, die den „5. Praktikergrad" in diesem Kampfsport erreicht haben. In unserem Film spricht er über sein Leben zwischen Familie und Training und seine Philosophie: „Kämpfen lernen, um nicht kämpfen zu müssen". Seine ruhige und besonnene Ausstrahlung in Verbindung mit der virtuosen Beherrschung des Kampfsports machen seinen beeindruckenden und unverwechselbaren Charakter aus. Serdar trainiert im Fitnesscenter „Muskelkater" in Mosbach, wo Melanie Hiller (Onlinemedien-Studentin des Jahrgangs 2010) auf ihn aufmerksam wurde.', 'img/backgrounds/wingtsun.jpg', 'img/backgrounds/wingtsun-single.jpg', '9.131995', '49.343943', 'img/banner/4.jpg'),
+(5, '2012-06-24 00:00:00', 'Tierheim Dallau – Jeder Käfig hat seine Geschichte', '', 'http://www.youtube.com/watch?v=j3jnztKygSU', 'Mit einem besonders großen Einzugsgebiet im Neckar-Odenwald-Kreis bietet das Tierheim Dallau vielen verschiedenen Tieren ein temporäres Zuhause -- manchen länger, anderen nur kurz. Wir haben Brigitte Schmitt, eines der langjährigen Mitglieder des Vereins, begleitet und ließen sich von ihr das Tierheim und seine Bewohner zeigen. Sie ist leidenschaftliche Tierfreundin und mit dem ganzen Herz bei der Sache, wenn sie um das Schicksal des Schäferhundrüden „Sultan" bangt, der fünf Jahre lang nicht vermittelt werden konnte. Florian Eberle, Marc Hitscherich und Matthias Weise (Studierende des Jahrgangs 2009) wollten eine Tierheimgeschichte erzählen und recherhierten nach einer geeigneten Einrichtung und einem Interviewpartner. So sind sie auf das Mosbacher Tierheim in Dallau gestoßen und fanden in Brigitte Schmitt eine charmante Protagonistin für ihren Film.', '', '', '9.2004', '49.384641', 'img/banner/5.jpg'),
+(6, '2012-06-25 14:46:37', 'Vorsicht, Kontrolle!', '', 'http://www.youtube.com/watch?v=gAEXJgjzqM0', 'Werner Simon ist stellvertretender Dienstgruppenführer der Verkehrspolizei Mosbach und sorgt mit der Überwachung des Schwerverkehrs für mehr Sicherheit auf den Straßen in und um Mosbach. Der Kontakt kam über seine Tochter Lisa Simon (Onlinemedien-Studentin des Jahrgangs 2009) zustande.', '', '', '9.144452', '49.343943', 'img/banner/6.jpg');
 
 -- --------------------------------------------------------
 

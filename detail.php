@@ -26,7 +26,6 @@
 			$video_url.= "&autoplay=1";
 		}
 	}
-	//print_r($element);
 	
 	$video_url = $helper->makeYoutubeURL($element[0]->source);
 	
@@ -47,8 +46,8 @@
 		
 				<h2><?php echo($protagonist) ?></h2>
 				<h1><?php print $element[0]->title?></h1>
-		
-				<div id="movieDetailBanner" style="background-image:url('img/banner/<?php print $Video_ID ?>.jpg');"></div>
+        
+				<div id="movieDetailBanner" style="background-image:url('<?php print $element[0]->banner; ?>');"></div>
 				
 				<div id="movieDetailDescription">
 					<div id="movieDetailPreview" style="background-image:url('<?php print $element[0]->images[0]->url ?>');">

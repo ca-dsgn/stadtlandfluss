@@ -773,7 +773,6 @@ a.weiterlesenLink:hover {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	overflow-y: scroll;
 	background: #fff url('../img/backgrounds/currentBack.jpg') center no-repeat fixed;
 }
 

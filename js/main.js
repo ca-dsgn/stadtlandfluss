@@ -101,6 +101,12 @@ $(document).ready(function() {
 		}
 	});
 	
+	
+	
+	
+	
+	pageNavStructure();
+	
 	$("#pageNav > li").mouseenter(function() {
 		
 		var li = $(this);
@@ -117,12 +123,14 @@ $(document).ready(function() {
 			   }
 		  }
 		}, 500);
+		
 	}).mouseleave( function() {
 		
 		$(this).find("ul").stop();
 		$(this).find("ul").slideUp();
 		$(this).removeClass("has_focus");
 	});
+	
 	$("#pageNav > li").click(function() {
 		
 		if ($(this).find("ul").is(":visible")) {
@@ -133,6 +141,11 @@ $(document).ready(function() {
 			$(this).find("ul").slideDown();
 		}
 	});
+	
+	
+	
+	
+	
 	
 	$(".playButtonPlaylist").live("click",function() {
 		
@@ -171,6 +184,31 @@ $(document).ready(function() {
 	});
 	
 });
+
+function pageNavStructure() {
+	
+	var i=0;
+	
+	console.log($("#pageNav").html());
+	
+	html = '<ul id="pageNav">';
+	html+= '<li class="active">' + $("#pageNav > li.active").html() + '<ul id="menu">';
+	
+	$("#pageNav > li").each(function() {
+	
+		if (!$(this).hasClass('active')) {
+						
+			html+= '<li>' + $(this).html()  + '</li>';
+		}
+	});
+	
+	html += '</li></ul>';
+
+	
+	html+= '</ul>';
+	console.log(html);
+	$("#pageNav").replaceWith(html);
+}
 
 function checkArrowVisibility() {
 	

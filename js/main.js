@@ -626,7 +626,7 @@ function PlayListUpdate() {
 		playlist += $(this).attr("ref") + seperator;
 	});
 	playlist = playlist.substr(0,playlist.length-1);
-	console.log(playlist);
+	
 	set_cookie("playlist",playlist);
 }
 
@@ -1135,4 +1135,18 @@ function onytplayerStateChange(newState) {
 			}
 		}
 	}
+}
+
+function openTrailer() {
+	
+	//Video SOURCE of Trailer
+	video_src = "http://www.youtube.com/v/p74Ui12Y55c&feature=plcp&enablejsapi=1&playerapiid=player&rel=0&autoplay=1";
+	
+	new_video_player(video_src);
+	
+	$('.videoLayer').show().animate({
+		opacity: 1
+	},300, function() {
+		$('.videoLayer, .videoPlayer').fadeIn(5000);
+	});
 }

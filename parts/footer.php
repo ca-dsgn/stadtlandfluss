@@ -16,7 +16,7 @@
 			<div class="wrapper">
 				<div id="pageFooterLeft">
 					<h2>Kennenlernen</h2>
-					<img src="img/trailer-thumb.jpg" />
+					<a onclick="javascript:openTrailer();"><img src="img/trailer-thumb.jpg" /></a>
 					<p class="floatRight"><a href="./about.php" class="blueButton">Mehr erfahren?</a></p>
 				</div>
 				<div id="pageFooterMiddle">

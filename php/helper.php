@@ -86,7 +86,7 @@ class Helper {
 		$html.= '<img src="'.$images[0]->url.'" alt="'.$images[0]->alt.'"/>';
 		$html.= '<p class="title">'.$title.'</p>';
 		$html.= '<div class="playButton">';
-		$html.= '<input type="hidden" class="video_src" value="'.$this->makeYoutubeURL($video_src,true).'"/>';
+		$html.= '<input type="hidden" class="video_src" value="'.$this->getYoutubeID($video_src).'"/>';
 		$html.= '</div>';
 		$html.= '</div>';
 		$html.= '<div class="info">';
@@ -114,6 +114,11 @@ class Helper {
 			$source.= "&autoplay=1";
 		}
 		return $source;
+	}
+	
+	public function getYoutubeID($source) {
+		
+		return substr($source,strpos($source,"v=")+2,strlen($source)-strpos($source,"&")-2);
 	}
 }
 

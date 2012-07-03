@@ -19,17 +19,6 @@
 		}
 	}
 	
-	$video_url = "http://www.youtube.com/v/".substr($element[0]->source,strpos($element[0]->source,"v=")+2,strlen($element[0]->source));
-	
-	if ($_GET["autoplay"] == "1") {
-		
-		$video_url.= "&autoplay=1";
-	}
-	
-	//print_r($element);
-	
-	$video_url = $helper->makeYoutubeURL($element[0]->source);
-	
 ?>
 <div id="detailContent">
 	<div class="wrapper">
@@ -51,7 +40,10 @@
 				<div id="movieDetailBanner" style="background-image:url('img/banner/<?php print $Video_ID ?>.jpg');"></div>
 				
 				<div id="movieDetailDescription">
-					<div id="movieDetailPreview" style="background-image:url('<?php print $element[0]->images[0]->url ?>');"><a href="" class="playButtonSmall">play</a></div>
+					<div id="movieDetailPreview" style="background-image:url('<?php print $element[0]->images[0]->url ?>');">
+                    	<a class="playButtonSmall">play</a>
+                        <input type="hidden" class="video_src" value="<?php print $helper->makeYoutubeURL($element[0]->source,true);?>">
+                    </div>
 					<h3>Film-Informationen</h3>
 					<p><?php print $element[0]->description?></p>
 				</div>		

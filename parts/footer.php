@@ -77,6 +77,45 @@
 		</div>
 	</footer>
 	<!-- PAGE FOOTER [END] -->
-
+	<script type="text/javascript">
+	$(document).ready(function() {
+		
+		slideShowPositioning();
+		$(".playButton").live("mouseenter",function() {
+			
+			blow_play_automat("on");
+		});
+		$(".playButton").live("mouseleave",function() {
+			
+			blow_play_automat("off");
+		});
+		$(".arrowRight").live("click",function() {
+			
+			slideshow_move("right");
+		});
+		$(".arrowLeft").live("click",function() {
+			
+			slideshow_move("left");
+		});
+		$(window).resize(function() {
+			slideShowPositioning();
+		});
+		slideShowDraggable();
+		$(window).keyup(function(event) {
+			
+			if (event.keyCode == 37) {
+				
+				//LEFT
+				slideshow_move("left");
+			}
+			if (event.keyCode == 39) {
+				
+				//RIGHT
+				
+				slideshow_move("right");
+			}
+		});
+	});
+	</script>
 </body>
 </html>

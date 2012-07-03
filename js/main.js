@@ -63,6 +63,10 @@ $(document).ready(function() {
 		e.preventDefault();
 		videoLayerClose(e);
 	});
+	$("#movieDetailPreview").live("click",function(e) {
+		
+		videoLayerOpen(e);
+	});
 	
 	$(".playListRight").live("click",function(e) {
 		
@@ -71,7 +75,13 @@ $(document).ready(function() {
 			
 		if (video_src != null) {
 			
-			video_player.loadVideoByUrl(video_src);
+			//Check if on IPAD
+			if (video_player != null) {
+				video_player.loadVideoByUrl(video_src);
+			}
+			else {
+				new_video_player(video_src);
+			}
 		}
 	});
 	
@@ -82,7 +92,12 @@ $(document).ready(function() {
 			
 		if (video_src != null) {
 			
-			video_player.loadVideoByUrl(video_src);
+			if (video_player != null) {
+				video_player.loadVideoByUrl(video_src);
+			}
+			else {
+				new_video_player(video_src);
+			}
 		}
 	});
 	
@@ -1002,16 +1017,34 @@ function new_video_player(video_src) {
 	
 	if ($("#player_container").length > 0) {
 		
-		var params = { allowScriptAccess: "always" };
-		var atts = { id: "player" };
-		swfobject.embedSWF(video_src,
-						   "player_container", "800", "500", "8", null, null, params, atts);
+		if (swfobject.hasFlashPlayerVersion("8.0.0")) {
+			
+			var params = {	allowScriptAccess: "always",
+							movie: video_src,
+							wmode: "opaque",
+							"allowFullScreen": true
+			};
+			var atts = { id: "player" };
+			swfobject.embedSWF(video_src,
+							   "player_container", "800", "500", "8", null, null, params, atts);
+		}
+		else {
+			html = '<object id="player" data="' + video_src + '" style="width: 800px; height: 500px;">';
+			html+= '<param name="movie" value="' + video_src + '">';
+			html+= '<param name="wmode" value="opaque"/>';
+			html+= '<param name="allowFullScreen" value="true">';
+			html+= '<param name="allowScriptAccess" value="always">';
+			html+= '<embed style="width: 800px; height: 500px;" wmode="opaque" src="' + video_src + '" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always">';
+			html+= '</object>';
+			
+			$("#player_container").replaceWith(html);
+		}
 	}
 }
 
 function videoLayerOpen(event) {
 	
-	video_src = $(event.srcElement).find(".video_src").val();
+	video_src = $(event.target).find(".video_src").val();
 	
 	$('.videoLayer').show().animate({
 		opacity: 1
@@ -1153,7 +1186,7 @@ function videoLayerPlaylistOpen() {
 }
 
 function onYouTubePlayerReady(playerId) {
-	
+
 	video_player = document.getElementById(playerId);
 	
 	video_player.addEventListener("onStateChange","onytplayerStateChange");

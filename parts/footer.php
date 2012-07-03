@@ -1,14 +1,18 @@
-  <?php include('disqus/disqus.php'); ?>
-  <?php include('disqus/disqus.api.keys.php'); ?>
-  <?php
+<?php
+	
+  	error_reporting(E_ALL);
+	
+	include('disqus/disqus.php'); 
+  	include('disqus/disqus.api.keys.php');
   
 	  $params = array(
 		'forum' => 'stadtlandflussvoting',
 		'thread' => '736430416',
 	  );
 	  
-	  $date = new DateTime();
-	  $timestamp = $date->getTimestamp();
+	  $date = date_create();
+	  
+	  $timestamp = date_timestamp_get($date);
 	  
 	  $xml = simplexml_load_file("disqus/response.xml");
 	  
@@ -37,6 +41,8 @@
 		 $dom->save('disqus/response.xml');
 	  }
   ?>
+  
+  -->
   <!-- VIDEO-LAYER [BEGIN] -->
   <div class="videoLayer">
 		<a href="" class="closeButton">close</a>

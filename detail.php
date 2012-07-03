@@ -20,12 +20,12 @@
 	}
 	
 	$video_url = "http://www.youtube.com/v/".substr($element[0]->source,strpos($element[0]->source,"v=")+2,strlen($element[0]->source));
-	
-	if ($_GET["autoplay"] == "1") {
-		
-		$video_url.= "&autoplay=1";
+	if (isset($_GET["autoplay"])) {
+		if ($_GET["autoplay"] == "1") {
+			
+			$video_url.= "&autoplay=1";
+		}
 	}
-	
 	//print_r($element);
 	
 	$video_url = $helper->makeYoutubeURL($element[0]->source);
@@ -59,16 +59,15 @@
 				<div id="movieDetailMeta">
 					<div class="left">
 						<p><strong>Ein Film von:</strong></p>
-                        <ul>
+                        <ul id="filmcrew">
 						<?php 
-						
-							//print_r(json_decode($vc->getFilmCrew($Video_ID)));
                             
-                            $persons = json_decode($vc->getFilmCrew($Video_ID));
+                            $filmcrew = json_decode($vc->getFilmCrew($Video_ID));
+							$html = "";
                             
-                            foreach($persons as $person) {
+                            foreach($filmcrew as $person) {
 								
-								$html .= "<li>".$person->name."</li>";
+								$html .= "<li>" . $person->name . "</li>";
 							}
 							print substr($html,0,strlen($html)-2);
 							

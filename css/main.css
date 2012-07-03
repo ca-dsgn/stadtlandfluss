@@ -353,6 +353,11 @@ a#backButton:hover {
 	height: 500px;
 	background-color: #b117b8;
 }
+#player_container {
+	
+	width: 800px;
+	height: 500px;
+}
 
 .closeButton {
 	position: absolute;

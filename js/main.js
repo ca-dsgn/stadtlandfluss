@@ -75,7 +75,13 @@ $(document).ready(function() {
 			
 		if (video_src != null) {
 			
-			video_player.loadVideoByUrl(video_src);
+			//Check if on IPAD
+			if (video_player != null) {
+				video_player.loadVideoByUrl(video_src);
+			}
+			else {
+				new_video_player(video_src);
+			}
 		}
 	});
 	
@@ -86,7 +92,12 @@ $(document).ready(function() {
 			
 		if (video_src != null) {
 			
-			video_player.loadVideoByUrl(video_src);
+			if (video_player != null) {
+				video_player.loadVideoByUrl(video_src);
+			}
+			else {
+				new_video_player(video_src);
+			}
 		}
 	});
 	
@@ -968,8 +979,6 @@ function new_video_player(video_src) {
 	
 	if ($("#player_container").length > 0) {
 		
-		
-		
 		if (swfobject.hasFlashPlayerVersion("8.0.0")) {
 			
 			var params = {	allowScriptAccess: "always",
@@ -982,15 +991,13 @@ function new_video_player(video_src) {
 							   "player_container", "800", "500", "8", null, null, params, atts);
 		}
 		else {
-			
-			html = '<object id="player" data="' + video_src + '" width="800" height="500">';
+			html = '<object id="player" data="' + video_src + '" style="width: 800px; height: 500px;">';
 			html+= '<param name="movie" value="' + video_src + '">';
 			html+= '<param name="wmode" value="opaque"/>';
 			html+= '<param name="allowFullScreen" value="true">';
 			html+= '<param name="allowScriptAccess" value="always">';
-			html+= '<embed wmode="opaque" src="' + video_src + '" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always">';
+			html+= '<embed style="width: 800px; height: 500px;" wmode="opaque" src="' + video_src + '" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always">';
 			html+= '</object>';
-			html = '<iframe class="youtube-player" type="text/html" width="640" height="385" src="' + video_src + '" frameborder="0"></iframe>';
 			
 			$("#player_container").replaceWith(html);
 		}
@@ -999,7 +1006,7 @@ function new_video_player(video_src) {
 
 function videoLayerOpen(event) {
 	
-	video_src = $(event.srcElement).find(".video_src").val();
+	video_src = $(event.target).find(".video_src").val();
 	
 	$('.videoLayer').show().animate({
 		opacity: 1
@@ -1147,8 +1154,6 @@ function onYouTubePlayerReady(playerId) {
 	video_player.addEventListener("onStateChange","onytplayerStateChange");
 }
 function onytplayerStateChange(newState) {
-
-	console.log("test");
 
 	if (playlist_mode == "on") {
 		

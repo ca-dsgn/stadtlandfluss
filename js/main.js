@@ -194,7 +194,15 @@ function pageNavStructure() {
 	var i=0;
 	
 	html = '<ul id="pageNav">';
-	html+= '<li class="active">' + $("#pageNav > li.active").html() + '<ul id="menu">';
+	
+	if ($("#pageNav > li.active").length > 0) {
+
+		element = $("#pageNav > li.active").html();
+	}
+	else {
+		element = '<a>Ansicht auswählen</a>';
+	}
+	html+= '<li class="active">' + element + '<ul id="menu">';
 	
 	$("#pageNav > li").each(function() {
 	

@@ -101,29 +101,26 @@ $(document).ready(function() {
 		}
 	});
 	
-	
-	
-	
-	
 	pageNavStructure();
 	
 	$("#pageNav > li").mouseenter(function() {
 		
-		var li = $(this);
-		
-		$(this).addClass("has_focus");
-		
-		setTimeout(function(){
-				
-		  if ($(li).hasClass("has_focus")) {
-			   
-			   if (!$(li).find("ul").is(":animated")) {
+		if (!$(this).hasClass("active")) {
+			var li = $(this);
+			
+			$(this).addClass("has_focus");
+			
+			setTimeout(function(){
+					
+			  if ($(li).hasClass("has_focus")) {
 				   
-					$(li).find("ul").slideDown(300);
-			   }
-		  }
-		}, 500);
-		
+				   if (!$(li).find("ul").is(":animated")) {
+					   
+						$(li).find("ul").slideDown(300);
+				   }
+			  }
+			}, 500);
+		}
 	}).mouseleave( function() {
 		
 		$(this).find("ul").stop();
@@ -131,13 +128,16 @@ $(document).ready(function() {
 		$(this).removeClass("has_focus");
 	});
 	
-	$("#pageNav > li").click(function() {
+	$("#pageNav > li").click(function(e) {
+		
+		e.preventDefault();
 		
 		if ($(this).find("ul").is(":visible")) {
 			
 			$(this).find("ul").slideUp();
 		}
 		else {
+				
 			$(this).find("ul").slideDown();
 		}
 	});

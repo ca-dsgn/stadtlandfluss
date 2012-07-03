@@ -27,7 +27,7 @@
 							<li>asd</li>
 							<li>asd</li>
 						</ul>						
-						<p class="floatRight"><a href="">alle Vorschläge ansehen</a> und <a href="" class="blueButton">abstimmen</a></p>
+						<p class="floatRight"><a href="kontakt.php" class="blueButton">Vorschlag einsenden</a><a href="voting.php" class="blueButton">Jetzt abstimmen</a></p>
 					</div>
 				</div>
 				<div id="pageFooterRight">

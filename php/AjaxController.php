@@ -27,7 +27,7 @@ if (isset($_POST["action"])) {
 			$Video_ID = $_POST["id"];
 			$video_object = json_decode($vc->getVideo($Video_ID));
 			
-			$result = $helper->makeYoutubeURL($video_object[0]->source,true);
+			$result = $helper->getYoutubeID($video_object[0]->source);
 			break;
 		
 		default: 

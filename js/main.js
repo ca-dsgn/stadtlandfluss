@@ -62,6 +62,7 @@ $(document).ready(function() {
 			
 		e.preventDefault();
 		videoLayerClose(e);
+		video_player.stopVideo();
 	});
 	$("#movieDetailPreview").live("click",function(e) {
 		
@@ -75,13 +76,7 @@ $(document).ready(function() {
 			
 		if (video_src != null) {
 			
-			//Check if on IPAD
-			if (video_player != null) {
-				video_player.loadVideoByUrl(video_src);
-			}
-			else {
-				new_video_player(video_src);
-			}
+			new_video_player(video_src);
 		}
 	});
 	
@@ -92,12 +87,7 @@ $(document).ready(function() {
 			
 		if (video_src != null) {
 			
-			if (video_player != null) {
-				video_player.loadVideoByUrl(video_src);
-			}
-			else {
-				new_video_player(video_src);
-			}
+			new_video_player(video_src);
 		}
 	});
 	
@@ -1019,60 +1009,43 @@ function matrixArrows() {
 
 function new_video_player(video_src) {
 	
-	if ($(".videoPlayer object").length > 0) {
+	if ($(".videoPlayer iframe").length > 0) {
 		
-		$(".videoPlayer object").replaceWith('<div id="player_container"></div>');
+		$(".videoPlayer iframe").replaceWith('<div id="player_container"></div>');
 	}
 	
 	if ($("#player_container").length > 0) {
-
-		/*
-		if (swfobject.hasFlashPlayerVersion("8.0.0")) {
-
-			var params = {	allowScriptAccess: "always",
-							movie: video_src,
-							wmode: "opaque",
-							"allowFullScreen": true
-			};
-			var atts = { id: "player" };
-			swfobject.embedSWF(video_src,
-							   "player_container", "800", "500", "8", null, null, params, atts);
-		}
-		else {
-			*/
-			
-			
-			video_player = new YT.Player('player', {
-				height: '500',
-				width: '800',
-				videoId: 'u1zgFlCw8Aw',
-				events: {
-				  'onReady': onPlayerReady,
-				  'onStateChange': onPlayerStateChange
-				}
-			  });
-			
-			/*
-			html = '<object id="player" data="' + video_src + '" style="width: 800px; height: 500px;">';
-			html+= '<param name="movie" value="' + video_src + '">';
-			html+= '<param name="wmode" value="opaque"/>';
-			html+= '<param name="allowFullScreen" value="true">';
-			html+= '<param name="allowScriptAccess" value="always">';
-			html+= '<embed style="width: 800px; height: 500px;" wmode="opaque" src="' + video_src + '" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always">';
-			html+= '</object>';
-
-			$("#player_container").replaceWith(html);
-			*/
-		//}
+		
+		video_player = new YT.Player('player_container', {
+			height: '500',
+			width: '800',
+			videoId: video_src,
+			events: {
+			  'onReady': onPlayerReady,
+			  'onStateChange': onPlayerStateChange
+			}
+		});
 	}
 }
 
 function onPlayerStateChange(event) {
-	console.log(event.data);
+	if (playlist_mode == "on") {
+		
+		if (event.data == 0) {
+			
+			//Next Video
+			video_src = getNextVideoFromPlaylist();
+			
+			if (video_src != null) {
+				
+				new_video_player(video_src);
+			}
+		}
+	}
 }
 
-function onPlayerReady() {
-	
+function onPlayerReady(event) {
+	event.target.playVideo();
 }
 
 function videoLayerOpen(event) {
@@ -1223,22 +1196,6 @@ function onYouTubePlayerReady(playerId) {
 	video_player = document.getElementById(playerId);
 	
 	video_player.addEventListener("onStateChange","onytplayerStateChange");
-}
-function onytplayerStateChange(newState) {
-
-	if (playlist_mode == "on") {
-		
-		if (newState == 0) {
-			
-			//Next Video
-			video_src = getNextVideoFromPlaylist();
-			
-			if (video_src != null) {
-				
-				video_player.loadVideoByUrl(video_src);
-			}
-		}
-	}
 }
 
 function openTrailer() {

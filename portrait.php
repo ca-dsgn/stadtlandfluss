@@ -48,7 +48,7 @@
 				$html.= '<li class="contentBox">';
 				$html.= '<img src="'.$element["data"]->keyvisual.'" class="portraitIMG" alt="moderne-single"/>';
 				$html.= '<div class="playButton">';
-				$html.= '<input type="hidden" class="video_src" value="'.$helper->makeYoutubeURL($element["data"]->source,true).'"/>';
+				$html.= '<input type="hidden" class="video_src" value="'.$helper->getYoutubeID($element["data"]->source).'"/>';
 				$html.= '</div>';
 				$html.= '<div class="description">';
 				$html.= '<hgroup>';

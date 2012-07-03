@@ -7,7 +7,7 @@
 		<div id="text">
 		
 		<!-- YOUTUBE VIDEO CODE -->
-		<iframe id="trailer" width="720" height="405" src="http://www.youtube.com/embed/qqLaRYxJeno?rel=0" frameborder="0" allowfullscreen></iframe>
+		<iframe id=trailer" width="720" height="405" src="http://www.youtube.com/embed/078c2_wt414?rel=0" frameborder="0" allowfullscreen></iframe>
 		<!-- END YOUTUBE VIDEO CODE -->
 		
 		<blockquote class="zitat">&bdquo;Wie oft kommt es vor, dass ein Mensch eine interessante Facette hat, die niemand oder nur sehr wenige kennen?&ldquo;</blockquote>

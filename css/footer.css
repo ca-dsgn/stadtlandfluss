@@ -159,7 +159,8 @@ iframe#facebook-like {
 	height: 40px;
 	border: 1px solid #5b6168;
 	background-color: #656c73;
-	font-size: 0.9em;
+	font-size: 14,4px;
+	
 }
 
 #topList li:hover {

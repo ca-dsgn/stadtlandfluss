@@ -105,22 +105,20 @@ $(document).ready(function() {
 	
 	$("#pageNav > li").mouseenter(function() {
 		
-		if (!$(this).hasClass("active")) {
-			var li = $(this);
-			
-			$(this).addClass("has_focus");
-			
-			setTimeout(function(){
-					
-			  if ($(li).hasClass("has_focus")) {
+		var li = $(this);
+		
+		$(this).addClass("has_focus");
+		
+		setTimeout(function(){
+				
+		  if ($(li).hasClass("has_focus")) {
+			   
+			   if (!$(li).find("ul").is(":animated")) {
 				   
-				   if (!$(li).find("ul").is(":animated")) {
-					   
-						$(li).find("ul").slideDown(300);
-				   }
-			  }
-			}, 500);
-		}
+					$(li).find("ul").slideDown(300);
+			   }
+		  }
+		}, 500);
 	}).mouseleave( function() {
 		
 		$(this).find("ul").stop();
@@ -128,17 +126,17 @@ $(document).ready(function() {
 		$(this).removeClass("has_focus");
 	});
 	
-	$("#pageNav > li").click(function(e) {
+	$("#pageNav > li > a").click(function(e) {
 		
 		e.preventDefault();
 		
-		if ($(this).find("ul").is(":visible")) {
+		if ($(this).parent().find("ul").is(":visible") && !$(this).parent().find("ul").is(":animated")) {
 			
-			$(this).find("ul").slideUp();
+			$(this).parent().find("ul").slideUp();
 		}
-		else {
+		if ($(this).parent().find("ul").is(":hidden") && !$(this).parent().find("ul").is(":animated")) {
 				
-			$(this).find("ul").slideDown();
+			$(this).parent().find("ul").slideDown();
 		}
 	});
 	
@@ -183,13 +181,17 @@ $(document).ready(function() {
 		$(".playList .info").delay(300).fadeIn(300);
 	});
 	
+	/* YOUTUBE IFRAME API */
+	var tag = document.createElement('script');
+	tag.src = "http://www.youtube.com/player_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	
 });
 
 function pageNavStructure() {
 	
 	var i=0;
-	
-	console.log($("#pageNav").html());
 	
 	html = '<ul id="pageNav">';
 	html+= '<li class="active">' + $("#pageNav > li.active").html() + '<ul id="menu">';
@@ -206,7 +208,6 @@ function pageNavStructure() {
 
 	
 	html+= '</ul>';
-	console.log(html);
 	$("#pageNav").replaceWith(html);
 }
 
@@ -1016,11 +1017,54 @@ function new_video_player(video_src) {
 	}
 	
 	if ($("#player_container").length > 0) {
-		
-		html = '<embed id="player" style="width: 800px; height: 500px;" wmode="opaque" src="' + video_src + '" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always">';
-		
-		$("#player_container").replaceWith(html);
+
+		/*
+		if (swfobject.hasFlashPlayerVersion("8.0.0")) {
+
+			var params = {	allowScriptAccess: "always",
+							movie: video_src,
+							wmode: "opaque",
+							"allowFullScreen": true
+			};
+			var atts = { id: "player" };
+			swfobject.embedSWF(video_src,
+							   "player_container", "800", "500", "8", null, null, params, atts);
+		}
+		else {
+			*/
+			
+			
+			video_player = new YT.Player('player', {
+				height: '500',
+				width: '800',
+				videoId: 'u1zgFlCw8Aw',
+				events: {
+				  'onReady': onPlayerReady,
+				  'onStateChange': onPlayerStateChange
+				}
+			  });
+			
+			/*
+			html = '<object id="player" data="' + video_src + '" style="width: 800px; height: 500px;">';
+			html+= '<param name="movie" value="' + video_src + '">';
+			html+= '<param name="wmode" value="opaque"/>';
+			html+= '<param name="allowFullScreen" value="true">';
+			html+= '<param name="allowScriptAccess" value="always">';
+			html+= '<embed style="width: 800px; height: 500px;" wmode="opaque" src="' + video_src + '" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always">';
+			html+= '</object>';
+
+			$("#player_container").replaceWith(html);
+			*/
+		//}
 	}
+}
+
+function onPlayerStateChange(event) {
+	console.log(event.data);
+}
+
+function onPlayerReady() {
+	
 }
 
 function videoLayerOpen(event) {

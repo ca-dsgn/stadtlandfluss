@@ -342,7 +342,8 @@ a#backButton:hover {
 
 
 .videoLayer {
-	position: absolute;
+	position: fixed;
+	top: 0;
 	width: 100%;
 	height: 100%;
 	background: url('../img/video-bg.png') fixed repeat;

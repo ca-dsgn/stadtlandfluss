@@ -1031,8 +1031,8 @@ function onYouTubePlayerReady(playerId) {
 
 function openTrailer() {
 	
-	//Video SOURCE of Trailer
-	video_src = "http://www.youtube.com/v/p74Ui12Y55c&feature=plcp&enablejsapi=1&playerapiid=player&rel=0&autoplay=1";
+	//Youtube Video ID of Trailer
+	video_src = "078c2_wt414";
 	
 	new_video_player(video_src);
 	

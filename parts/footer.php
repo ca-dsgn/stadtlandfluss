@@ -1,4 +1,43 @@
-	<!-- VIDEO-LAYER [BEGIN] -->
+  <?php include('disqus/disqus.php'); ?>
+  <?php include('disqus/disqus.api.keys.php'); ?>
+  <?php
+  
+	  $params = array(
+		'forum' => 'stadtlandflussvoting',
+		'thread' => '736430416',
+	  );
+	  
+	  $date = new DateTime();
+	  $timestamp = $date->getTimestamp();
+	  
+	  $xml = simplexml_load_file("disqus/response.xml");
+	  
+	  $old_timestamp = $xml->timestamp;
+	  
+	  //Every 4 seconds load API so that max API calls wont swap
+	  if ($timestamp >= $old_timestamp+4) {
+		 
+		 $disqus = Disqus::connect(ACCESS_TOKEN, API_KEY, API_SECRET)->getPosts($params);
+		 $posts = $disqus->getMostLikes();
+		 
+		 $xml->timestamp = $timestamp;
+		 $xml->response = null;
+		 
+		 foreach($posts['posts'] as $post) {
+			 
+			$new_elem = $xml->response->addChild("post"); 
+			$new_elem->addChild("message",$post->raw_message);
+			$new_elem->addChild("likes",$post->likes);
+		 }
+		 
+		 $dom = new DOMDocument('1.0');
+		 $dom->preserveWhiteSpace = false;
+		 $dom->formatOutput = true;
+		 $dom->loadXML($xml->asXML());
+		 $dom->save('disqus/response.xml');
+	  }
+  ?>
+  <!-- VIDEO-LAYER [BEGIN] -->
   <div class="videoLayer">
 		<a href="" class="closeButton">close</a>
     <div class="videoPlayer">
@@ -23,9 +62,18 @@
 					<div id="voteBox">						
 						<h2>Was soll verfilmt werden?</h2>
 						<ul id="topList">
-							<li>asd</li>
-							<li>asd</li>
-							<li>asd</li>
+                        	<?php
+								
+								$i=1;
+								
+								foreach($xml->response->children() as $post) {
+									
+									if ($i<=3) {
+										
+										print "<li><p>".$post->message."<span>".$post->message."</span></p></li>";
+									}
+								}
+							?>
 						</ul>						
 						<p class="floatRight"><a href="kontakt.php" class="blueButton">Vorschlag einsenden</a><a href="voting.php" class="blueButton">Jetzt abstimmen</a></p>
 					</div>

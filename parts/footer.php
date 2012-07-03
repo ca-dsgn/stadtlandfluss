@@ -70,8 +70,9 @@
 									
 									if ($i<=3) {
 										
-										print "<li><p>".$post->message."<span>".$post->message."</span></p></li>";
+										print "<li><p>".$post->message."<span>".$post->likes." Stimmen</span></p></li>";
 									}
+									$i++;
 								}
 							?>
 						</ul>						

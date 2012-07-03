@@ -75,13 +75,13 @@
 		color: #fff;
 }
 
-
-
-
-
 #menu {
 	display: none;
 	background-color: #fff;
+}
+
+ul#menu {
+	margin-left:0;
 }
 
 li.active:hover #menu li a {color: #252729; background-color: #fff;}

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.0.1
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 02. Juli 2012 um 18:34
--- Server Version: 5.1.37
--- PHP-Version: 5.3.0
+-- Erstellungszeit: 03. Jul 2012 um 10:23
+-- Server Version: 5.5.16
+-- PHP-Version: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -21,6 +21,7 @@ USE `stadtlandfluss`;
 -- Tabellenstruktur für Tabelle `comments`
 --
 
+DROP TABLE IF EXISTS `comments`;
 CREATE TABLE IF NOT EXISTS `comments` (
   `Comment_ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `Video_ID` int(10) unsigned NOT NULL,
@@ -46,6 +47,7 @@ INSERT INTO `comments` (`Comment_ID`, `Video_ID`, `name`, `text`) VALUES
 -- Tabellenstruktur für Tabelle `images`
 --
 
+DROP TABLE IF EXISTS `images`;
 CREATE TABLE IF NOT EXISTS `images` (
   `Image_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `url` varchar(255) DEFAULT NULL,
@@ -80,46 +82,9 @@ INSERT INTO `images` (`Image_ID`, `url`, `alt`, `Video_ID`) VALUES
 (18, 'img/grid/5-1.jpg', 'Tierheim Dallau', 5),
 (19, 'img/grid/5-2.jpg', 'Tierheim Dallau', 5),
 (20, 'img/grid/5-3.jpg', 'Tierheim Dallau', 5),
-(21, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 6),
-(22, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 6),
-(23, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 6),
-(24, NULL, NULL, NULL),
-(25, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 7),
-(26, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 7),
-(27, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 7),
-(28, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 8),
-(29, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 8),
-(30, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 8),
-(32, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 9),
-(33, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 9),
-(34, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 9),
-(35, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 10),
-(36, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 10),
-(37, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 10),
-(38, 'img/grid/2-3.jpg', 'Benzin im Blut', 11),
-(39, 'img/grid/3-1.jpg', 'Santa Farina', 11),
-(40, 'img/grid/3-2.jpg', 'Santa Farina', 11),
-(41, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 12),
-(42, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 12),
-(43, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 12),
-(44, 'img/grid/2-1.jpg', 'Benzin im Blut', 13),
-(45, 'img/grid/2-2.jpg', 'Benzin im Blut', 13),
-(46, 'img/grid/2-3.jpg', 'Benzin im Blut', 13),
-(47, 'img/grid/5-1.jpg', 'Tierheim Dallau', 14),
-(48, 'img/grid/5-2.jpg', 'Tierheim Dallau', 14),
-(49, 'img/grid/5-3.jpg', 'Tierheim Dallau', 14),
-(50, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 15),
-(51, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 15),
-(52, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 15),
-(53, 'img/grid/2-1.jpg', 'Benzin im Blut', 16),
-(54, 'img/grid/2-2.jpg', 'Benzin im Blut', 16),
-(55, 'img/grid/2-3.jpg', 'Benzin im Blut', 16),
-(56, 'img/grid/5-1.jpg', 'Tierheim Dallau', 17),
-(57, 'img/grid/5-2.jpg', 'Tierheim Dallau', 17),
-(58, 'img/grid/5-3.jpg', 'Tierheim Dallau', 17),
-(59, 'img/grid/4-1.jpg', 'Vorsicht, Kontrolle!', 18),
-(60, 'img/grid/4-2.jpg', 'Vorsicht, Kontrolle!', 18),
-(61, 'img/grid/4-3.jpg', 'Vorsicht, Kontrolle!', 18);
+(21, 'img/grid/6-1.jpg', 'Vorsicht, Kontrolle!', 6),
+(22, 'img/grid/6-2.jpg', 'Vorsicht, Kontrolle!', 6),
+(23, 'img/grid/6-3.jpg', 'Vorsicht, Kontrolle!', 6);
 
 -- --------------------------------------------------------
 
@@ -127,6 +92,7 @@ INSERT INTO `images` (`Image_ID`, `url`, `alt`, `Video_ID`) VALUES
 -- Tabellenstruktur für Tabelle `person2video`
 --
 
+DROP TABLE IF EXISTS `person2video`;
 CREATE TABLE IF NOT EXISTS `person2video` (
   `p2v_ID` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `Video_ID` int(5) unsigned DEFAULT NULL,
@@ -186,6 +152,7 @@ INSERT INTO `person2video` (`p2v_ID`, `Video_ID`, `Person_ID`, `isfilmcrew`, `fu
 -- Tabellenstruktur für Tabelle `persons`
 --
 
+DROP TABLE IF EXISTS `persons`;
 CREATE TABLE IF NOT EXISTS `persons` (
   `Person_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -238,6 +205,7 @@ INSERT INTO `persons` (`Person_ID`, `name`, `type`) VALUES
 -- Tabellenstruktur für Tabelle `stories`
 --
 
+DROP TABLE IF EXISTS `stories`;
 CREATE TABLE IF NOT EXISTS `stories` (
   `Story_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `description` varchar(2000) DEFAULT NULL,
@@ -260,6 +228,7 @@ INSERT INTO `stories` (`Story_ID`, `description`, `title`, `votes`) VALUES
 -- Tabellenstruktur für Tabelle `suggestions`
 --
 
+DROP TABLE IF EXISTS `suggestions`;
 CREATE TABLE IF NOT EXISTS `suggestions` (
   `name` varchar(255) DEFAULT NULL,
   `timestamp` timestamp NULL DEFAULT NULL,
@@ -275,12 +244,12 @@ CREATE TABLE IF NOT EXISTS `suggestions` (
 --
 
 INSERT INTO `suggestions` (`name`, `timestamp`, `story`, `phone`, `mail`, `Suggestion_ID`) VALUES
-('TestName', '2012-06-19 14:22:02', 'lorem ipsum dolem bla bla', '293049324-93/249324', 'afasdfdsf.de', 0),
-('Test1Name', '2012-06-19 14:56:16', 'waads wadw  story', '342324324/324324', '234423erre.com', 1),
-('name', '2012-06-19 17:08:49', 'story', 'phone', 'mail', 3),
-('name', '2012-06-24 16:22:35', 'story', 'phone', 'mail', 4),
-('name', '2012-06-24 16:48:55', 'story', 'phone', 'mail', 5),
-('name', '2012-06-25 18:58:19', 'story', 'phone', 'mail', 6);
+('TestName', '2012-06-19 12:22:02', 'lorem ipsum dolem bla bla', '293049324-93/249324', 'afasdfdsf.de', 0),
+('Test1Name', '2012-06-19 12:56:16', 'waads wadw  story', '342324324/324324', '234423erre.com', 1),
+('name', '2012-06-19 15:08:49', 'story', 'phone', 'mail', 3),
+('name', '2012-06-24 14:22:35', 'story', 'phone', 'mail', 4),
+('name', '2012-06-24 14:48:55', 'story', 'phone', 'mail', 5),
+('name', '2012-06-25 16:58:19', 'story', 'phone', 'mail', 6);
 
 -- --------------------------------------------------------
 
@@ -288,6 +257,7 @@ INSERT INTO `suggestions` (`name`, `timestamp`, `story`, `phone`, `mail`, `Sugge
 -- Tabellenstruktur für Tabelle `tags`
 --
 
+DROP TABLE IF EXISTS `tags`;
 CREATE TABLE IF NOT EXISTS `tags` (
   `Tag_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `start` varchar(30) DEFAULT NULL,
@@ -315,6 +285,7 @@ INSERT INTO `tags` (`Tag_ID`, `start`, `end`, `name`, `longitude`, `altitude`, `
 -- Tabellenstruktur für Tabelle `videos`
 --
 
+DROP TABLE IF EXISTS `videos`;
 CREATE TABLE IF NOT EXISTS `videos` (
   `Video_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `date` datetime DEFAULT NULL,
@@ -349,6 +320,7 @@ INSERT INTO `videos` (`Video_ID`, `date`, `title`, `subtitle`, `source`, `descri
 -- Tabellenstruktur für Tabelle `votings`
 --
 
+DROP TABLE IF EXISTS `votings`;
 CREATE TABLE IF NOT EXISTS `votings` (
   `Voting_ID` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `headline` varchar(255) DEFAULT NULL,
@@ -357,7 +329,6 @@ CREATE TABLE IF NOT EXISTS `votings` (
   PRIMARY KEY (`Voting_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `votings`
---
-
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

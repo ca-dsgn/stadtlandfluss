@@ -361,8 +361,8 @@ a#backButton:hover {
 
 .closeButton {
 	position: absolute;
-	top: 25px;
-	right: 25px;
+	top: 75px;
+	right: 35px;
 	width: 70px;
 	height: 70px;
 	z-index: 700;
@@ -1000,14 +1000,10 @@ div#text {	margin: 0 auto; width: 25%; max-width: 960px; min-width: 720px; paddi
 
 blockquote.zitat {
 	font-weight: normal;
-	color: black;
-	font-size: 1.3em;
+	color: #656565;
+	font-size: 1.4em;
 	margin: 30px 0 30px 0;
-	background-color: rgba(96,206,240,0.6);
-	padding: 20px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius:10px;
+	text-align: center;
 }
 
 div#text h2 { margin-top: 15px; }

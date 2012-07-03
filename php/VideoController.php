@@ -63,12 +63,12 @@ class VideoController
 	public function getVideoWithImages($p_iCurrentIndex)
 	{
 			$dbConnection = new Database();
-			$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".$p_iCurrentIndex, $dbConnection->get_database(), "ro");
+			$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = ".$p_iCurrentIndex, $dbConnection->get_database(), "ro"); //fill with videos
 			
-			$resultSetImages = $dbConnection->queryAssoc("SELECT * FROM images WHERE Video_ID =".$p_iCurrentIndex, $dbConnection->get_database(), "ro");
+			$resultSetImages = $dbConnection->queryAssoc("SELECT * FROM images WHERE Video_ID =".$p_iCurrentIndex, $dbConnection->get_database(), "ro"); // fill with images
 			
 			$image_array = Array();
-			foreach($resultSetImages AS $key => $value) {
+			foreach($resultSetImages AS $key => $value) { //iterate through images
 				
 				array_push($image_array,array(
 					"Image_ID"=>$value["Image_ID"],
@@ -77,7 +77,7 @@ class VideoController
 					)
 				);
 			}
-			$this->helper->array_push_associative($resultSet[0],array("images" => $image_array));
+			$this->helper->array_push_associative($resultSet[0],array("images" => $image_array)); //insert images into json structure
 			
 			return json_encode($resultSet);
 	}
@@ -110,7 +110,7 @@ class VideoController
 	*/
 	public function getPreviousVideo($p_iCurrentIndex)
 	{
-			if($p_iCurrentIndex == 0)
+			if($p_iCurrentIndex == 0) //if is first
 			{
 				$dbConnection = new Database();
 				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID=(Select MAX(Video_ID) from videos)", $dbConnection->get_database(), "ro");
@@ -129,13 +129,13 @@ class VideoController
 	*/
 	public function getNextVideo($p_iCurrentIndex)
 	{
-			if($p_iCurrentIndex == $this->idMax)
+			if($p_iCurrentIndex == $this->idMax) //if is last video
 			{
 				$dbConnection = new Database();
 				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID=(Select MIN(Video_ID) from videos)", $dbConnection->get_database(), "ro");
 				return json_encode($resultSet);
 			}
-			else
+			else 
 			{
 				$dbConnection = new Database();
 				$resultSet = $dbConnection->queryAssoc("Select * from videos where Video_ID = (Select MIN(Video_ID) from videos where Video_ID > ".$p_iCurrentIndex.")", $dbConnection->get_database(), "ro");
@@ -219,6 +219,10 @@ class VideoController
 	}
 	
 	
+	/**
+	*	returns a JSON String with all Videos and their videos for the matrix view
+	*/ 
+	
 	public function getMatrixViewWithImages($p_iStart, $p_iEnd)
 	{		
 			$dbConnection = new Database();
@@ -226,9 +230,9 @@ class VideoController
 			//SELECT * FROM videos LEFT JOIN images ON videos.Video_ID = images.Video_ID WHERE videos.Video_ID >= 0 and videos.Video_ID < 5
 			$id_array = Array();
 			$i=0;
-			foreach($resultSetVideos AS $key => $value)
+			foreach($resultSetVideos AS $key => $value) //iterate through Videos
 			{									
-					$this->helper->array_push_associative($resultSetVideos[$i],array("images" => json_decode($this->getImages($value['Video_ID']),true)));
+					$this->helper->array_push_associative($resultSetVideos[$i],array("images" => json_decode($this->getImages($value['Video_ID']),true))); //insert images into json structure
 					$i++;
 			}
 			return json_encode($resultSetVideos);
@@ -240,7 +244,6 @@ class VideoController
 	*/
 	public function getAllLocations()
 	{
-	//hier noch name
 			$dbConnection = new Database();
 			$resultSet = $dbConnection->queryAssoc("SELECT altitude, longitude, title, Video_ID FROM videos", $dbConnection->get_database(), "ro");
 			return json_encode($resultSet);

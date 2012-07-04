@@ -52,7 +52,7 @@
 				<div id="movieDetailDescription">
 					<div id="movieDetailPreview" style="background-image:url('<?php print $element[0]->images[0]->url ?>');">
                     	<a class="playButtonSmall">play</a>
-                        <input type="hidden" class="video_src" value="<?php print $helper->makeYoutubeURL($element[0]->source,true);?>">
+                        <input type="hidden" class="video_src" value="<?php print $helper->getYoutubeID($element[0]->source);?>">
                     </div>
 					<h3>Film-Informationen</h3>
 					<p><?php print $element[0]->description?></p>

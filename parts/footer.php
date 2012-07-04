@@ -101,9 +101,11 @@
 					<!-- GOOGLE +1 END -->
 					
 					<!-- FACEBOOK Empfehlen-Button BEGIN -->
-					<iframe id="facebook-like" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.stadtlandfluss-geschichten.de&amp;send=false&amp;layout=box_count&amp;width=150&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=63&amp;appId=351388158233394" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:63px;" allowTransparency="true"></iframe>
+					<iframe id="facebook-like" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.stadtlandfluss-geschichten.de&amp;send=false&amp;layout=box_count&amp;width=150&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=63&amp;appId=351388158233394" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:63px; float: right;" allowTransparency="true"></iframe>
 					<!-- FACEBOOK Empfehlen-Button END -->
+					
 					<br style="clear: both; margin-bottom:10px;"/>
+					
 					<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.stadtlandfluss-geschichten.de" data-text="StadtLandFluss-Geschichten sind kurzweilige Filme über Menschen aus der Region Mosbach." data-lang="de">Twittern</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 					

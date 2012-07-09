@@ -50,7 +50,8 @@
 	    <?php    // sind keine Fehler vorhanden, wird die Email versendet
 	      } else {
 	        $mailbetreff="Kontaktformular ".$_SERVER['HTTP_HOST'];
-	        // HIER DIE EMPFÄNGER EMAIL-ADRESSE ANPASSEN!!!       
+	        // HIER DIE EMPFÄNGER EMAIL-ADRESSE ANPASSEN!!!     
+				utf8_encode($mailnachricht);
 	        echo (mail("wirth@dhbw-mosbach.de", $mailbetreff, $mailnachricht, "From: $email")) ? "<p>Vielen Dank f&uuml;r Ihre eMail!</p>": "<p class='error'>Ein Fehler ist aufgetreten! Bitte kontaktieren Sie uns über die im Impressum genannten Informationen.</p>";
 	      }
 	    // das Formular welches als erstes dem Besucher angezeigt wird

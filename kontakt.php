@@ -21,7 +21,7 @@
 	        $wert=preg_replace("/(content-type:|bcc:|cc:|to:|from:)/im", "",$wert);
 	        $$feld=$wert;
 	        // die übermittelten Variablen werden zum "Text der Email" zusammengefasst
-	        if($feld!="abschicken") $mailnachricht.=ucfirst($feld).": $wert\n";
+	        if($feld!="abschicken") $mailnachricht.=ucfirst($feld).": $wert<br/>\n";
 	      }
 	      $mailnachricht.="\nDatum/Zeit: ". date("d.m.Y H:i:s");
 	      // Überprüfen ob alle Pflichtfelder gefüllt sind
@@ -51,10 +51,22 @@
 	        <p id="last">*Pflichtfelder</p>
 	    <?php    // sind keine Fehler vorhanden, wird die Email versendet
 	      } else {
-	        $mailbetreff="Kontaktformular ".$_SERVER['HTTP_HOST'];
-	        // HIER DIE EMPFÄNGER EMAIL-ADRESSE ANPASSEN!!!     
-				utf8_encode($mailnachricht);
-	        echo (mail("wirth@dhbw-mosbach.de", $mailbetreff, $mailnachricht, "From: $email")) ? "<p>Vielen Dank f&uuml;r Ihre eMail!</p>": "<p class='error'>Ein Fehler ist aufgetreten! Bitte kontaktieren Sie uns über die im Impressum genannten Informationen.</p>";
+			
+			/* Update CA 10.07.2012*/
+			$msg = $mailnachricht;
+			$subject = "Kontaktformular ".$_SERVER['HTTP_HOST'];
+			
+			$receiver = "wirth@dhbw-mosbach.de";
+			
+			$mail_content = "<h1>Nachricht von ".$vorname." ".$nachname."</h1>
+							 <p>".$msg."</p>";
+	
+			$from = "From: Mineralsgems <info@mineralsgems.de>\n";
+			$from .= "Reply-To: ".$email."\n";
+			$from .= "Content-Type: text/html; charset=UTF-8\n";
+	
+			echo (mail($receiver, $subject, $mail_content, $from)) ? "<p>Vielen Dank f&uuml;r Ihre eMail!</p>": "<p class='error'>Ein Fehler ist aufgetreten! Bitte kontaktieren Sie uns über die im Impressum genannten Informationen.</p>";
+			
 	      }
 	    // das Formular welches als erstes dem Besucher angezeigt wird
 	    } else { ?>

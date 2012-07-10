@@ -668,6 +668,8 @@ a#backButton:hover {
 	float: right;
 	overflow: hidden;
 	background-image: url('../img/playlist.png');
+	margin-left: 0;
+	padding: 0;
 }
 .playList ul li {
 	height: 150px;

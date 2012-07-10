@@ -56,7 +56,7 @@ p, td {
 	line-height: 1.7em;
 }
 
-ul {
+ul, ol {
 	margin-left: 20px;
 	color: #656565;
     font-size: 0.9em;
@@ -801,7 +801,7 @@ a.weiterlesenLink:hover {
 
 .contentScrollBox h3, div#text h2, div.info_box h2 {
 	font-size: 1.3em;
-	color: #5FCEEF;
+	color: #44779A;
 	text-shadow: none;
 }
 

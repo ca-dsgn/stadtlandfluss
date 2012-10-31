@@ -30,6 +30,17 @@
 	      empty($vorname) ? $err[] = "Vorname" : false;
 	      empty($email) ? $err[] = "E-Mailadresse" : false;
 	      empty($text) ? $err[] = "Freitextfeld" : false;
+		  
+		  include("php/securimage.php");
+					
+		  $img = new Securimage();
+		  $valid = $img->check($_POST["secure_code"]);
+		  
+		  if (!$valid) {
+			 
+			  $err[] = "Sicherheitscode";
+		  }
+		  
 	      // wenn nicht, werden die Fehlermeldungen ausgegeben und das "halbgefüllte" Formular angezeigt
 	      if(!empty($err)) {
 	        echo "<p class='error'><strong>Ihre Daten konnten leider nicht versendet werden. Bitte &uuml;berpr&uuml;fen Sie folgende Felder auf Vollst&auml;ndigkeit:</strong></p><ul class='error'>";
@@ -45,6 +56,12 @@
 	        <tr><td align="right">Postanschrift:</td><td align="left"><input type="text" name="strasse" value="<?php echo $strasse; ?>" style="width:100%" /></td></tr>
 	        <tr><td align="right">Telefon:</td><td align="left"><input type="text" name="telefon" value="<?php echo $telefon; ?>" style="width:100%" /></td></tr>
 	        <tr><td align="right">*E-Mail:</td><td align="left"><input type="text" name="email" value="<?php echo $email; ?>" style="width:100%" /></td></tr>
+            
+            <tr><td align="right">Sicherheitsabfrage:</td><td align="left"><img id="secure_image" src="php/securimage_show.php?sid=<?php echo sha1(time()) ?>" alt="Sicherheitsabfrage"/><br/>
+							<a onclick="document.getElementById(\'secure_image\').src = \''.$url.'php/securimage_show.php?sid=\' + Math.random(); return false">Erneuern</a></td></tr>
+                            
+            <tr><td align="right">*Sicherheitscode:</td><td align="left"><input type="text" name="secure_code" id="secure_code"/></td></tr>
+            
 	        <tr><td colspan="2"><textarea rows="12"  style="width:100%" name="text"><?php echo $text; ?></textarea></td><td> </td></tr>
 	        <tr><td colspan="2" align="center" nowrap><br /><input type="reset" value="Formular l&ouml;schen" style="width:200px;" />  <input type="submit" name="abschicken" class="button" value="Formular absenden" style="width:200px;" /></td></tr>
 	        </table>
@@ -79,6 +96,11 @@
 	        <tr><td align="right">Postanschrift:</td><td align="left"><input type="text" name="strasse" value="" style="width:100%" /></td></tr>
 	        <tr><td align="right">Telefon:</td><td align="left"><input type="text" name="telefon" value="" style="width:100%" /></td></tr>
 	        <tr><td align="right">*E-Mail:</td><td align="left"><input type="text" name="email" value="" style="width:100%" /></td></tr>
+            
+            <tr><td align="right">Sicherheitsabfrage:</td><td align="left"><img id="secure_image" src="php/securimage_show.php?sid=<?php echo sha1(time()) ?>" alt="Sicherheitsabfrage"/><br/>
+							<a onclick="document.getElementById(\'secure_image\').src = \''.$url.'php/securimage_show.php?sid=\' + Math.random(); return false">Erneuern</a></td></tr>
+                            
+            <tr><td align="right">*Sicherheitscode:</td><td align="left"><input type="text" name="secure_code" id="secure_code"/></td></tr>
 	        <tr><td colspan="2"><textarea rows="12"  style="width:100%" name="text"></textarea></td><td> </td></tr>
 	        <tr><td colspan="2" align="center" nowrap><br /><input type="reset" value="Formular l&ouml;schen" style="width:200px" />  <input type="submit" name="abschicken" value="Formular absenden" style="width:200px" /></td></tr>
 	        </table>

@@ -58,7 +58,7 @@
 	        <tr><td align="right">*E-Mail:</td><td align="left"><input type="text" name="email" value="<?php echo $email; ?>" style="width:100%" /></td></tr>
             
             <tr><td align="right">Sicherheitsabfrage:</td><td align="left"><img id="secure_image" src="php/securimage_show.php?sid=<?php echo sha1(time()) ?>" alt="Sicherheitsabfrage"/><br/>
-							<a onclick="document.getElementById(\'secure_image\').src = \''.$url.'php/securimage_show.php?sid=\' + Math.random(); return false">Erneuern</a></td></tr>
+							<a onclick="document.getElementById('secure_image').src = 'php/securimage_show.php?sid=' + Math.random(); return false">Erneuern</a></td></tr>
                             
             <tr><td align="right">*Sicherheitscode:</td><td align="left"><input type="text" name="secure_code" id="secure_code"/></td></tr>
             
@@ -98,7 +98,7 @@
 	        <tr><td align="right">*E-Mail:</td><td align="left"><input type="text" name="email" value="" style="width:100%" /></td></tr>
             
             <tr><td align="right">Sicherheitsabfrage:</td><td align="left"><img id="secure_image" src="php/securimage_show.php?sid=<?php echo sha1(time()) ?>" alt="Sicherheitsabfrage"/><br/>
-							<a onclick="document.getElementById(\'secure_image\').src = \''.$url.'php/securimage_show.php?sid=\' + Math.random(); return false">Erneuern</a></td></tr>
+							<a onclick="document.getElementById('secure_image').src = 'php/securimage_show.php?sid=' + Math.random(); return false">Erneuern</a></td></tr>
                             
             <tr><td align="right">*Sicherheitscode:</td><td align="left"><input type="text" name="secure_code" id="secure_code"/></td></tr>
 	        <tr><td colspan="2"><textarea rows="12"  style="width:100%" name="text"></textarea></td><td> </td></tr>

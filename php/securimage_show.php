@@ -41,7 +41,6 @@ $img = new securimage();
 // Change some settings
 
 $img->text_color = new Securimage_Color("#1e1e1e");
-$img->ttf_file = 'arial.ttf';
 $img->code_length = rand(4, 6);
 
 //$img->text_transparency_percentage = 65; // 100 = completely transparent

@@ -4,6 +4,7 @@
 ?>
 
 <div id="singlepageContent">
+
 	<div class="wrapper">
 		<div id="text">
 		
